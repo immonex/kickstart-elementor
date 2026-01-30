@@ -355,11 +355,12 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			return;
 		}
 
-		$template_data = $this->get_template_data();
-		if ( false === $template_data ) {
+		$template_data_escaped = $this->get_template_data();
+		if ( false === $template_data_escaped ) {
 			return;
 		}
 
+		// phpcs:ignore
 		$utils          = apply_filters( 'inx_elementor_get_utils', [] );
 		$plain_template = $template_file_info['folder'] . DIRECTORY_SEPARATOR . $template_file_info['plain_name'];
 		$template_file  = '';
@@ -381,8 +382,8 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 		}
 
 		echo 'php' === substr( strtolower( $template_file ), -3 ) ?
-			$utils['template']->render_php_template( $template_file, $template_data ) :
-			$utils['template']->render_twig_template( $template_file, $template_data );
+			$utils['template']->render_php_template( $template_file, $template_data_escaped ) : // phpcs:ignore
+			$utils['template']->render_twig_template( $template_file, $template_data_escaped ); // phpcs:ignore
 	} // render
 
 	/**
@@ -401,6 +402,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			return;
 		}
 
+		// phpcs:ignore
 		$utils    = apply_filters( 'inx_elementor_get_utils', [] );
 		$template = $template_file_info['folder'] . DIRECTORY_SEPARATOR . $template_file_info['plain_name'] . '-preview';
 
@@ -408,11 +410,15 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			return;
 		}
 
-		$template_data = [
-			'demo_content' => $this->get_demo_content(),
+		$demo_content = $this->get_demo_content();
+
+		$template_data_escaped = [
+			'demo_content'         => $demo_content,
+			'demo_content_escaped' => $demo_content,
 		];
 
-		echo $utils['template']->render_php_template( $template, $template_data );
+		// phpcs:ignore
+		echo $utils['template']->render_php_template( $template, $template_data_escaped );
 	} // content_template
 
 	/**
@@ -446,6 +452,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 
 		$contents = array_merge(
 			[
+				// phpcs:ignore
 				'heading_base_level' => apply_filters( 'inx_get_option_value', 1, 'heading_base_level' ),
 			],
 			$contents
@@ -505,7 +512,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 		}
 
 		$this->post_id = 'inx_property' === static::POST_TYPE ?
-			apply_filters( 'inx_current_property_post_id', get_the_ID() ) :
+			apply_filters( 'inx_current_property_post_id', get_the_ID() ) : // phpcs:ignore
 			get_the_ID();
 
 		return $this->post_id;

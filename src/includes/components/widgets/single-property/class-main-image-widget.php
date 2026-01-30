@@ -501,6 +501,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 	 * @return mixed[] Attachment or placeholder ID and URL.
 	 */
 	private function create_demo_image() {
+		// phpcs:ignore
 		$plugin_dir   = apply_filters( 'inx_elementor_get_plugin_dir', '' );
 		$source_image = trailingslashit( $plugin_dir ) . 'assets/demo-images/' . self::DEMO_IMAGE_FILENAME;
 

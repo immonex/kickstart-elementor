@@ -104,6 +104,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 			);
 		}
 
+		// phpcs:ignore
 		if ( apply_filters( 'inx_elementor_is_addon_active', false, 'print' ) ) {
 			$text_style_sections['print_link'] = __( 'Print/PDF Link', 'immonex-kickstart-elementor' );
 

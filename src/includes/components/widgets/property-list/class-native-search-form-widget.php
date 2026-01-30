@@ -61,8 +61,8 @@ class Native_Search_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 	 * @since 1.0.0
 	 */
 	protected function register_controls() {
-		$utils                  = apply_filters( 'inx_elementor_get_utils', [] );
-		$search_form_elements   = apply_filters( 'inx_get_search_form_elements', [] );
+		$utils                  = apply_filters( 'inx_elementor_get_utils', [] ); // phpcs:ignore
+		$search_form_elements   = apply_filters( 'inx_get_search_form_elements', [] ); // phpcs:ignore
 		$pages                  = get_pages();
 		$element_options        = [];
 		$element_control_titles = [];

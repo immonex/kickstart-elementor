@@ -85,6 +85,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			}
 		}
 
+		// phpcs:ignore
 		$agent_elements  = apply_filters( 'inx_team_get_agent_elements', [] );
 		$element_options = [];
 

@@ -31,7 +31,7 @@
 	<!-- https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties -->
 	<config name="minimum_supported_wp_version" value="6.5"/>
 	<rule ref="WordPress">
-		<exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped"/>
+		<!-- exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped"/ -->
 		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query"/>
 		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_query"/>
 		<exclude name="WordPress.Security.NonceVerification.Recommended"/>
@@ -50,7 +50,7 @@
 			</property>
 		</properties>
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
-		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound"/>
+		<!-- exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound"/ -->
 	</rule>
 	<rule ref="WordPress.WP.I18n">
 		<properties>

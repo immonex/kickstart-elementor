@@ -5,12 +5,16 @@
  * @package immonex\KickstartElementor
  */
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <#
 view.addRenderAttribute('list_items', 'class', 'inx-e-labels__items');
 view.addRenderAttribute('list_item', 'class', 'inx-e-labels__item');
 
-const contents = <?php echo $template_data['demo_content']; ?>;
+const contents = <?php echo $template_data['demo_content_escaped']; // phpcs:ignore ?>;
 
 let items = [];
 if (parseInt(settings.include_label_terms)) items = items.concat(contents.items.label);

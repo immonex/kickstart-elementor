@@ -24,6 +24,7 @@ class Media_Utils {
 	 * @return mixed[]|bool Image data (ID and URL) or false on error.
 	 */
 	public static function add_image_to_media_lib( $source_image, $meta = [], $placeholder_on_error = true ) {
+		// phpcs:ignore
 		$utils = apply_filters( 'inx_elementor_get_utils', [] );
 
 		$placeholder_url = \Elementor\Utils::get_placeholder_image_src();

@@ -7,6 +7,11 @@
 
 namespace immonex\Kickstart\Elementor;
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Main plugin class.
  */

@@ -79,7 +79,7 @@ class Key_Value_List_Widget extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$tweaks = apply_filters(
-			'inx_elementor_tweaks',
+			'inx_elementor_tweaks', // phpcs:ignore
 			[ 'enable_before_after_item_contents' => self::ENABLE_BEFORE_AFTER_ITEM_CONTENTS ],
 			90
 		);
@@ -148,6 +148,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					}
 
 					$options = $this->add_extended_element_select_options(
+						// phpcs:ignore
 						apply_filters( 'inx_elementor_mapping_select_options', [], $option_type ),
 						$option_type
 					);
@@ -1047,6 +1048,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				continue;
 			}
 
+			// phpcs:ignore
 			$element_data = apply_filters( 'inx_get_flex_items', [], $element['element'], $scope );
 			if ( empty( $element_data ) ) {
 				continue;
@@ -1080,7 +1082,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					}
 
 					$element_return['value'] = apply_filters(
-						'inx_format',
+						'inx_format', // phpcs:ignore
 						$element_return['value'],
 						$format['type'],
 						$format['args']
@@ -1158,7 +1160,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		}
 
 		$this->format_filters = apply_filters(
-			'inx_elementor_format_filters',
+			'inx_elementor_format_filters', // phpcs:ignore
 			[
 				'inx_format_price'  => [
 					'title' => __( 'Price', 'immonex-kickstart-elementor' ),

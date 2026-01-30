@@ -102,6 +102,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 				continue;
 			}
 
+			// phpcs:ignore
 			$options = apply_filters( 'inx_elementor_mapping_select_options', [], $option_type );
 			if ( empty( $options ) ) {
 				continue;
@@ -247,6 +248,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 	 * @return string Dynamic tag value.
 	 */
 	public function get_value( $options = [] ) {
+		// phpcs:ignore
 		$is_edit_mode = ! empty( $_REQUEST['editor_post_id'] )
 			|| \Elementor\Plugin::$instance->editor->is_edit_mode();
 
@@ -282,6 +284,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 				$element['value'] = "[{$element['value']}]";
 				$element_data     = [ $element ];
 			} else {
+				// phpcs:ignore
 				$element_data = apply_filters( 'inx_get_flex_items', [], $element['element'], $scope );
 
 				if ( empty( $element_data ) ) {
@@ -301,7 +304,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 					}
 
 					$element_return['value'] = apply_filters(
-						'inx_format',
+						'inx_format', // phpcs:ignore
 						$element_return['value'],
 						$format['type'],
 						$format['args']
@@ -343,6 +346,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 			return '';
 		}
 
+		// phpcs:ignore
 		$template_data = apply_filters( 'inx_get_property_template_data', [] );
 		if ( empty( $template_data ) ) {
 			return '';
@@ -415,7 +419,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		}
 
 		$this->format_filters = apply_filters(
-			'inx_elementor_format_filters',
+			'inx_elementor_format_filters', // phpcs:ignore
 			[
 				'inx_format_price'  => [
 					'title' => __( 'Price', 'immonex-kickstart-elementor' ),

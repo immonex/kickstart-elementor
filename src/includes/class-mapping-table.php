@@ -7,6 +7,11 @@
 
 namespace immonex\Kickstart\Elementor;
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Mapping table related helper methods.
  */

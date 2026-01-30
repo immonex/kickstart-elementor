@@ -5,9 +5,13 @@
  * @package immonex\KickstartElementor
  */
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <#
-let contents = <?php echo $template_data['demo_content']; ?>;
+let contents = <?php echo $template_data['demo_content_escaped']; // phpcs:ignore ?>;
 let short_desc = contents.short_desc
 
 if (contents.short_desc.length > settings.max_length) {

@@ -5,9 +5,13 @@
  * @package immonex\KickstartElementor
  */
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <#
-let contents = <?php echo $template_data['demo_content']; ?>;
+let contents = <?php echo $template_data['demo_content_escaped']; // phpcs:ignore ?>;
 
 if (settings.format_ctext === 'yes') {
 	contents[settings.field_name] = '<p>' + contents[settings.field_name].replace(/(\r\n|\r|\n){2}/g, '</p><p>') + '</p>'

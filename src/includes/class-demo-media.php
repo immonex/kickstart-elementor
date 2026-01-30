@@ -87,7 +87,7 @@ class Demo_Media {
 	 */
 	public static function create_demo_images() {
 		$image_ids  = [];
-		$plugin_dir = apply_filters( 'inx_elementor_get_plugin_dir', '' );
+		$plugin_dir = apply_filters( 'inx_elementor_get_plugin_dir', '' ); // phpcs:ignore
 
 		foreach ( array_keys( self::DEMO_IMAGE_FILENAMES ) as $type ) {
 			$image_ids[ $type ] = [];

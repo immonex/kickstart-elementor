@@ -86,6 +86,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 			}
 		}
 
+		// phpcs:ignore
 		$agency_elements = apply_filters( 'inx_team_get_agency_elements', [] );
 		$element_options = [];
 

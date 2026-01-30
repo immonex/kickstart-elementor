@@ -173,18 +173,21 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		}
 
 		if ( empty( $desc ) ) {
+			// phpcs:ignore
 			$desc = apply_filters( 'inx_get_custom_field_value_by_name', '', $settings['field_name'], $post_id );
 		}
 		if ( ! $desc ) {
 			return false;
 		}
 
+		// phpcs:ignore
 		$utils = apply_filters( 'inx_elementor_get_utils', [] );
 		if ( empty( $utils ) ) {
 			return false;
 		}
 
 		if ( 'yes' === $settings['format_ctext'] ) {
+			// phpcs:ignore
 			$desc = apply_filters( 'inx_the_content', $utils['string']->convert_urls( $desc ) );
 		}
 

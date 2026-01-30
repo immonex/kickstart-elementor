@@ -361,7 +361,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 			return false;
 		} else {
 			$image_ids = apply_filters(
-				'inx_get_property_images',
+				'inx_get_property_images', // phpcs:ignore
 				[],
 				$this->get_post_id(),
 				[

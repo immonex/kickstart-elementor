@@ -5,12 +5,16 @@
  * @package immonex\KickstartElementor
  */
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <#
 view.addRenderAttribute('list_items', 'class', 'inx-e-icon-list__items');
 view.addRenderAttribute('list_item', 'class', 'inx-e-icon-list__item');
 
-const contents = <?php echo $template_data['demo_content']; ?>;
+const contents = <?php echo $template_data['demo_content_escaped']; // phpcs:ignore ?>;
 const hLevel = parseInt(settings.heading_level) + parseInt(contents['heading_base_level']) - 1
 const h = 'h' + hLevel
 

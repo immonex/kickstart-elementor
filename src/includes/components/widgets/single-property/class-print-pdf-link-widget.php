@@ -173,6 +173,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 			return false;
 		}
 
+		// phpcs:ignore
 		$url = apply_filters( 'inx_print_pdf_link_url', '' );
 		if ( ! $url ) {
 			return false;

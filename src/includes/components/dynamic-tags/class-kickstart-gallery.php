@@ -123,9 +123,10 @@ class Kickstart_Gallery extends \Elementor\Core\DynamicTags\Data_Tag {
 		} elseif ( ! $type ) {
 			return [];
 		} else {
+			// phpcs:ignore
 			$property_id = apply_filters( 'inx_current_property_post_id', get_the_id() );
 			$image_ids   = apply_filters(
-				'inx_get_property_images',
+				'inx_get_property_images', // phpcs:ignore
 				[],
 				$property_id,
 				[

@@ -7,6 +7,11 @@
 
 namespace immonex\Kickstart\Elementor;
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Register Elementor elements.
  */
@@ -63,6 +68,7 @@ class Elementor_Bootstrap {
 		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'enqueue_editor_css_js' ] );
 
+		// phpcs:ignore
 		if ( apply_filters( 'inx_elementor_is_plugin_available', false, 'elementor-pro' ) ) {
 			add_action( 'elementor/dynamic_tags/register', [ $this, 'register_inx_dynamic_tag_group' ] );
 			add_action( 'elementor/dynamic_tags/register', [ $this, 'register_inx_dynamic_tags' ] );
@@ -91,6 +97,7 @@ class Elementor_Bootstrap {
 			],
 		];
 
+		// phpcs:ignore
 		if ( apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-kickstart-team', self::MIN_REQ_VERSIONS['team'] ) ) {
 			$add_categories['inx-team'] = [
 				'title' => $house_icon . __( 'Contacts & Agencies', 'immonex-kickstart-elementor' ) . ' (+Team)',
@@ -149,11 +156,13 @@ class Elementor_Bootstrap {
 	 * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
 	 */
 	public function register_widgets( $widgets_manager ) {
+		// phpcs:disable
 		$esp_active          = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-energy-scale-pro', self::MIN_REQ_VERSIONS['esp'] );
 		$print_add_on_active = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-kickstart-print', self::MIN_REQ_VERSIONS['print'] );
 		$team_add_on_active  = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-kickstart-team', self::MIN_REQ_VERSIONS['team'] );
 		$lead_gen_active     = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-lead-generator', self::MIN_REQ_VERSIONS['lead-generator'] );
 		$notify_active       = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-notify', self::MIN_REQ_VERSIONS['notify'] );
+		// phpcs:enable
 
 		$this->widgets = [
 			new Components\Widgets\SingleProperty\Native_Head_Widget(),
@@ -246,7 +255,7 @@ class Elementor_Bootstrap {
 	 * @return string Possibly modified option value.
 	 */
 	public function disable_element_cache_for_template_pages( $value ) {
-		$options           = apply_filters( 'inx_options', [], 'core' );
+		$options           = apply_filters( 'inx_options', [], 'core' ); // phpcs:ignore
 		$template_page_ids = array_filter(
 			[
 				! empty( $options['property_list_page_id'] ) ? (int) $options['property_list_page_id'] : null,

@@ -5,4 +5,7 @@
  * @package immonex\KickstartElementor
  */
 
-die( "Don't event think about it!" );
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	die( "Don't event think about it!" );
+}

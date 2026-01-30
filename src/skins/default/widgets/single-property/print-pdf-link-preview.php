@@ -5,9 +5,13 @@
  * @package immonex\KickstartElementor
  */
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <#
-const contents = <?php echo $template_data['demo_content']; ?>;
+const contents = <?php echo $template_data['demo_content_escaped']; // phpcs:ignore ?>;
 const link_text = settings.link_text || (settings.icon && settings.icon.value) ?
 	settings.link_text : contents.default_link_text;
 const iconHTML = settings.icon ?

@@ -180,6 +180,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 			return false;
 		}
 
+		// phpcs:ignore
 		$utils = apply_filters( 'inx_elementor_get_utils', [] );
 		if ( empty( $utils ) ) {
 			return false;

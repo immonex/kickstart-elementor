@@ -62,8 +62,8 @@ class Downloads_Links_Widget extends \immonex\Kickstart\Elementor\Components\Wid
 	protected function get_template_data() {
 		$template_data = parent::get_template_data();
 
-		$files = apply_filters( 'inx_get_property_files', [], false );
-		$links = apply_filters( 'inx_get_property_links', [], false );
+		$files = apply_filters( 'inx_get_property_files', [], false ); // phpcs:ignore
+		$links = apply_filters( 'inx_get_property_links', [], false ); // phpcs:ignore
 
 		if ( empty( $files ) && empty( $links ) ) {
 			return false;
@@ -105,6 +105,7 @@ class Downloads_Links_Widget extends \immonex\Kickstart\Elementor\Components\Wid
 		}
 
 		if ( ! empty( $links ) ) {
+			// phpcs:ignore
 			$utils = apply_filters( 'inx_elementor_get_utils', [] );
 			$icon  = \Elementor\Icons_Manager::try_get_icon_html(
 				[

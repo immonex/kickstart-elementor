@@ -5,6 +5,10 @@
  * @package immonex\KickstartElementor
  */
 
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
 <#
 view.addRenderAttribute('list_items', 'class', 'inx-e-single-property-type__items');
@@ -20,7 +24,7 @@ if (settings.link_type) {
 	view.addRenderAttribute('list_item', 'itemtype', 'https://schema.org/ListItem');
 }
 
-const contents = <?php echo $template_data['demo_content']; ?>;
+const contents = <?php echo $template_data['demo_content_escaped']; // phpcs:ignore ?>;
 const iconHTML = settings.icon ?
 	elementor.helpers.renderIcon(view, settings.icon, { 'aria-hidden': true }, 'i' , 'object') :
 	false;
