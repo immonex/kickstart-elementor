@@ -1,0 +1,14 @@
+// Base styles for all skin related elements
+
+[class*="elementor-widget-inx-e-"] {
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: .5em;
+	}
+}
+
+.elementor-widget-container {
+	> div[class*="inx-"],
+	> article[class*="inx-"] {
+		margin-bottom: 0 !important;
+	}
+}

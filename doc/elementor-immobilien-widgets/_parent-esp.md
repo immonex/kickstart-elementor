@@ -1,0 +1,1 @@
+[Parent-Plugin](einleitung?id=parent-plugin): [immonex Energy Scale Pro](https://plugins.inveris.de/shop/immonex-energy-scale-pro/)

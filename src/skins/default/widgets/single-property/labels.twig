@@ -1,0 +1,13 @@
+<ul {{ list_items_attr }}>
+	{% for item in items %}
+		<li {{ list_item_attr }}>
+			{% if item.before_item %}
+				<span class="inx-e-labels__before-item">{{ item.before_item }}</span>
+			{% endif %}
+			<span class="inx-e-labels__label {{ item.class }}">{{ item.label }}</span>
+			{% if item.after_item %}
+				<span class="inx-e-labels__after-item">{{ item.after_item }}</span>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

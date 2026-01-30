@@ -1,0 +1,1 @@
+?> Die *Mapping-Gruppe* wird beim [Immobilien-Import mit immonex OpenImmo2WP](https://docs.immonex.de/openimmo2wp) zugewiesen und entspricht der jeweiligen Angabe in der Spalte ***Group*** der hierbei verwendeten [Mapping-Tabelle](https://docs.immonex.de/openimmo2wp/#/mapping/tabellen).

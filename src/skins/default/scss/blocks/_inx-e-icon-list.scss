@@ -1,0 +1,170 @@
+@use "../_config";
+
+ul.inx-e-icon-list__items {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.inx-e-icon-list__item {
+	display: flex;
+	align-items: var(--inx-e-icon-list-icon-vertical-align, center);
+	position: relative;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+	font-size: inherit;
+
+	&::after {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+}
+
+.inx-e-icon-list__icon {
+	display: flex;
+	position: relative;
+	top: var(--inx-e-icon-list-icon-vertical-offset, initial);
+	text-align: var(--inx-e-icon-list-icon-align);
+
+	i {
+		width: 1.25em;
+		font-size: var(--inx-e-icon-list-icon-size);
+	}
+
+	svg {
+		width: var(--inx-e-icon-list-icon-size, 1em);
+		height: var(--inx-e-icon-list-icon-size, 1em);
+		margin: var(--inx-e-icon-list-icon-margin, 0 calc(var(--inx-e-icon-list-icon-size, 1em) * 0.25) 0 0);
+	}
+}
+
+.inx-e-icon-list__text a {
+	color: var(--inx-color-action-element);
+}
+
+.inx-e-icon-list__icon + .inx-e-icon-list__text {
+	align-self: center;
+}
+
+.elementor-widget.inx-e--layout--inline {
+	ul.inx-e-icon-list__items {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -8px;
+		margin-left: -8px;
+	}
+
+	&.inx-e--align--left .inx-e-icon-list__items {
+		justify-content: flex-start;
+	}
+
+	&.inx-e--align--center ul.inx-e-icon-list__items {
+		justify-content: center;
+	}
+
+	.inx-e-icon-list__item {
+		margin-right: 8px;
+		margin-left: 8px;
+		word-break: break-word;
+
+		&::after {
+			width: auto;
+			left: auto;
+			right: auto;
+			position: relative;
+			height: 100%;
+			border-top: 0;
+			border-bottom: 0;
+			border-right: 0;
+			border-left-width: 1px;
+			border-style: solid;
+			right: -8px;
+		}
+	}
+}
+
+.elementor-widget.inx-e--align--left {
+	.inx-e-icon-list__item {
+		justify-content: flex-start;
+		text-align: left;
+	}
+}
+
+.elementor-widget.inx-e--align--center {
+	.inx-e-icon-list__item {
+		justify-content: center;
+
+		&::after {
+			margin: auto;
+		}
+	}
+}
+
+.elementor-widget.inx-e--align--right {
+	ul.inx-e-icon-list__items {
+		justify-content: flex-end;
+	}
+
+	.inx-e-icon-list__item {
+		justify-content: flex-end;
+		text-align: right;
+	}
+}
+
+@each $breakpoint in config.$elementor-breakpoints {
+	body.elementor-device-#{$breakpoint},
+	body[data-elementor-device-mode="#{$breakpoint}"] {
+		@if $breakpoint == desktop {
+			$breakpoint: '';
+		} @else {
+			$breakpoint: -#{$breakpoint};
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--left {
+			&.inx-e--layout--inline ul.inx-e-icon-list__items {
+				justify-content: flex-start;
+			}
+
+			.inx-e-icon-list__item {
+				justify-content: flex-start;
+				text-align: left;
+			}
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--center {
+			&.inx-e--layout--inline ul.inx-e-icon-list__items {
+				justify-content: center;
+			}
+
+			.inx-e-icon-list__item {
+				justify-content: center;
+
+				&::after {
+					margin: auto;
+				}
+			}
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--right {
+			ul.inx-e-icon-list__items {
+				justify-content: flex-end;
+			}
+
+			.inx-e-icon-list__item {
+				justify-content: flex-end;
+				text-align: right;
+			}
+		}
+
+		@for $i from 2 through 4 {
+			.inx-e-icon-list.inx-e#{$breakpoint}--columns--#{$i} {
+				.inx-e-icon-list__item:nth-child(#{$i}n+1):nth-last-child(-n+#{$i}),
+				.inx-e-icon-list__item:nth-child(#{$i}n+1):nth-last-child(-n+#{$i}) ~ li {
+					padding-bottom: 0 !important;
+				}
+			}
+		}
+	}
+}

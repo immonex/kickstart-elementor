@@ -1,0 +1,1 @@
+Typ: [regulär](einleitung?id=reguläre-widgets)

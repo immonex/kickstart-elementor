@@ -1,0 +1,1 @@
+?> Das Widget [Flex-Details](flex-details) bietet die gleichen Strukturierungs- und Darstellungsmöglichkeiten bei **erweiterten Auswahloptionen** hinsichtlich der einzubindenden Inhalte.

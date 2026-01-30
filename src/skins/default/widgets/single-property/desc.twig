@@ -1,0 +1,9 @@
+{% if desc and settings.heading %}
+	<{{ h_tag }} class="inx-e-heading">{{ settings.heading }}</{{ h_tag }}>
+{% endif %}
+
+{% if desc %}
+<div class="inx-e-desc-text">
+	{{ desc }}
+</div>
+{% endif %}

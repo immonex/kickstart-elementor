@@ -1,0 +1,18 @@
+ol.inx-e-single-property-type__items,
+ul.inx-e-single-property-type__items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+	flex-wrap: wrap;
+}
+
+.inx-e-single-property-type__separator svg {
+	vertical-align: middle;
+}
+
+a.inx-e-single-property-type__title {
+	color: var(--inx-color-action-element);
+}

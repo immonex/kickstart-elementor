@@ -1,0 +1,1 @@
+[Parent-Plugin](einleitung?id=parent-plugin): [immonex Notify](https://plugins.inveris.de/shop/immonex-notify/)

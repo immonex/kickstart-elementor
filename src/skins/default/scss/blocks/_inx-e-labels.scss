@@ -1,0 +1,155 @@
+@use "../_config";
+
+ul.inx-e-labels__items {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.inx-e-labels__item {
+	margin: 0;
+	padding: 0;
+}
+
+.inx-e-labels__label {
+	padding: 0 .3em;
+	line-height: 1.2em;
+	color: #fff;
+	background-color: var(--inx-color-label-default, #d1ab78);
+	background: var(--inx-gradient-label-default);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.elementor-widget.inx-e--layout--vertical {
+	.inx-e-labels__item {
+		display: flex;
+	}
+
+	&.inx-e--align--left {
+		.inx-e-labels__item {
+			justify-content: flex-start;
+		}
+	}
+
+	&.inx-e--align--center {
+		.inx-e-labels__item {
+			justify-content: center;
+		}
+	}
+
+	&.inx-e--align--right {
+		.inx-e-labels__item {
+			justify-content: flex-end;
+		}
+	}
+}
+
+.elementor-widget.inx-e--layout--horizontal {
+	ul.inx-e-labels__items {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.inx-e-labels__label {
+		display: inline-block;
+	}
+
+	&.inx-e--align--left {
+		.inx-e-labels__items {
+			justify-content: flex-start;
+		}
+	}
+
+	&.inx-e--align--center {
+		.inx-e-labels__items {
+			justify-content: center;
+		}
+	}
+
+	&.inx-e--align--right {
+		.inx-e-labels__items {
+			justify-content: flex-end;
+		}
+	}
+}
+
+@each $breakpoint in config.$elementor-breakpoints {
+	body.elementor-device-#{$breakpoint},
+	body[data-elementor-device-mode="#{$breakpoint}"] {
+		@if $breakpoint == desktop {
+			$breakpoint: '';
+		} @else {
+			$breakpoint: -#{$breakpoint};
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--left {
+			&.inx-e--layout--horizontal ul.inx-e-labels__items {
+				justify-content: flex-start;
+			}
+
+			.inx-e-labels__item {
+				justify-content: flex-start;
+				text-align: left;
+			}
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--center {
+			&.inx-e--layout--horizontal ul.inx-e-labels__items {
+				justify-content: center;
+			}
+
+			.inx-e-labels__item {
+				justify-content: center;
+
+				&::after {
+					margin: auto;
+				}
+			}
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--right {
+			ul.inx-e-labels__items {
+				justify-content: flex-end;
+			}
+
+			.inx-e-labels__item {
+				justify-content: flex-end;
+				text-align: right;
+			}
+		}
+	}
+}
+
+.inx-e-labels__label--tax--marketing-type[class*="kauf"],
+.inx-e-labels__label--tax--marketing-type[class*="sale"],
+.inx-e-labels__label--tax--marketing-type[class*="vent"],
+.inx-e-labels__label--tax--marketing-type[class*="vendita"], {
+	background-color: var(--inx-color-marketing-type-sale, #584990);
+	background: var(--inx-gradient-marketing-type-sale);
+}
+
+.inx-e-labels__label--tax--marketing-type[class*="miete"],
+.inx-e-labels__label--tax--marketing-type[class*="pacht"],
+.inx-e-labels__label--tax--marketing-type[class*="rent"],
+.inx-e-labels__label--tax--marketing-type[class*="alquiler"],
+.inx-e-labels__label--tax--marketing-type[class*="arrendamiento"],
+.inx-e-labels__label--tax--marketing-type[class*="affitto"],
+.inx-e-labels__label--tax--marketing-type[class*="noleggio"],
+.inx-e-labels__label--tax--marketing-type[class*="locazione"] {
+	background-color: var(--inx-color-marketing-type-rent, #ba5a3d);
+	background: var(--inx-gradient-marketing-type-rent);
+}
+
+.inx-e-labels__label--tax--marketing-type[class*="lease"],
+.inx-e-labels__label--tax--marketing-type[class*="leasing"] {
+	background-color: var(--inx-color-marketing-type-leasing, #e78b00);
+	background: var(--inx-gradient-marketing-type-leasing);
+}
+
+.inx-e-labels__label--demo {
+	background-color: var(--inx-color-demo, #6d115f);
+	background: var(--inx-gradient-demo);
+}

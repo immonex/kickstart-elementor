@@ -1,0 +1,32 @@
+{% if items %}
+	{% if settings.link_type %}
+		<ol {{ list_items_attr }}>
+			{% for item in items %}
+				<li {{ list_item_attr }}>
+					<a itemprop="item" href="{{ item.url }}" class="inx-e-single-property-type__title">
+						<span itemprop="name">{{ item.title }}</span>
+					</a>
+					<meta itemprop="position" content="{{ loop.index }}" />
+				</li>
+				{% if not loop.last %}
+					<li class="inx-e-single-property-type__separator">
+						{% if icon_html %}{{ icon_html }}{% else %}&gt;{% endif %}
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ol>
+	{% else %}
+		<ul {{ list_items_attr }}>
+			{% for item in items %}
+				<li {{ list_item_attr }}>
+					<span class="inx-e-single-property-type__title">{{ item.title }}</span>
+				</li>
+				{% if not loop.last %}
+					<li class="inx-e-single-property-type__separator">
+						{% if icon_html %}{{ icon_html }}{% else %}&gt;{% endif %}
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endif %}

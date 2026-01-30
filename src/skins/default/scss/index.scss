@@ -1,0 +1,11 @@
+// Base styles
+@use "_base.scss";
+
+// Blocks (Modules)
+@use "blocks/_inx-e-desc.scss";
+@use "blocks/_inx-e-icon-list.scss";
+@use "blocks/_inx-e-key-value-list.scss";
+@use "blocks/_inx-e-labels.scss";
+@use "blocks/_inx-e-short-desc.scss";
+@use "blocks/_inx-e-single-property-core-details.scss";
+@use "blocks/_inx-e-single-property-type.scss";

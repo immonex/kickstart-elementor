@@ -1,0 +1,1 @@
+?> Wird keine **Linkfarbe** im Elementor-Editor ausgewählt, wird als Standardvorgabe die Farbe für ***Aktionselemente*** (***immonex → Einstellungen → Allgemein → Farben***) übernommen.

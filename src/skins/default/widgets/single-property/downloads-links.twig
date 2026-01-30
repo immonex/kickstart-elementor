@@ -1,0 +1,17 @@
+{% if settings.heading %}
+	<{{ h_tag }} class="inx-e-heading">{{ settings.heading }}</{{ h_tag }}>
+{% endif %}
+
+<ul {{ list_items_attr }}>
+	{% for item in items %}
+	<li {{ list_item_attr }}>
+		{% if item.icon %}
+			<span class="inx-e-icon-list__icon">{{ item.icon }}</span>
+		{% endif %}
+
+		<span class="inx-e-icon-list__text">
+			<a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
+		</span>
+	</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,1 @@
+[Parent-Plugin](einleitung?id=parent-plugin): [immonex Lead Generator](https://plugins.inveris.de/shop/immonex-lead-generator/)

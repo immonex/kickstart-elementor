@@ -1,0 +1,13 @@
+<a href="{{ url }}" target="_blank" class="inx-e-print-pdf-link">
+	{% if icon and icon_align == 'left' %}
+		<span class="inx-e-print-pdf-link__icon">{{ icon }}</span>
+	{% endif %}
+
+	{% if link_text %}
+	<span class="inx-e-print-pdf-link__link-text">{{ link_text }}</span>
+	{% endif %}
+
+	{% if icon and icon_align == 'right' %}
+		<span class="inx-e-print-pdf-link__icon">{{ icon }}</span>
+	{% endif %}
+</a>

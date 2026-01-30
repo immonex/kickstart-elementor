@@ -1,0 +1,1 @@
+[Parent-Plugin](einleitung?id=parent-plugin): [Kickstart Team Add-on](https://de.wordpress.org/plugins/immonex-kickstart-team/)

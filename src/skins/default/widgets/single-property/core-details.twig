@@ -1,0 +1,21 @@
+<ul {{ list_items_attr }}>
+	{% for item in items %}
+		<li {{ list_item_attr }}>
+			<div class="inx-e-key-value-list__inner-item">
+				{% if item.before_item %}
+					<span class="inx-e-key-value-list__before-item">{{ item.before_item }}</span>
+				{% endif %}
+				{% if item.icon_html %}
+				<span class="inx-e-key-value-list__icon">
+					{{ item.icon_html }}
+				</span>
+				{% endif %}
+				<span class="inx-e-key-value-list__label">{{ item.title }}</span>
+				<span class="inx-e-key-value-list__value">{{ item.value }}</span>
+				{% if item.after_item %}
+					<span class="inx-e-key-value-list__after-item">{{ item.after_item }}</span>
+				{% endif %}
+			</div>
+		</li>
+	{% endfor %}
+</ul>
