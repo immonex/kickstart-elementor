@@ -1,8 +1,8 @@
 # immonex Kickstart Elementor
 
-<img src="assets/immonex-kickstart-elementor-logo.png" width="286" height="286" align="right" alt="immonex Kickstart Elementor Logo">
-
 ## Accelerating WordPress-based Real Estate Site Development
+
+<img src="assets/immonex-kickstart-elementor-logo.png" width="286" height="286" align="right" alt="immonex Kickstart Elementor Logo">
 
 This **add-on plugin** extends [immonex Kickstart](https://wordpress.org/plugins/immonex-kickstart/)[^1] powered [WordPress](https://wordpress.org/) installations by a variety of **widgets and other dynamic content elements** for the quick and easy implementation of **real estate agency sites and portals** with the [Elementor Website Builder](https://wordpress.org/plugins/elementor/).
 
@@ -194,8 +194,6 @@ Copyright (C) 2014, 2026 [inveris OHG](https://inveris.de/) / [immonex](https://
 This plugin is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
 This plugin is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
----
 
 [^1]: [immonex Kickstart](https://wordpress.org/plugins/immonex-kickstart/) is a license-fee free [Open Source Plugin](https://github.com/immonex/kickstart/) that extends WordPress sites – regardless of the theme used – by essential components for publishing real estate offers, which are synchronized via an import interface: list and detail views, property search, location maps etc. The range of functions and content elements can be expanded modularly by various add-ons as needed.
 
