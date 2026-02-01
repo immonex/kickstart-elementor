@@ -52,7 +52,7 @@
     "test": "vendor/phpunit/phpunit/phpunit -c tests/phpunit/plugin.xml",
     "doc": "doc-gen serve",
     "doc:publish": "doc-gen publish",
-    "apidoc": "bin/phpdoc run --sourcecode --template=clean --title='immonex Kickstart Elementor'",
+    "apidoc": "[ -f bin/phpdoc ] || bin/install-phpdoc.sh; bin/phpdoc run --sourcecode --template=clean --title='immonex Kickstart Elementor'",
     "apidoc:view": "node_modules/.bin/lws --stack lws-static lws-index -d apidoc -o",
     "apidoc:delete": "rimraf apidoc && rimraf .tmp/apidoc"
   }
