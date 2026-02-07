@@ -7,7 +7,7 @@
 
 use immonex\Kickstart\Elementor\Kickstart_Elementor;
 
-class Kickstart_Team_Test extends WP_UnitTestCase {
+class Kickstart_Elementor_Test extends WP_UnitTestCase {
 	private $kickstart_elementor;
 
 	public function setUp(): void {
@@ -28,4 +28,4 @@ class Kickstart_Team_Test extends WP_UnitTestCase {
 			$this->assertEquals( $expected_value, $bootstrap_data[$key] );
 		}
 	} // test_bootstrap_data
-} // class Kickstart_Team_Test
+} // class Kickstart_Elementor_Test

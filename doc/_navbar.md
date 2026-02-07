@@ -5,6 +5,7 @@
   * **Präsentation**
   * [Kickstart (Basis-Plugin)](https://docs.immonex.de/kickstart/)
   * [+ Team Add-on (Kontakte und Formulare)](https://docs.immonex.de/kickstart-team/)
+  * [+ Elementor Add-on (35+ Widgets und Dynamic Tags für Elementor)](https://docs.immonex.de/kickstart-elementor/)
   * [+ Slideshows Add-on (digitale Schaufensteraushänge)](https://docs.immonex.de/kickstart-slideshows/)
   * **Energieausweis**
   * [Energy Scale Pro (Energieskalen)](https://docs.immonex.de/energy-scale-pro/)

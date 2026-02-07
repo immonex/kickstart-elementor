@@ -1,6 +1,6 @@
 # Systemanforderungen <!-- {docsify-ignore-all} -->
 
-- betriebsbereite¹ [WordPress-Installation](https://de.wordpress.org/download/) ab Version 6.5
+- betriebsbereite [WordPress-Installation](https://de.wordpress.org/download/)¹ ab Version 6.5
 - PHP ab Version 8.3
 - mindestens 128 MB Arbeitsspeicher pro PHP-Prozess (empfohlen für den [OpenImmo-Import](https://docs.immonex.de/kickstart/#/schnellstart/import))
 - **vorinstallierte/aktive Plugins**
