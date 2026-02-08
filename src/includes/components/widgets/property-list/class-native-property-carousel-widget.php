@@ -2,10 +2,10 @@
 /**
  * Class Native_Property_Carousel_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\PropertyList;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\PropertyList;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Property_Carousel_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\PropertyList\Native_Property_List_Widget {
+class Native_Property_Carousel_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\PropertyList\Native_Property_List_Widget {
 
 	const WIDGET_NAME       = 'inx-e-native-property-carousel';
 	const WIDGET_ICON       = 'eicon-posts-carousel';
 	const WIDGET_CATEGORIES = [ 'inx-property-list' ];
-	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/karussell';
+	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/karussell';
 	const TEMPLATE          = 'slider';
 
 	/**
@@ -32,7 +32,7 @@ class Native_Property_Carousel_Widget extends \immonex\Kickstart\Elementor\Compo
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Carousel', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Carousel', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -47,7 +47,7 @@ class Native_Property_Carousel_Widget extends \immonex\Kickstart\Elementor\Compo
 			array_merge(
 				$this->keywords,
 				[
-					__( 'carousel', 'immonex-kickstart-elementor' ),
+					__( 'carousel', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);

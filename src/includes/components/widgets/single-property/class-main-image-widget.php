@@ -2,10 +2,10 @@
 /**
  * Class Main_Image_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Main_Image_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE              = 'inx_property';
 	const WIDGET_NAME            = 'inx-e-single-property-main-image';
 	const WIDGET_ICON            = 'eicon-image';
 	const WIDGET_CATEGORIES      = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL        = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/hauptbild';
+	const WIDGET_HELP_URL        = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/hauptbild';
 	const DEFAULT_CONTROL_SCOPES = [];
 	const DEMO_IMAGE_FILENAME    = 'main-lycs-architecture-744233-unsplash.jpg';
 
@@ -34,7 +34,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Main Image', 'immonex-kickstart-elementor' );
+		return __( 'Main Image', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -49,8 +49,8 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 			array_merge(
 				$this->keywords,
 				[
-					__( 'image', 'immonex-kickstart-elementor' ),
-					__( 'photo', 'immonex-kickstart-elementor' ),
+					__( 'image', 'immonex-kickstart-for-elementor' ),
+					__( 'photo', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -80,7 +80,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->start_controls_section(
 			'image_section',
 			[
-				'label' => __( 'Image', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Image', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
@@ -98,19 +98,19 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_control(
 			'open_lightbox',
 			[
-				'label'       => __( 'Lightbox', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Lightbox', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'description' => sprintf(
 					/* translators: 1: Link open tag, 2: Link close tag. */
-					__( 'Manage your site’s lightbox settings in the %1$sLightbox panel%2$s.', 'immonex-kickstart-elementor' ),
+					__( 'Manage your site’s lightbox settings in the %1$sLightbox panel%2$s.', 'immonex-kickstart-for-elementor' ),
 					'<a href="javascript: $e.run( \'panel/global/open\' ).then( () => $e.route( \'panel/global/settings-lightbox\' ) )">',
 					'</a>'
 				),
 				'default'     => 'default',
 				'options'     => [
-					'default' => __( 'Default', 'immonex-kickstart-elementor' ),
-					'yes'     => __( 'Yes', 'immonex-kickstart-elementor' ),
-					'no'      => __( 'No', 'immonex-kickstart-elementor' ),
+					'default' => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'yes'     => __( 'Yes', 'immonex-kickstart-for-elementor' ),
+					'no'      => __( 'No', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -120,7 +120,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->start_controls_section(
 			'style_image_section',
 			[
-				'label' => __( 'Image', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Image', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -128,19 +128,19 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'align',
 			[
-				'label'     => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'   => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -153,7 +153,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'width',
 			[
-				'label'      => __( 'Width', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Width', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default( 'width', [ 'unit' => '%' ] ),
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -180,7 +180,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'space',
 			[
-				'label'      => __( 'Max Width', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Max Width', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default( 'space', [ 'unit' => '%' ] ),
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -207,7 +207,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'height',
 			[
-				'label'      => __( 'Height', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Height', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
 				'range'      => [
@@ -229,17 +229,17 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'object-fit',
 			[
-				'label'     => __( 'Object Fit', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Object Fit', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'condition' => [
 					'height[size]!' => '',
 				],
 				'options'   => [
-					''           => __( 'Default', 'immonex-kickstart-elementor' ),
-					'fill'       => __( 'Fill', 'immonex-kickstart-elementor' ),
-					'cover'      => __( 'Cover', 'immonex-kickstart-elementor' ),
-					'contain'    => __( 'Contain', 'immonex-kickstart-elementor' ),
-					'scale-down' => __( 'Scale Down', 'immonex-kickstart-elementor' ),
+					''           => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'fill'       => __( 'Fill', 'immonex-kickstart-for-elementor' ),
+					'cover'      => __( 'Cover', 'immonex-kickstart-for-elementor' ),
+					'contain'    => __( 'Contain', 'immonex-kickstart-for-elementor' ),
+					'scale-down' => __( 'Scale Down', 'immonex-kickstart-for-elementor' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} img' => 'object-fit: {{VALUE}};',
@@ -250,19 +250,19 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'object-position',
 			[
-				'label'     => __( 'Object Position', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Object Position', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => $this->get_default( 'object-position', 'center center' ),
 				'options'   => [
-					'center center' => __( 'Center Center', 'immonex-kickstart-elementor' ),
-					'center left'   => __( 'Center Left', 'immonex-kickstart-elementor' ),
-					'center right'  => __( 'Center Right', 'immonex-kickstart-elementor' ),
-					'top center'    => __( 'Top Center', 'immonex-kickstart-elementor' ),
-					'top left'      => __( 'Top Left', 'immonex-kickstart-elementor' ),
-					'top right'     => __( 'Top Right', 'immonex-kickstart-elementor' ),
-					'bottom center' => __( 'Bottom Center', 'immonex-kickstart-elementor' ),
-					'bottom left'   => __( 'Bottom Left', 'immonex-kickstart-elementor' ),
-					'bottom right'  => __( 'Bottom Right', 'immonex-kickstart-elementor' ),
+					'center center' => __( 'Center Center', 'immonex-kickstart-for-elementor' ),
+					'center left'   => __( 'Center Left', 'immonex-kickstart-for-elementor' ),
+					'center right'  => __( 'Center Right', 'immonex-kickstart-for-elementor' ),
+					'top center'    => __( 'Top Center', 'immonex-kickstart-for-elementor' ),
+					'top left'      => __( 'Top Left', 'immonex-kickstart-for-elementor' ),
+					'top right'     => __( 'Top Right', 'immonex-kickstart-for-elementor' ),
+					'bottom center' => __( 'Bottom Center', 'immonex-kickstart-for-elementor' ),
+					'bottom left'   => __( 'Bottom Left', 'immonex-kickstart-for-elementor' ),
+					'bottom right'  => __( 'Bottom Right', 'immonex-kickstart-for-elementor' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} img' => 'object-position: {{VALUE}};',
@@ -287,14 +287,14 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->start_controls_tab(
 			'normal',
 			[
-				'label' => __( 'Normal', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Normal', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'opacity',
 			[
-				'label'     => __( 'Opacity', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Opacity', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -322,14 +322,14 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->start_controls_tab(
 			'hover',
 			[
-				'label' => __( 'Hover', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Hover', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'opacity_hover',
 			[
-				'label'     => __( 'Opacity', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Opacity', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -355,7 +355,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_control(
 			'background_hover_transition',
 			[
-				'label'     => __( 'Transition Duration', 'immonex-kickstart-elementor' ) . ' (s)',
+				'label'     => __( 'Transition Duration', 'immonex-kickstart-for-elementor' ) . ' (s)',
 				'type'      => \Elementor\Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -373,7 +373,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => __( 'Hover Animation', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Hover Animation', 'immonex-kickstart-for-elementor' ),
 				'type'  => \Elementor\Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -394,7 +394,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'image_border_radius',
 			[
-				'label'      => __( 'Corner Radius', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'selectors'  => [
@@ -490,7 +490,7 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 				'url' => wp_get_attachment_image_url( $image[0], 'full' ),
 			];
 
-		return \immonex\Kickstart\Elementor\Media_Utils::add_image_sizes( $image_data );
+		return \immonex\Kickstart\ForElementor\Media_Utils::add_image_sizes( $image_data );
 	} // get_demo_image
 
 	/**
@@ -506,12 +506,12 @@ class Main_Image_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$source_image = trailingslashit( $plugin_dir ) . 'assets/demo-images/' . self::DEMO_IMAGE_FILENAME;
 
 		$meta = [
-			'post_title'                  => __( 'Main Image', 'immonex-kickstart-elementor' ),
+			'post_title'                  => __( 'Main Image', 'immonex-kickstart-for-elementor' ),
 			'_inx_elementor_demo_content' => 'main_image',
-			'_wp_attachment_image_alt'    => 'immonex Kickstart Elementor ' . __( 'Demo Image', 'immonex-kickstart-elementor' ),
+			'_wp_attachment_image_alt'    => 'immonex Kickstart for Elementor ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
 		];
 
-		return \immonex\Kickstart\Elementor\Media_Utils::add_image_to_media_lib( $source_image, $meta );
+		return \immonex\Kickstart\ForElementor\Media_Utils::add_image_to_media_lib( $source_image, $meta );
 	} // create_demo_image
 
 } // class Main_Image_Widget

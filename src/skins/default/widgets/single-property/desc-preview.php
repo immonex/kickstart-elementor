@@ -2,7 +2,7 @@
 /**
  * Widget Preview Template (Description Text)
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
 // Prevent direct access.

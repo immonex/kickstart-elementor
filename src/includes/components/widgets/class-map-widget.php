@@ -2,10 +2,10 @@
 /**
  * Class Map_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets;
+namespace immonex\Kickstart\ForElementor\Components\Widgets;
 
 /**
  * Extended Elementor Widget Base Class.

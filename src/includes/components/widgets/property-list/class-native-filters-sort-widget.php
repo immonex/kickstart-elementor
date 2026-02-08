@@ -2,10 +2,10 @@
 /**
  * Class Native_Filters_Sort_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\PropertyList;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\PropertyList;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Filters_Sort_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Filters_Sort_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const WIDGET_NAME              = 'inx-e-native-filters-sort';
 	const WIDGET_ICON              = 'eicon-filter';
 	const WIDGET_CATEGORIES        = [ 'inx-property-list' ];
-	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/filter-sortierung';
+	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/filter-sortierung';
 	const ENABLE_RENDER_ON_PREVIEW = true;
 	const IS_DYNAMIC_CONTENT       = true;
 
@@ -33,7 +33,7 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\Elementor\Components
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Filters/Sort', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Filters/Sort', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -48,9 +48,9 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\Elementor\Components
 			array_merge(
 				$this->keywords,
 				[
-					__( 'filters', 'immonex-kickstart-elementor' ),
-					__( 'sort', 'immonex-kickstart-elementor' ),
-					__( 'order', 'immonex-kickstart-elementor' ),
+					__( 'filters', 'immonex-kickstart-for-elementor' ),
+					__( 'sort', 'immonex-kickstart-for-elementor' ),
+					__( 'order', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -65,7 +65,7 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -77,13 +77,13 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'elements',
 			[
-				'label'         => __( 'Custom Option Scope', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'Custom Option Scope', 'immonex-kickstart-for-elementor' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'label_block'   => true,
 				'fields'        => [
 					[
 						'name'    => 'option',
-						'label'   => __( 'Option', 'immonex-kickstart-elementor' ),
+						'label'   => __( 'Option', 'immonex-kickstart-for-elementor' ),
 						'type'    => \Elementor\Controls_Manager::SELECT,
 						'options' => $sort_options['array'],
 					],
@@ -97,16 +97,16 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\Elementor\Components
 			'exclude',
 			[
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
-				'label'       => __( 'Exclude Options', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Exclude selected options instead of explicitely including them.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Exclude Options', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Exclude selected options instead of explicitely including them.', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'default',
 			[
-				'label'       => __( 'Default Option', 'immonex-kickstart-elementor' ),
-				'description' => __( 'The default sorting option only needs to be selected here if it does not correspond to the first selection option and is not defined by GET parameter or filter function.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Default Option', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'The default sorting option only needs to be selected here if it does not correspond to the first selection option and is not defined by GET parameter or filter function.', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => $sort_options['array'],
 				'separator'   => 'before',
@@ -118,7 +118,7 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'extended_style_section',
 			[
-				'label' => __( 'Extended', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);

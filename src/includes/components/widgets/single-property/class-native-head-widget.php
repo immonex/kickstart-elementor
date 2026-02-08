@@ -2,10 +2,10 @@
 /**
  * Class Native_Head_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE                = 'inx_property';
 	const WIDGET_NAME              = 'inx-e-single-property-native-head';
 	const WIDGET_ICON              = 'eicon-archive-title';
 	const WIDGET_CATEGORIES        = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/standard-header';
+	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/standard-header';
 	const ENABLE_RENDER_ON_PREVIEW = true;
 
 	/**
@@ -33,7 +33,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Standard Header', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Standard Header', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -48,9 +48,9 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 			array_merge(
 				$this->keywords,
 				[
-					__( 'head', 'immonex-kickstart-elementor' ),
-					__( 'header', 'immonex-kickstart-elementor' ),
-					__( 'top', 'immonex-kickstart-elementor' ),
+					__( 'head', 'immonex-kickstart-for-elementor' ),
+					__( 'header', 'immonex-kickstart-for-elementor' ),
+					__( 'top', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -65,17 +65,17 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$contents = $this->get_head_contents();
 
 		$text_style_sections = [
-			'labels'        => __( 'Labels', 'immonex-kickstart-elementor' ),
-			'type'          => __( 'Use/Property Type', 'immonex-kickstart-elementor' ),
-			'location'      => __( 'Address/Location', 'immonex-kickstart-elementor' ),
-			'primary-price' => __( 'Primary Price', 'immonex-kickstart-elementor' ),
-			'element-title' => __( 'Core Data', 'immonex-kickstart-elementor' ),
+			'labels'        => __( 'Labels', 'immonex-kickstart-for-elementor' ),
+			'type'          => __( 'Use/Property Type', 'immonex-kickstart-for-elementor' ),
+			'location'      => __( 'Address/Location', 'immonex-kickstart-for-elementor' ),
+			'primary-price' => __( 'Primary Price', 'immonex-kickstart-for-elementor' ),
+			'element-title' => __( 'Core Data', 'immonex-kickstart-for-elementor' ),
 		];
 
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -87,9 +87,9 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( "The standard header contains the property's type, title, address and price as well as other core data and labels.", 'immonex-kickstart-elementor' ) .
+				'content'     => __( "The standard header contains the property's type, title, address and price as well as other core data and labels.", 'immonex-kickstart-for-elementor' ) .
 					'<br><br>' .
-					__( '<strong>Alternatively</strong>, these contens can also be inserted as separate elements.', 'immonex-kickstart-elementor' ),
+					__( '<strong>Alternatively</strong>, these contens can also be inserted as separate elements.', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
@@ -106,18 +106,18 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 
 		// phpcs:ignore
 		if ( apply_filters( 'inx_elementor_is_addon_active', false, 'print' ) ) {
-			$text_style_sections['print_link'] = __( 'Print/PDF Link', 'immonex-kickstart-elementor' );
+			$text_style_sections['print_link'] = __( 'Print/PDF Link', 'immonex-kickstart-for-elementor' );
 
 			$this->add_control(
 				'print_link',
 				[
-					'label'       => __( 'Print/PDF Link', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Print/PDF Link', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::SELECT,
-					'description' => __( 'The default is defined in the Kickstart Print add-on options.', 'immonex-kickstart-elementor' ),
+					'description' => __( 'The default is defined in the Kickstart Print add-on options.', 'immonex-kickstart-for-elementor' ),
 					'options'     => [
-						''     => __( 'Default', 'immonex-kickstart-elementor' ),
-						'show' => __( 'Show', 'immonex-kickstart-elementor' ),
-						'hide' => __( 'Hide', 'immonex-kickstart-elementor' ),
+						''     => __( 'Default', 'immonex-kickstart-for-elementor' ),
+						'show' => __( 'Show', 'immonex-kickstart-for-elementor' ),
+						'hide' => __( 'Hide', 'immonex-kickstart-for-elementor' ),
 					],
 					'separator'   => 'before',
 				]
@@ -129,7 +129,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->start_controls_section(
 			'general_style_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -137,7 +137,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->add_control(
 			'text_color',
 			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-single-property__head' => 'color: {{VALUE}}',
@@ -148,13 +148,13 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->add_control(
 			'background',
 			[
-				'label'       => __( 'Background', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Background', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'description' => __( 'The <strong>default</strong> background color for header and footer sections can be adjusted in the Kickstart plugin options.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'The <strong>default</strong> background color for header and footer sections can be adjusted in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
 				'options'     => [
-					''            => __( 'Default', 'immonex-kickstart-elementor' ),
-					'transparent' => __( 'Transparent', 'immonex-kickstart-elementor' ),
-					'custom'      => __( 'Custom', 'immonex-kickstart-elementor' ),
+					''            => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'transparent' => __( 'Transparent', 'immonex-kickstart-for-elementor' ),
+					'custom'      => __( 'Custom', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -176,7 +176,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->add_control(
 			'bg_color',
 			[
-				'label'     => __( 'Background Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-single-property__head' => 'background-color: {{VALUE}}',
@@ -192,7 +192,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->start_controls_section(
 			'title_section',
 			[
-				'label' => __( 'Title', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Title', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -244,7 +244,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 				$this->add_control(
 					"{$key}_color",
 					[
-						'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+						'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 						'type'      => \Elementor\Controls_Manager::COLOR,
 						'selectors' => [
 							'print_link' === $key ?
@@ -269,7 +269,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 				$this->add_control(
 					'print_link_icon_color',
 					[
-						'label'     => __( 'Icon Color', 'immonex-kickstart-elementor' ),
+						'label'     => __( 'Icon Color', 'immonex-kickstart-for-elementor' ),
 						'type'      => \Elementor\Controls_Manager::COLOR,
 						'selectors' => [
 							'{{WRAPPER}} .inx-single-property__head .inx-print-link-wrap__link svg' => 'color: {{VALUE}}',
@@ -284,7 +284,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->start_controls_section(
 			'icons_section',
 			[
-				'label' => __( 'Icons', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Icons', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -292,7 +292,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->add_control(
 			'icon_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-single-property__head .inx-core-detail-icon' => 'color: {{VALUE}}',
@@ -305,7 +305,7 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 		$this->start_controls_section(
 			'extended_style_section',
 			[
-				'label' => __( 'Extended', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -381,12 +381,12 @@ class Native_Head_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 	 */
 	private function get_head_contents() {
 		return [
-			'type'      => __( 'Use/Property Type', 'immonex-kickstart-elementor' ),
-			'labels'    => __( 'Labels', 'immonex-kickstart-elementor' ),
-			'title'     => __( 'Title', 'immonex-kickstart-elementor' ),
-			'location'  => __( 'Address/Location', 'immonex-kickstart-elementor' ),
-			'price'     => __( 'Primary Price', 'immonex-kickstart-elementor' ),
-			'core_data' => __( 'Core Data', 'immonex-kickstart-elementor' ),
+			'type'      => __( 'Use/Property Type', 'immonex-kickstart-for-elementor' ),
+			'labels'    => __( 'Labels', 'immonex-kickstart-for-elementor' ),
+			'title'     => __( 'Title', 'immonex-kickstart-for-elementor' ),
+			'location'  => __( 'Address/Location', 'immonex-kickstart-for-elementor' ),
+			'price'     => __( 'Primary Price', 'immonex-kickstart-for-elementor' ),
+			'core_data' => __( 'Core Data', 'immonex-kickstart-for-elementor' ),
 		];
 	} // get_head_contents
 

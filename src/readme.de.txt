@@ -1,4 +1,4 @@
-=== immonex Kickstart Elementor ===
+=== immonex Kickstart for Elementor ===
 Contributors: immonex
 Tags: realestate, elementor, immobilien, immobilienmakler, openimmo
 Requires at least: 6.5
@@ -8,7 +8,7 @@ Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-35+ Widgets, Dynamic Tags und mehr zur Erstellung professioneller Immobilien-Websites mit immonex Kickstart und Elementor
+35+ Widgets und Dynamic Tags zur Erstellung professioneller Immobilien-Websites mit immonex Kickstart und Elementor
 
 == Beschreibung ==
 
@@ -72,7 +72,7 @@ Optionale Plugins (zusätzliche Funktionen und Frontend-Elemente):
 
 = Schritte =
 
-immonex Kickstart Elementor ist im offiziellen [WordPress-Plugin-Verzeichnis](https://de.wordpress.org/plugins/) verfügbar und kann via WordPress Backend installiert werden.
+immonex Kickstart for Elementor ist im offiziellen [WordPress-Plugin-Verzeichnis](https://de.wordpress.org/plugins/) verfügbar und kann via WordPress Backend installiert werden.
 
 1. *Plugins > Neues Plugin hinzufügen > Suche nach "immonex" ...* [1]
 2. Nur Elementor Pro: Immobilien und optional Agenturen/Kontaktpersonen unter *Elementor > Editor > Einstellungen > Inhaltstypen* aktivieren.
@@ -89,11 +89,11 @@ immonex Kickstart Elementor ist im offiziellen [WordPress-Plugin-Verzeichnis](ht
 
 Eine detaillierte Plugin-Dokumentation ist hier zu finden:
 
-[docs.immonex.de/kickstart-elementor](https://docs.immonex.de/kickstart-elementor/)
+[docs.immonex.de/kickstart-for-elementor](https://docs.immonex.de/kickstart-for-elementor/)
 
-immonex Kickstart Elementor ist freie Software. Quellcodes, Dokumentation, Support und Issue Tracking für Entwickler werden via GitHub bereitgestellt:
+immonex Kickstart for Elementor ist freie Software. Quellcodes, Dokumentation, Support und Issue Tracking für Entwickler werden via GitHub bereitgestellt:
 
-[github.com/immonex/kickstart-elementor](https://github.com/immonex/kickstart-elementor)
+[github.com/immonex/kickstart-for-elementor](https://github.com/immonex/kickstart-for-elementor)
 
 == Screenshots ==
 
@@ -113,7 +113,7 @@ immonex Kickstart Elementor ist freie Software. Quellcodes, Dokumentation, Suppo
 == Changelog ==
 
 = 1.0.0 "Ice" =
-* Veröffentlichungsdatum: 30.01.2026
+* Veröffentlichungsdatum: 08.02.2026
 * Erstveröffentlichung.
 
 Siehe changelog.de.txt für die komplette Versionshistorie.

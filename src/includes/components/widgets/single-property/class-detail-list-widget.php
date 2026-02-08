@@ -2,10 +2,10 @@
 /**
  * Class Detail_List_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_Value_List_Widget {
+class Detail_List_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Key_Value_List_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-detail-list';
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/flex-details';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/flex-details';
 
 	/**
 	 * Get widget title.
@@ -29,7 +29,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Flex Details', 'immonex-kickstart-elementor' );
+		return __( 'Flex Details', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -44,8 +44,8 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 			array_merge(
 				$this->keywords,
 				[
-					__( 'flexible', 'immonex-kickstart-elementor' ),
-					__( 'details', 'immonex-kickstart-elementor' ),
+					__( 'flexible', 'immonex-kickstart-for-elementor' ),
+					__( 'details', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -66,7 +66,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 				'items' => [
 					'inx_format_price'  => [
 						[
-							'title' => __( 'Purchase Price', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Purchase Price', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 418000, 1 ) . '&nbsp;€',
 								2 => number_format_i18n( 418000, 2 ) . '&nbsp;€',
@@ -74,7 +74,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 							],
 						],
 						[
-							'title' => __( 'Parking Space', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Parking Space', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 12000.5, 1 ) . '&nbsp;€',
 								2 => number_format_i18n( 12000.5, 2 ) . '&nbsp;€',
@@ -84,7 +84,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 					],
 					'inx_format_area'   => [
 						[
-							'title' => __( 'Living Space', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Living Space', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => '142,0&nbsp;m²',
 								2 => '142,00&nbsp;m²',
@@ -92,7 +92,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 							],
 						],
 						[
-							'title' => __( 'Usable Space', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Usable Space', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 23.5, 1 ) . '&nbsp;m²',
 								2 => number_format_i18n( 23.5, 2 ) . '&nbsp;m²',
@@ -100,7 +100,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 							],
 						],
 						[
-							'title' => __( 'Plot Area', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Plot Area', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 840, 1 ) . '&nbsp;m²',
 								2 => number_format_i18n( 840, 2 ) . '&nbsp;m²',
@@ -110,7 +110,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 					],
 					'inx_format_number' => [
 						[
-							'title' => __( 'Rooms', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Rooms', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 6, 1 ),
 								2 => number_format_i18n( 6, 2 ),
@@ -118,7 +118,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 							],
 						],
 						[
-							'title' => __( 'Bedrooms', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Bedrooms', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 3, 1 ),
 								2 => number_format_i18n( 3, 2 ),
@@ -126,7 +126,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 							],
 						],
 						[
-							'title' => __( 'Bathrooms', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Bathrooms', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 2, 1 ),
 								2 => number_format_i18n( 2, 2 ),
@@ -134,7 +134,7 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 							],
 						],
 						[
-							'title' => __( 'Floors', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Floors', 'immonex-kickstart-for-elementor' ),
 							'value' => [
 								1 => number_format_i18n( 2.5, 1 ),
 								2 => number_format_i18n( 2.5, 2 ),
@@ -144,33 +144,33 @@ class Detail_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets
 					],
 					'inx_format_link'   => [
 						[
-							'title' => __( 'Website', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Website', 'immonex-kickstart-for-elementor' ),
 							'value' => '<a href="https://www.immonex.one/">www.immonex.one</a>',
 						],
 						[
-							'title' => __( 'E-Mail', 'immonex-kickstart-elementor' ),
+							'title' => __( 'E-Mail', 'immonex-kickstart-for-elementor' ),
 							'value' => wp_sprintf(
 								'<a href="mailto:%1$s">%1$s</a>',
-								_x( 'elena.example@immonex.one', 'sample data', 'immonex-kickstart-elementor' )
+								_x( 'elena.example@immonex.one', 'sample data', 'immonex-kickstart-for-elementor' )
 							),
 						],
 						[
-							'title' => __( 'Phone', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Phone', 'immonex-kickstart-for-elementor' ),
 							'value' => '<a href="tel:+49 9999 123456">+49 9999 123456</a>',
 						],
 					],
 					'generic'           => [
 						[
-							'title' => __( 'Build Year', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Build Year', 'immonex-kickstart-for-elementor' ),
 							'value' => '2004',
 						],
 						[
-							'title' => __( 'Flooring', 'immonex-kickstart-elementor' ),
-							'value' => __( 'Parquet, Marble', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Flooring', 'immonex-kickstart-for-elementor' ),
+							'value' => __( 'Parquet, Marble', 'immonex-kickstart-for-elementor' ),
 						],
 						[
-							'title' => __( 'Condition', 'immonex-kickstart-elementor' ),
-							'value' => __( 'modernized', 'immonex-kickstart-elementor' ),
+							'title' => __( 'Condition', 'immonex-kickstart-for-elementor' ),
+							'value' => __( 'modernized', 'immonex-kickstart-for-elementor' ),
 						],
 					],
 				],

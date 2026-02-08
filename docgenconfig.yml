@@ -3,9 +3,9 @@
 # Source: https://npm.immonex.de/#/detail/@immonex/doc-gen
 # Docsify-Konfiguration: https://docsify.js.org/#/configuration
 
-title: Kickstart Elementor
-subtitle: immonex Kickstart Elementor
-description: immonex Kickstart Add-on, das native Widgets und Dynamic Tags für Elementor bereitstellt
+title: Kickstart for Elementor
+subtitle: immonex Kickstart for Elementor
+description: 35+ Widgets und Dynamic Tags zur Erstellung professioneller Immobilien-Websites mit immonex Kickstart und Elementor
 keywords:
   - wordpress
   - plugin
@@ -14,7 +14,7 @@ keywords:
   - widgets
 author: Carsten Scheuer
 
-name: kickstart-elementor
+name: kickstart-for-elementor
 permission: public
 category: Plugins
 

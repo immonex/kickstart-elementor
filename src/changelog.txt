@@ -1,5 +1,5 @@
 == Changelog ==
 
 = 1.0.0 "Ice" =
-* Release date: 2026-01-30
+* Release date: 2026-02-08
 * Initial release.

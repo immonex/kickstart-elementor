@@ -2,10 +2,10 @@
 /**
  * Class Desc_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE         = 'inx_property';
 	const WIDGET_NAME       = 'inx-e-single-property-desc';
 	const WIDGET_ICON       = 'eicon-post-content';
 	const WIDGET_CATEGORIES = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/beschreibung';
+	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/beschreibung';
 
 	const DEFAULT_CTEXT_FORMATTING_STATE = 'yes';
 
@@ -34,7 +34,7 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Description', 'immonex-kickstart-elementor' );
+		return __( 'Description', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -48,7 +48,7 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		$this->keywords = array_unique(
 			array_merge(
 				$this->keywords,
-				[ __( 'description', 'immonex-kickstart-elementor' ) ]
+				[ __( 'description', 'immonex-kickstart-for-elementor' ) ]
 			)
 		);
 	} // add_keywords
@@ -62,7 +62,7 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -72,13 +72,13 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		$this->add_control(
 			'field_name',
 			[
-				'label'   => __( 'Description Type', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Description Type', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					'freitexte.objektbeschreibung' => __( 'Property', 'immonex-kickstart-elementor' ),
-					'freitexte.lage'               => __( 'Location', 'immonex-kickstart-elementor' ),
-					'freitexte.ausstatt_beschr'    => __( 'Features', 'immonex-kickstart-elementor' ),
-					'freitexte.sonstige_angaben'   => __( 'Miscellaneous', 'immonex-kickstart-elementor' ),
+					'freitexte.objektbeschreibung' => __( 'Property', 'immonex-kickstart-for-elementor' ),
+					'freitexte.lage'               => __( 'Location', 'immonex-kickstart-for-elementor' ),
+					'freitexte.ausstatt_beschr'    => __( 'Features', 'immonex-kickstart-for-elementor' ),
+					'freitexte.sonstige_angaben'   => __( 'Miscellaneous', 'immonex-kickstart-for-elementor' ),
 				],
 				'default' => 'freitexte.objektbeschreibung',
 			]
@@ -87,7 +87,7 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		$this->add_control(
 			'format_ctext',
 			[
-				'label'   => __( 'Format Continuous Text', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Format Continuous Text', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SWITCHER,
 				'default' => static::DEFAULT_CTEXT_FORMATTING_STATE,
 			]
@@ -102,7 +102,7 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		$this->start_controls_section(
 			'body_text_section',
 			[
-				'label' => __( 'Description Text', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Description Text', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -110,23 +110,23 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		$this->add_responsive_control(
 			'body_text_align',
 			[
-				'label'     => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'    => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'  => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'   => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Justified', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-justify',
 					],
 				],
@@ -140,7 +140,7 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 		$this->add_control(
 			'body_text_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-desc-text' => 'color: {{VALUE}}',
@@ -211,13 +211,13 @@ class Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget
 	 */
 	protected function get_demo_content( $contents = null ) {
 		$contents = [
-			'freitexte.objektbeschreibung' => __( 'Would you like to live in a great single-family home and move in straight away - without any tiresome renovation work?', 'immonex-kickstart-elementor' ) . PHP_EOL . PHP_EOL
-				. __( 'Floor-to-ceiling windows, a friendly and colorful facade design as well as many communicative common areas underline the clear orientation towards the needs of the residents.', 'immonex-kickstart-elementor' ) . PHP_EOL . PHP_EOL
-				. __( 'The house convinces with a style-typical architecture that combines modern living ambience with classic industrial charm. Striking stylistic elements such as the striking clinker facade were retained in the course of the modernization and today give the building a very special, individual character.', 'immonex-kickstart-elementor' ),
-			'freitexte.lage'               => __( 'The single-family house offered here surprises with an astonishingly idyllic location in the midst of the hustle and bustle of Rupert Farnsworth Alley.', 'immonex-kickstart-elementor' ) . PHP_EOL . PHP_EOL
-				. __( 'There is a large supermarket in town, as well as bakeries, butchers, various bank branches, a pharmacy and various craft businesses.', 'immonex-kickstart-elementor' ),
-			'freitexte.ausstatt_beschr'    => __( 'Thanks to the floor-to-ceiling windows and the southern orientation, the sun shines into the living room throughout the day. The threshold-free door takes you to both the south-facing terrace and the garden. Very practical and in good shape: there is a tool shed and a large greenhouse in the garden. The former even has electricity and fresh water connections!', 'immonex-kickstart-elementor' ),
-			'freitexte.sonstige_angaben'   => __( 'We would like to point out that the property information, documents, plans, etc. come from the seller or landlord. We therefore assume no liability for the accuracy or completeness of the information.', 'immonex-kickstart-elementor' ),
+			'freitexte.objektbeschreibung' => __( 'Would you like to live in a great single-family home and move in straight away - without any tiresome renovation work?', 'immonex-kickstart-for-elementor' ) . PHP_EOL . PHP_EOL
+				. __( 'Floor-to-ceiling windows, a friendly and colorful facade design as well as many communicative common areas underline the clear orientation towards the needs of the residents.', 'immonex-kickstart-for-elementor' ) . PHP_EOL . PHP_EOL
+				. __( 'The house convinces with a style-typical architecture that combines modern living ambience with classic industrial charm. Striking stylistic elements such as the striking clinker facade were retained in the course of the modernization and today give the building a very special, individual character.', 'immonex-kickstart-for-elementor' ),
+			'freitexte.lage'               => __( 'The single-family house offered here surprises with an astonishingly idyllic location in the midst of the hustle and bustle of Rupert Farnsworth Alley.', 'immonex-kickstart-for-elementor' ) . PHP_EOL . PHP_EOL
+				. __( 'There is a large supermarket in town, as well as bakeries, butchers, various bank branches, a pharmacy and various craft businesses.', 'immonex-kickstart-for-elementor' ),
+			'freitexte.ausstatt_beschr'    => __( 'Thanks to the floor-to-ceiling windows and the southern orientation, the sun shines into the living room throughout the day. The threshold-free door takes you to both the south-facing terrace and the garden. Very practical and in good shape: there is a tool shed and a large greenhouse in the garden. The former even has electricity and fresh water connections!', 'immonex-kickstart-for-elementor' ),
+			'freitexte.sonstige_angaben'   => __( 'We would like to point out that the property information, documents, plans, etc. come from the seller or landlord. We therefore assume no liability for the accuracy or completeness of the information.', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return parent::get_demo_content( $contents );

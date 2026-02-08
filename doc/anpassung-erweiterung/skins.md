@@ -13,7 +13,7 @@ Im **Plugin-Verzeichnis** des Elementor-Add-ons ist ein *Standard-Skin* im Unter
 <pre class="tree">
 <strong>…/wp-content/plugins</strong>
 ╷
-├── <strong>/immonex-kickstart-elementor</strong> ← <em class="token important">Plugin-Verzeichnis</em>
+├── <strong>/immonex-kickstart-for-elementor</strong> ← <em class="token important">Plugin-Verzeichnis</em>
 │   ╷
 │   └─ /skins
 │      ╷
@@ -24,7 +24,7 @@ Im **Plugin-Verzeichnis** des Elementor-Add-ons ist ein *Standard-Skin* im Unter
 
 Der passende Ort für *update-sichere* [Anpassungen](#individuelle-anpassung) oder [Custom Skins](#custom-skins) ist ein Unterordner im **Child-Theme-Verzeichnis**:
 
-`…/wp-content/themes/<child-theme-name>/immonex-kickstart-elementor/<skin-name>`
+`…/wp-content/themes/<child-theme-name>/immonex-kickstart-for-elementor/<skin-name>`
 
 ?> Mit dem sog. [nativen Widgets](#elementor-immobilien-widgets) werden Frontend-Komponenten anderer, sog. *Parent-Plugins* eingebunden, deren Vorlagen in den Skin-Ordnern eben dieser Plugins enthalten sind, **nicht** im o. g. Skin-Ordner des Elementor-Add-ons.
 
@@ -37,11 +37,11 @@ Skin-Auswahl unter ***immonex → Einstellungen → Elementor <sup>ADD-ON</sup>*
 Die Ordnerstruktur könnte in diesem Beispiel so aussehen:
 
 <pre class="tree">
-<strong>…/wp-content/plugins/immonex-kickstart-elementor/skins</strong>
+<strong>…/wp-content/plugins/immonex-kickstart-for-elementor/skins</strong>
 ╷
 └── <span class="token important">/default</span> ← Standard-Skin "Snow"
 
-<strong>…/wp-content/themes/<child-theme-name>immonex-kickstart-elementor</strong>
+<strong>…/wp-content/themes/&lt;child-theme-name&gt;/immonex-kickstart-for-elementor</strong>
 ╷
 ├── <span class="token important">/agnus</span> ← Custom Skin "Agnus"
 ├── <span class="token important">/denise</span> ← Custom Skin "Denise"
@@ -141,7 +141,7 @@ Beispielstruktur:
 ├── /my-immo-theme
 ├── <strong>/my-immo-child-theme</strong> ← Child-Theme-Ordner
 │   ╷
-│   └─ <strong>/immonex-kickstart-elementor</strong> ← Custom Skins für das Kickstart-Elementor-Add-on
+│   └─ <strong>/immonex-kickstart-for-elementor</strong> ← Custom Skins für das Kickstart-Elementor-Add-on
 │      ╷
 │      ├─ <span class="token important">/default</span> ← angepasste Dateien des <em class="token important">Standard-Skins</em>
 │      └─ <span class="token important">/my-skin</span> ← <em class="token important">individuelles Custom Skin</em>
@@ -159,7 +159,7 @@ Sollen bspw. nur eigene Varianten der Dateien `index.css` und `detail-list.twig`
 <pre class="tree">
 <strong>…/wp-content/plugins</strong>
 ╷
-├── <strong>/immonex-kickstart-elementor</strong>
+├── <strong>/immonex-kickstart-for-elementor</strong>
 │   ╷
 │   └─ <strong>/skins</strong>
 │      ╷
@@ -183,7 +183,7 @@ Sollen bspw. nur eigene Varianten der Dateien `index.css` und `detail-list.twig`
 <pre class="tree">
 <strong>…/wp-content/themes/&lt;child-theme-name&gt;</strong>
 ╷
-├── <strong>/immonex-kickstart-elementor</strong>
+├── <strong>/immonex-kickstart-for-elementor</strong>
 │   ╷
 │   └─ <span class="token important">/default</span>
 │      ╷
@@ -211,7 +211,7 @@ Als Basis hierfür kann eine Kopie des Standard-Skins angelegt werden, die dann 
 ├── /my-immo-theme
 ├── <strong>/my-immo-child-theme</strong>
 │   ╷
-│   └─ <strong>/immonex-kickstart-elementor</strong>
+│   └─ <strong>/immonex-kickstart-for-elementor</strong>
 │      ╷
 │      └─ <span class="token important">/fichtenelch</span> ← <em class="token important">Custom Skin "Fichtenelch"</em>
 …

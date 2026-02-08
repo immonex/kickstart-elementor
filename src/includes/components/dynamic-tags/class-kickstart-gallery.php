@@ -2,10 +2,10 @@
 /**
  * Class Kickstart_Gallery
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\DynamicTags;
+namespace immonex\Kickstart\ForElementor\Components\DynamicTags;
 
 /**
  * Kickstart Gallery Dynamic Data Tag
@@ -31,7 +31,7 @@ class Kickstart_Gallery extends \Elementor\Core\DynamicTags\Data_Tag {
 	 * @return string Dynamic tag title.
 	 */
 	public function get_title() {
-		return __( 'Kickstart Gallery', 'immonex-kickstart-elementor' );
+		return __( 'Kickstart Gallery', 'immonex-kickstart-for-elementor' );
 	}
 
 	/**
@@ -66,14 +66,14 @@ class Kickstart_Gallery extends \Elementor\Core\DynamicTags\Data_Tag {
 		$this->add_control(
 			'gallery_type',
 			[
-				'label'       => __( 'Image Type/Source', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Image Type/Source', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '_inx_gallery_images',
 				'options'     => [
-					'_inx_gallery_images' => __( 'Main Gallery Images', 'immonex-kickstart-elementor' ),
-					'_inx_floor_plans'    => __( 'Floor Plans', 'immonex-kickstart-elementor' ),
-					'_inx_epass_images'   => __( 'Energy Pass Images', 'immonex-kickstart-elementor' ),
-					'custom_field'        => __( 'Custom Field(s)', 'immonex-kickstart-elementor' ),
+					'_inx_gallery_images' => __( 'Main Gallery Images', 'immonex-kickstart-for-elementor' ),
+					'_inx_floor_plans'    => __( 'Floor Plans', 'immonex-kickstart-for-elementor' ),
+					'_inx_epass_images'   => __( 'Energy Pass Images', 'immonex-kickstart-for-elementor' ),
+					'custom_field'        => __( 'Custom Field(s)', 'immonex-kickstart-for-elementor' ),
 				],
 				'label_block' => true,
 			]
@@ -82,9 +82,9 @@ class Kickstart_Gallery extends \Elementor\Core\DynamicTags\Data_Tag {
 		$this->add_control(
 			'image_selection_custom_field',
 			[
-				'label'       => __( 'Image ID Field(s)', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Image ID Field(s)', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Comma-separated list of <strong>custom field names</strong> containing the (attachment post) IDs of the images to include in the gallery.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Comma-separated list of <strong>custom field names</strong> containing the (attachment post) IDs of the images to include in the gallery.', 'immonex-kickstart-for-elementor' ),
 				'condition'   => [
 					'gallery_type' => 'custom_field',
 				],
@@ -116,7 +116,7 @@ class Kickstart_Gallery extends \Elementor\Core\DynamicTags\Data_Tag {
 		}
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			$demo_image_ids = \immonex\Kickstart\Elementor\Demo_Media::get_demo_image_ids();
+			$demo_image_ids = \immonex\Kickstart\ForElementor\Demo_Media::get_demo_image_ids();
 			$image_ids      = $type && isset( $demo_image_ids[ $type ] ) ?
 				$demo_image_ids[ $type ] :
 				$demo_image_ids['gallery'];

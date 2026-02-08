@@ -2,10 +2,10 @@
 /**
  * Class Areas_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Areas_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_Value_List_Widget {
+class Areas_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Key_Value_List_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-areas';
 	const WIDGET_ICON     = 'eicon-layout-settings';
 	const ENABLE_ICONS    = false;
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/zimmer-und-flaechen';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/zimmer-und-flaechen';
 	const FIXED_ELEMENTS  = [ 'flaechen' ];
 
 	/**
@@ -32,7 +32,7 @@ class Areas_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Rooms & Areas', 'immonex-kickstart-elementor' );
+		return __( 'Rooms & Areas', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -47,10 +47,10 @@ class Areas_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 			array_merge(
 				$this->keywords,
 				[
-					__( 'area', 'immonex-kickstart-elementor' ),
-					__( 'areas', 'immonex-kickstart-elementor' ),
-					__( 'size', 'immonex-kickstart-elementor' ),
-					__( 'sizes', 'immonex-kickstart-elementor' ),
+					__( 'area', 'immonex-kickstart-for-elementor' ),
+					__( 'areas', 'immonex-kickstart-for-elementor' ),
+					__( 'size', 'immonex-kickstart-for-elementor' ),
+					__( 'sizes', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -71,7 +71,7 @@ class Areas_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 		$defaults = [
 			'item_order'         => 'label-value',
 			'global_value_color' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-			'heading'            => __( 'Rooms and Areas', 'immonex-kickstart-elementor' ),
+			'heading'            => __( 'Rooms and Areas', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return ! empty( $defaults[ $control_id ] ) ? $defaults[ $control_id ] : $default_value;
@@ -112,27 +112,27 @@ class Areas_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 			[
 				'items' => [
 					[
-						'title' => __( 'Living Area', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Living Area', 'immonex-kickstart-for-elementor' ),
 						'value' => '140 m²',
 					],
 					[
-						'title' => __( 'Plot', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Plot', 'immonex-kickstart-for-elementor' ),
 						'value' => '820 m²',
 					],
 					[
-						'title' => __( 'Usable Area', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Usable Area', 'immonex-kickstart-for-elementor' ),
 						'value' => '20 m²',
 					],
 					[
-						'title' => __( 'Basement Area', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Basement Area', 'immonex-kickstart-for-elementor' ),
 						'value' => '34 m²',
 					],
 					[
-						'title' => __( 'Total Rooms', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Total Rooms', 'immonex-kickstart-for-elementor' ),
 						'value' => '5',
 					],
 					[
-						'title' => __( 'Bathrooms', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Bathrooms', 'immonex-kickstart-for-elementor' ),
 						'value' => '2',
 					],
 				],

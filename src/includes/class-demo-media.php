@@ -2,10 +2,10 @@
 /**
  * Class Demo_Media
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor;
+namespace immonex\Kickstart\ForElementor;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -97,29 +97,29 @@ class Demo_Media {
 
 				$image_type_title = '';
 				if ( 'exterior' === substr( $filename, 0, 8 ) ) {
-					$image_type_title = __( 'Exterior', 'immonex-kickstart-elementor' );
+					$image_type_title = __( 'Exterior', 'immonex-kickstart-for-elementor' );
 				}
 				if ( 'interior' === substr( $filename, 0, 8 ) ) {
-					$image_type_title = __( 'Interior', 'immonex-kickstart-elementor' );
+					$image_type_title = __( 'Interior', 'immonex-kickstart-for-elementor' );
 				}
 				if ( 'floor-plan' === substr( $filename, 0, 10 ) ) {
-					$image_type_title = __( 'Floor Plan', 'immonex-kickstart-elementor' );
+					$image_type_title = __( 'Floor Plan', 'immonex-kickstart-for-elementor' );
 				}
 				if ( 'epass' === substr( $filename, 0, 5 ) ) {
-					$image_type_title = __( 'Energy Pass', 'immonex-kickstart-elementor' );
+					$image_type_title = __( 'Energy Pass', 'immonex-kickstart-for-elementor' );
 				}
 
 				$post_title_ext = $image_type_title ? ' (' . $image_type_title . ')' : '';
 
 				$meta = [
-					'post_title'                  => __( 'Gallery Image', 'immonex-kickstart-elementor' ) . $post_title_ext,
-					'post_excerpt'                => ( $image_type_title ? $image_type_title : __( 'Gallery', 'immonex-kickstart-elementor' ) )
-						. ' ' . __( 'Demo Image', 'immonex-kickstart-elementor' ),
+					'post_title'                  => __( 'Gallery Image', 'immonex-kickstart-for-elementor' ) . $post_title_ext,
+					'post_excerpt'                => ( $image_type_title ? $image_type_title : __( 'Gallery', 'immonex-kickstart-for-elementor' ) )
+						. ' ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
 					'_inx_elementor_demo_content' => "gallery_image_{$type}",
-					'_wp_attachment_image_alt'    => 'immonex Kickstart Elementor ' . __( 'Demo Image', 'immonex-kickstart-elementor' ),
+					'_wp_attachment_image_alt'    => 'immonex Kickstart for Elementor ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
 				];
 
-				$image_data = \immonex\Kickstart\Elementor\Media_Utils::add_image_to_media_lib( $source_image, $meta );
+				$image_data = \immonex\Kickstart\ForElementor\Media_Utils::add_image_to_media_lib( $source_image, $meta );
 
 				if ( $image_data['id'] ) {
 					$image_ids[ $type ][] = $image_data['id'];

@@ -2,10 +2,10 @@
 /**
  * Class Native_Property_List_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\PropertyList;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\PropertyList;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Property_List_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const WIDGET_NAME              = 'inx-e-native-property-list';
 	const WIDGET_ICON              = 'eicon-gallery-grid';
 	const WIDGET_CATEGORIES        = [ 'inx-property-list' ];
-	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/liste-grid';
+	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/liste-grid';
 	const ENABLE_RENDER_ON_PREVIEW = true;
 	const IS_DYNAMIC_CONTENT       = true;
 
@@ -33,7 +33,7 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'List (Grid)', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'List (Grid)', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -48,8 +48,8 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 			array_merge(
 				$this->keywords,
 				[
-					__( 'list', 'immonex-kickstart-elementor' ),
-					__( 'grid', 'immonex-kickstart-elementor' ),
+					__( 'list', 'immonex-kickstart-for-elementor' ),
+					__( 'grid', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -66,7 +66,7 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -77,8 +77,8 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'no_results_text',
 			[
-				'label'       => __( 'No Results Message', 'immonex-kickstart-elementor' ),
-				'description' => __( '<strong>Optional</strong> custom text to display if no properties match the search/filter criteria. (Defaults to the message stored in the Kickstart plugin options.)', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'No Results Message', 'immonex-kickstart-for-elementor' ),
+				'description' => __( '<strong>Optional</strong> custom text to display if no properties match the search/filter criteria. (Defaults to the message stored in the Kickstart plugin options.)', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'before',
@@ -99,13 +99,13 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'sort',
 			[
-				'label'         => __( 'Custom Sort Priority', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'Custom Sort Priority', 'immonex-kickstart-for-elementor' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'fields'        => [
 					[
 						'name'        => 'option',
-						'label'       => __( 'Option', 'immonex-kickstart-elementor' ),
-						'description' => __( 'By default, lists are sorted in descending order by the publication date of the entries they contain.', 'immonex-kickstart-elementor' ),
+						'label'       => __( 'Option', 'immonex-kickstart-for-elementor' ),
+						'description' => __( 'By default, lists are sorted in descending order by the publication date of the entries they contain.', 'immonex-kickstart-for-elementor' ),
 						'type'        => \Elementor\Controls_Manager::SELECT,
 						'options'     => $sort_options['array'],
 					],
@@ -127,7 +127,7 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->start_controls_section(
 			'tax_filters_section',
 			[
-				'label' => __( 'Taxonomy Filters', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Taxonomy Filters', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -139,7 +139,7 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->start_controls_section(
 			'cf_filters_section',
 			[
-				'label' => __( 'Custom Field Filters', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Custom Field Filters', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -168,7 +168,7 @@ class Native_Property_List_Widget extends \immonex\Kickstart\Elementor\Component
 			$this->start_controls_section(
 				'extended_style_section',
 				[
-					'label' => __( 'Extended', 'immonex-kickstart-elementor' ),
+					'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 					'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 				]
 			);

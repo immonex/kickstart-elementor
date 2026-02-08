@@ -2,10 +2,10 @@
 /**
  * Class Icon_List_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets;
+namespace immonex\Kickstart\ForElementor\Components\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -32,7 +32,7 @@ class Icon_List_Widget extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Icon List', 'immonex-kickstart-elementor' );
+		return __( 'Icon List', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -47,8 +47,8 @@ class Icon_List_Widget extends Widget_Base {
 			array_merge(
 				$this->keywords,
 				[
-					__( 'icon', 'immonex-kickstart-elementor' ),
-					__( 'list', 'immonex-kickstart-elementor' ),
+					__( 'icon', 'immonex-kickstart-for-elementor' ),
+					__( 'list', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -63,14 +63,14 @@ class Icon_List_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$default_control_args = [
 			'heading' => [
-				'default' => $this->get_default( 'heading', __( 'Features', 'immonex-kickstart-elementor' ) ),
+				'default' => $this->get_default( 'heading', __( 'Features', 'immonex-kickstart-for-elementor' ) ),
 			],
 		];
 
@@ -82,7 +82,7 @@ class Icon_List_Widget extends Widget_Base {
 			$this->add_control(
 				'icon',
 				[
-					'label'       => __( 'Icon', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Icon', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::ICONS,
 					'default'     => $this->get_default(
 						'icon',
@@ -115,7 +115,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'list_section',
 			[
-				'label' => __( 'List', 'immonex-kickstart-elementor' ),
+				'label' => __( 'List', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -123,16 +123,16 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'layout',
 			[
-				'label'          => __( 'Layout', 'immonex-kickstart-elementor' ),
+				'label'          => __( 'Layout', 'immonex-kickstart-for-elementor' ),
 				'type'           => \Elementor\Controls_Manager::CHOOSE,
 				'default'        => $this->get_default( 'layout', 'columns' ),
 				'options'        => [
 					'columns' => [
-						'title' => __( 'Default', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Default', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-editor-list-ul',
 					],
 					'inline'  => [
-						'title' => __( 'Inline', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Inline', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-ellipsis-h',
 					],
 				],
@@ -147,7 +147,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label'                => __( 'Columns', 'immonex-kickstart-elementor' ),
+				'label'                => __( 'Columns', 'immonex-kickstart-for-elementor' ),
 				'type'                 => \Elementor\Controls_Manager::SELECT,
 				'widescreen_default'   => $this->get_default( 'columns', '3' ),
 				'default'              => $this->get_default( 'columns', '3' ),
@@ -175,7 +175,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'space_between',
 			[
-				'label'      => __( 'Space Between', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Space Between', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'space_between',
@@ -212,20 +212,20 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'item_align',
 			[
-				'label'        => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::CHOOSE,
 				'default'      => $this->get_default( 'item_align', 'left' ),
 				'options'      => [
 					'left'   => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -236,10 +236,10 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider',
 			[
-				'label'     => __( 'Divider', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Divider', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'  => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off' => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'  => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'selectors' => array_merge(
 					[ '{{WRAPPER}} .inx-e-icon-list__item:not(:last-child):after' => 'content: ""' ],
 					$this->get_responsive_selectors( '{{WRAPPER}}:not(.inx-e--layout--inline):not(.inx-e%s--columns--1) .inx-e-icon-list__item:last-child:after', 'content: ""' )
@@ -251,14 +251,14 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_style',
 			[
-				'label'     => __( 'Style', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Style', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => $this->get_default( 'divider_style', 'solid' ),
 				'options'   => [
-					'solid'  => __( 'Solid', 'immonex-kickstart-elementor' ),
-					'double' => __( 'Double', 'immonex-kickstart-elementor' ),
-					'dotted' => __( 'Dotted', 'immonex-kickstart-elementor' ),
-					'dashed' => __( 'Dashed', 'immonex-kickstart-elementor' ),
+					'solid'  => __( 'Solid', 'immonex-kickstart-for-elementor' ),
+					'double' => __( 'Double', 'immonex-kickstart-for-elementor' ),
+					'dotted' => __( 'Dotted', 'immonex-kickstart-for-elementor' ),
+					'dashed' => __( 'Dashed', 'immonex-kickstart-for-elementor' ),
 				],
 				'condition' => [
 					'divider' => 'yes',
@@ -276,7 +276,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_weight',
 			[
-				'label'      => __( 'Weight', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Weight', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default( 'divider_weight', [ 'size' => 1 ] ),
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
@@ -302,7 +302,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_width',
 			[
-				'label'      => __( 'Width', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Width', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default( 'divider_width', [ 'unit' => '%' ] ),
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -320,7 +320,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_height',
 			[
-				'label'      => __( 'Height', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Height', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default( 'divider_height', [ 'unit' => '%' ] ),
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vh', 'custom' ],
@@ -352,7 +352,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'global'    => [
 					'default' => $this->get_default( 'global_divider_color', \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT ),
@@ -372,7 +372,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'style_section',
 			[
-				'label' => __( 'Icon', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Icon', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -380,7 +380,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'global'    => [
 					'default' => $this->get_default( 'global_icon_color', \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY ),
@@ -395,7 +395,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label'      => __( 'Size', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Size', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default( 'icon_size', [ 'size' => 14 ] ),
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -419,7 +419,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'text_indent',
 			[
-				'label'      => __( 'Gap', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Gap', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'range'      => [
@@ -441,20 +441,20 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_self_align',
 			[
-				'label'                => __( 'Horizontal Alignment', 'immonex-kickstart-elementor' ),
+				'label'                => __( 'Horizontal Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'                 => \Elementor\Controls_Manager::CHOOSE,
 				'default'              => $this->get_default( 'icon_self_align', 'center' ),
 				'options'              => [
 					'left'   => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -472,20 +472,20 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_self_vertical_align',
 			[
-				'label'     => __( 'Vertical Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Vertical Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'default'   => $this->get_default( 'icon_self_vertical_align', 'center' ),
 				'options'   => [
 					'flex-start' => [
-						'title' => __( 'Start', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Start', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-v-align-top',
 					],
 					'center'     => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-v-align-middle',
 					],
 					'flex-end'   => [
-						'title' => __( 'End', 'immonex-kickstart-elementor' ),
+						'title' => __( 'End', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 				],
@@ -498,7 +498,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_vertical_offset',
 			[
-				'label'      => __( 'Adjust Vertical Position', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Adjust Vertical Position', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'range'      => [
@@ -522,7 +522,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'text_style_section',
 			[
-				'label' => __( 'Text', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Text', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -549,7 +549,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'global'    => [
 					'default' => $this->get_default( 'global_text_color', \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY ),

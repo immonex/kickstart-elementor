@@ -3,7 +3,7 @@
 	<description>Custom coding standard for immonex WordPress plugins</description>
 
 	<!-- What to scan -->
-	<file>./src/</file>
+	<file>src/</file>
 	<exclude-pattern>/lib/</exclude-pattern>
 	<exclude-pattern>/vendor/</exclude-pattern>
 	<exclude-pattern>/third_party/</exclude-pattern>
@@ -36,8 +36,8 @@
 		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_query"/>
 		<exclude name="WordPress.Security.NonceVerification.Recommended"/>
 		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found"/>
-		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
-		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed"/>
+		<!-- exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/ -->
+		<!-- exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed"/ -->
 		<exclude name="Generic.Commenting.DocComment.LongNotCapital"/>
 	</rule>
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
@@ -48,15 +48,14 @@
 				<element value="inx_"/>
 			</property>
 		</properties>
-		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
+		<!-- exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/ -->
 		<!-- exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound"/ -->
 	</rule>
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<!-- Value: replace the text domain used. -->
 			<property name="text_domain" type="array">
-				<element value="immonex-kickstart-elementor"/>
-				<element value="tgmpa"/>
+				<element value="immonex-kickstart-for-elementor"/>
 			</property>
 		</properties>
 	</rule>

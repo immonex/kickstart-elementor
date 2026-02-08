@@ -2,10 +2,10 @@
 /**
  * Class Kickstart_Template_Data
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\DynamicTags;
+namespace immonex\Kickstart\ForElementor\Components\DynamicTags;
 
 /**
  * Kickstart Template Dynamic Data Tag
@@ -38,7 +38,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 	 * @return string Dynamic tag title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Kickstart Template Data', 'immonex-kickstart-elementor' );
+		return esc_html__( 'Kickstart Template Data', 'immonex-kickstart-for-elementor' );
 	}
 
 	/**
@@ -75,12 +75,12 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$this->add_control(
 			'type',
 			[
-				'label'       => __( 'Type', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Type', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => 'flex_elements',
 				'options'     => [
-					'flex_elements' => __( 'Flex Elements', 'immonex-kickstart-elementor' ),
-					'array_keys'    => __( 'Array Keys', 'immonex-kickstart-elementor' ),
+					'flex_elements' => __( 'Flex Elements', 'immonex-kickstart-for-elementor' ),
+					'array_keys'    => __( 'Array Keys', 'immonex-kickstart-for-elementor' ),
 				],
 				'label_block' => true,
 			]
@@ -89,7 +89,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$repeater->add_control(
 			'element_type',
 			[
-				'label'       => __( 'Element Type', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Element Type', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => 'name',
 				'options'     => $element_type_select_options,
@@ -118,7 +118,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 			$repeater->add_control(
 				"element_{$option_type}",
 				[
-					'label'       => __( 'Element', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::SELECT,
 					'options'     => $options,
 					'condition'   => [
@@ -132,7 +132,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$repeater->add_control(
 			'element_user_defined',
 			[
-				'label'       => __( 'Element', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'condition'   => [
 					'element_type' => 'user_defined',
@@ -143,7 +143,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 
 		$format_filters = $this->get_format_filters();
 		$format_options = [
-			'' => __( 'no formatting', 'immonex-kickstart-elementor' ),
+			'' => __( 'no formatting', 'immonex-kickstart-for-elementor' ),
 		];
 		if ( ! empty( $format_filters ) ) {
 			foreach ( $format_filters as $key => $filter ) {
@@ -154,7 +154,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$repeater->add_control(
 			'format',
 			[
-				'label'       => __( 'Format', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Format', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => $format_options,
 				'label_block' => true,
@@ -164,11 +164,11 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$repeater->add_control(
 			'decimal_places',
 			[
-				'label'     => __( 'Decimal Places', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Decimal Places', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => 9,
 				'options'   => [
-					9 => __( 'auto', 'immonex-kickstart-elementor' ),
+					9 => __( 'auto', 'immonex-kickstart-for-elementor' ),
 					1 => '1',
 					2 => '2',
 				],
@@ -185,7 +185,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$repeater->add_control(
 			'before_value',
 			[
-				'label'       => __( 'Before Value', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Before Value', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'before',
@@ -195,7 +195,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$repeater->add_control(
 			'after_value',
 			[
-				'label'       => __( 'After Value', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'After Value', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'after',
@@ -203,13 +203,13 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		);
 
 		$title_field = "<# const label = element_type === 'user_defined' ? '" .
-			__( 'User-defined/RegEx', 'immonex-kickstart-elementor' ) .
+			__( 'User-defined/RegEx', 'immonex-kickstart-for-elementor' ) .
 			"' : eval('element_' + element_type); #>{{{ label }}}";
 
 		$this->add_control(
 			'elements',
 			[
-				'label'         => __( 'Elements', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'Elements', 'immonex-kickstart-for-elementor' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => $title_field,
@@ -223,7 +223,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		$this->add_control(
 			'key',
 			[
-				'label'       => esc_html__( 'Key(s)', 'immonex-kickstart-elementor' ),
+				'label'       => esc_html__( 'Key(s)', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'condition'   => [
 					'type' => 'array_keys',
@@ -400,9 +400,9 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 	 */
 	private function get_element_type_select_options() {
 		return [
-			'name'         => __( 'Name', 'immonex-kickstart-elementor' ),
-			'destination'  => __( 'Destination (Custom Field)', 'immonex-kickstart-elementor' ),
-			'user_defined' => __( 'User-defined/RegEx', 'immonex-kickstart-elementor' ),
+			'name'         => __( 'Name', 'immonex-kickstart-for-elementor' ),
+			'destination'  => __( 'Destination (Custom Field)', 'immonex-kickstart-for-elementor' ),
+			'user_defined' => __( 'User-defined/RegEx', 'immonex-kickstart-for-elementor' ),
 		];
 	} // get_element_type_select_options
 
@@ -422,22 +422,22 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 			'inx_elementor_format_filters', // phpcs:ignore
 			[
 				'inx_format_price'  => [
-					'title' => __( 'Price', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Price', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'price',
 					'args'  => [],
 				],
 				'inx_format_area'   => [
-					'title' => __( 'Area', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Area', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'area',
 					'args'  => [],
 				],
 				'inx_format_number' => [
-					'title' => __( 'Number', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Number', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'number',
 					'args'  => [],
 				],
 				'inx_format_link'   => [
-					'title' => __( 'Link (URL/E-Mail/Phone)', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Link (URL/E-Mail/Phone)', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'link',
 					'args'  => [],
 				],

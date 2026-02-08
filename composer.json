@@ -1,5 +1,5 @@
 {
-    "name": "immonex/kickstart-elementor",
+    "name": "immonex/kickstart-for-elementor",
     "config": {
         "platform": {
             "php": "8.3"

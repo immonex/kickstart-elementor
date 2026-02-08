@@ -2,10 +2,10 @@
 /**
  * Class Gallery_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets;
+namespace immonex\Kickstart\ForElementor\Components\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -32,7 +32,7 @@ class Gallery_Widget extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Gallery', 'immonex-kickstart-elementor' );
+		return __( 'Gallery', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -47,12 +47,12 @@ class Gallery_Widget extends Widget_Base {
 			array_merge(
 				$this->keywords,
 				[
-					__( 'image', 'immonex-kickstart-elementor' ),
-					__( 'photo', 'immonex-kickstart-elementor' ),
-					__( 'video', 'immonex-kickstart-elementor' ),
-					__( 'virtual', 'immonex-kickstart-elementor' ),
-					__( 'tour', 'immonex-kickstart-elementor' ),
-					__( 'gallery', 'immonex-kickstart-elementor' ),
+					__( 'image', 'immonex-kickstart-for-elementor' ),
+					__( 'photo', 'immonex-kickstart-for-elementor' ),
+					__( 'video', 'immonex-kickstart-for-elementor' ),
+					__( 'virtual', 'immonex-kickstart-for-elementor' ),
+					__( 'tour', 'immonex-kickstart-for-elementor' ),
+					__( 'gallery', 'immonex-kickstart-for-elementor' ),
 					'360',
 				]
 			)

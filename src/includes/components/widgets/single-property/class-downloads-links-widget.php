@@ -2,10 +2,10 @@
 /**
  * Class Downloads_Links_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Downloads_Links_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Icon_List_Widget {
+class Downloads_Links_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Icon_List_Widget {
 
 	const WIDGET_NAME           = 'inx-e-single-property-downloads-links';
-	const WIDGET_HELP_URL       = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/downloads-und-links';
+	const WIDGET_HELP_URL       = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/downloads-und-links';
 	const ENABLE_ICON_SELECTION = false;
 
 	/**
@@ -30,7 +30,7 @@ class Downloads_Links_Widget extends \immonex\Kickstart\Elementor\Components\Wid
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Downloads & Links', 'immonex-kickstart-elementor' );
+		return __( 'Downloads & Links', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -45,8 +45,8 @@ class Downloads_Links_Widget extends \immonex\Kickstart\Elementor\Components\Wid
 			array_merge(
 				$this->keywords,
 				[
-					__( 'downloads', 'immonex-kickstart-elementor' ),
-					__( 'links', 'immonex-kickstart-elementor' ),
+					__( 'downloads', 'immonex-kickstart-for-elementor' ),
+					__( 'links', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -144,7 +144,7 @@ class Downloads_Links_Widget extends \immonex\Kickstart\Elementor\Components\Wid
 	 */
 	protected function get_default( $control_id, $default_value = '', $breakpoint = 'default' ) {
 		$defaults = [
-			'heading' => __( 'Downloads and Links', 'immonex-kickstart-elementor' ),
+			'heading' => __( 'Downloads and Links', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return ! empty( $defaults[ $control_id ] ) ? $defaults[ $control_id ] : $default_value;
@@ -164,7 +164,7 @@ class Downloads_Links_Widget extends \immonex\Kickstart\Elementor\Components\Wid
 			[
 				'items' => [
 					[
-						'title' => __( 'Information Brochure', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Information Brochure', 'immonex-kickstart-for-elementor' ),
 						'type'  => 'pdf',
 						'icon'  => [
 							'value'   => 'far fa-file-pdf',

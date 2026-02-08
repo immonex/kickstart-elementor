@@ -2,10 +2,10 @@
 /**
  * Class Native_Agent_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\Team;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\Team;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Agent_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const WIDGET_NAME               = 'inx-e-native-team-agent';
 	const WIDGET_ICON               = 'eicon-person';
 	const WIDGET_CATEGORIES         = [ 'inx-single-property', 'inx-team' ];
-	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/kontaktperson-formular';
+	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/kontaktperson-formular';
 	const ENABLE_RENDER_ON_PREVIEW  = true;
 	const IS_DYNAMIC_CONTENT        = true;
 	const PARENT_PLUGIN_NAME        = 'immonex Kickstart Team';
@@ -35,7 +35,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Contact <span style="white-space:nowrap">Person/Form</span>', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Contact <span style="white-space:nowrap">Person/Form</span>', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -50,9 +50,9 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			array_merge(
 				$this->keywords,
 				[
-					__( 'contact', 'immonex-kickstart-elementor' ),
-					__( 'team', 'immonex-kickstart-elementor' ),
-					__( 'agent', 'immonex-kickstart-elementor' ),
+					__( 'contact', 'immonex-kickstart-for-elementor' ),
+					__( 'team', 'immonex-kickstart-for-elementor' ),
+					__( 'agent', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -76,7 +76,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			]
 		);
 		$agents      = [
-			'' => __( 'Automatic (Property Detail Pages)', 'immonex-kickstart-elementor' ),
+			'' => __( 'Automatic (Property Detail Pages)', 'immonex-kickstart-for-elementor' ),
 		];
 
 		if ( ! empty( $agent_posts ) ) {
@@ -114,19 +114,19 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 
 		$text_style_sections = [
 			'text_general'     => [
-				'label' => __( 'Text in General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Text in General', 'immonex-kickstart-for-elementor' ),
 				'class' => '.inx-team-single-agent',
 			],
 			'name'             => [
-				'label' => __( 'Name', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Name', 'immonex-kickstart-for-elementor' ),
 				'class' => '.inx-team-single-agent__name',
 			],
 			'contact_elements' => [
-				'label' => __( 'Contact Data Elements', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Contact Data Elements', 'immonex-kickstart-for-elementor' ),
 				'class' => '.inx-team-single-agent__element-value',
 			],
 			'consent'          => [
-				'label' => __( 'Consent Texts', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Consent Texts', 'immonex-kickstart-for-elementor' ),
 				'class' => '.inx-team-contact-form__consent-text',
 			],
 		];
@@ -134,7 +134,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -144,14 +144,14 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'type',
 			[
-				'label'       => __( 'Display Type', 'immonex-kickstart-elementor' ),
-				'description' => __( 'The detail page section and the more compact widget view usually contain all contact information incl. photo and a form (see Elements below), the full view also includes a list of related properties and a link to the agency details.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Display Type', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'The detail page section and the more compact widget view usually contain all contact information incl. photo and a form (see Elements below), the full view also includes a list of related properties and a link to the agency details.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					''                                    => __( 'Full View (Single)', 'immonex-kickstart-elementor' ),
-					'default_contact_element_replacement' => __( 'Contact Section (Property Detail Pages)', 'immonex-kickstart-elementor' ),
-					'widget'                              => __( 'Widget', 'immonex-kickstart-elementor' ),
+					''                                    => __( 'Full View (Single)', 'immonex-kickstart-for-elementor' ),
+					'default_contact_element_replacement' => __( 'Contact Section (Property Detail Pages)', 'immonex-kickstart-for-elementor' ),
+					'widget'                              => __( 'Widget', 'immonex-kickstart-for-elementor' ),
 				],
 				'default'     => 'default_contact_element_replacement',
 			]
@@ -160,8 +160,8 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'agent_id',
 			[
-				'label'       => __( 'Contact Person (Agent)', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Only to be selected if the agent data should <strong>not</strong> be embedded in a <strong>property detail page<strong>.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Contact Person (Agent)', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Only to be selected if the agent data should <strong>not</strong> be embedded in a <strong>property detail page<strong>.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => $agents,
@@ -173,7 +173,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 
 		$default_control_args = [
 			'heading'       => [
-				'description' => __( 'Insert "auto" for an agent\'s gender conforming standard title.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Insert "auto" for an agent\'s gender conforming standard title.', 'immonex-kickstart-for-elementor' ),
 				'default'     => 'auto',
 				'condition'   => [
 					'type!' => '',
@@ -191,13 +191,13 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'contact_form_scope',
 			[
-				'label'     => __( 'Contact Form Scope', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Contact Form Scope', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => '',
 				'options'   => [
-					''         => __( 'Default', 'immonex-kickstart-elementor' ),
-					'basic'    => __( 'Basic', 'immonex-kickstart-elementor' ),
-					'extended' => __( 'Extended', 'immonex-kickstart-elementor' ),
+					''         => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'basic'    => __( 'Basic', 'immonex-kickstart-for-elementor' ),
+					'extended' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 				],
 				'separator' => 'before',
 			]
@@ -206,14 +206,14 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'link_type',
 			[
-				'label'     => __( 'Agent Link Destination', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Agent Link Destination', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => '',
 				'options'   => [
-					''         => __( 'Default', 'immonex-kickstart-elementor' ),
-					'internal' => __( 'Internal Profile Page', 'immonex-kickstart-elementor' ),
-					'external' => __( 'External URL (if available)', 'immonex-kickstart-elementor' ),
-					'none'     => _x( 'None', 'link destination: none', 'immonex-kickstart-elementor' ),
+					''         => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'internal' => __( 'Internal Profile Page', 'immonex-kickstart-for-elementor' ),
+					'external' => __( 'External URL (if available)', 'immonex-kickstart-for-elementor' ),
+					'none'     => _x( 'None', 'link destination: none', 'immonex-kickstart-for-elementor' ),
 				],
 				'condition' => [
 					'type!' => 'default_contact_element_replacement',
@@ -224,17 +224,17 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'display_for',
 			[
-				'label'       => __( 'Property Status', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Display the agent widget only on detail pages of properties matching the selected state.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Property Status', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Display the agent widget only on detail pages of properties matching the selected state.', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',
 				'options'     => [
-					''                      => __( 'Default', 'immonex-kickstart-elementor' ),
-					'all'                   => __( 'All Properties', 'immonex-kickstart-elementor' ),
-					'all_except_references' => __( 'All except References', 'immonex-kickstart-elementor' ),
-					'available_only'        => __( 'Available only', 'immonex-kickstart-elementor' ),
-					'unavailable_only'      => __( 'Unavailable only', 'immonex-kickstart-elementor' ),
-					'references_only'       => __( 'References only', 'immonex-kickstart-elementor' ),
+					''                      => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'all'                   => __( 'All Properties', 'immonex-kickstart-for-elementor' ),
+					'all_except_references' => __( 'All except References', 'immonex-kickstart-for-elementor' ),
+					'available_only'        => __( 'Available only', 'immonex-kickstart-for-elementor' ),
+					'unavailable_only'      => __( 'Unavailable only', 'immonex-kickstart-for-elementor' ),
+					'references_only'       => __( 'References only', 'immonex-kickstart-for-elementor' ),
 				],
 				'condition'   => [
 					'type!' => 'default_contact_element_replacement',
@@ -245,8 +245,8 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'convert_links',
 			[
-				'label'        => __( 'Convert Links', 'immonex-kickstart-elementor' ),
-				'description'  => __( 'Convert mail addresses and phone numbers to links.', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Convert Links', 'immonex-kickstart-for-elementor' ),
+				'description'  => __( 'Convert mail addresses and phone numbers to links.', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'return_value' => '1',
@@ -258,7 +258,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->start_controls_section(
 			'elements_section',
 			[
-				'label' => __( 'Contact Elements', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Contact Elements', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -266,7 +266,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'use_default_elements',
 			[
-				'label'        => __( 'Use default elements', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Use default elements', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'return_value' => '1',
@@ -278,7 +278,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'The order of the following elements does not affect their frontend output order.', 'immonex-kickstart-elementor' ),
+				'content'     => __( 'The order of the following elements does not affect their frontend output order.', 'immonex-kickstart-for-elementor' ),
 				'condition'   => [
 					'use_default_elements' => '',
 				],
@@ -290,7 +290,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$repeater->add_control(
 			'element',
 			[
-				'label'       => __( 'Element', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'label_block' => true,
 				'options'     => $element_options,
@@ -300,7 +300,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'form_elements',
 			[
-				'label'         => __( 'User-defined Elements', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'User-defined Elements', 'immonex-kickstart-for-elementor' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => "<# const labels = {$element_options_json}; const label = labels[element]; #>{{{ label }}}",
@@ -317,7 +317,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->start_controls_section(
 			'extended_content_section',
 			[
-				'label'     => __( 'Extended (Full View)', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Extended (Full View)', 'immonex-kickstart-for-elementor' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_CONTENT,
 				'condition' => [
 					'type' => '',
@@ -330,7 +330,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'The following settings can be used to override the corresponding ones in the plugin and agent options.', 'immonex-kickstart-elementor' ),
+				'content'     => __( 'The following settings can be used to override the corresponding ones in the plugin and agent options.', 'immonex-kickstart-for-elementor' ),
 				'condition'   => [
 					'use_default_elements' => '',
 				],
@@ -340,15 +340,15 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'show_property_list',
 			[
-				'label'       => __( 'Property List', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Display properties associated with the agent.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Property List', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Display properties associated with the agent.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',
 				'options'     => [
-					''    => __( 'Default (Plugin/Agent Options)', 'immonex-kickstart-elementor' ),
-					'yes' => __( 'show', 'immonex-kickstart-elementor' ),
-					'no'  => __( 'hide', 'immonex-kickstart-elementor' ),
+					''    => __( 'Default (Plugin/Agent Options)', 'immonex-kickstart-for-elementor' ),
+					'yes' => __( 'show', 'immonex-kickstart-for-elementor' ),
+					'no'  => __( 'hide', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -356,15 +356,15 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'show_agency_link',
 			[
-				'label'       => __( 'Footer Box (Agency Link)', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Includes the name/logo linked to the detail page of the related agency and a short description, if available.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Footer Box (Agency Link)', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Includes the name/logo linked to the detail page of the related agency and a short description, if available.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',
 				'options'     => [
-					''    => __( 'Default (Plugin/Agent Options)', 'immonex-kickstart-elementor' ),
-					'yes' => __( 'show', 'immonex-kickstart-elementor' ),
-					'no'  => __( 'hide', 'immonex-kickstart-elementor' ),
+					''    => __( 'Default (Plugin/Agent Options)', 'immonex-kickstart-for-elementor' ),
+					'yes' => __( 'show', 'immonex-kickstart-for-elementor' ),
+					'no'  => __( 'hide', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -410,7 +410,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'disable_heading_dividing_line',
 			[
-				'label'        => __( 'Hide Dividing Line', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Hide Dividing Line', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'return_value' => '0',
 				'selectors'    => [
@@ -437,10 +437,10 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			$this->add_control(
 				"{$key}_color",
 				[
-					'label'       => __( 'Text Color', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::COLOR,
-					'description' => __( 'This color is <strong>not</strong> applied to links.', 'immonex-kickstart-elementor' )
-						. __( 'The link (action elements) color is defined in the Kickstart plugin options.', 'immonex-kickstart-elementor' ),
+					'description' => __( 'This color is <strong>not</strong> applied to links.', 'immonex-kickstart-for-elementor' )
+						. __( 'The link (action elements) color is defined in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
 					'selectors'   => [
 						"{{WRAPPER}} :not(a) > {$section_data['class']}" => 'color: {{VALUE}}',
 					],
@@ -461,7 +461,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->start_controls_section(
 			'icon_section',
 			[
-				'label' => __( 'Icons', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Icons', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -469,10 +469,10 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'icon_color',
 			[
-				'label'       => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::COLOR,
-				'description' => __( 'This color is <strong>not</strong> applied to links.', 'immonex-kickstart-elementor' )
-					. __( 'The link (action elements) color is defined in the Kickstart plugin options.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'This color is <strong>not</strong> applied to links.', 'immonex-kickstart-for-elementor' )
+					. __( 'The link (action elements) color is defined in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
 				'selectors'   => [
 					'{{WRAPPER}} :not(a) > span > svg' => 'color: {{VALUE}}',
 				],
@@ -484,7 +484,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->start_controls_section(
 			'form_section',
 			[
-				'label' => __( 'Form Fields', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Form Fields', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -492,7 +492,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'field_bg_color',
 			[
-				'label'     => __( 'Background Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea' => 'background-color: {{VALUE}}',
@@ -503,7 +503,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'field_placeholder_color',
 			[
-				'label'     => __( 'Placeholder Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Placeholder Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__input > input::placeholder, {{WRAPPER}} .inx-team-contact-form__input > textarea::placeholder' => 'color: {{VALUE}}',
@@ -515,7 +515,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'field_border_color',
 			[
-				'label'     => __( 'Border Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Border Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea' => 'border-color: {{VALUE}}',
@@ -526,7 +526,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_responsive_control(
 			'field_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'selectors'  => [
@@ -539,7 +539,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'field_text_color',
 			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea' => 'color: {{VALUE}}',
@@ -560,7 +560,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->start_controls_section(
 			'submit_button_section',
 			[
-				'label' => __( 'Submit Button', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Submit Button', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -568,7 +568,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'submit_button_bg_color',
 			[
-				'label'     => __( 'Background Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled)' => 'background-color: {{VALUE}}',
@@ -579,7 +579,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'submit_button_hover_color',
 			[
-				'label'     => __( 'Hover Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Hover Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled):hover' => 'background-color: {{VALUE}}',
@@ -591,7 +591,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'submit_button_border_color',
 			[
-				'label'     => __( 'Border Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Border Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled)' => 'border-color: {{VALUE}}',
@@ -602,7 +602,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_responsive_control(
 			'submit_button_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'selectors'  => [
@@ -615,7 +615,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->add_control(
 			'submit_button_text_color',
 			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled)' => 'color: {{VALUE}}',
@@ -636,7 +636,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->start_controls_section(
 			'list_headline_section',
 			[
-				'label'     => __( 'List Headlines', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'List Headlines', 'immonex-kickstart-for-elementor' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'type' => '',
@@ -650,7 +650,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 					'prefix' => 'list',
 				],
 				'heading_style_section' => [
-					'label'     => __( 'List Headlines', 'immonex-kickstart-elementor' ),
+					'label'     => __( 'List Headlines', 'immonex-kickstart-for-elementor' ),
 					'condition' => [
 						'type' => '',
 					],

@@ -2,10 +2,10 @@
 /**
  * Class Native_Agent_List_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\Team;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\Team;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Agent_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Agent_List_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const WIDGET_NAME               = 'inx-e-native-team-agent-list';
 	const WIDGET_ICON               = 'eicon-gallery-grid';
 	const WIDGET_CATEGORIES         = [ 'inx-team' ];
-	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/kontaktpersonen-liste';
+	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/kontaktpersonen-liste';
 	const ENABLE_RENDER_ON_PREVIEW  = true;
 	const IS_DYNAMIC_CONTENT        = true;
 	const PARENT_PLUGIN_NAME        = 'immonex Kickstart Team';
@@ -35,7 +35,7 @@ class Native_Agent_List_Widget extends \immonex\Kickstart\Elementor\Components\W
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Agent List', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Agent List', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -50,8 +50,8 @@ class Native_Agent_List_Widget extends \immonex\Kickstart\Elementor\Components\W
 			array_merge(
 				$this->keywords,
 				[
-					__( 'team', 'immonex-kickstart-elementor' ),
-					__( 'agent', 'immonex-kickstart-elementor' ),
+					__( 'team', 'immonex-kickstart-for-elementor' ),
+					__( 'agent', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -75,7 +75,7 @@ class Native_Agent_List_Widget extends \immonex\Kickstart\Elementor\Components\W
 			]
 		);
 		$agencies     = [
-			'' => __( 'All', 'immonex-kickstart-elementor' ),
+			'' => __( 'All', 'immonex-kickstart-for-elementor' ),
 		];
 
 		if ( ! empty( $agency_posts ) ) {
@@ -87,7 +87,7 @@ class Native_Agent_List_Widget extends \immonex\Kickstart\Elementor\Components\W
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -95,7 +95,7 @@ class Native_Agent_List_Widget extends \immonex\Kickstart\Elementor\Components\W
 		$this->add_control(
 			'agency',
 			[
-				'label'       => __( 'Agency', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Agency', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',

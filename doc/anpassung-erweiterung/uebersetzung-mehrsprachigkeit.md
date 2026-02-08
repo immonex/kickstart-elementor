@@ -1,16 +1,16 @@
 # Übersetzungen & Mehrsprachigkeit
 
-Die offiziellen Übersetzungen werden via [translate.wordpress.org (GlotPress)](https://translate.wordpress.org/projects/wp-plugins/immonex-kickstart-elementor/) bereitgestellt. Die Varianten *de_DE* (**informell/Du**) und *de_DE_formal* (**formell/Sie**) sind hier immer vollständig verfügbar. Weitere Sprachen und länderspezifische Varianten können ebenfalls hierüber ergänzt werden (Infos zu Hintergrund und Vorgehensweise im offiziellen [Handbuch für Übersetzer](https://make.wordpress.org/polyglots/handbook/)).
+Die offiziellen Übersetzungen werden via [translate.wordpress.org (GlotPress)](https://translate.wordpress.org/projects/wp-plugins/immonex-kickstart-for-elementor/) bereitgestellt. Die Varianten *de_DE* (**informell/Du**) und *de_DE_formal* (**formell/Sie**) sind hier immer vollständig verfügbar. Weitere Sprachen und länderspezifische Varianten können ebenfalls hierüber ergänzt werden (Infos zu Hintergrund und Vorgehensweise im offiziellen [Handbuch für Übersetzer](https://make.wordpress.org/polyglots/handbook/)).
 
 Die Übersetzungen von translate.wordpress.org werden automatisch in den globalen WordPress-Übersetzungs-Ordner `.../wp-content/languages/plugins` heruntergeladen, sofern diese für die unter ***Einstellungen → Allgemein*** eingestellte Website-Sprache verfügbar sind:
 
 <pre class="tree">
 <strong>…/wp-content/languages/plugins</strong>
 ╷
-├── immonex-kickstart-elementor-de_DE.po
-├── immonex-kickstart-elementor-de_DE.mo
-├── immonex-kickstart-elementor-de_DE_formal.po
-└── immonex-kickstart-elementor-de_DE_formal.mo
+├── immonex-kickstart-for-elementor-de_DE.po
+├── immonex-kickstart-for-elementor-de_DE.mo
+├── immonex-kickstart-for-elementor-de_DE_formal.po
+└── immonex-kickstart-for-elementor-de_DE_formal.mo
 </pre>
 
 !> Die Übersetzungen im globalen WP-Sprachordner haben Priorität. Die gleichnamigen Dateien, die **zusätzlich** im Unterordner `languages` des Plugin-Verzeichnisses enthalten sind, werden im Regelfall **nicht** eingebunden.

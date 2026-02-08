@@ -2,10 +2,10 @@
 /**
  * Class Core_Details_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_Value_List_Widget {
+class Core_Details_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Key_Value_List_Widget {
 
 	const WIDGET_NAME            = 'inx-e-single-property-core-details';
-	const WIDGET_HELP_URL        = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/kerndaten';
+	const WIDGET_HELP_URL        = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/kerndaten';
 	const DEFAULT_CONTROL_SCOPES = [];
 	const DISABLE_SOURCE_NOTICE  = true;
 
@@ -31,7 +31,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Core Details', 'immonex-kickstart-elementor' );
+		return __( 'Core Details', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -46,8 +46,8 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			array_merge(
 				$this->keywords,
 				[
-					__( 'core', 'immonex-kickstart-elementor' ),
-					__( 'details', 'immonex-kickstart-elementor' ),
+					__( 'core', 'immonex-kickstart-for-elementor' ),
+					__( 'details', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -194,7 +194,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 		$this->predefined_elements = [
 			'verwaltung_techn.objektnr_extern' => [
 				'element_type' => 'name',
-				'title'        => __( 'Property #', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Property #', 'immonex-kickstart-for-elementor' ),
 				'icon'         => [
 					'value'   => 'fas fa-hashtag',
 					'library' => 'fa-solid',
@@ -203,7 +203,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'geo.ort'                          => [
 				'element_type' => 'name',
-				'title'        => __( 'Locality', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Locality', 'immonex-kickstart-for-elementor' ),
 				'icon'         => [
 					'value'   => 'fas fa-map-marked-alt',
 					'library' => 'fa-solid',
@@ -212,7 +212,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'baujahr'                          => [
 				'element_type' => 'name',
-				'title'        => __( 'Build Year', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Build Year', 'immonex-kickstart-for-elementor' ),
 				'icon'         => [
 					'value'   => 'fas fa-calendar-alt',
 					'library' => 'fa-solid',
@@ -221,7 +221,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'primaerflaeche'                   => [
 				'element_type' => 'name',
-				'title'        => __( 'Area', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Area', 'immonex-kickstart-for-elementor' ),
 				'format'       => 'inx_format_area',
 				'icon'         => [
 					'value'   => 'fas fa-ruler-combined',
@@ -231,7 +231,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'grundstuecksflaeche'              => [
 				'element_type' => 'name',
-				'title'        => __( 'Plot Area', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Plot Area', 'immonex-kickstart-for-elementor' ),
 				'format'       => 'inx_format_area',
 				'icon'         => [
 					'value'   => 'far fa-object-group',
@@ -241,7 +241,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'primaeranzahl_zimmer'             => [
 				'element_type' => 'name',
-				'title'        => __( 'Rooms', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Rooms', 'immonex-kickstart-for-elementor' ),
 				'format'       => 'inx_format_number',
 				'icon'         => [
 					'value'   => 'fas fa-door-open',
@@ -250,7 +250,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'anzahl_wohn_schlafzimmer'         => [
 				'element_type' => 'name',
-				'title'        => __( 'Living Rooms/Bedrooms', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Living Rooms/Bedrooms', 'immonex-kickstart-for-elementor' ),
 				'format'       => 'inx_format_number',
 				'icon'         => [
 					'value'   => 'fas fa-bed',
@@ -259,7 +259,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'anzahl_schlafzimmer'              => [
 				'element_type' => 'name',
-				'title'        => __( 'Bedrooms', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Bedrooms', 'immonex-kickstart-for-elementor' ),
 				'format'       => 'inx_format_number',
 				'icon'         => [
 					'value'   => 'fas fa-bed',
@@ -269,7 +269,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'anzahl_badezimmer'                => [
 				'element_type' => 'name',
-				'title'        => __( 'Bathrooms', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Bathrooms', 'immonex-kickstart-for-elementor' ),
 				'format'       => 'inx_format_number',
 				'icon'         => [
 					'value'   => 'fas fa-bath',
@@ -279,7 +279,7 @@ class Core_Details_Widget extends \immonex\Kickstart\Elementor\Components\Widget
 			],
 			'primaerpreis'                     => [
 				'element_type' => 'name',
-				'title'        => __( 'Primary Price', 'immonex-kickstart-elementor' ),
+				'title'        => __( 'Primary Price', 'immonex-kickstart-for-elementor' ),
 				'format'       => 'inx_format_price',
 				'icon'         => [
 					'value'   => 'fas fa-euro-sign',

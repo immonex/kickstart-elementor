@@ -2,10 +2,10 @@
 /**
  * Class Native_Virtual_Tour_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Virtual_Tour_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Gallery_Widget {
+class Native_Virtual_Tour_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Gallery_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-native-virtual-tour';
 	const WIDGET_ICON     = 'eicon-video-camera';
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/virtuelle-360-grad-tour';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/virtuelle-360-grad-tour';
 
 	/**
 	 * Get widget title.
@@ -30,7 +30,7 @@ class Native_Virtual_Tour_Widget extends \immonex\Kickstart\Elementor\Components
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( '360° Virtual Tour', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( '360° Virtual Tour', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -42,7 +42,7 @@ class Native_Virtual_Tour_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
@@ -51,7 +51,7 @@ class Native_Virtual_Tour_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'headline',
 			[
-				'label'       => __( 'Heading', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Heading', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 			]
@@ -74,7 +74,7 @@ class Native_Virtual_Tour_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'disable_heading_dividing_line',
 			[
-				'label'        => __( 'Hide Dividing Line', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Hide Dividing Line', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'return_value' => '0',
 				'selectors'    => [
@@ -98,8 +98,8 @@ class Native_Virtual_Tour_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_render_attribute( 'shortcode', 'elements', 'virtual_tour' );
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			$virtual_tour_embed_code  = '<p style="margin:0; padding:16px; text-align:center; color:#FFF; background-color:#4C93EC">' . __( 'This is a <strong>demo</strong> of the <a href="https://www.cloudpano.com/" target="_blank">CloudPano</a> 360° tour service.', 'immonex-kickstart-elementor' ) . '</p>' . PHP_EOL;
-			$virtual_tour_embed_code .= '<iframe width="640" height="480" src="' . \immonex\Kickstart\Elementor\Demo_Media::DEMO_VIRTUAL_TOUR_URL . '"></iframe>';
+			$virtual_tour_embed_code  = '<p style="margin:0; padding:16px; text-align:center; color:#FFF; background-color:#4C93EC">' . __( 'This is a <strong>demo</strong> of the <a href="https://www.cloudpano.com/" target="_blank">CloudPano</a> 360° tour service.', 'immonex-kickstart-for-elementor' ) . '</p>' . PHP_EOL;
+			$virtual_tour_embed_code .= '<iframe width="640" height="480" src="' . \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIRTUAL_TOUR_URL . '"></iframe>';
 
 			$this->add_render_attribute( 'shortcode', 'is_preview', '1' );
 			$this->add_render_attribute( 'shortcode', 'virtual_tour_embed_code', $virtual_tour_embed_code );

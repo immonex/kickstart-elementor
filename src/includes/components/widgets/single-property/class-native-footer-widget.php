@@ -2,10 +2,10 @@
 /**
  * Class Native_Footer_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Footer_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Footer_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE                = 'inx_property';
 	const WIDGET_NAME              = 'inx-e-single-property-native-footer';
 	const WIDGET_ICON              = 'eicon-footer';
 	const WIDGET_CATEGORIES        = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/footer';
+	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/footer';
 	const ENABLE_RENDER_ON_PREVIEW = true;
 
 	/**
@@ -33,7 +33,7 @@ class Native_Footer_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Footer', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Footer', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -48,8 +48,8 @@ class Native_Footer_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 			array_merge(
 				$this->keywords,
 				[
-					__( 'footer', 'immonex-kickstart-elementor' ),
-					__( 'bottom', 'immonex-kickstart-elementor' ),
+					__( 'footer', 'immonex-kickstart-for-elementor' ),
+					__( 'bottom', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -64,7 +64,7 @@ class Native_Footer_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -76,7 +76,7 @@ class Native_Footer_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'The native footer box contains a link to the property overview page.', 'immonex-kickstart-elementor' ),
+				'content'     => __( 'The native footer box contains a link to the property overview page.', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
@@ -85,7 +85,7 @@ class Native_Footer_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->start_controls_section(
 			'extended_style_section',
 			[
-				'label' => __( 'Extended', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);

@@ -2,7 +2,7 @@
 /**
  * Skin Name: Snow
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
 // Prevent direct access.

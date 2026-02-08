@@ -1,4 +1,4 @@
-=== immonex Kickstart Elementor ===
+=== immonex Kickstart for Elementor ===
 Contributors: immonex
 Tags: realestate, elementor, immobilien, immobilienmakler, openimmo
 Requires at least: 6.5
@@ -8,7 +8,7 @@ Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-35+ widgets, dynamic tags, and more to create professional real estate websites with immonex Kickstart and Elementor
+35+ widgets and dynamic tags for creating professional real estate websites with immonex Kickstart and Elementor
 
 == Description ==
 
@@ -72,7 +72,7 @@ Optional plugins (additional functions and frontend elements):
 
 = Steps =
 
-immonex Kickstart Elementor is available in the official [WordPress Plugin Directory](https://wordpress.org/plugins/) and can be installed via the WordPress backend.
+immonex Kickstart for Elementor is available in the official [WordPress Plugin Directory](https://wordpress.org/plugins/) and can be installed via the WordPress backend.
 
 1. *Plugins > Add New > Search for "immonex" ...* [1]
 2. Elementor Pro only: Enable Properties and optionally Agencies/Agents under *Elementor > Editor > Settings > Post Types*
@@ -89,11 +89,11 @@ immonex Kickstart Elementor is available in the official [WordPress Plugin Direc
 
 A detailed plugin documentation in German can be found here:
 
-[docs.immonex.de/kickstart-elementor](https://docs.immonex.de/kickstart-elementor/)
+[docs.immonex.de/kickstart-for-elementor](https://docs.immonex.de/kickstart-for-elementor/)
 
-immonex Kickstart Elementor is free software. Sources, development docs/support and issue tracking is provided via GitHub:
+immonex Kickstart for Elementor is free software. Sources, development docs/support and issue tracking is provided via GitHub:
 
-[github.com/immonex/kickstart-elementor](https://github.com/immonex/kickstart-elementor)
+[github.com/immonex/kickstart-for-elementor](https://github.com/immonex/kickstart-for-elementor)
 
 == Screenshots ==
 
@@ -113,7 +113,7 @@ immonex Kickstart Elementor is free software. Sources, development docs/support 
 == Changelog ==
 
 = 1.0.0 "Ice" =
-* Release date: 2026-01-30
+* Release date: 2026-02-08
 * Initial release.
 
 See changelog.txt for the complete version history.

@@ -29,10 +29,10 @@
 
 <div>
 <div class="home-page-elementor-logo element-light">
-<a href="https://be.elementor.com/visit/?bta=229006&nci=5657" target="_blank" class="no-icon"><img src="assets/elementor-logo-full-blue.svg" style="height:40px"></a>
+<a href="https://be.elementor.com/visit/?bta=229006&nci=5657" target="_blank" class="no-icon"><img src="assets/elementor-logo-full-codeberry.svg" style="height:40px"></a>
 </div>
 <div class="home-page-kickstart-logo element-dark">
-<a href="https://be.elementor.com/visit/?bta=229006&nci=5657" target="_blank" class="no-icon"><img src="assets/elementor-logo-full-green.svg" style="height:40px"></a>
+<a href="https://be.elementor.com/visit/?bta=229006&nci=5657" target="_blank" class="no-icon"><img src="assets/elementor-logo-full-bc-white.svg" style="height:40px"></a>
 </div>
 </div>
 

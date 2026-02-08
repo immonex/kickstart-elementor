@@ -1,8 +1,8 @@
-# immonex Kickstart Elementor
+# immonex Kickstart for Elementor
 
 ## Accelerating WordPress-based Real Estate Site Development
 
-<img src="assets/immonex-kickstart-elementor-logo.png" width="286" height="286" align="right" alt="immonex Kickstart Elementor Logo">
+<img src="assets/immonex-kickstart-for-elementor-logo.png" width="286" height="286" align="right" alt="immonex Kickstart Add-on for Elementor">
 
 This **add-on plugin** extends [immonex Kickstart](https://wordpress.org/plugins/immonex-kickstart/)[^1] powered [WordPress](https://wordpress.org/) installations by a variety of **widgets and other dynamic content elements** for the quick and easy implementation of **real estate agency sites and portals** with the [Elementor Website Builder](https://wordpress.org/plugins/elementor/).
 
@@ -11,7 +11,7 @@ The focus here is on the presentation of real estate offers, the data of which i
 > [!TIP]
 > All widgets can be used in full with the **free Elementor version**. [Elementor Pro](https://elementor.com/products/website-builder/) is only required for using the *dynamic tags*.
 
-The plugin supports both Kickstart's basic frontend components – property list and detail views, search form, image/video galleries, maps, 360° tours ... – and those of its add-ons like [Team](https://wordpress.org/plugins/immonex-kickstart-elementor/) (contact persons, agencies, inquiry forms etc.) and *Print* (PDF exposé generation).
+The plugin supports both Kickstart's basic frontend components – property list and detail views, search form, image/video galleries, maps, 360° tours ... – and those of its add-ons like [Team](https://wordpress.org/plugins/immonex-kickstart-for-elementor/) (contact persons, agencies, inquiry forms etc.) and *Print* (PDF exposé generation).
 
 Suitable widgets are also available for embedding content elements provided by the following immonex plugins:
 
@@ -35,11 +35,11 @@ As a part of this, the **immonex WP Plugin Suite** includes a wide range of Word
 
 ## Basics & Scope
 
-Kickstart Elementor is available in the official [WordPress Plugin Repository](https://wordpress.org/plugins/immonex-kickstart-elementor).
+Kickstart Elementor is available in the official [WordPress Plugin Repository](https://wordpress.org/plugins/immonex-kickstart-for-elementor).
 
 A **user/dev documentation** including detailed instructions how to install, setup and customize the plugin (in German) is available here:
 
-https://docs.immonex.de/kickstart-elementor/
+https://docs.immonex.de/kickstart-for-elementor/
 
 The plugin offers various options for **project-related** customization via options and *custom skins*. The following information relates to the development of the **add-on plugin itself**.
 
@@ -72,8 +72,8 @@ Setting up a simple development environment starts by cloning this repository an
 
 ```bash
 $ cd ~/projects
-$ git clone git@github.com:immonex/kickstart-elementor.git immonex-kickstart-elementor
-$ cd immonex-kickstart-elementor
+$ git clone git@github.com:immonex/kickstart-for-elementor.git immonex-kickstart-for-elementor
+$ cd immonex-kickstart-for-elementor
 $ npm install
 $ composer install
 ```
@@ -82,7 +82,7 @@ $ composer install
 Then, a symlink to the `src` directory has to be created in the `plugins` folder of the local WP installation:
 
 ```bash
-$ ln -s ~/projects/immonex-kickstart-elementor/src/ ~/htdocs/wp-dev-installation/wp-content/plugins/immonex-kickstart-elementor
+$ ln -s ~/projects/immonex-kickstart-for-elementor/src/ ~/htdocs/wp-dev-installation/wp-content/plugins/immonex-kickstart-for-elementor
 ```
 
 Now, the plugin can be activated in the WP backend.
@@ -141,7 +141,7 @@ $ npm run test
 
 ### Translations
 
-The **regular translations** for this plugin are provided via [translate.wordpress.org (GlotPress)](https://translate.wordpress.org/projects/wp-plugins/immonex-kickstart-elementor/).
+The **regular translations** for this plugin are provided via [translate.wordpress.org (GlotPress)](https://translate.wordpress.org/projects/wp-plugins/immonex-kickstart-for-elementor/).
 
 Additionally, formal and informal German translations (PO/MO files) are available in the [src/languages](src/languages) folder, too. This directory also contains a current POT file (as base for custom/local translations) that can be updated with the following command:
 
@@ -173,13 +173,13 @@ $ npm run apidoc:delete
 
 ### User/Integrator Documentation
 
-The source files (markdown) of the [docs for users and integrators](https://docs.immonex.de/kickstart-elementor/) mentioned above are located in the `doc` folder. A globally installed *doc-gen* package (currently **not** available publicly) and a suitable user account are required for publishing...
+The source files (markdown) of the [docs for users and integrators](https://docs.immonex.de/kickstart-for-elementor/) mentioned above are located in the `doc` folder. A globally installed *doc-gen* package (currently **not** available publicly) and a suitable user account are required for publishing...
 
 ```bash
 $ npm run doc
 ```
 
-...or publishing it under https://docs.immonex.de/kickstart-elementor/:
+...or publishing it under https://docs.immonex.de/kickstart-for-elementor/:
 
 ```bash
 $ npm run doc:publish

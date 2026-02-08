@@ -2,10 +2,10 @@
 /**
  * Class Native_Property_Map_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\PropertyList;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\PropertyList;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Map_Widget {
+class Native_Property_Map_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Map_Widget {
 
 	const WIDGET_NAME       = 'inx-e-native-property-map';
 	const WIDGET_CATEGORIES = [ 'inx-property-list' ];
-	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/uebersichtskarte';
+	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/uebersichtskarte';
 	const DEFAULT_MAP_ZOOM  = 12;
 
 	/**
@@ -31,7 +31,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Overview Map', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Overview Map', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -46,8 +46,8 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 			array_merge(
 				$this->keywords,
 				[
-					__( 'map', 'immonex-kickstart-elementor' ),
-					__( 'markers', 'immonex-kickstart-elementor' ),
+					__( 'map', 'immonex-kickstart-for-elementor' ),
+					__( 'markers', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -62,7 +62,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -72,23 +72,23 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'type',
 			[
-				'label'       => __( 'Map Type', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Map Type', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'description' => __( 'Google-based maps require a valid API key supplied in the field below or via the Kickstart plugin options.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Google-based maps require a valid API key supplied in the field below or via the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
 				'default'     => 'osm_german',
 				'options'     => [
-					'osm'          => 'OpenStreetMap (' . __( 'road map view', 'immonex-kickstart-elementor' )
-						. ' ' . __( 'with property location marker', 'immonex-kickstart-elementor' ) . ')',
-					'osm_german'   => 'OpenStreetMap (' . __( 'road map view', 'immonex-kickstart-elementor' )
-						. ' ' . __( 'with property location marker', 'immonex-kickstart-elementor' )
-						. ' – ' . __( 'German Style', 'immonex-kickstart-elementor' ) . ')',
-					'osm_otm'      => 'OpenTopoMap (' . __( 'OSM-based topographic view', 'immonex-kickstart-elementor' )
-						. ' ' . __( 'with road map layer and property location marker', 'immonex-kickstart-elementor' ) . ')',
-					'gmap'         => 'Google Map (' . __( 'road map view', 'immonex-kickstart-elementor' )
-						. ' ' . __( 'with property location marker', 'immonex-kickstart-elementor' ) . ')',
-					'gmap_terrain' => 'Google Map Terrain (' . __( 'topographic view', 'immonex-kickstart-elementor' )
-						. ' ' . __( 'with road map layer and property location marker', 'immonex-kickstart-elementor' ) . ')',
-					'gmap_hybrid'  => 'Google Map Hybrid (' . __( 'satellite view', 'immonex-kickstart-elementor' ) . ')',
+					'osm'          => 'OpenStreetMap (' . __( 'road map view', 'immonex-kickstart-for-elementor' )
+						. ' ' . __( 'with property location marker', 'immonex-kickstart-for-elementor' ) . ')',
+					'osm_german'   => 'OpenStreetMap (' . __( 'road map view', 'immonex-kickstart-for-elementor' )
+						. ' ' . __( 'with property location marker', 'immonex-kickstart-for-elementor' )
+						. ' – ' . __( 'German Style', 'immonex-kickstart-for-elementor' ) . ')',
+					'osm_otm'      => 'OpenTopoMap (' . __( 'OSM-based topographic view', 'immonex-kickstart-for-elementor' )
+						. ' ' . __( 'with road map layer and property location marker', 'immonex-kickstart-for-elementor' ) . ')',
+					'gmap'         => 'Google Map (' . __( 'road map view', 'immonex-kickstart-for-elementor' )
+						. ' ' . __( 'with property location marker', 'immonex-kickstart-for-elementor' ) . ')',
+					'gmap_terrain' => 'Google Map Terrain (' . __( 'topographic view', 'immonex-kickstart-for-elementor' )
+						. ' ' . __( 'with road map layer and property location marker', 'immonex-kickstart-for-elementor' ) . ')',
+					'gmap_hybrid'  => 'Google Map Hybrid (' . __( 'satellite view', 'immonex-kickstart-for-elementor' ) . ')',
 				],
 				'label_block' => true,
 			]
@@ -97,9 +97,9 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'google_api_key',
 			[
-				'label'       => __( 'Google API Key', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Google API Key', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( '<strong>Alternative</strong> key to be used instead of the one in the plugin options.', 'immonex-kickstart-elementor' ),
+				'description' => __( '<strong>Alternative</strong> key to be used instead of the one in the plugin options.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'condition'   => [
 					'type' => [
@@ -114,9 +114,9 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'options',
 			[
-				'label'       => __( 'Map Options', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Map Options', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Additional <strong>provider-related</strong> options (OpenLayers/OpenStreetMap or Google Maps).', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Additional <strong>provider-related</strong> options (OpenLayers/OpenStreetMap or Google Maps).', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 			]
 		);
@@ -124,12 +124,12 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'auto_fit',
 			[
-				'label'        => __( 'Auto Fit', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Auto Fit', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'description'  => __( 'Center and zoom the map according to the contained markers automatically.', 'immonex-kickstart-elementor' ),
+				'description'  => __( 'Center and zoom the map according to the contained markers automatically.', 'immonex-kickstart-for-elementor' ),
 				'default'      => '1',
-				'label_off'    => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'     => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'return_value' => '1',
 				'separator'    => 'before',
 			]
@@ -138,7 +138,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'lat',
 			[
-				'label'     => __( 'Default Center Latitude', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Default Center Latitude', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'default'   => $this->get_default( 'lat', 0 ),
 				'min'       => -90,
@@ -152,7 +152,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'lng',
 			[
-				'label'     => __( 'Default Center Longitude', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Default Center Longitude', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'default'   => $this->get_default( 'lng', 0 ),
 				'min'       => -90,
@@ -166,7 +166,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'map_zoom',
 			[
-				'label'      => __( 'Default Zoom', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Default Zoom', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'zoom',
@@ -195,8 +195,8 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 			],
 			[
 				'limit'         => [
-					'label'       => __( 'Property/Marker Limit', 'immonex-kickstart-elementor' ),
-					'description' => __( 'Maximum number of markers that can be contained in the map.', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Property/Marker Limit', 'immonex-kickstart-for-elementor' ),
+					'description' => __( 'Maximum number of markers that can be contained in the map.', 'immonex-kickstart-for-elementor' ),
 					'separator'   => 'before',
 				],
 				'disable_links' => [ 'separator' => 'before' ],
@@ -208,7 +208,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'tax_filters_section',
 			[
-				'label' => __( 'Taxonomy Filters', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Taxonomy Filters', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -220,7 +220,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'cf_filters_section',
 			[
-				'label' => __( 'Custom Field Filters', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Custom Field Filters', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -240,7 +240,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'authors_filter_section',
 			[
-				'label' => __( 'Author Filters', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Author Filters', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -259,7 +259,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'extended_content_section',
 			[
-				'label' => __( 'Extended', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -271,7 +271,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'marker_section',
 			[
-				'label' => __( 'Marker', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Marker', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -279,12 +279,12 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'marker_type',
 			[
-				'label'   => __( 'Marker Type', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Marker Type', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => $this->get_default( 'marker_type', 'integrated' ),
 				'options' => [
-					'integrated' => __( 'integrated', 'immonex-kickstart-elementor' ),
-					'custom'     => __( 'custom', 'immonex-kickstart-elementor' ),
+					'integrated' => __( 'integrated', 'immonex-kickstart-for-elementor' ),
+					'custom'     => __( 'custom', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -292,7 +292,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'marker_fill_color',
 			[
-				'label'     => __( 'Fill Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Fill Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => $this->get_default( 'marker_fill_color', self::DEFAULT_MARKER_FILL_COLOR ),
 				'condition' => [
@@ -304,7 +304,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'marker_fill_opacity',
 			[
-				'label'      => __( 'Fill Opacity', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Fill Opacity', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'marker_fill_opacity',
@@ -329,7 +329,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'marker_stroke_color',
 			[
-				'label'     => __( 'Stroke Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Stroke Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => $this->get_default( 'marker_fill_color', self::DEFAULT_MARKER_STROKE_COLOR ),
 				'condition' => [
@@ -341,7 +341,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'marker_stroke_width',
 			[
-				'label'      => __( 'Stroke Width', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Stroke Width', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'marker_stroke_width',
@@ -366,7 +366,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'marker_scale',
 			[
-				'label'      => __( 'Scale Factor', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Scale Factor', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'marker_scale',
@@ -391,7 +391,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'marker_icon_url',
 			[
-				'label'     => __( 'Marker Icon URL', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Marker Icon URL', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::TEXT,
 				'condition' => [
 					'marker_type' => 'custom',
@@ -404,7 +404,7 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'extended_style_section',
 			[
-				'label' => __( 'Extended', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);

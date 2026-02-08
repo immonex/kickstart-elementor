@@ -2,10 +2,10 @@
 /**
  * Class Labels_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Labels_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE         = 'inx_property';
 	const WIDGET_NAME       = 'inx-e-single-property-labels';
 	const WIDGET_ICON       = 'eicon-tags';
 	const WIDGET_CATEGORIES = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/labels';
+	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/labels';
 
 	/**
 	 * Get widget title.
@@ -32,7 +32,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Labels', 'immonex-kickstart-elementor' );
+		return __( 'Labels', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -47,8 +47,8 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 			array_merge(
 				$this->keywords,
 				[
-					__( 'labels', 'immonex-kickstart-elementor' ),
-					__( 'tags', 'immonex-kickstart-elementor' ),
+					__( 'labels', 'immonex-kickstart-for-elementor' ),
+					__( 'tags', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -63,7 +63,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->start_controls_section(
 			'tax_section',
 			[
-				'label' => __( 'Taxonomies', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Taxonomies', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -73,7 +73,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_control(
 			'include_label_terms',
 			[
-				'label'        => __( 'Labels', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Labels', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'return_value' => '1',
@@ -83,7 +83,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_control(
 			'include_marketing_type_terms',
 			[
-				'label'        => __( 'Marketing Type', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Marketing Type', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'return_value' => '1',
@@ -93,7 +93,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_control(
 			'include_type_of_use_terms',
 			[
-				'label'        => __( 'Type of Use', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Type of Use', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '0',
 				'return_value' => '1',
@@ -103,7 +103,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_control(
 			'include_property_type_terms',
 			[
-				'label'        => __( 'Property Type', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Property Type', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '0',
 				'return_value' => '1',
@@ -123,16 +123,16 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_control(
 			'layout',
 			[
-				'label'        => __( 'Layout', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Layout', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::CHOOSE,
 				'default'      => $this->get_default( 'item_layout', 'horizontal' ),
 				'options'      => [
 					'horizontal' => [
-						'title' => __( 'Horizontal', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Horizontal', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-ellipsis-h',
 					],
 					'vertical'   => [
-						'title' => __( 'Vertical', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Vertical', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-editor-list-ul',
 					],
 				],
@@ -144,19 +144,19 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_responsive_control(
 			'item_align',
 			[
-				'label'        => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::CHOOSE,
 				'options'      => [
 					'left'   => [
-						'title' => __( 'left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => __( 'right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -167,7 +167,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_responsive_control(
 			'space_between',
 			[
-				'label'      => __( 'Space Between', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Space Between', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'space_between',
@@ -198,7 +198,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_control(
 			'border_radius',
 			[
-				'label'      => __( 'Corner Radius', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'border_radius',
@@ -256,14 +256,14 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'The label colors can be customized in the Kickstart plugin options. <strong>Optionally</strong>, alternative uniform colors for all labels can be selected below.', 'immonex-kickstart-elementor' ),
+				'content'     => __( 'The label colors can be customized in the Kickstart plugin options. <strong>Optionally</strong>, alternative uniform colors for all labels can be selected below.', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'text_color',
 			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-labels__label' => 'color: {{VALUE}};',
@@ -274,7 +274,7 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 		$this->add_control(
 			'bg_color',
 			[
-				'label'     => __( 'Background Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-labels__label' => 'background: {{VALUE}};',
@@ -355,29 +355,29 @@ class Labels_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widg
 				'items' => [
 					'marketing_type' => [
 						[
-							'label' => __( 'For Sale', 'immonex-kickstart-elementor' ),
+							'label' => __( 'For Sale', 'immonex-kickstart-for-elementor' ),
 							'class' => 'inx-e-labels__label--tax--marketing-type inx-e-labels__label--for-sale',
 						],
 					],
 					'label'          => [
 						[
-							'label' => __( 'Reserved', 'immonex-kickstart-elementor' ),
+							'label' => __( 'Reserved', 'immonex-kickstart-for-elementor' ),
 							'class' => 'inx-e-labels__label--tax--label inx-e-labels__label--reserved',
 						],
 						[
-							'label' => __( 'Demo', 'immonex-kickstart-elementor' ),
+							'label' => __( 'Demo', 'immonex-kickstart-for-elementor' ),
 							'class' => 'inx-e-labels__label--tax--label inx-e-labels__label--demo',
 						],
 					],
 					'type_of_use'    => [
 						[
-							'label' => __( 'Living Property', 'immonex-kickstart-elementor' ),
+							'label' => __( 'Living Property', 'immonex-kickstart-for-elementor' ),
 							'class' => 'inx-e-labels__label--tax--type-of-use inx-e-labels__label--living-property',
 						],
 					],
 					'property_type'  => [
 						[
-							'label' => __( 'Single-family House', 'immonex-kickstart-elementor' ),
+							'label' => __( 'Single-family House', 'immonex-kickstart-for-elementor' ),
 							'class' => 'inx-e-labels__label--tax--property-type inx-e-labels__label--single-family-house',
 						],
 					],

@@ -2,14 +2,16 @@
 /**
  * Autoloader registration
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor;
+namespace immonex\Kickstart\ForElementor;
 
-// Prevent direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if ( ! defined( 'UTEST' ) ) {
+	// Prevent direct access.
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit;
+	}
 }
 
 /**

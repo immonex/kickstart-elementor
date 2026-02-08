@@ -2,10 +2,10 @@
 /**
  * Class Title_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Title_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Title_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE         = 'inx_property';
 	const WIDGET_NAME       = 'inx-e-single-property-title';
 	const WIDGET_ICON       = 'eicon-post-title';
 	const WIDGET_CATEGORIES = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/titel';
+	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/titel';
 
 	/**
 	 * Get widget title.
@@ -32,7 +32,7 @@ class Title_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widge
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Title', 'immonex-kickstart-elementor' );
+		return __( 'Title', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -46,7 +46,7 @@ class Title_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widge
 		$this->keywords = array_unique(
 			array_merge(
 				$this->keywords,
-				[ __( 'title', 'immonex-kickstart-elementor' ) ]
+				[ __( 'title', 'immonex-kickstart-for-elementor' ) ]
 			)
 		);
 	} // add_keywords
@@ -60,7 +60,7 @@ class Title_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widge
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -70,7 +70,7 @@ class Title_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widge
 		$this->add_control(
 			'html_tag',
 			[
-				'label'   => __( 'HTML Tag', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'HTML Tag', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
 					'h1'   => 'H1',
@@ -122,7 +122,7 @@ class Title_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widge
 	protected function get_demo_content( $contents = null ) {
 		return parent::get_demo_content(
 			[
-				'title' => __( 'Spacious house in an excellent location', 'immonex-kickstart-elementor' ),
+				'title' => __( 'Spacious house in an excellent location', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 	} // get_demo_content

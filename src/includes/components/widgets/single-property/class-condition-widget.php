@@ -2,10 +2,10 @@
 /**
  * Class Areas_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Condition_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_Value_List_Widget {
+class Condition_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Key_Value_List_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-condition';
 	const WIDGET_ICON     = 'eicon-rating';
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/zustand-und-erschliessung';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/zustand-und-erschliessung';
 	const ENABLE_ICONS    = false;
 	const FIXED_ELEMENTS  = [ 'zustand' ];
 
@@ -32,7 +32,7 @@ class Condition_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\K
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Condition & Development', 'immonex-kickstart-elementor' );
+		return __( 'Condition & Development', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -47,7 +47,7 @@ class Condition_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\K
 			array_merge(
 				$this->keywords,
 				[
-					__( 'condition', 'immonex-kickstart-elementor' ),
+					__( 'condition', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -68,7 +68,7 @@ class Condition_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\K
 		$defaults = [
 			'item_order'         => 'label-value',
 			'global_value_color' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-			'heading'            => __( 'Condition and Development', 'immonex-kickstart-elementor' ),
+			'heading'            => __( 'Condition and Development', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return ! empty( $defaults[ $control_id ] ) ? $defaults[ $control_id ] : $default_value;
@@ -109,20 +109,20 @@ class Condition_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\K
 			[
 				'items' => [
 					[
-						'title' => __( 'Build Year', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Build Year', 'immonex-kickstart-for-elementor' ),
 						'value' => '1982',
 					],
 					[
-						'title' => __( 'Condition', 'immonex-kickstart-elementor' ),
-						'value' => __( 'modernized', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Condition', 'immonex-kickstart-for-elementor' ),
+						'value' => __( 'modernized', 'immonex-kickstart-for-elementor' ),
 					],
 					[
-						'title' => __( 'Construction Type', 'immonex-kickstart-elementor' ),
-						'value' => __( 'massive', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Construction Type', 'immonex-kickstart-for-elementor' ),
+						'value' => __( 'massive', 'immonex-kickstart-for-elementor' ),
 					],
 					[
-						'title' => __( 'Roof Type', 'immonex-kickstart-elementor' ),
-						'value' => __( 'Gabled Roof', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Roof Type', 'immonex-kickstart-for-elementor' ),
+						'value' => __( 'Gabled Roof', 'immonex-kickstart-for-elementor' ),
 					],
 				],
 			]

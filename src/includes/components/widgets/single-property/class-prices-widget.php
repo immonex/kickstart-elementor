@@ -2,10 +2,10 @@
 /**
  * Class Prices_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Prices_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_Value_List_Widget {
+class Prices_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Key_Value_List_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-prices';
 	const WIDGET_ICON     = 'eicon-price-list';
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/preise';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/preise';
 	const ENABLE_ICONS    = false;
 	const FIXED_ELEMENTS  = [ 'preise' ];
 
@@ -32,7 +32,7 @@ class Prices_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Prices', 'immonex-kickstart-elementor' );
+		return __( 'Prices', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -47,11 +47,11 @@ class Prices_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_
 			array_merge(
 				$this->keywords,
 				[
-					__( 'price', 'immonex-kickstart-elementor' ),
-					__( 'prices', 'immonex-kickstart-elementor' ),
-					__( 'provision', 'immonex-kickstart-elementor' ),
-					__( 'courtage', 'immonex-kickstart-elementor' ),
-					__( 'costs', 'immonex-kickstart-elementor' ),
+					__( 'price', 'immonex-kickstart-for-elementor' ),
+					__( 'prices', 'immonex-kickstart-for-elementor' ),
+					__( 'provision', 'immonex-kickstart-for-elementor' ),
+					__( 'courtage', 'immonex-kickstart-for-elementor' ),
+					__( 'costs', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -83,7 +83,7 @@ class Prices_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_
 		$defaults = [
 			'item_order'         => 'label-value',
 			'global_value_color' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-			'heading'            => __( 'Prices', 'immonex-kickstart-elementor' ),
+			'heading'            => __( 'Prices', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return ! empty( $defaults[ $control_id ] ) ? $defaults[ $control_id ] : $default_value;
@@ -124,16 +124,16 @@ class Prices_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_
 			[
 				'items' => [
 					[
-						'title' => __( 'Purchase Price', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Purchase Price', 'immonex-kickstart-for-elementor' ),
 						'value' => '340.000 €',
 					],
 					[
-						'title' => __( 'Rental Revenues/Year', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Rental Revenues/Year', 'immonex-kickstart-for-elementor' ),
 						'value' => '12.000 €',
 					],
 					[
-						'title' => __( "Buyer's Provision", 'immonex-kickstart-elementor' ),
-						'value' => '3,57 % ' . __( 'incl. VAT', 'immonex-kickstart-elementor' ),
+						'title' => __( "Buyer's Provision", 'immonex-kickstart-for-elementor' ),
+						'value' => '3,57 % ' . __( 'incl. VAT', 'immonex-kickstart-for-elementor' ),
 					],
 				],
 			]

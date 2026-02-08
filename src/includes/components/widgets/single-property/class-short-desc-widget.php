@@ -2,10 +2,10 @@
 /**
  * Class Short_Desc_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Short_Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE         = 'inx_property';
 	const WIDGET_NAME       = 'inx-e-single-property-short-desc';
 	const WIDGET_ICON       = 'eicon-post-excerpt';
 	const WIDGET_CATEGORIES = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/kurzbeschreibung';
+	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/kurzbeschreibung';
 
 	const DEFAULT_MAX_LENGTH          = 256;
 	const DEFAULT_CONTINUATION_POINTS = '…';
@@ -36,7 +36,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Short Description', 'immonex-kickstart-elementor' );
+		return __( 'Short Description', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -51,9 +51,9 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 			array_merge(
 				$this->keywords,
 				[
-					__( 'excerpt', 'immonex-kickstart-elementor' ),
-					__( 'short', 'immonex-kickstart-elementor' ),
-					__( 'description', 'immonex-kickstart-elementor' ),
+					__( 'excerpt', 'immonex-kickstart-for-elementor' ),
+					__( 'short', 'immonex-kickstart-for-elementor' ),
+					__( 'description', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -68,7 +68,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -78,9 +78,9 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_control(
 			'max_length',
 			[
-				'label'       => __( 'Max. Length', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Max. Length', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
-				'description' => __( '16 up to 1,024 characters', 'immonex-kickstart-elementor' ),
+				'description' => __( '16 up to 1,024 characters', 'immonex-kickstart-for-elementor' ),
 				'placeholder' => '0',
 				'min'         => 16,
 				'max'         => 1024,
@@ -92,7 +92,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_control(
 			'continuation_points',
 			[
-				'label'   => __( 'Continuation Points', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Continuation Points', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::TEXT,
 				'default' => static::DEFAULT_CONTINUATION_POINTS,
 			]
@@ -101,7 +101,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_control(
 			'p_wrap',
 			[
-				'label'   => __( 'Paragraph Wrap', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Paragraph Wrap', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SWITCHER,
 				'default' => static::DEFAULT_P_WRAP_STATE,
 			]
@@ -112,7 +112,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->start_controls_section(
 			'body_text_section',
 			[
-				'label' => __( 'Body Text', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Body Text', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -120,23 +120,23 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_responsive_control(
 			'body_text_align',
 			[
-				'label'     => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'    => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'  => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'   => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Justified', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-justify',
 					],
 				],
@@ -150,7 +150,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 		$this->add_control(
 			'body_text_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-short-desc' => 'color: {{VALUE}}',
@@ -204,7 +204,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\
 	protected function get_demo_content( $contents = null ) {
 		return parent::get_demo_content(
 			[
-				'short_desc' => __( "Don't miss out on this extraordinary chance to own a stunning freestanding single-family home with captivating ocean views in the charming town of Demo. Located just an hour and a half outside the city, the potential for this home is boundless!", 'immonex-kickstart-elementor' ),
+				'short_desc' => __( "Don't miss out on this extraordinary chance to own a stunning freestanding single-family home with captivating ocean views in the charming town of Demo. Located just an hour and a half outside the city, the potential for this home is boundless!", 'immonex-kickstart-for-elementor' ),
 			]
 		);
 	} // get_demo_content

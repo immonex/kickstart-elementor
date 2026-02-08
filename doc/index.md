@@ -1,9 +1,9 @@
-<span class="home-page-plugin-logo element-light">![immonex Kickstart Elementor Logo](assets/immonex-kickstart-elementor-logo.png ':no-zoom')</span>
-<span class="home-page-plugin-logo element-dark">![immonex Kickstart Elementor Logo](assets/immonex-kickstart-elementor-logo-dark.png ':no-zoom')</span>
+<span class="home-page-plugin-logo element-light">![immonex Kickstart Add-on for Elementor](assets/immonex-kickstart-for-elementor-logo.webp ':no-zoom')</span>
+<span class="home-page-plugin-logo element-dark">![immonex Kickstart Add-on for Elementor](assets/immonex-kickstart-for-elementor-logo-dark.webp ':no-zoom')</span>
 
 # Über dieses Plugin <!-- {docsify-ignore-all} -->
 
-**immonex Kickstart Elementor** ermöglicht als *Add-on-Plugin* für [immonex Kickstart](https://de.wordpress.org/plugins/immonex-kickstart/)¹ die schnelle und einfache Einbindung der hierüber bereitgestellten **Frontend-Komponenten für die Präsentation von Immobilien-Angeboten** in *Elementor-Templates*, z. B.
+**immonex Kickstart for Elementor** ermöglicht als *Add-on-Plugin* für [immonex Kickstart](https://de.wordpress.org/plugins/immonex-kickstart/)¹ die schnelle und einfache Einbindung der hierüber bereitgestellten **Frontend-Komponenten für die Präsentation von Immobilien-Angeboten** in *Elementor-Templates*, z. B.
 
 - Immobilienlisten
 - Objektdetails (Beschreibungstexte, Flächen, Ausstattung, Preise etc.)
@@ -11,7 +11,7 @@
 - Standortkarten
 - Mediengalerien (Objektfotos, Grundrisse/Lagepläne, Videos, 360°-Ansichten, virtuelle Touren ...)
 
-![Elementor-Immobilien-Widgets](assets/elementor-immobilien-widgets.png)
+![Elementor-Immobilien-Widgets](assets/elementor-immobilien-widgets.webp)
 
 Ebenfalls unterstützt werden Inhaltselemente weiterer immonex-Plugins wie ...
 

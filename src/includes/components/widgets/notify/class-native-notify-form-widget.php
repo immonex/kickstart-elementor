@@ -2,10 +2,10 @@
 /**
  * Class Native_Notify_Form_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\Notify;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\Notify;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Notify_Form_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const WIDGET_NAME              = 'inx-e-native-notify-form';
 	const WIDGET_ICON              = 'eicon-mail';
 	const WIDGET_CATEGORIES        = [ 'inx-marketing-acquisition' ];
-	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/suchagent-formular';
+	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/suchagent-formular';
 	const ENABLE_RENDER_ON_PREVIEW = true;
 	const IS_DYNAMIC_CONTENT       = true;
 	const PARENT_PLUGIN_NAME       = 'immonex Notify';
@@ -35,7 +35,7 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Search Agent Form', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Search Agent Form', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -50,10 +50,10 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 			array_merge(
 				$this->keywords,
 				[
-					__( 'notify', 'immonex-kickstart-elementor' ),
-					__( 'search', 'immonex-kickstart-elementor' ),
-					__( 'agent', 'immonex-kickstart-elementor' ),
-					__( 'form', 'immonex-kickstart-elementor' ),
+					__( 'notify', 'immonex-kickstart-for-elementor' ),
+					__( 'search', 'immonex-kickstart-for-elementor' ),
+					__( 'agent', 'immonex-kickstart-for-elementor' ),
+					__( 'form', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -95,7 +95,7 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -105,19 +105,19 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 		$this->add_control(
 			'form_scope',
 			[
-				'label'       => __( 'Form Scope', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Form Scope', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'description' => sprintf(
 					/* translators: 1: Link open tag, 2: Link close tag. */
-					__( 'See %1$sdetailed form description%2$s.', 'immonex-kickstart-elementor' ),
+					__( 'See %1$sdetailed form description%2$s.', 'immonex-kickstart-for-elementor' ),
 					'<a href="https://docs.immonex.de/notify/#/immobilien-suchauftraege/frontend-formular" target="_blank">',
 					'</a>'
 				),
 				'default'     => 'compact',
 				'options'     => [
-					'compact'      => __( 'compact', 'immonex-kickstart-elementor' ),
-					'all'          => __( 'complete', 'immonex-kickstart-elementor' ),
-					'user-defined' => __( 'user-defined', 'immonex-kickstart-elementor' ),
+					'compact'      => __( 'compact', 'immonex-kickstart-for-elementor' ),
+					'all'          => __( 'complete', 'immonex-kickstart-for-elementor' ),
+					'user-defined' => __( 'user-defined', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -128,7 +128,7 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
 				'content'     => wp_sprintf(
-					__( 'The following mandatory elements are always included in the form:', 'immonex-kickstart-elementor' ) . '<br>%s',
+					__( 'The following mandatory elements are always included in the form:', 'immonex-kickstart-for-elementor' ) . '<br>%s',
 					implode( ', ', $mandatory_elements )
 				),
 				'condition'   => [
@@ -142,7 +142,7 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 		$repeater->add_control(
 			'element',
 			[
-				'label'       => __( 'Element', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'label_block' => true,
 				'options'     => $element_options,
@@ -152,7 +152,7 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\Elementor\Components\
 		$this->add_control(
 			'form_elements',
 			[
-				'label'         => __( 'User-defined Elements', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'User-defined Elements', 'immonex-kickstart-for-elementor' ),
 				'type'          => \Elementor\Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => "<# const labels = {$element_options_json}; const label = labels[element]; #>{{{ label }}}",

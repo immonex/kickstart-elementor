@@ -2,10 +2,10 @@
 /**
  * Class Native_Energy_Scale
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Energy_Scale_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE                = 'inx_property';
 	const WIDGET_NAME              = 'inx-e-single-property-native-energy-scale';
 	const WIDGET_ICON              = 'eicon-dashboard';
 	const WIDGET_CATEGORIES        = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/energieskala';
+	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/energieskala';
 	const ENABLE_RENDER_ON_PREVIEW = true;
 	const PARENT_PLUGIN_NAME       = 'immonex Energy Scale Pro';
 	const PARENT_PLUGIN_SHOP_URL   = 'https://plugins.inveris.de/wordpress-plugins/immonex-energy-scale-pro';
@@ -35,7 +35,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Energy Scale', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Energy Scale', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -50,8 +50,8 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 			array_merge(
 				$this->keywords,
 				[
-					__( 'energy', 'immonex-kickstart-elementor' ),
-					__( 'scale', 'immonex-kickstart-elementor' ),
+					__( 'energy', 'immonex-kickstart-for-elementor' ),
+					__( 'scale', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -70,7 +70,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -80,9 +80,9 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'display_if_unavailable',
 			[
-				'label'        => __( 'Always show', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Always show', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'description'  => __( 'Display a notice and a preview scale if the energy data of the respective property are not available (yet).', 'immonex-kickstart-elementor' ),
+				'description'  => __( 'Display a notice and a preview scale if the energy data of the respective property are not available (yet).', 'immonex-kickstart-for-elementor' ),
 				'default'      => '1',
 				'return_value' => '1',
 			]
@@ -91,9 +91,9 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'display_errors',
 			[
-				'label'        => __( 'Display Errors', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Display Errors', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'description'  => __( 'This option can be enabled <strong>temporary</strong> for troubleshooting purposes.', 'immonex-kickstart-elementor' ),
+				'description'  => __( 'This option can be enabled <strong>temporary</strong> for troubleshooting purposes.', 'immonex-kickstart-for-elementor' ),
 				'default'      => '0',
 				'return_value' => '1',
 			]
@@ -102,9 +102,9 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'remarks',
 			[
-				'label'       => __( 'Remarks', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Remarks', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Optional short text to display under the graphical scale', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Optional short text to display under the graphical scale', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'separator'   => 'before',
 			]
@@ -115,7 +115,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'scale_section',
 			[
-				'label' => __( 'Scale', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Scale', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -123,13 +123,13 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'template',
 			[
-				'label'   => __( 'Template', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Template', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					''             => __( 'Default', 'immonex-kickstart-elementor' ),
-					'auto'         => __( 'Automatic Selection', 'immonex-kickstart-elementor' ),
-					'bandtacho'    => __( 'Bandtacho', 'immonex-kickstart-elementor' ),
-					'stacked_bars' => __( 'Stacked Bars', 'immonex-kickstart-elementor' ),
+					''             => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'auto'         => __( 'Automatic Selection', 'immonex-kickstart-for-elementor' ),
+					'bandtacho'    => __( 'Bandtacho', 'immonex-kickstart-for-elementor' ),
+					'stacked_bars' => __( 'Stacked Bars', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -137,12 +137,12 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'display',
 			[
-				'label'       => __( 'Display Type', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Display Type', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'description' => __( 'The compact display type is better suited for embedding in narrow columns.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'The compact display type is better suited for embedding in narrow columns.', 'immonex-kickstart-for-elementor' ),
 				'options'     => [
-					''        => __( 'Standard', 'immonex-kickstart-elementor' ),
-					'compact' => __( 'Compact', 'immonex-kickstart-elementor' ),
+					''        => __( 'Standard', 'immonex-kickstart-for-elementor' ),
+					'compact' => __( 'Compact', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -150,7 +150,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'scale_text_color',
 			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .immonex-energy-scale > *:not(.immonex-energy-scale-remarks)' => 'color: {{VALUE}};',
@@ -172,7 +172,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->start_controls_section(
 			'remarks_section',
 			[
-				'label' => __( 'Remarks', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Remarks', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -180,7 +180,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'remarks_bg_color',
 			[
-				'label'     => __( 'Background Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .immonex-energy-scale-remarks' => 'background-color: {{VALUE}};',
@@ -191,7 +191,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\Elementor\Components
 		$this->add_control(
 			'remarks_text_color',
 			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .immonex-energy-scale-remarks' => 'color: {{VALUE}};',

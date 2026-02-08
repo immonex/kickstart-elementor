@@ -2,10 +2,10 @@
 /**
  * Class Property_Type_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Property_Type_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE         = 'inx_property';
 	const WIDGET_NAME       = 'inx-e-single-property-type';
 	const WIDGET_ICON       = 'eicon-angle-right';
 	const WIDGET_CATEGORIES = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/objektart-pfad';
+	const WIDGET_HELP_URL   = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/objektart-pfad';
 
 	/**
 	 * Get widget title.
@@ -32,8 +32,8 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Property Type', 'immonex-kickstart-elementor' ) .
-			' (' . __( 'Trail', 'immonex-kickstart-elementor' ) . ')';
+		return __( 'Property Type', 'immonex-kickstart-for-elementor' ) .
+			' (' . __( 'Trail', 'immonex-kickstart-for-elementor' ) . ')';
 	} // get_title
 
 	/**
@@ -48,9 +48,9 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 			array_merge(
 				$this->keywords,
 				[
-					__( 'type', 'immonex-kickstart-elementor' ),
-					__( 'breadcrumb', 'immonex-kickstart-elementor' ),
-					__( 'trail', 'immonex-kickstart-elementor' ),
+					__( 'type', 'immonex-kickstart-for-elementor' ),
+					__( 'breadcrumb', 'immonex-kickstart-for-elementor' ),
+					__( 'trail', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -65,7 +65,7 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -77,14 +77,14 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'The property type is rendered as breadcrumb trail with (optional) links to the related category overview/archive pages.', 'immonex-kickstart-elementor' ),
+				'content'     => __( 'The property type is rendered as breadcrumb trail with (optional) links to the related category overview/archive pages.', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'include_type_of_use',
 			[
-				'label'        => __( 'Include Type of Use', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Include Type of Use', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'return_value' => '1',
@@ -94,8 +94,8 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'include_parent',
 			[
-				'label'        => __( 'Include Parent Type', 'immonex-kickstart-elementor' ),
-				'description'  => __( 'e.g. <strong>Houses</strong> for a property types like <strong>Single-family home</strong>', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Include Parent Type', 'immonex-kickstart-for-elementor' ),
+				'description'  => __( 'e.g. <strong>Houses</strong> for a property types like <strong>Single-family home</strong>', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'return_value' => '1',
@@ -105,13 +105,13 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'link_type',
 			[
-				'label'       => __( 'Links', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Links', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'description' => __( 'The default overview page can be selected in the <strong>lists</strong> tab of the Kickstart plugin options.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'The default overview page can be selected in the <strong>lists</strong> tab of the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
 				'options'     => [
-					''        => _x( 'None', 'link destination: none', 'immonex-kickstart-elementor' ),
-					'list'    => __( 'Default Overview Page', 'immonex-kickstart-elementor' ),
-					'archive' => __( 'Archive Page', 'immonex-kickstart-elementor' ),
+					''        => _x( 'None', 'link destination: none', 'immonex-kickstart-for-elementor' ),
+					'list'    => __( 'Default Overview Page', 'immonex-kickstart-for-elementor' ),
+					'archive' => __( 'Archive Page', 'immonex-kickstart-for-elementor' ),
 				],
 				'default'     => 'list',
 			]
@@ -120,9 +120,9 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'icon',
 			[
-				'label'       => __( 'Icon', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Icon', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::ICONS,
-				'description' => __( 'The icon is displayed as separator between the trail elements (&gt; if not selected).', 'immonex-kickstart-elementor' ),
+				'description' => __( 'The icon is displayed as separator between the trail elements (&gt; if not selected).', 'immonex-kickstart-for-elementor' ),
 				'default'     => $this->get_default(
 					'icon',
 					[
@@ -152,7 +152,7 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->start_controls_section(
 			'text_section',
 			[
-				'label' => __( 'Text/Icon', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Text/Icon', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -160,19 +160,19 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_responsive_control(
 			'text_align',
 			[
-				'label'     => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'options'   => [
 					'flex-start' => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'     => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end'   => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -187,7 +187,7 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'text_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-single-property-type__items'         => 'color: {{VALUE}}',
@@ -202,7 +202,7 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'link_color',
 			[
-				'label'     => __( 'Link Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Link Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-single-property-type__item a.inx-e-single-property-type__title' => 'color: {{VALUE}}',
@@ -330,17 +330,17 @@ class Property_Type_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 	protected function get_demo_content( $contents = null ) {
 		$items = [
 			[
-				'title' => __( 'Residential Property', 'immonex-kickstart-elementor' ),
+				'title' => __( 'Residential Property', 'immonex-kickstart-for-elementor' ),
 				'url'   => '#',
 				'type'  => 'type_of_use',
 			],
 			[
-				'title' => __( 'Houses', 'immonex-kickstart-elementor' ),
+				'title' => __( 'Houses', 'immonex-kickstart-for-elementor' ),
 				'url'   => '#',
 				'type'  => 'parent',
 			],
 			[
-				'title' => __( 'Single-family House', 'immonex-kickstart-elementor' ),
+				'title' => __( 'Single-family House', 'immonex-kickstart-for-elementor' ),
 				'url'   => '#',
 				'type'  => '',
 			],

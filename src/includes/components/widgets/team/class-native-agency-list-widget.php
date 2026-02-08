@@ -2,10 +2,10 @@
 /**
  * Class Native_Agency_List_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\Team;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\Team;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Agency_List_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Agency_List_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const WIDGET_NAME               = 'inx-e-native-team-agency-list';
 	const WIDGET_ICON               = 'eicon-gallery-grid';
 	const WIDGET_CATEGORIES         = [ 'inx-team' ];
-	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/agenturliste';
+	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/agenturliste';
 	const ENABLE_RENDER_ON_PREVIEW  = true;
 	const IS_DYNAMIC_CONTENT        = true;
 	const PARENT_PLUGIN_NAME        = 'immonex Kickstart Team';
@@ -35,7 +35,7 @@ class Native_Agency_List_Widget extends \immonex\Kickstart\Elementor\Components\
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Agency List', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Agency List', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -50,8 +50,8 @@ class Native_Agency_List_Widget extends \immonex\Kickstart\Elementor\Components\
 			array_merge(
 				$this->keywords,
 				[
-					__( 'team', 'immonex-kickstart-elementor' ),
-					__( 'agency', 'immonex-kickstart-elementor' ),
+					__( 'team', 'immonex-kickstart-for-elementor' ),
+					__( 'agency', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -70,7 +70,7 @@ class Native_Agency_List_Widget extends \immonex\Kickstart\Elementor\Components\
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);

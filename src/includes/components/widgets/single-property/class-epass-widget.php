@@ -2,10 +2,10 @@
 /**
  * Class Epass_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Epass_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_Value_List_Widget {
+class Epass_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Key_Value_List_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-epass';
 	const WIDGET_ICON     = 'eicon-plug';
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/energieausweis';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/energieausweis';
 	const ENABLE_ICONS    = false;
 	const FIXED_ELEMENTS  = [ 'epass' ];
 
@@ -32,7 +32,7 @@ class Epass_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Energy Pass', 'immonex-kickstart-elementor' );
+		return __( 'Energy Pass', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -47,11 +47,11 @@ class Epass_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 			array_merge(
 				$this->keywords,
 				[
-					__( 'energy', 'immonex-kickstart-elementor' ),
-					__( 'pass', 'immonex-kickstart-elementor' ),
-					__( 'efficiency', 'immonex-kickstart-elementor' ),
-					__( 'enev', 'immonex-kickstart-elementor' ),
-					__( 'geg', 'immonex-kickstart-elementor' ),
+					__( 'energy', 'immonex-kickstart-for-elementor' ),
+					__( 'pass', 'immonex-kickstart-for-elementor' ),
+					__( 'efficiency', 'immonex-kickstart-for-elementor' ),
+					__( 'enev', 'immonex-kickstart-for-elementor' ),
+					__( 'geg', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -72,7 +72,7 @@ class Epass_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 		$defaults = [
 			'item_order'         => 'label-value',
 			'global_value_color' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
-			'heading'            => __( 'Energy Pass', 'immonex-kickstart-elementor' ),
+			'heading'            => __( 'Energy Pass', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return ! empty( $defaults[ $control_id ] ) ? $defaults[ $control_id ] : $default_value;
@@ -113,23 +113,23 @@ class Epass_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Key_V
 			[
 				'items' => [
 					[
-						'title' => __( 'Type', 'immonex-kickstart-elementor' ),
-						'value' => __( 'Consumption Pass', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Type', 'immonex-kickstart-for-elementor' ),
+						'value' => __( 'Consumption Pass', 'immonex-kickstart-for-elementor' ),
 					],
 					[
-						'title' => __( 'Issuing Date', 'immonex-kickstart-elementor' ),
-						'value' => __( '2024-10-01', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Issuing Date', 'immonex-kickstart-for-elementor' ),
+						'value' => __( '2024-10-01', 'immonex-kickstart-for-elementor' ),
 					],
 					[
-						'title' => __( 'Primary Energy Carrier', 'immonex-kickstart-elementor' ),
-						'value' => __( 'Oil', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Primary Energy Carrier', 'immonex-kickstart-for-elementor' ),
+						'value' => __( 'Oil', 'immonex-kickstart-for-elementor' ),
 					],
 					[
-						'title' => __( 'Energy Consumption Parameter', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Energy Consumption Parameter', 'immonex-kickstart-for-elementor' ),
 						'value' => '148 kWh/(m²・a)',
 					],
 					[
-						'title' => __( 'Energy Efficiency Class', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Energy Efficiency Class', 'immonex-kickstart-for-elementor' ),
 						'value' => 'E',
 					],
 				],

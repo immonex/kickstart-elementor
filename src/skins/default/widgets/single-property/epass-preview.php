@@ -2,7 +2,7 @@
 /**
  * Widget Preview Template (Energy Pass List)
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
 // Prevent direct access.

@@ -2,10 +2,10 @@
 /**
  * Class Mapping_Table
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor;
+namespace immonex\Kickstart\ForElementor;
 
 // Prevent direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -72,15 +72,15 @@ class Mapping_Table {
 		$this->lang = substr( determine_locale(), 0, 2 );
 
 		$this->default_select_option_titles = [
-			'ausstattung'   => __( 'Features', 'immonex-kickstart-elementor' ),
-			'epass'         => __( 'Energy Pass', 'immonex-kickstart-elementor' ),
-			'flaechen'      => __( 'Areas', 'immonex-kickstart-elementor' ),
-			'infrastruktur' => __( 'Infrastructure', 'immonex-kickstart-elementor' ),
-			'kontakt'       => __( 'Contact', 'immonex-kickstart-elementor' ),
-			'lage'          => __( 'Location', 'immonex-kickstart-elementor' ),
-			'preise'        => __( 'Prices', 'immonex-kickstart-elementor' ),
-			'sonstiges'     => __( 'Miscellaneous', 'immonex-kickstart-elementor' ),
-			'zustand'       => __( 'Condition', 'immonex-kickstart-elementor' ),
+			'ausstattung'   => __( 'Features', 'immonex-kickstart-for-elementor' ),
+			'epass'         => __( 'Energy Pass', 'immonex-kickstart-for-elementor' ),
+			'flaechen'      => __( 'Areas', 'immonex-kickstart-for-elementor' ),
+			'infrastruktur' => __( 'Infrastructure', 'immonex-kickstart-for-elementor' ),
+			'kontakt'       => __( 'Contact', 'immonex-kickstart-for-elementor' ),
+			'lage'          => __( 'Location', 'immonex-kickstart-for-elementor' ),
+			'preise'        => __( 'Prices', 'immonex-kickstart-for-elementor' ),
+			'sonstiges'     => __( 'Miscellaneous', 'immonex-kickstart-for-elementor' ),
+			'zustand'       => __( 'Condition', 'immonex-kickstart-for-elementor' ),
 		];
 
 		add_filter( 'inx_elementor_mapping_select_options', [ $this, 'get_select_options' ], 10, 2 );
@@ -129,7 +129,7 @@ class Mapping_Table {
 					$wildcard_part = substr( $item[ $column ], 0, strpos( $item[ $column ], ':' ) );
 
 					if ( ! isset( $options[ $wildcard_part ] ) ) {
-						$options[ "{$wildcard_part}:*" ] = "{$wildcard_part} (" . __( 'various', 'immonex-kickstart-elementor' ) . ')';
+						$options[ "{$wildcard_part}:*" ] = "{$wildcard_part} (" . __( 'various', 'immonex-kickstart-for-elementor' ) . ')';
 					}
 
 					continue;
@@ -157,7 +157,7 @@ class Mapping_Table {
 						&& $options[ $item[ $column ] ] !== $this->get_select_option_title( $item, $column )
 					) {
 						$parent_title                = false !== strpos( $item['source'], '=' ) ? $this->get_select_option_title( $item, $column, true ) : '';
-						$options[ $item[ $column ] ] = $item[ $column ] . ( $parent_title ? $parent_title : ' (' . __( 'various', 'immonex-kickstart-elementor' ) . ')' );
+						$options[ $item[ $column ] ] = $item[ $column ] . ( $parent_title ? $parent_title : ' (' . __( 'various', 'immonex-kickstart-for-elementor' ) . ')' );
 					}
 					continue;
 				}

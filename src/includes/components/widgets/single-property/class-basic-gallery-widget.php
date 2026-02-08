@@ -2,10 +2,10 @@
 /**
  * Class Basic_Gallery_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Gallery_Widget {
+class Basic_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Gallery_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-basic-gallery';
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/basisgalerie';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/basisgalerie';
 
 	/**
 	 * Get widget title.
@@ -29,7 +29,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Basic Gallery', 'immonex-kickstart-elementor' );
+		return __( 'Basic Gallery', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -41,7 +41,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->start_controls_section(
 			'general_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
@@ -50,14 +50,14 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'gallery_image_type',
 			[
-				'label'       => __( 'Image Type/Source', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Image Type/Source', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => 'gallery',
 				'options'     => [
-					'gallery'      => __( 'Main Gallery Images', 'immonex-kickstart-elementor' ),
-					'floor_plans'  => __( 'Floor Plans', 'immonex-kickstart-elementor' ),
-					'epass_images' => __( 'Energy Pass Images', 'immonex-kickstart-elementor' ),
-					'custom_field' => __( 'Custom Field(s)', 'immonex-kickstart-elementor' ),
+					'gallery'      => __( 'Main Gallery Images', 'immonex-kickstart-for-elementor' ),
+					'floor_plans'  => __( 'Floor Plans', 'immonex-kickstart-for-elementor' ),
+					'epass_images' => __( 'Energy Pass Images', 'immonex-kickstart-for-elementor' ),
+					'custom_field' => __( 'Custom Field(s)', 'immonex-kickstart-for-elementor' ),
 				],
 				'label_block' => true,
 			]
@@ -66,9 +66,9 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'image_selection_custom_field',
 			[
-				'label'       => __( 'Image ID Field(s)', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Image ID Field(s)', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Comma-separated list of <strong>custom field names</strong> containing the (attachment post) IDs of the images to include in the gallery.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Comma-separated list of <strong>custom field names</strong> containing the (attachment post) IDs of the images to include in the gallery.', 'immonex-kickstart-for-elementor' ),
 				'condition'   => [
 					'gallery_image_type' => 'custom_field',
 				],
@@ -99,7 +99,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'gallery_columns',
 			[
-				'label'   => __( 'Columns', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Columns', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 4,
 				'options' => $gallery_columns,
@@ -109,12 +109,12 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'gallery_display_caption',
 			[
-				'label'     => __( 'Caption', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Caption', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => '',
 				'options'   => [
-					'none' => __( 'None', 'immonex-kickstart-elementor' ),
-					''     => __( 'Attachment Caption', 'immonex-kickstart-elementor' ),
+					'none' => __( 'None', 'immonex-kickstart-for-elementor' ),
+					''     => __( 'Attachment Caption', 'immonex-kickstart-for-elementor' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} .gallery-item .gallery-caption' => 'display: {{VALUE}};',
@@ -125,19 +125,19 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'open_lightbox',
 			[
-				'label'       => __( 'Lightbox', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Lightbox', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'description' => sprintf(
 					/* translators: 1: Link open tag, 2: Link close tag. */
-					__( 'Manage your site’s lightbox settings in the %1$sLightbox panel%2$s.', 'immonex-kickstart-elementor' ),
+					__( 'Manage your site’s lightbox settings in the %1$sLightbox panel%2$s.', 'immonex-kickstart-for-elementor' ),
 					'<a href="javascript: $e.run( \'panel/global/open\' ).then( () => $e.route( \'panel/global/settings-lightbox\' ) )">',
 					'</a>'
 				),
 				'default'     => 'default',
 				'options'     => [
-					'default' => __( 'Default', 'immonex-kickstart-elementor' ),
-					'yes'     => __( 'Yes', 'immonex-kickstart-elementor' ),
-					'no'      => __( 'No', 'immonex-kickstart-elementor' ),
+					'default' => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'yes'     => __( 'Yes', 'immonex-kickstart-for-elementor' ),
+					'no'      => __( 'No', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -145,11 +145,11 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'gallery_rand',
 			[
-				'label'   => __( 'Order By', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Order By', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
-					''     => __( 'Default', 'immonex-kickstart-elementor' ),
-					'rand' => __( 'Random', 'immonex-kickstart-elementor' ),
+					''     => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'rand' => __( 'Random', 'immonex-kickstart-for-elementor' ),
 				],
 				'default' => '',
 			]
@@ -162,7 +162,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->start_controls_section(
 			'gallery_images_section',
 			[
-				'label' => __( 'Images', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Images', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -170,11 +170,11 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'image_spacing',
 			[
-				'label'        => __( 'Spacing', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Spacing', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'options'      => [
-					''       => __( 'Default', 'immonex-kickstart-elementor' ),
-					'custom' => __( 'Custom', 'immonex-kickstart-elementor' ),
+					''       => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'custom' => __( 'Custom', 'immonex-kickstart-for-elementor' ),
 				],
 				'prefix_class' => 'gallery-spacing-',
 				'default'      => '',
@@ -187,7 +187,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'image_spacing_custom',
 			[
-				'label'      => __( 'Custom Spacing', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Custom Spacing', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 				'range'      => [
@@ -226,7 +226,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_responsive_control(
 			'image_border_radius',
 			[
-				'label'      => __( 'Corner Radius', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors'  => [
@@ -240,7 +240,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->start_controls_section(
 			'caption_section',
 			[
-				'label'     => __( 'Caption', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Caption', 'immonex-kickstart-for-elementor' ),
 				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'gallery_display_caption' => '',
@@ -251,24 +251,24 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_responsive_control(
 			'align',
 			[
-				'label'     => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'default'   => $this->get_default( 'align', 'center' ),
 				'options'   => [
 					'left'    => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'  => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'   => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Justified', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-justify',
 					],
 				],
@@ -284,7 +284,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_control(
 			'text_color',
 			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -324,7 +324,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 		$this->add_responsive_control(
 			'caption_space',
 			[
-				'label'      => __( 'Spacing', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Spacing', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors'  => [
@@ -353,7 +353,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widge
 			$settings['gallery_image_type'];
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			$demo_image_ids = \immonex\Kickstart\Elementor\Demo_Media::get_demo_image_ids();
+			$demo_image_ids = \immonex\Kickstart\ForElementor\Demo_Media::get_demo_image_ids();
 			$image_ids      = $type && isset( $demo_image_ids[ $type ] ) ?
 				$demo_image_ids[ $type ] :
 				$demo_image_ids['gallery'];

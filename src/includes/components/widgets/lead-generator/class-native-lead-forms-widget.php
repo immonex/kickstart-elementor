@@ -2,10 +2,10 @@
 /**
  * Class Native_Lead_Forms_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\LeadGenerator;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\LeadGenerator;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Native_Lead_Forms_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const WIDGET_NAME              = 'inx-e-native-lead-forms';
 	const WIDGET_ICON              = 'eicon-price-table';
 	const WIDGET_CATEGORIES        = [ 'inx-marketing-acquisition' ];
-	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/lead-generator';
+	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/lead-generator';
 	const ENABLE_RENDER_ON_PREVIEW = true;
 	const IS_DYNAMIC_CONTENT       = true;
 	const PARENT_PLUGIN_NAME       = 'immonex Lead Generator';
@@ -35,7 +35,7 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\W
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Lead Generator', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Lead Generator', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -50,8 +50,8 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\W
 			array_merge(
 				$this->keywords,
 				[
-					__( 'lead', 'immonex-kickstart-elementor' ),
-					__( 'forms', 'immonex-kickstart-elementor' ),
+					__( 'lead', 'immonex-kickstart-for-elementor' ),
+					__( 'forms', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -73,7 +73,7 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\W
 
 		if ( ! empty( $lead_gen_options['property_type_form_data'] ) ) {
 			$ff_options = [
-				'' => __( 'Default', 'immonex-kickstart-elementor' ),
+				'' => __( 'Default', 'immonex-kickstart-for-elementor' ),
 			];
 
 			foreach ( $lead_gen_options['property_type_form_data'] as $i => $option ) {
@@ -84,7 +84,7 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\W
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -93,7 +93,7 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\W
 
 		if ( $additional_form_sets > 0 ) {
 			$options = [
-				'' => __( 'Default Form', 'immonex-kickstart-elementor' ),
+				'' => __( 'Default Form', 'immonex-kickstart-for-elementor' ),
 			];
 
 			for ( $i = 1; $i <= $additional_form_sets; $i++ ) {
@@ -103,11 +103,11 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\W
 			$this->add_control(
 				'form_set_id',
 				[
-					'label'       => __( 'Form Set ID', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Form Set ID', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::SELECT,
 					'description' => sprintf(
 						/* translators: 1: Link open tag, 2: Link close tag. */
-						__( 'If an %1$salternative set of property type forms%2$s shall be embedded, select its ID here.', 'immonex-kickstart-elementor' ),
+						__( 'If an %1$salternative set of property type forms%2$s shall be embedded, select its ID here.', 'immonex-kickstart-for-elementor' ),
 						'<a href="https://docs.immonex.de/lead-generator/#/installation-einrichtung/einbindung?id=formularset" target="_blank">',
 						'</a>'
 					),
@@ -119,11 +119,11 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\Elementor\Components\W
 		$this->add_control(
 			'fast-forward',
 			[
-				'label'       => __( 'Fast Forward', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Fast Forward', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'description' => sprintf(
 					/* translators: 1: Link open tag, 2: Link close tag. */
-					__( 'A %1$sspecific property type form%2$s to start with can be selected here.', 'immonex-kickstart-elementor' ),
+					__( 'A %1$sspecific property type form%2$s to start with can be selected here.', 'immonex-kickstart-for-elementor' ),
 					'<a href="https://docs.immonex.de/lead-generator/#/installation-einrichtung/einbindung?id=fast-forward" target="_blank">',
 					'</a>'
 				),

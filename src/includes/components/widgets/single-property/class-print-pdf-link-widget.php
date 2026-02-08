@@ -2,10 +2,10 @@
 /**
  * Class Print_PDF_Link_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Widget_Base {
+class Print_PDF_Link_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
 	const POST_TYPE          = 'inx_property';
 	const WIDGET_NAME        = 'inx-e-single-property-print-pdf-link';
 	const WIDGET_ICON        = 'eicon-document-file';
 	const WIDGET_CATEGORIES  = [ 'inx-single-property' ];
-	const WIDGET_HELP_URL    = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/drucken-pdf-link';
+	const WIDGET_HELP_URL    = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/drucken-pdf-link';
 	const PARENT_PLUGIN_NAME = 'immonex Kickstart Print';
 
 	/**
@@ -33,7 +33,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Print/PDF Link', 'immonex-kickstart-elementor' );
+		return __( 'Print/PDF Link', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -48,9 +48,9 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 			array_merge(
 				$this->keywords,
 				[
-					__( 'print', 'immonex-kickstart-elementor' ),
-					__( 'pdf', 'immonex-kickstart-elementor' ),
-					__( 'link', 'immonex-kickstart-elementor' ),
+					__( 'print', 'immonex-kickstart-for-elementor' ),
+					__( 'pdf', 'immonex-kickstart-for-elementor' ),
+					__( 'link', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -69,7 +69,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -79,9 +79,9 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 		$this->add_control(
 			'link_text',
 			[
-				'label'       => __( 'Link Text', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Defaults to "Print/PDF" if empty and no icon is selected.', 'immonex-kickstart-elementor' ),
-				'default'     => __( 'Print/PDF', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Link Text', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Defaults to "Print/PDF" if empty and no icon is selected.', 'immonex-kickstart-for-elementor' ),
+				'default'     => __( 'Print/PDF', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 			]
 		);
@@ -89,7 +89,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 		$this->add_control(
 			'icon',
 			[
-				'label'       => __( 'Icon', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Icon', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::ICONS,
 				'default'     => $this->get_default(
 					'icon',
@@ -115,7 +115,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 		$this->start_controls_section(
 			'style_section',
 			[
-				'label' => __( 'Link Text/Icon', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Link Text/Icon', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -131,8 +131,8 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 		$this->add_control(
 			'color',
 			[
-				'label'       => __( 'Color', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Defaults to the standard link color.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Color', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Defaults to the standard link color.', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::COLOR,
 				'selectors'   => [
 					'{{WRAPPER}} .inx-e-print-pdf-link' => 'color: {{VALUE}};',
@@ -144,16 +144,16 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 		$this->add_control(
 			'icon_align',
 			[
-				'label'   => __( 'Icon Alignment', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Icon Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::CHOOSE,
 				'default' => $this->get_default( 'icon_align', 'right' ),
 				'options' => [
 					'left'  => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'right' => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -185,7 +185,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 			'';
 
 		if ( ! trim( $settings['link_text'] ) && ! $icon ) {
-			$settings['link_text'] = __( 'Print/PDF', 'immonex-kickstart-elementor' );
+			$settings['link_text'] = __( 'Print/PDF', 'immonex-kickstart-for-elementor' );
 		}
 
 		return array_merge(
@@ -210,7 +210,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\Elementor\Components\Widg
 		return parent::get_demo_content(
 			[
 				'url'               => '#',
-				'default_link_text' => __( 'Print/PDF', 'immonex-kickstart-elementor' ),
+				'default_link_text' => __( 'Print/PDF', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 	} // get_demo_content

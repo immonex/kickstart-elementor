@@ -1,11 +1,11 @@
 <?php
 /**
- * Class Kickstart_Elementor
+ * Class Kickstart_for_Elementor
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor;
+namespace immonex\Kickstart\ForElementor;
 
 // Prevent direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,22 +15,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main plugin class.
  */
-class Kickstart_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
+class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
 
-	const PLUGIN_NAME                = 'immonex Kickstart Elementor';
+	const PLUGIN_NAME                = 'immonex Kickstart for Elementor';
 	const ADDON_NAME                 = 'Elementor';
 	const ADDON_TAB_ID               = 'addon_elementor';
 	const PLUGIN_PREFIX              = 'inx_elementor_';
 	const PUBLIC_PREFIX              = 'inx-elementor-';
-	const TEXTDOMAIN                 = 'immonex-kickstart-elementor';
+	const TEXTDOMAIN                 = 'immonex-kickstart-for-elementor';
 	const PLUGIN_VERSION             = '1.0.0';
 	const PLUGIN_VERSION_BYNAME      = 'Ice';
-	const PLUGIN_HOME_URL            = 'https://immonex.dev/';
+	const PLUGIN_HOME_URL            = 'https://immonex.dev/wordpress-immobilien-plugin/immonex-kickstart-for-elementor';
 	const PLUGIN_DOC_URLS            = [
-		'de' => '',
+		'de' => 'https://docs.immonex.de/kickstart-for-elementor/',
 	];
 	const PLUGIN_SUPPORT_URLS        = [
-		'de' => 'https://plugins.inveris.de/support/',
+		'de' => 'https://wordpress.org/support/plugin/immonex-kickstart-for-elementor',
 	];
 	const PLUGIN_DEV_URLS            = [
 		'de' => 'https://immonex.dev/',
@@ -82,6 +82,25 @@ class Kickstart_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
 	 *                               true by default).
 	 */
 	protected function activate_plugin_single_site( $fire_before_hook = true, $fire_after_hook = true ) {
+		/**
+		 * Temporary: Check if the plugin is installed with its deprecated
+		 * name/slug and remove it if so.
+		 */
+
+		$deprecated_plugin_slug_dir       = WP_PLUGIN_DIR . '/immonex-kickstart-elementor';
+		$deprecated_plugin_slug_main_file = 'immonex-kickstart-elementor/immonex-kickstart-elementor.php';
+
+		if ( is_plugin_active( $deprecated_plugin_slug_main_file ) ) {
+			deactivate_plugins( $deprecated_plugin_slug_main_file );
+		}
+
+		if (
+			file_exists( $deprecated_plugin_slug_dir )
+			&& realpath( $deprecated_plugin_slug_dir ) === $deprecated_plugin_slug_dir
+		) {
+			$result = delete_plugins( [ $deprecated_plugin_slug_main_file ] );
+		}
+
 		parent::activate_plugin_single_site( true, false );
 
 		// phpcs:ignore
@@ -112,7 +131,7 @@ class Kickstart_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
 		// Internal filter.
 		add_filter(
 			'inx_elementor_get_plugin_dir',
-			function ( $plugin_dir ) {
+			function ( $plugin_dir ) { // phpcs:ignore
 				return $this->plugin_dir;
 			}
 		);
@@ -120,7 +139,7 @@ class Kickstart_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
 		// Internal filter.
 		add_filter(
 			'inx_elementor_get_utils',
-			function ( $utils ) {
+			function ( $utils ) { // phpcs:ignore
 				return $this->utils;
 			}
 		);
@@ -202,7 +221,7 @@ class Kickstart_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
 
 		$addon_sections = [
 			"{$prefix}layout" => [
-				'title'       => __( 'Layout & Design', 'immonex-kickstart-elementor' ),
+				'title'       => __( 'Layout & Design', 'immonex-kickstart-for-elementor' ),
 				'description' => '',
 				'tab'         => self::ADDON_TAB_ID,
 			],
@@ -232,12 +251,12 @@ class Kickstart_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
 			[
 				'name'    => 'skin',
 				'type'    => 'select',
-				'label'   => __( 'Skin', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Skin', 'immonex-kickstart-for-elementor' ),
 				'section' => "{$prefix}layout",
 				'args'    => [
 					'plugin_slug' => $this->plugin_slug,
 					'option_name' => $this->plugin_options_name,
-					'description' => __( 'A skin is a set of templates files (PHP, Twig, CSS, JS etc.) and related resources like images and fonts for plugin frontend elements and pages.', 'immonex-kickstart-elementor' ),
+					'description' => __( 'A skin is a set of templates files (PHP, Twig, CSS, JS etc.) and related resources like images and fonts for plugin frontend elements and pages.', 'immonex-kickstart-for-elementor' ),
 					'options'     => $this->utils['template']->get_frontend_skins(),
 					'value'       => $this->plugin_options['skin'],
 				],
@@ -252,4 +271,4 @@ class Kickstart_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
 		return array_merge( $fields, $addon_fields );
 	} // extend_fields
 
-} // class Kickstart_Elementor
+} // class Kickstart_for_Elementor

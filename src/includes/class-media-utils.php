@@ -2,10 +2,10 @@
 /**
  * Class Media_Utils
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor;
+namespace immonex\Kickstart\ForElementor;
 
 /**
  * Media related helper methods.

@@ -2,7 +2,7 @@
 
 ## Automatisch
 
-immonex Kickstart Elementor ist im offiziellen [WordPress-Plugin-Verzeichnis](https://de.wordpress.org/plugins/immonex-kickstart-elementor/) verfügbar und kann über die Suche unter ***Plugins → Installieren*** automatisiert heruntergeladen und installiert werden.
+immonex Kickstart for Elementor ist im offiziellen [WordPress-Plugin-Verzeichnis](https://de.wordpress.org/plugins/immonex-kickstart-for-elementor/) verfügbar und kann über die Suche unter ***Plugins → Installieren*** automatisiert heruntergeladen und installiert werden.
 
 ## Manuell
 

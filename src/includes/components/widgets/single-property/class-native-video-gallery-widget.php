@@ -2,10 +2,10 @@
 /**
  * Class Native_Video_Gallery_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Components\Widgets\Gallery_Widget {
+class Native_Video_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Gallery_Widget {
 
 	const WIDGET_NAME     = 'inx-e-single-property-native-video-gallery';
 	const WIDGET_ICON     = 'eicon-video-playlist';
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/#/elementor-immobilien-widgets/videogalerie';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/videogalerie';
 
 	/**
 	 * Get widget title.
@@ -30,7 +30,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Video Gallery', 'immonex-kickstart-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Video Gallery', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -42,7 +42,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 
@@ -51,12 +51,12 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'enable_default_headline',
 			[
-				'label'        => __( 'Show Default Headline', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Show Default Headline', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'description'  => __( 'Defaults to <em>Videos</em>.', 'immonex-kickstart-elementor' ),
+				'description'  => __( 'Defaults to <em>Videos</em>.', 'immonex-kickstart-for-elementor' ),
 				'default'      => '1',
-				'label_off'    => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'     => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'return_value' => '1',
 			]
 		);
@@ -64,9 +64,9 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'headline',
 			[
-				'label'       => __( 'Custom Headline', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Custom Headline', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Leave blank to disable the headline display.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Leave blank to disable the headline display.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'condition'   => [
 					'enable_default_headline!' => '1',
@@ -78,11 +78,11 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'enable_caption_display',
 			[
-				'label'        => __( 'Show Video Captions', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Show Video Captions', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
-				'label_off'    => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'     => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'return_value' => '1',
 			]
 		);
@@ -92,7 +92,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->start_controls_section(
 			'animation_style_section',
 			[
-				'label' => __( 'Animation', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Animation', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -100,11 +100,11 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'animation_type',
 			[
-				'label'       => __( 'Transition Animation', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Transition Animation', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'description' => __( 'Defaults to <code>Scale<code>.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Defaults to <code>Scale<code>.', 'immonex-kickstart-for-elementor' ),
 				'options'     => [
-					''      => __( 'Default', 'immonex-kickstart-elementor' ),
+					''      => __( 'Default', 'immonex-kickstart-for-elementor' ),
 					'slide' => 'Slide',
 					'fade'  => 'Fade',
 					'pull'  => 'Pull',
@@ -121,7 +121,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'disable_heading_dividing_line',
 			[
-				'label'        => __( 'Hide Dividing Line', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Hide Dividing Line', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'return_value' => '0',
 				'selectors'    => [
@@ -136,7 +136,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->start_controls_section(
 			'video_style_section',
 			[
-				'label' => __( 'Video', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Video', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -144,11 +144,11 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'autoplay',
 			[
-				'label'        => __( 'Autoplay', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Autoplay', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '0',
-				'label_off'    => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'     => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'return_value' => '1',
 			]
 		);
@@ -156,11 +156,11 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'automute',
 			[
-				'label'        => __( 'Automute', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Automute', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
-				'label_off'    => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'     => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'return_value' => '1',
 			]
 		);
@@ -168,11 +168,11 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'youtube-nocookie',
 			[
-				'label'        => __( 'YouTube Nocookie', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'YouTube Nocookie', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SWITCHER,
 				'default'      => '1',
-				'label_off'    => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'     => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'return_value' => '1',
 			]
 		);
@@ -180,9 +180,9 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'allow',
 			[
-				'label'       => __( 'iFrame allow Attribute', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'iFrame allow Attribute', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Leave blank to use the default value.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Leave blank to use the default value.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 			]
 		);
@@ -192,7 +192,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->start_controls_section(
 			'extended_style_section',
 			[
-				'label' => __( 'Extended', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -202,7 +202,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'The following options must only be adjusted <strong>per widget</strong> in special cases. The global defaults for all galleries can be defined in the Kickstart plugin options.', 'immonex-kickstart-elementor' ),
+				'content'     => __( 'The following options must only be adjusted <strong>per widget</strong> in special cases. The global defaults for all galleries can be defined in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
 				'scope'       => [ 'tax_filters' ],
 			]
 		);
@@ -210,9 +210,9 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'gallery_image_slider_min_height',
 			[
-				'label'       => __( 'Slider Min. Height', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Slider Min. Height', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
-				'description' => __( "Minimum height of the <strong>container element</strong> that holds the gallery's upper main slider in pixels (<code>0</code> to use the global default value).", 'immonex-kickstart-elementor' ),
+				'description' => __( "Minimum height of the <strong>container element</strong> that holds the gallery's upper main slider in pixels (<code>0</code> to use the global default value).", 'immonex-kickstart-for-elementor' ),
 				'placeholder' => '0',
 				'min'         => 0,
 				'max'         => 800,
@@ -227,8 +227,8 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 		$this->add_control(
 			'image_slider_bg_color',
 			[
-				'label'       => __( 'Slider Background Color', 'immonex-kickstart-elementor' ),
-				'description' => __( 'Background color of the upper main slider area that contains the currently selected image, video or virtual tour.', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Slider Background Color', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Background color of the upper main slider area that contains the currently selected image, video or virtual tour.', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::COLOR,
 				'selectors'   => [
 					'{{WRAPPER}} .inx-gallery__images li' => 'background-color: {{VALUE}};',
@@ -251,7 +251,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\Elementor\Component
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			$this->add_render_attribute( 'shortcode', 'is_preview', '1' );
-			$this->add_render_attribute( 'shortcode', 'video_urls', implode( '|', \immonex\Kickstart\Elementor\Demo_Media::DEMO_VIDEO_URLS ) );
+			$this->add_render_attribute( 'shortcode', 'video_urls', implode( '|', \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIDEO_URLS ) );
 			$this->add_render_attribute( 'shortcode', 'videos_require_consent', '0' );
 		}
 

@@ -2,10 +2,10 @@
 /**
  * Class Widget_Base
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets;
+namespace immonex\Kickstart\ForElementor\Components\Widgets;
 
 /**
  * Extended Elementor Widget Base Class.
@@ -15,7 +15,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	/**
 	 * Plugin Slug.
 	 */
-	const PLUGIN_SLUG = 'immonex-kickstart-elementor';
+	const PLUGIN_SLUG = 'immonex-kickstart-for-elementor';
 
 	/**
 	 * Specific post type the widget is bound to.
@@ -45,7 +45,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	/**
 	 * Widget Help URL
 	 */
-	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-elementor/';
+	const WIDGET_HELP_URL = 'https://docs.immonex.de/kickstart-for-elementor/';
 
 	/**
 	 * Default Heading Level
@@ -142,7 +142,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	public function __construct( $data = [], $args = null ) {
 		parent::__construct( $data, $args );
 
-		$this->plugin_assets_url = plugins_url( 'assets', 'immonex-kickstart-elementor/immonex-kickstart-elementor.php' ) . '/';
+		$this->plugin_assets_url = plugins_url( 'assets', 'immonex-kickstart-for-elementor/immonex-kickstart-for-elementor.php' ) . '/';
 
 		if ( static::PARENT_PLUGIN_WP_REPO_URL ) {
 			$lang = substr( determine_locale(), 0, 2 );
@@ -240,7 +240,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 		if ( ! $this->parent_plugin_available ) {
 			return [
 				'tabs'     => [
-					'content' => __( 'Plugin required', 'immonex-kickstart-elementor' ),
+					'content' => __( 'Plugin required', 'immonex-kickstart-for-elementor' ),
 				],
 				'controls' => [],
 			];
@@ -269,34 +269,34 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 		} elseif ( static::PARENT_PLUGIN_SHOP_URL ) {
 			$plugin_link = '<a href="' . static::PARENT_PLUGIN_SHOP_URL . '" target="_blank" style="white-space:nowrap">' . static::PARENT_PLUGIN_NAME . '</a>';
 		} elseif ( static::PARENT_PLUGIN_NAME ) {
-			$plugin_link = '<strong>' . static::PARENT_PLUGIN_NAME . '</strong> (' . __( 'available soon', 'immonex-kickstart-elementor' ) . ')';
+			$plugin_link = '<strong>' . static::PARENT_PLUGIN_NAME . '</strong> (' . __( 'available soon', 'immonex-kickstart-for-elementor' ) . ')';
 		}
 
 		return [
 			'condition'    => ! $this->parent_plugin_available,
 			'image'        => esc_url( $this->plugin_assets_url . 'immonex-plus-icon.png' ),
-			'image_alt'    => esc_attr__( 'Plugin required', 'immonex-kickstart-elementor' ),
+			'image_alt'    => esc_attr__( 'Plugin required', 'immonex-kickstart-for-elementor' ),
 			'description'  => wp_sprintf(
 				// translators: %s = plugin name/link string.
-				__( 'This widget requires %s.', 'immonex-kickstart-elementor' ),
+				__( 'This widget requires %s.', 'immonex-kickstart-for-elementor' ),
 				$plugin_link ?
 					(
 						$is_free_plugin ?
 						wp_sprintf(
 							// translators: %s = plugin name/link.
-							__( 'the free %s plugin', 'immonex-kickstart-elementor' ),
+							__( 'the free %s plugin', 'immonex-kickstart-for-elementor' ),
 							$plugin_link
 						) :
 						wp_sprintf(
 							// translators: %s = plugin name/link.
-							__( 'the %s premium plugin', 'immonex-kickstart-elementor' ),
+							__( 'the %s premium plugin', 'immonex-kickstart-for-elementor' ),
 							$plugin_link
 						)
 					) :
-					__( 'an additional plugin', 'immonex-kickstart-elementor' )
+					__( 'an additional plugin', 'immonex-kickstart-for-elementor' )
 			),
 			'upgrade_url'  => static::PARENT_PLUGIN_SHOP_URL ? esc_url( static::PARENT_PLUGIN_SHOP_URL ) : '',
-			'upgrade_text' => static::PARENT_PLUGIN_SHOP_URL ? esc_html__( 'Order it now!', 'immonex-kickstart-elementor' ) : '',
+			'upgrade_text' => static::PARENT_PLUGIN_SHOP_URL ? esc_html__( 'Order it now!', 'immonex-kickstart-for-elementor' ) : '',
 		];
 	} // get_upsale_data
 
@@ -544,13 +544,13 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	 */
 	protected function get_tax_atts() {
 		return [
-			'property-type'  => __( 'Property Types', 'immonex-kickstart-elementor' ),
-			'marketing-type' => __( 'Marketing Types', 'immonex-kickstart-elementor' ),
-			'type-of-use'    => __( 'Types of Use', 'immonex-kickstart-elementor' ),
-			'project'        => __( 'Projects', 'immonex-kickstart-elementor' ),
-			'locality'       => __( 'Localities', 'immonex-kickstart-elementor' ),
-			'labels'         => __( 'Labels', 'immonex-kickstart-elementor' ),
-			'features'       => __( 'Features', 'immonex-kickstart-elementor' ),
+			'property-type'  => __( 'Property Types', 'immonex-kickstart-for-elementor' ),
+			'marketing-type' => __( 'Marketing Types', 'immonex-kickstart-for-elementor' ),
+			'type-of-use'    => __( 'Types of Use', 'immonex-kickstart-for-elementor' ),
+			'project'        => __( 'Projects', 'immonex-kickstart-for-elementor' ),
+			'locality'       => __( 'Localities', 'immonex-kickstart-for-elementor' ),
+			'labels'         => __( 'Labels', 'immonex-kickstart-for-elementor' ),
+			'features'       => __( 'Features', 'immonex-kickstart-for-elementor' ),
 		];
 	} // get_tax_atts
 
@@ -564,24 +564,24 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	protected function get_explicit_cf_flags() {
 		return [
 			'available'        => [
-				'label'      => __( 'Available Properties', 'immonex-kickstart-elementor' ),
-				'not_option' => __( 'Unavailable only', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Available Properties', 'immonex-kickstart-for-elementor' ),
+				'not_option' => __( 'Unavailable only', 'immonex-kickstart-for-elementor' ),
 			],
 			'reserved'         => [
-				'label'      => __( 'Reserved Properties', 'immonex-kickstart-elementor' ),
-				'not_option' => __( 'Unreserved only', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Reserved Properties', 'immonex-kickstart-for-elementor' ),
+				'not_option' => __( 'Unreserved only', 'immonex-kickstart-for-elementor' ),
 			],
 			'sold'             => [
-				'label'      => __( 'Sold/Rented Properties', 'immonex-kickstart-elementor' ),
-				'not_option' => __( 'Unsold/Unrented only', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Sold/Rented Properties', 'immonex-kickstart-for-elementor' ),
+				'not_option' => __( 'Unsold/Unrented only', 'immonex-kickstart-for-elementor' ),
 			],
 			'featured'         => [
-				'label'      => __( 'Featured Properties', 'immonex-kickstart-elementor' ),
-				'not_option' => __( 'Non-featured only', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Featured Properties', 'immonex-kickstart-for-elementor' ),
+				'not_option' => __( 'Non-featured only', 'immonex-kickstart-for-elementor' ),
 			],
 			'front-page-offer' => [
-				'label'      => __( 'Front Page Offers', 'immonex-kickstart-elementor' ),
-				'not_option' => __( 'Non-Front-Page-Offers only', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Front Page Offers', 'immonex-kickstart-for-elementor' ),
+				'not_option' => __( 'Non-Front-Page-Offers only', 'immonex-kickstart-for-elementor' ),
 			],
 		];
 	} // get_explicit_cf_flags
@@ -595,15 +595,15 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	 */
 	protected function get_property_sort_options() {
 		$sort_options = [
-			''                    => __( 'Automatic', 'immonex-kickstart-elementor' ),
-			'date_desc'           => __( 'Most Current', 'immonex-kickstart-elementor' ),
-			'marketing_type_desc' => __( 'For Sale first', 'immonex-kickstart-elementor' ),
-			'marketing_type_asc'  => __( 'For Rent first', 'immonex-kickstart-elementor' ),
-			'availability_desc'   => __( 'Available first', 'immonex-kickstart-elementor' ),
-			'price_asc'           => __( 'Primary Price ascending', 'immonex-kickstart-elementor' ),
-			'price_desc'          => __( 'Primary Price descending', 'immonex-kickstart-elementor' ),
-			'area_asc'            => __( 'Area ascending', 'immonex-kickstart-elementor' ),
-			'rooms_asc'           => __( 'Rooms ascending', 'immonex-kickstart-elementor' ),
+			''                    => __( 'Automatic', 'immonex-kickstart-for-elementor' ),
+			'date_desc'           => __( 'Most Current', 'immonex-kickstart-for-elementor' ),
+			'marketing_type_desc' => __( 'For Sale first', 'immonex-kickstart-for-elementor' ),
+			'marketing_type_asc'  => __( 'For Rent first', 'immonex-kickstart-for-elementor' ),
+			'availability_desc'   => __( 'Available first', 'immonex-kickstart-for-elementor' ),
+			'price_asc'           => __( 'Primary Price ascending', 'immonex-kickstart-for-elementor' ),
+			'price_desc'          => __( 'Primary Price descending', 'immonex-kickstart-for-elementor' ),
+			'area_asc'            => __( 'Area ascending', 'immonex-kickstart-for-elementor' ),
+			'rooms_asc'           => __( 'Rooms ascending', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return [
@@ -629,14 +629,14 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 		$tax_atts       = $this->get_tax_atts();
 		$explicit_flags = $this->get_explicit_cf_flags();
 
-		$template_desc = __( 'Enter the <strong>filename</strong> if an <strong>alternative</strong> PHP template should be used for rendering the component.', 'immonex-kickstart-elementor' );
+		$template_desc = __( 'Enter the <strong>filename</strong> if an <strong>alternative</strong> PHP template should be used for rendering the component.', 'immonex-kickstart-for-elementor' );
 		if (
 			! empty( $args['template']['folder'] )
 			&& ! empty( $args['template']['plugin'] )
 		) {
 			$template_desc .= wp_sprintf(
 				/* translators: %1$s: skin subfolder name, %2$s: plugin name */
-				'(' . __( 'The file must be included in the subfolder %1$s of the <strong>skin</strong> folder selected in the %2$s plugin options.', 'immonex-kickstart-elementor' ) . ')',
+				'(' . __( 'The file must be included in the subfolder %1$s of the <strong>skin</strong> folder selected in the %2$s plugin options.', 'immonex-kickstart-for-elementor' ) . ')',
 				"<code>{$args['template']['folder']}</code>",
 				"<strong>{$args['template']['plugin']}</strong>"
 			);
@@ -644,12 +644,12 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 
 		$all_controls = [
 			'heading'                    => [
-				'label' => __( 'Heading', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Heading', 'immonex-kickstart-for-elementor' ),
 				'type'  => \Elementor\Controls_Manager::TEXT,
 				'scope' => [ 'heading' ],
 			],
 			'heading_level'              => [
-				'label'   => __( 'H Level (relative)', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'H Level (relative)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
 					1 => 'H1',
@@ -663,24 +663,24 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'   => [ 'heading' ],
 			],
 			'heading_style_section'      => [
-				'label' => __( 'Heading', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Heading', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 				'scope' => [ 'heading_style' ],
 			],
 			'heading_align'              => [
-				'label'         => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'          => \Elementor\Controls_Manager::CHOOSE,
 				'options'       => [
 					'left'   => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
@@ -693,7 +693,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'         => [ 'heading_style' ],
 			],
 			'heading_title_color'        => [
-				'label'     => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-heading' => 'color: {{VALUE}};',
@@ -703,7 +703,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			],
 			'heading_typography'         => [
 				'group_control' => [
-					'label'   => __( 'Typograhy', 'immonex-kickstart-elementor' ),
+					'label'   => __( 'Typograhy', 'immonex-kickstart-for-elementor' ),
 					'type'    => \Elementor\Group_Control_Typography::get_type(),
 					'options' => [
 						'selector' => '{{WRAPPER}} .inx-e-heading, {{WRAPPER}} .inx-single-property__section-title',
@@ -713,7 +713,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			],
 			'heading_text_stroke'        => [
 				'group_control' => [
-					'label'   => __( 'Text Stroke', 'immonex-kickstart-elementor' ),
+					'label'   => __( 'Text Stroke', 'immonex-kickstart-for-elementor' ),
 					'type'    => \Elementor\Group_Control_Text_Stroke::get_type(),
 					'options' => [
 						'selector' => '{{WRAPPER}} .inx-e-heading, {{WRAPPER}} .inx-single-property__section-title',
@@ -725,29 +725,29 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'group_control' => [
 					'type'    => \Elementor\Group_Control_Text_Shadow::get_type(),
 					'options' => [
-						'label'    => __( 'Text Shadow', 'immonex-kickstart-elementor' ),
+						'label'    => __( 'Text Shadow', 'immonex-kickstart-for-elementor' ),
 						'selector' => '{{WRAPPER}} .inx-e-heading, {{WRAPPER}} .inx-single-property__section-title',
 					],
 				],
 				'scope'         => [ 'heading_style' ],
 			],
 			'blend_mode'                 => [
-				'label'     => __( 'Blend Mode', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Blend Mode', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
-					''            => __( 'Normal', 'immonex-kickstart-elementor' ),
-					'multiply'    => __( 'Multiply', 'immonex-kickstart-elementor' ),
-					'screen'      => __( 'Screen', 'immonex-kickstart-elementor' ),
-					'overlay'     => __( 'Overlay', 'immonex-kickstart-elementor' ),
-					'darken'      => __( 'Darken', 'immonex-kickstart-elementor' ),
-					'lighten'     => __( 'Lighten', 'immonex-kickstart-elementor' ),
-					'color-dodge' => __( 'Color Dodge', 'immonex-kickstart-elementor' ),
-					'saturation'  => __( 'Saturation', 'immonex-kickstart-elementor' ),
-					'color'       => __( 'Color', 'immonex-kickstart-elementor' ),
-					'difference'  => __( 'Difference', 'immonex-kickstart-elementor' ),
-					'exclusion'   => __( 'Exclusion', 'immonex-kickstart-elementor' ),
-					'hue'         => __( 'Hue', 'immonex-kickstart-elementor' ),
-					'luminosity'  => __( 'Luminosity', 'immonex-kickstart-elementor' ),
+					''            => __( 'Normal', 'immonex-kickstart-for-elementor' ),
+					'multiply'    => __( 'Multiply', 'immonex-kickstart-for-elementor' ),
+					'screen'      => __( 'Screen', 'immonex-kickstart-for-elementor' ),
+					'overlay'     => __( 'Overlay', 'immonex-kickstart-for-elementor' ),
+					'darken'      => __( 'Darken', 'immonex-kickstart-for-elementor' ),
+					'lighten'     => __( 'Lighten', 'immonex-kickstart-for-elementor' ),
+					'color-dodge' => __( 'Color Dodge', 'immonex-kickstart-for-elementor' ),
+					'saturation'  => __( 'Saturation', 'immonex-kickstart-for-elementor' ),
+					'color'       => __( 'Color', 'immonex-kickstart-for-elementor' ),
+					'difference'  => __( 'Difference', 'immonex-kickstart-for-elementor' ),
+					'exclusion'   => __( 'Exclusion', 'immonex-kickstart-for-elementor' ),
+					'hue'         => __( 'Hue', 'immonex-kickstart-for-elementor' ),
+					'luminosity'  => __( 'Luminosity', 'immonex-kickstart-for-elementor' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} .inx-e-heading' => 'mix-blend-mode: {{VALUE}}',
@@ -756,18 +756,18 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'     => [ 'heading_style' ],
 			],
 			'limit'                      => [
-				'label'       => __( 'Post Limit', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Post Limit', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
-				'description' => __( 'Maximum <strong>total</strong> number of displayed posts.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Maximum <strong>total</strong> number of displayed posts.', 'immonex-kickstart-for-elementor' ),
 				'min'         => 0,
 				'max'         => 100,
 				'default'     => 0,
 				'scope'       => [ 'lists', 'overview_map' ],
 			],
 			'limit-page'                 => [
-				'label'       => __( 'Page Limit', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Page Limit', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
-				'description' => __( 'Number of displayed posts <strong>per page</strong> unless a maximum number has been specified.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Number of displayed posts <strong>per page</strong> unless a maximum number has been specified.', 'immonex-kickstart-for-elementor' ),
 				'min'         => 0,
 				'max'         => 100,
 				'default'     => 0,
@@ -775,18 +775,18 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'       => [ 'lists' ],
 			],
 			'authors'                    => [
-				'label'       => __( 'Authors Filter', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Authors Filter', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT2,
-				'description' => __( 'Show/Hide only posts of selected authors.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Show/Hide only posts of selected authors.', 'immonex-kickstart-for-elementor' ),
 				'multiple'    => true,
 				'options'     => $this->get_user_list(),
 				'label_block' => true,
 				'scope'       => [ 'authors' ],
 			],
 			'exclude_authors'            => [
-				'label'       => __( 'Exclude Authors', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Exclude Authors', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
-				'description' => __( 'Exclude posts of selected authors instead of explicitely including them.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Exclude posts of selected authors instead of explicitely including them.', 'immonex-kickstart-for-elementor' ),
 				'conditions'  => [
 					'terms' => [
 						[
@@ -799,51 +799,51 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'       => [ 'authors' ],
 			],
 			'order'                      => [
-				'label'       => __( 'Order', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Order', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					''         => __( 'Default (Publishing Date descending)', 'immonex-kickstart-elementor' ),
-					'ID'       => __( 'Post ID', 'immonex-kickstart-elementor' ),
-					'title'    => __( 'Post Title', 'immonex-kickstart-elementor' ),
-					'name'     => __( 'Slug', 'immonex-kickstart-elementor' ),
-					'date'     => __( 'Publishing Date', 'immonex-kickstart-elementor' ),
-					'modified' => __( 'Modification Date', 'immonex-kickstart-elementor' ),
-					'rand'     => __( 'Random', 'immonex-kickstart-elementor' ),
+					''         => __( 'Default (Publishing Date descending)', 'immonex-kickstart-for-elementor' ),
+					'ID'       => __( 'Post ID', 'immonex-kickstart-for-elementor' ),
+					'title'    => __( 'Post Title', 'immonex-kickstart-for-elementor' ),
+					'name'     => __( 'Slug', 'immonex-kickstart-for-elementor' ),
+					'date'     => __( 'Publishing Date', 'immonex-kickstart-for-elementor' ),
+					'modified' => __( 'Modification Date', 'immonex-kickstart-for-elementor' ),
+					'rand'     => __( 'Random', 'immonex-kickstart-for-elementor' ),
 				],
 				'label_block' => true,
 				'scope'       => [ 'team_common' ],
 			],
 			'order_dir'                  => [
-				'label'     => __( 'Sort Direction', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Sort Direction', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
-					'ASC'  => __( 'Ascending', 'immonex-kickstart-elementor' ),
-					'DESC' => __( 'Descending', 'immonex-kickstart-elementor' ),
+					'ASC'  => __( 'Ascending', 'immonex-kickstart-for-elementor' ),
+					'DESC' => __( 'Descending', 'immonex-kickstart-for-elementor' ),
 				],
 				'default'   => 'ASC',
 				'condition' => [ 'order!' => '' ],
 				'scope'     => [ 'team_common' ],
 			],
 			'demo'                       => [
-				'label'       => __( 'Demo', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Demo', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'description' => __( 'Display posts that are marked as demo content.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Display posts that are marked as demo content.', 'immonex-kickstart-for-elementor' ),
 				'options'     => [
-					''     => __( 'Default (Yes)', 'immonex-kickstart-elementor' ),
-					'yes'  => __( 'Yes', 'immonex-kickstart-elementor' ),
-					'no'   => __( 'No', 'immonex-kickstart-elementor' ),
-					'only' => __( 'Only', 'immonex-kickstart-elementor' ),
+					''     => __( 'Default (Yes)', 'immonex-kickstart-for-elementor' ),
+					'yes'  => __( 'Yes', 'immonex-kickstart-for-elementor' ),
+					'no'   => __( 'No', 'immonex-kickstart-for-elementor' ),
+					'only' => __( 'Only', 'immonex-kickstart-for-elementor' ),
 				],
 				'scope'       => [ 'team_common' ],
 			],
 			'tax_filter_notice'          => [
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'Add comma-separated <strong>taxonomy term slugs</strong> in the following fields to explicitely include (e.g. "houses, flats") or exclude (e.g. "-lots") related properties.', 'immonex-kickstart-elementor' ),
+				'content'     => __( 'Add comma-separated <strong>taxonomy term slugs</strong> in the following fields to explicitely include (e.g. "houses, flats") or exclude (e.g. "-lots") related properties.', 'immonex-kickstart-for-elementor' ),
 				'scope'       => [ 'tax_filters' ],
 			],
 			'min-rooms'                  => [
-				'label'   => __( 'Minimum Rooms (primary)', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Minimum Rooms (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'min'     => 0,
 				'max'     => 100,
@@ -852,7 +852,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			],
 			'min-area'                   =>
 			[
-				'label'   => __( 'Minimum Area (primary)', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Minimum Area (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'min'     => 0,
 				'max'     => 10000,
@@ -860,78 +860,78 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'   => [ 'cf_filters' ],
 			],
 			'price_min'                  => [
-				'label'   => __( 'Minimum Price (primary)', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Minimum Price (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'default' => 0,
 				'scope'   => [ 'cf_filters' ],
 			],
 			'price_max'                  => [
-				'label'   => __( 'Maximum Price (primary)', 'immonex-kickstart-elementor' ),
+				'label'   => __( 'Maximum Price (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'default' => 0,
 				'scope'   => [ 'cf_filters' ],
 			],
 			'iso-country'                => [
-				'label'       => __( 'Countries', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Countries', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Comma-separated list of <strong>ISO 3166-1 ALPHA-3</strong> country codes (e.g. "DEU,AUT,CHE")', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Comma-separated list of <strong>ISO 3166-1 ALPHA-3</strong> country codes (e.g. "DEU,AUT,CHE")', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'scope'       => [ 'cf_filters' ],
 			],
 			'references'                 => [
-				'label'       => __( 'Reference Properties', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Reference Properties', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					''     => __( 'Default', 'immonex-kickstart-elementor' ),
-					'yes'  => __( 'Yes', 'immonex-kickstart-elementor' ),
-					'no'   => __( 'No', 'immonex-kickstart-elementor' ),
-					'only' => __( 'Only', 'immonex-kickstart-elementor' ),
+					''     => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'yes'  => __( 'Yes', 'immonex-kickstart-for-elementor' ),
+					'no'   => __( 'No', 'immonex-kickstart-for-elementor' ),
+					'only' => __( 'Only', 'immonex-kickstart-for-elementor' ),
 				],
 				'label_block' => true,
 				'scope'       => [ 'cf_filters' ],
 			],
 			'masters'                    => [
-				'label'       => __( 'Master Properties', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Master Properties', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					''     => __( 'Default', 'immonex-kickstart-elementor' ),
-					'yes'  => __( 'Yes', 'immonex-kickstart-elementor' ),
-					'no'   => __( 'No', 'immonex-kickstart-elementor' ),
-					'only' => __( 'Only', 'immonex-kickstart-elementor' ),
+					''     => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'yes'  => __( 'Yes', 'immonex-kickstart-for-elementor' ),
+					'no'   => __( 'No', 'immonex-kickstart-for-elementor' ),
+					'only' => __( 'Only', 'immonex-kickstart-for-elementor' ),
 				],
 				'label_block' => true,
 				'scope'       => [ 'cf_filters' ],
 			],
 			'disable_links'              => [
-				'label'       => __( 'Disable Property Detail Links', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Disable Property Detail Links', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					''            => __( 'No', 'immonex-kickstart-elementor' ),
-					'all'         => __( 'All', 'immonex-kickstart-elementor' ),
-					'unavailable' => __( 'For unavailable Properties', 'immonex-kickstart-elementor' ),
-					'references'  => __( 'For Reference Properties', 'immonex-kickstart-elementor' ),
+					''            => __( 'No', 'immonex-kickstart-for-elementor' ),
+					'all'         => __( 'All', 'immonex-kickstart-for-elementor' ),
+					'unavailable' => __( 'For unavailable Properties', 'immonex-kickstart-for-elementor' ),
+					'references'  => __( 'For Reference Properties', 'immonex-kickstart-for-elementor' ),
 				],
 				'label_block' => true,
 			],
 			'force-lang'                 => [
-				'label'       => __( 'Force Detail Page Language', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Force Detail Page Language', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Required in special cases in multilingual environments only: Enter a two letter ISO 639-1 language code (de, en, fr ...) to force a specific language for the <strong>linked property detail pages</strong>.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'Required in special cases in multilingual environments only: Enter a two letter ISO 639-1 language code (de, en, fr ...) to force a specific language for the <strong>linked property detail pages</strong>.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 			],
 			'template'                   => [
-				'label'       => __( 'Custom Template', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Custom Template', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'description' => $template_desc,
 				'label_block' => true,
 			],
 			'list_element_style_section' => [
-				'label' => __( 'List Elements', 'immonex-kickstart-elementor' ),
+				'label' => __( 'List Elements', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 				'scope' => [ 'list_element_style' ],
 			],
 			'list_element_bg_color'      => [
-				'label'     => __( 'Background Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-property-list-item, {{WRAPPER}} .inx-team-agent-list-item' => 'background-color: {{VALUE}};',
@@ -942,7 +942,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'group_control' => [
 					'type'    => \Elementor\Group_Control_Box_Shadow::get_type(),
 					'options' => [
-						'label'    => __( 'Box Shadow', 'immonex-kickstart-elementor' ),
+						'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
 						'selector' => '{{WRAPPER}} .inx-property-list-item.inx-property-list-item--card, {{WRAPPER}} .inx-team-agent-list-item.inx-team-agent-list-item--type--card',
 						'exclude'  => [ 'box_shadow_position' ],
 					],
@@ -955,7 +955,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 					'options' => [
 						'fields_options' => [
 							'border' => [
-								'label' => __( 'Border Type', 'immonex-kickstart-elementor' ),
+								'label' => __( 'Border Type', 'immonex-kickstart-for-elementor' ),
 							],
 						],
 						'selector'       => '{{WRAPPER}} .inx-property-list-item.inx-property-list-item--card, {{WRAPPER}} .inx-team-agent-list-item.inx-team-agent-list-item--type--card',
@@ -965,7 +965,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'         => [ 'list_element_style' ],
 			],
 			'list_element_border_radius' => [
-				'label'      => __( 'Border Radius', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem' ],
 				'selectors'  => [
@@ -974,7 +974,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'      => [ 'list_element_style' ],
 			],
 			'list_element_icon_color'    => [
-				'label'     => __( 'Icon Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Icon Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .inx-core-detail-icon, {{WRAPPER}} .inx-team-agent-list-item__element-icon svg' => 'color: {{VALUE}};',
@@ -983,9 +983,9 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'scope'     => [ 'list_element_style' ],
 			],
 			'list_element_text_color'    => [
-				'label'       => __( 'Text Color', 'immonex-kickstart-elementor' ),
+				'label'       => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::COLOR,
-				'description' => __( 'This color is <strong>not</strong> applied to links.', 'immonex-kickstart-elementor' ),
+				'description' => __( 'This color is <strong>not</strong> applied to links.', 'immonex-kickstart-for-elementor' ),
 				'selectors'   => [
 					'{{WRAPPER}} .inx-property-list-item, {{WRAPPER}} .inx-team-agent-list-item' => 'color: {{VALUE}};',
 				],
@@ -993,7 +993,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			],
 			'list_element_typography'    => [
 				'group_control' => [
-					'label'   => __( 'Typograhy', 'immonex-kickstart-elementor' ),
+					'label'   => __( 'Typograhy', 'immonex-kickstart-for-elementor' ),
 					'type'    => \Elementor\Group_Control_Typography::get_type(),
 					'options' => [
 						'selector' => '{{WRAPPER}} .inx-property-list-item, {{WRAPPER}} .inx-team-agent-list-item',
@@ -1017,8 +1017,8 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'label'       => $flag['label'],
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					''    => __( 'Default', 'immonex-kickstart-elementor' ),
-					'yes' => __( 'Only', 'immonex-kickstart-elementor' ),
+					''    => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'yes' => __( 'Only', 'immonex-kickstart-for-elementor' ),
 					'no'  => $flag['not_option'],
 				],
 				'label_block' => true,

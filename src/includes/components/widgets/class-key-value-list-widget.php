@@ -2,10 +2,10 @@
 /**
  * Class Icon_List_Widget
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor\Components\Widgets;
+namespace immonex\Kickstart\ForElementor\Components\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -50,7 +50,7 @@ class Key_Value_List_Widget extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Key/Value List', 'immonex-kickstart-elementor' );
+		return __( 'Key/Value List', 'immonex-kickstart-for-elementor' );
 	} // get_title
 
 	/**
@@ -65,8 +65,8 @@ class Key_Value_List_Widget extends Widget_Base {
 			array_merge(
 				$this->keywords,
 				[
-					__( 'key-value', 'immonex-kickstart-elementor' ),
-					__( 'list', 'immonex-kickstart-elementor' ),
+					__( 'key-value', 'immonex-kickstart-for-elementor' ),
+					__( 'list', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -97,7 +97,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'general_content_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-elementor' ),
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -105,7 +105,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		if ( in_array( 'heading', static::DEFAULT_CONTROL_SCOPES, true ) ) {
 			$default_control_args = [
 				'heading' => [
-					'default' => $this->get_default( 'heading', __( 'Detail Section', 'immonex-kickstart-elementor' ) ),
+					'default' => $this->get_default( 'heading', __( 'Detail Section', 'immonex-kickstart-for-elementor' ) ),
 				],
 			];
 
@@ -121,7 +121,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'predefined_element',
 					[
-						'label'   => __( 'Element', 'immonex-kickstart-elementor' ),
+						'label'   => __( 'Element', 'immonex-kickstart-for-elementor' ),
 						'type'    => \Elementor\Controls_Manager::SELECT,
 						'options' => $selectable_elements,
 					]
@@ -132,7 +132,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'element_type',
 					[
-						'label'       => __( 'Element Type', 'immonex-kickstart-elementor' ),
+						'label'       => __( 'Element Type', 'immonex-kickstart-for-elementor' ),
 						'type'        => \Elementor\Controls_Manager::SELECT,
 						'default'     => $this->get_default( 'element_type', 'group' ),
 						'options'     => $element_type_select_options,
@@ -160,7 +160,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					$repeater->add_control(
 						"element_{$option_type}",
 						[
-							'label'       => __( 'Element', 'immonex-kickstart-elementor' ),
+							'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
 							'type'        => \Elementor\Controls_Manager::SELECT,
 							'options'     => $options,
 							'condition'   => [
@@ -176,7 +176,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'element_user_defined',
 					[
-						'label'       => __( 'Element', 'immonex-kickstart-elementor' ),
+						'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
 						'type'        => \Elementor\Controls_Manager::TEXT,
 						'condition'   => [
 							'element_type' => 'user_defined',
@@ -187,7 +187,7 @@ class Key_Value_List_Widget extends Widget_Base {
 
 				$format_filters = $this->get_format_filters();
 				$format_options = [
-					'' => __( 'no formatting', 'immonex-kickstart-elementor' ),
+					'' => __( 'no formatting', 'immonex-kickstart-for-elementor' ),
 				];
 				if ( ! empty( $format_filters ) ) {
 					foreach ( $format_filters as $key => $filter ) {
@@ -198,7 +198,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'format',
 					[
-						'label'       => __( 'Format', 'immonex-kickstart-elementor' ),
+						'label'       => __( 'Format', 'immonex-kickstart-for-elementor' ),
 						'type'        => \Elementor\Controls_Manager::SELECT,
 						'options'     => $format_options,
 						'label_block' => true,
@@ -208,11 +208,11 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'decimal_places',
 					[
-						'label'     => __( 'Decimal Places', 'immonex-kickstart-elementor' ),
+						'label'     => __( 'Decimal Places', 'immonex-kickstart-for-elementor' ),
 						'type'      => \Elementor\Controls_Manager::SELECT,
 						'default'   => $this->get_default( 'decimal_places', 9 ),
 						'options'   => [
-							9 => __( 'auto', 'immonex-kickstart-elementor' ),
+							9 => __( 'auto', 'immonex-kickstart-for-elementor' ),
 							1 => '1',
 							2 => '2',
 						],
@@ -232,7 +232,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$repeater->add_control(
 				'before_value',
 				[
-					'label'       => __( 'Before Value', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Before Value', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::TEXT,
 					'label_block' => true,
 					'separator'   => 'before',
@@ -242,7 +242,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$repeater->add_control(
 				'after_value',
 				[
-					'label'       => __( 'After Value', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'After Value', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::TEXT,
 					'label_block' => true,
 					'separator'   => 'after',
@@ -252,7 +252,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$repeater->add_control(
 				'icon',
 				[
-					'label'       => __( 'Icon', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Icon', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::ICONS,
 					'recommended' => [
 						'fa-solid'   => [
@@ -323,7 +323,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'before_item',
 					[
-						'label' => __( 'Before Item', 'immonex-kickstart-elementor' ),
+						'label' => __( 'Before Item', 'immonex-kickstart-for-elementor' ),
 						'type'  => \Elementor\Controls_Manager::TEXT,
 					]
 				);
@@ -331,7 +331,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'after_item',
 					[
-						'label' => __( 'After Item', 'immonex-kickstart-elementor' ),
+						'label' => __( 'After Item', 'immonex-kickstart-for-elementor' ),
 						'type'  => \Elementor\Controls_Manager::TEXT,
 					]
 				);
@@ -343,9 +343,9 @@ class Key_Value_List_Widget extends Widget_Base {
 					[
 						'type'        => \Elementor\Controls_Manager::NOTICE,
 						'notice_type' => 'warning',
-						'content'     => __( 'Elements can be combined based on the entries in the <strong>import mapping table</strong> (immonex OpenImmo2WP).', 'immonex-kickstart-elementor' ) .
+						'content'     => __( 'Elements can be combined based on the entries in the <strong>import mapping table</strong> (immonex OpenImmo2WP).', 'immonex-kickstart-for-elementor' ) .
 							'<br><br>(' .
-							__( 'The sample data shown may not match the actual type of information.', 'immonex-kickstart-elementor' ) .
+							__( 'The sample data shown may not match the actual type of information.', 'immonex-kickstart-for-elementor' ) .
 							')',
 					]
 				);
@@ -361,7 +361,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->add_control(
 				'elements',
 				[
-					'label'       => __( 'Elements', 'immonex-kickstart-elementor' ),
+					'label'       => __( 'Elements', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::REPEATER,
 					'fields'      => $repeater->get_controls(),
 					'title_field' => $title_field,
@@ -379,7 +379,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'list_section',
 			[
-				'label' => __( 'List', 'immonex-kickstart-elementor' ),
+				'label' => __( 'List', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -387,16 +387,16 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'layout',
 			[
-				'label'          => __( 'Layout', 'immonex-kickstart-elementor' ),
+				'label'          => __( 'Layout', 'immonex-kickstart-for-elementor' ),
 				'type'           => \Elementor\Controls_Manager::CHOOSE,
 				'default'        => $this->get_default( 'layout', 'columns' ),
 				'options'        => [
 					'columns' => [
-						'title' => __( 'Columns', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Columns', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-editor-list-ul',
 					],
 					'inline'  => [
-						'title' => __( 'Inline', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Inline', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-ellipsis-h',
 					],
 				],
@@ -411,7 +411,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label'                => __( 'Columns', 'immonex-kickstart-elementor' ),
+				'label'                => __( 'Columns', 'immonex-kickstart-for-elementor' ),
 				'type'                 => \Elementor\Controls_Manager::SELECT,
 				'widescreen_default'   => $this->get_default( 'columns', '3', 'widescreen' ),
 				'default'              => $this->get_default( 'columns', '3' ),
@@ -439,20 +439,20 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'item_align',
 			[
-				'label'        => __( 'Alignment', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::CHOOSE,
 				'default'      => $this->get_default( 'item_align', 'left' ),
 				'options'      => [
 					'left'   => [
-						'title' => __( 'left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => __( 'center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => __( 'right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -463,7 +463,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'space_between',
 			[
-				'label'      => __( 'Space Between', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Space Between', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'space_between',
@@ -501,10 +501,10 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider',
 			[
-				'label'     => __( 'Divider', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Divider', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'immonex-kickstart-elementor' ),
-				'label_on'  => __( 'On', 'immonex-kickstart-elementor' ),
+				'label_off' => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'  => __( 'On', 'immonex-kickstart-for-elementor' ),
 				'selectors' => array_merge(
 					[ '{{WRAPPER}} .inx-e-key-value-list__item:not(:last-child):after' => 'content: ""' ],
 					$this->get_responsive_selectors( '{{WRAPPER}}:not(.inx-e--layout--inline):not(.inx-e%s--columns--1) .inx-e-key-value-list__item:last-child:after', 'content: ""' )
@@ -516,13 +516,13 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_style',
 			[
-				'label'     => __( 'Style', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Style', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
-					'solid'  => __( 'Solid', 'immonex-kickstart-elementor' ),
-					'double' => __( 'Double', 'immonex-kickstart-elementor' ),
-					'dotted' => __( 'Dotted', 'immonex-kickstart-elementor' ),
-					'dashed' => __( 'Dashed', 'immonex-kickstart-elementor' ),
+					'solid'  => __( 'Solid', 'immonex-kickstart-for-elementor' ),
+					'double' => __( 'Double', 'immonex-kickstart-for-elementor' ),
+					'dotted' => __( 'Dotted', 'immonex-kickstart-for-elementor' ),
+					'dashed' => __( 'Dashed', 'immonex-kickstart-for-elementor' ),
 				],
 				'default'   => $this->get_default( 'divider_style', 'solid' ),
 				'condition' => [
@@ -541,7 +541,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_weight',
 			[
-				'label'      => __( 'Weight', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Weight', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'divider_height',
@@ -575,7 +575,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_width',
 			[
-				'label'      => __( 'Width', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Width', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'divider_width',
@@ -599,7 +599,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_height',
 			[
-				'label'      => __( 'Height', 'immonex-kickstart-elementor' ),
+				'label'      => __( 'Height', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'default'    => $this->get_default(
 					'divider_height',
@@ -637,7 +637,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'divider_color',
 			[
-				'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'global'    => [
 					'default' => $this->get_default( 'global_divider_color', \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT ),
@@ -657,7 +657,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'item_section',
 			[
-				'label' => __( 'Item', 'immonex-kickstart-elementor' ),
+				'label' => __( 'Item', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -665,16 +665,16 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'item_layout',
 			[
-				'label'        => __( 'Layout', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Layout', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::CHOOSE,
 				'default'      => $this->get_default( 'item_layout', 'vertical' ),
 				'options'      => [
 					'horizontal' => [
-						'title' => __( 'Horizontal', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Horizontal', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-ellipsis-h',
 					],
 					'vertical'   => [
-						'title' => __( 'Vertical', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Vertical', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-editor-list-ul',
 					],
 				],
@@ -686,20 +686,20 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'item_horizontal_align',
 			[
-				'label'     => __( 'Horizontal Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Horizontal Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'default'   => $this->get_default( 'item_horizontal_align', 'flex-start' ),
 				'options'   => [
 					'flex-start' => [
-						'title' => __( 'Left', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center'     => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'flex-end'   => [
-						'title' => __( 'Right', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
@@ -715,24 +715,24 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'item_vertical_align',
 			[
-				'label'     => __( 'Vertical Alignment', 'immonex-kickstart-elementor' ),
+				'label'     => __( 'Vertical Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::CHOOSE,
 				'default'   => $this->get_default( 'item_vertical_align', 'baseline' ),
 				'options'   => [
 					'flex-start' => [
-						'title' => __( 'Start', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Start', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-v-align-top',
 					],
 					'center'     => [
-						'title' => __( 'Center', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-v-align-middle',
 					],
 					'baseline'   => [
-						'title' => __( 'Baseline', 'immonex-kickstart-elementor' ),
+						'title' => __( 'Baseline', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-align-end-v',
 					],
 					'flex-end'   => [
-						'title' => __( 'End', 'immonex-kickstart-elementor' ),
+						'title' => __( 'End', 'immonex-kickstart-for-elementor' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 				],
@@ -743,20 +743,20 @@ class Key_Value_List_Widget extends Widget_Base {
 		);
 
 		$item_order_options = [
-			'label-value' => __( 'Label, Value', 'immonex-kickstart-elementor' ),
-			'value-label' => __( 'Value, Label', 'immonex-kickstart-elementor' ),
+			'label-value' => __( 'Label, Value', 'immonex-kickstart-for-elementor' ),
+			'value-label' => __( 'Value, Label', 'immonex-kickstart-for-elementor' ),
 		];
 
 		if ( static::ENABLE_ICONS ) {
 			$item_order_options = array_merge(
 				$item_order_options,
 				[
-					'label-value-icon' => __( 'Label, Value, Icon', 'immonex-kickstart-elementor' ),
-					'icon-label-value' => __( 'Icon, Label, Value', 'immonex-kickstart-elementor' ),
-					'icon-value-label' => __( 'Icon, Value, Label', 'immonex-kickstart-elementor' ),
-					'value-label-icon' => __( 'Value, Label, Icon', 'immonex-kickstart-elementor' ),
-					'icon-value'       => __( 'Icon, Value', 'immonex-kickstart-elementor' ),
-					'value-icon'       => __( 'Value, Icon', 'immonex-kickstart-elementor' ),
+					'label-value-icon' => __( 'Label, Value, Icon', 'immonex-kickstart-for-elementor' ),
+					'icon-label-value' => __( 'Icon, Label, Value', 'immonex-kickstart-for-elementor' ),
+					'icon-value-label' => __( 'Icon, Value, Label', 'immonex-kickstart-for-elementor' ),
+					'value-label-icon' => __( 'Value, Label, Icon', 'immonex-kickstart-for-elementor' ),
+					'icon-value'       => __( 'Icon, Value', 'immonex-kickstart-for-elementor' ),
+					'value-icon'       => __( 'Value, Icon', 'immonex-kickstart-for-elementor' ),
 				]
 			);
 		}
@@ -764,7 +764,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		$this->add_control(
 			'item_order',
 			[
-				'label'        => __( 'Scope/Order', 'immonex-kickstart-elementor' ),
+				'label'        => __( 'Scope/Order', 'immonex-kickstart-for-elementor' ),
 				'type'         => \Elementor\Controls_Manager::SELECT,
 				'default'      => $this->get_default( 'item_order', static::ENABLE_ICONS ? 'icon-label-value' : 'label-value' ),
 				'options'      => $item_order_options,
@@ -780,7 +780,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->start_controls_section(
 				'style_section',
 				[
-					'label' => __( 'Icon', 'immonex-kickstart-elementor' ),
+					'label' => __( 'Icon', 'immonex-kickstart-for-elementor' ),
 					'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 				]
 			);
@@ -788,7 +788,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->add_control(
 				'icon_color',
 				[
-					'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+					'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .inx-e-key-value-list__icon i'   => 'color: {{VALUE}};',
@@ -803,7 +803,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->add_responsive_control(
 				'icon_size',
 				[
-					'label'      => __( 'Size', 'immonex-kickstart-elementor' ),
+					'label'      => __( 'Size', 'immonex-kickstart-for-elementor' ),
 					'type'       => \Elementor\Controls_Manager::SLIDER,
 					'default'    => $this->get_default( 'icon_size', [ 'size' => 16 ] ),
 					'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -827,7 +827,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->add_control(
 				'icon_gap',
 				[
-					'label'      => __( 'Gap', 'immonex-kickstart-elementor' ),
+					'label'      => __( 'Gap', 'immonex-kickstart-for-elementor' ),
 					'type'       => \Elementor\Controls_Manager::SLIDER,
 					'default'    => $this->get_default( 'icon_gap', [ 'size' => 4 ] ),
 					'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -845,7 +845,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->add_responsive_control(
 				'icon_vertical_offset',
 				[
-					'label'      => __( 'Adjust Vertical Position', 'immonex-kickstart-elementor' ),
+					'label'      => __( 'Adjust Vertical Position', 'immonex-kickstart-for-elementor' ),
 					'type'       => \Elementor\Controls_Manager::SLIDER,
 					'size_units' => [ 'px', 'em', 'rem', 'custom' ],
 					'range'      => [
@@ -869,22 +869,22 @@ class Key_Value_List_Widget extends Widget_Base {
 
 		$typo_sections = [
 			'label'       => [
-				'label'         => __( 'Label', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'Label', 'immonex-kickstart-for-elementor' ),
 				'typo_default'  => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_SECONDARY,
 				'color_default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY,
 			],
 			'value'       => [
-				'label'         => __( 'Value', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'Value', 'immonex-kickstart-for-elementor' ),
 				'typo_default'  => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_PRIMARY,
 				'color_default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
 			],
 			'before_item' => [
-				'label'         => __( 'Before Item', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'Before Item', 'immonex-kickstart-for-elementor' ),
 				'typo_default'  => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
 				'color_default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
 			],
 			'after_item'  => [
-				'label'         => __( 'After Item', 'immonex-kickstart-elementor' ),
+				'label'         => __( 'After Item', 'immonex-kickstart-for-elementor' ),
 				'typo_default'  => \Elementor\Core\Kits\Documents\Tabs\Global_Typography::TYPOGRAPHY_TEXT,
 				'color_default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_TEXT,
 			],
@@ -917,7 +917,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$this->add_control(
 					"{$key}_font_size",
 					[
-						'label'      => __( 'Font Size', 'immonex-kickstart-elementor' ),
+						'label'      => __( 'Font Size', 'immonex-kickstart-for-elementor' ),
 						'type'       => \Elementor\Controls_Manager::SLIDER,
 						'default'    => $this->get_default( "{$key}_font_size", [ 'size' => 20 ] ),
 						'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -944,7 +944,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->add_control(
 				"{$key}_color",
 				[
-					'label'     => __( 'Color', 'immonex-kickstart-elementor' ),
+					'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						"{{WRAPPER}} .inx-e-key-value-list__{$class_key}" => 'color: {{VALUE}};',
@@ -959,7 +959,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$this->add_control(
 					"{$key}_gap",
 					[
-						'label'      => __( 'Gap', 'immonex-kickstart-elementor' ),
+						'label'      => __( 'Gap', 'immonex-kickstart-for-elementor' ),
 						'type'       => \Elementor\Controls_Manager::SLIDER,
 						'default'    => $this->get_default( "{$key}_gap", [ 'size' => 8 ] ),
 						'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -1163,22 +1163,22 @@ class Key_Value_List_Widget extends Widget_Base {
 			'inx_elementor_format_filters', // phpcs:ignore
 			[
 				'inx_format_price'  => [
-					'title' => __( 'Price', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Price', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'price',
 					'args'  => [],
 				],
 				'inx_format_area'   => [
-					'title' => __( 'Area', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Area', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'area',
 					'args'  => [],
 				],
 				'inx_format_number' => [
-					'title' => __( 'Number', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Number', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'number',
 					'args'  => [],
 				],
 				'inx_format_link'   => [
-					'title' => __( 'Link (URL/E-Mail/Phone)', 'immonex-kickstart-elementor' ),
+					'title' => __( 'Link (URL/E-Mail/Phone)', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'link',
 					'args'  => [],
 				],
@@ -1197,11 +1197,11 @@ class Key_Value_List_Widget extends Widget_Base {
 	 */
 	protected function get_element_type_select_options() {
 		return [
-			'group'        => __( 'Group', 'immonex-kickstart-elementor' ),
-			'name'         => __( 'Name', 'immonex-kickstart-elementor' ),
-			'source'       => __( 'Source', 'immonex-kickstart-elementor' ),
-			'destination'  => __( 'Destination (Custom Field)', 'immonex-kickstart-elementor' ),
-			'user_defined' => __( 'User-defined/RegEx', 'immonex-kickstart-elementor' ),
+			'group'        => __( 'Group', 'immonex-kickstart-for-elementor' ),
+			'name'         => __( 'Name', 'immonex-kickstart-for-elementor' ),
+			'source'       => __( 'Source', 'immonex-kickstart-for-elementor' ),
+			'destination'  => __( 'Destination (Custom Field)', 'immonex-kickstart-for-elementor' ),
+			'user_defined' => __( 'User-defined/RegEx', 'immonex-kickstart-for-elementor' ),
 		];
 	} // get_element_type_select_options
 
@@ -1219,16 +1219,16 @@ class Key_Value_List_Widget extends Widget_Base {
 	protected function add_extended_element_select_options( $options, $type ) {
 		$raw_ext_options = [
 			'destination' => [
-				'_inx_full_address'                    => __( 'full Address', 'immonex-kickstart-elementor' ),
-				'_inx_street'                          => __( 'Street', 'immonex-kickstart-elementor' ),
-				'_inx_lat'                             => __( 'Latitude', 'immonex-kickstart-elementor' ),
-				'_inx_lng'                             => __( 'Longitude', 'immonex-kickstart-elementor' ),
-				'_inx_virtual_tour_embed_code'         => __( 'Virtual Tour Embed Code', 'immonex-kickstart-elementor' ),
-				'_openimmo_obid'                       => __( 'OpenImmo ID (OBID)', 'immonex-kickstart-elementor' ),
-				'_immonex_energy_class'                => __( 'Energy Efficiency Class', 'immonex-kickstart-elementor' ),
-				'_immonex_areabutler_url'              => __( 'AreaButler URL', 'immonex-kickstart-elementor' ),
-				'_immonex_areabutler_url_no_address'   => __( 'AreaButler URL without Address', 'immonex-kickstart-elementor' ),
-				'_immonex_areabutler_url_with_address' => __( 'AreaButler URL with Address', 'immonex-kickstart-elementor' ),
+				'_inx_full_address'                    => __( 'full Address', 'immonex-kickstart-for-elementor' ),
+				'_inx_street'                          => __( 'Street', 'immonex-kickstart-for-elementor' ),
+				'_inx_lat'                             => __( 'Latitude', 'immonex-kickstart-for-elementor' ),
+				'_inx_lng'                             => __( 'Longitude', 'immonex-kickstart-for-elementor' ),
+				'_inx_virtual_tour_embed_code'         => __( 'Virtual Tour Embed Code', 'immonex-kickstart-for-elementor' ),
+				'_openimmo_obid'                       => __( 'OpenImmo ID (OBID)', 'immonex-kickstart-for-elementor' ),
+				'_immonex_energy_class'                => __( 'Energy Efficiency Class', 'immonex-kickstart-for-elementor' ),
+				'_immonex_areabutler_url'              => __( 'AreaButler URL', 'immonex-kickstart-for-elementor' ),
+				'_immonex_areabutler_url_no_address'   => __( 'AreaButler URL without Address', 'immonex-kickstart-for-elementor' ),
+				'_immonex_areabutler_url_with_address' => __( 'AreaButler URL with Address', 'immonex-kickstart-for-elementor' ),
 			],
 		];
 

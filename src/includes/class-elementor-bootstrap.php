@@ -2,10 +2,10 @@
 /**
  * Class Elementor_Bootstrap
  *
- * @package immonex\KickstartElementor
+ * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\Elementor;
+namespace immonex\Kickstart\ForElementor;
 
 // Prevent direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,7 +42,7 @@ class Elementor_Bootstrap {
 	/**
 	 * Kickstart Elementor Widgets
 	 *
-	 * @var \immonex\Kickstart\Elementor\Components\Widgets[]
+	 * @var \immonex\Kickstart\ForElementor\Components\Widgets[]
 	 */
 	private $widgets = [];
 
@@ -88,11 +88,11 @@ class Elementor_Bootstrap {
 		$house_icon     = '<span style="font-size:150%">&#8962;</span> ';
 		$add_categories = [
 			'inx-single-property' => [
-				'title' => $house_icon . __( 'Property Details', 'immonex-kickstart-elementor' ),
+				'title' => $house_icon . __( 'Property Details', 'immonex-kickstart-for-elementor' ),
 				'icon'  => 'fa fa-home',
 			],
 			'inx-property-list'   => [
-				'title' => $house_icon . __( 'Property Lists and Search', 'immonex-kickstart-elementor' ),
+				'title' => $house_icon . __( 'Property Lists and Search', 'immonex-kickstart-for-elementor' ),
 				'icon'  => 'fa fa-home',
 			],
 		];
@@ -100,13 +100,13 @@ class Elementor_Bootstrap {
 		// phpcs:ignore
 		if ( apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-kickstart-team', self::MIN_REQ_VERSIONS['team'] ) ) {
 			$add_categories['inx-team'] = [
-				'title' => $house_icon . __( 'Contacts & Agencies', 'immonex-kickstart-elementor' ) . ' (+Team)',
+				'title' => $house_icon . __( 'Contacts & Agencies', 'immonex-kickstart-for-elementor' ) . ' (+Team)',
 				'icon'  => 'fa fa-home',
 			];
 		}
 
 		$add_categories['inx-marketing-acquisition'] = [
-			'title' => $house_icon . __( 'Marketing & Acquisition', 'immonex-kickstart-elementor' ),
+			'title' => $house_icon . __( 'Marketing & Acquisition', 'immonex-kickstart-for-elementor' ),
 			'icon'  => 'fa fa-home',
 		];
 
