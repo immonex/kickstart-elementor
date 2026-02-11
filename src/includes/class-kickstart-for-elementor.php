@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main plugin class.
  */
-class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Base {
+class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Base {
 
 	const PLUGIN_NAME                = 'immonex Kickstart for Elementor';
 	const ADDON_NAME                 = 'Elementor';
@@ -33,7 +33,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_6_4\Ba
 		'de' => 'https://wordpress.org/support/plugin/immonex-kickstart-for-elementor',
 	];
 	const PLUGIN_DEV_URLS            = [
-		'de' => 'https://immonex.dev/',
+		'de' => 'https://github.com/immonex/kickstart-for-elementor',
 	];
 	const OPTIONS_LINK_MENU_LOCATION = false;
 	const PARENT_PLUGIN_MAIN_CLASS   = '\immonex\Kickstart\Kickstart';

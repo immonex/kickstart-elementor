@@ -68,7 +68,8 @@ class Native_Search_Form_Widget extends \immonex\Kickstart\ForElementor\Componen
 		$element_control_titles = [];
 		$default_elements       = [];
 		$results_page_options   = [
-			'' => __( 'default', 'immonex-kickstart-for-elementor' ),
+			''        => __( 'default', 'immonex-kickstart-for-elementor' ),
+			'current' => __( 'current page (explicitly)', 'immonex-kickstart-for-elementor' ),
 		];
 
 		if ( ! empty( $search_form_elements ) ) {

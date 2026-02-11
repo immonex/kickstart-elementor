@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: immonex Kickstart for Elementor 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
-"POT-Creation-Date: 2026-02-08T10:10:35+00:00\n"
-"PO-Revision-Date: 2026-02-08 11:11+0100\n"
+"POT-Creation-Date: 2026-02-11T10:39:59+00:00\n"
+"PO-Revision-Date: 2026-02-11 11:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: immonex <dev@immonex.de>\n"
 "Language: de_DE@formal\n"
@@ -98,15 +98,15 @@ msgstr "Kontakte & Agenturen"
 msgid "Marketing & Acquisition"
 msgstr "Marketing & Akquise"
 
-#: includes/class-kickstart-for-elementor.php:205
+#: includes/class-kickstart-for-elementor.php:224
 msgid "Layout & Design"
 msgstr "Layout & Design"
 
-#: includes/class-kickstart-for-elementor.php:235
+#: includes/class-kickstart-for-elementor.php:254
 msgid "Skin"
 msgstr "Skin"
 
-#: includes/class-kickstart-for-elementor.php:240
+#: includes/class-kickstart-for-elementor.php:259
 msgid ""
 "A skin is a set of templates files (PHP, Twig, CSS, JS etc.) and related "
 "resources like images and fonts for plugin frontend elements and pages."
@@ -118,7 +118,7 @@ msgstr ""
 #: includes/class-mapping-table.php:75
 #: includes/components/widgets/class-icon-list-widget.php:73
 #: includes/components/widgets/class-widget-base.php:553
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:282
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:283
 #: includes/components/widgets/single-property/class-desc-widget.php:80
 msgid "Features"
 msgstr "Ausstattung"
@@ -239,7 +239,7 @@ msgstr "Elementart"
 #: includes/components/widgets/class-key-value-list-widget.php:163
 #: includes/components/widgets/class-key-value-list-widget.php:179
 #: includes/components/widgets/notify/class-native-notify-form-widget.php:145
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:182
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:183
 #: includes/components/widgets/team/class-native-agency-widget.php:288
 #: includes/components/widgets/team/class-native-agent-widget.php:293
 msgid "Element"
@@ -283,7 +283,7 @@ msgstr "Benutzerdefiniert/RegEx"
 
 #: includes/components/dynamic-tags/class-kickstart-template-data.php:212
 #: includes/components/widgets/class-key-value-list-widget.php:364
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:162
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:163
 msgid "Elements"
 msgstr "Elemente"
 
@@ -370,7 +370,7 @@ msgstr "Liste"
 #: includes/components/widgets/property-list/class-native-filters-sort-widget.php:68
 #: includes/components/widgets/property-list/class-native-property-list-widget.php:69
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:65
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:113
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:114
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:44
 #: includes/components/widgets/single-property/class-desc-widget.php:65
 #: includes/components/widgets/single-property/class-native-energy-scale-widget.php:73
@@ -419,7 +419,7 @@ msgstr "Layout"
 #: includes/components/widgets/class-widget-base.php:897
 #: includes/components/widgets/class-widget-base.php:1020
 #: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:76
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:127
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:128
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:138
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:151
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:176
@@ -856,17 +856,17 @@ msgid "Order it now!"
 msgstr "Jetzt ordern!"
 
 #: includes/components/widgets/class-widget-base.php:547
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:264
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:265
 msgid "Property Types"
 msgstr "Objektarten"
 
 #: includes/components/widgets/class-widget-base.php:548
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:273
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:274
 msgid "Marketing Types"
 msgstr "Vermarktungsarten"
 
 #: includes/components/widgets/class-widget-base.php:549
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:255
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:256
 msgid "Types of Use"
 msgstr "Nutzungsarten"
 
@@ -965,7 +965,7 @@ msgid "Rooms ascending"
 msgstr "Zimmer/Räume aufsteigend"
 
 #: includes/components/widgets/class-widget-base.php:632
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:333
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:334
 msgid ""
 "Enter the <strong>filename</strong> if an <strong>alternative</strong> PHP "
 "template should be used for rendering the component."
@@ -1278,7 +1278,7 @@ msgstr ""
 "festzulegen."
 
 #: includes/components/widgets/class-widget-base.php:923
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:331
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:332
 msgid "Custom Template"
 msgstr "Benutzerdefiniertes Template"
 
@@ -1421,7 +1421,7 @@ msgstr ""
 "Die folgenden obligatorischen Elemente sind immer im Formular enthalten:"
 
 #: includes/components/widgets/notify/class-native-notify-form-widget.php:155
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:202
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:203
 #: includes/components/widgets/team/class-native-agency-widget.php:298
 #: includes/components/widgets/team/class-native-agent-widget.php:303
 msgid "User-defined Elements"
@@ -1477,7 +1477,7 @@ msgstr ""
 #: includes/components/widgets/property-list/class-native-property-list-widget.php:171
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:262
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:407
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:323
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:324
 #: includes/components/widgets/single-property/class-native-footer-widget.php:88
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:315
 #: includes/components/widgets/single-property/class-native-head-widget.php:308
@@ -1747,11 +1747,15 @@ msgstr "Suchformular"
 msgid "default"
 msgstr "Standard"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:123
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:72
+msgid "current page (explicitly)"
+msgstr "aktuelle Seite (explizit)"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:124
 msgid "Dynamic Updates"
 msgstr "Dynamische Aktualisierung"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:124
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:125
 msgid ""
 "Enable dynamic updates of <strong>list and map elements</strong> on the same "
 "page when search options are changed."
@@ -1759,19 +1763,19 @@ msgstr ""
 "Dynamische Aktualisierung von <strong>Listen- und Kartenelementen</strong> "
 "auf der gleichen Seite bei Änderung der Suchkriterien aktivieren."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:128
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:129
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:129
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:130
 msgid "Disabled"
 msgstr "Deaktiviert"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:137
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:138
 msgid "Alternative Results Page"
 msgstr "Alternative Ergebnisseite"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:138
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:139
 msgid ""
 "Defaults to the <strong>current page</strong> if a property list shortcode "
 "is included."
@@ -1779,11 +1783,11 @@ msgstr ""
 "Standard ist die <strong>aktuelle Seite</strong>, sofern hier ein Immobilien-"
 "Listen-Shortcode enthalten ist."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:149
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:150
 msgid "Sold/Rented Selection"
 msgstr "Verkauft/Vermietet-Auswahl"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:150
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:151
 msgid ""
 "Show \"Sold\" and \"Rented\" in the <strong>marketing type select box</"
 "strong> if related properties exist."
@@ -1792,25 +1796,25 @@ msgstr ""
 "<strong>Auswahlbox der Vermarktungsart</strong> aufgeführt werden, sofern "
 "zugehörige Immobilien vorhanden sind."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:170
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:171
 #: includes/components/widgets/team/class-native-agency-widget.php:264
 #: includes/components/widgets/team/class-native-agent-widget.php:269
 msgid "Use default elements"
 msgstr "Standard-Elemente verwenden"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:192
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:193
 msgid "Extended Search"
 msgstr "Erweiterte Suche"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:218
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:219
 msgid "Taxonomy Selection Defaults"
 msgstr "Taxonomie-Auswahl-Vorgaben"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:226
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:227
 msgid "Main Categories only"
 msgstr "Nur Hauptkategorien"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:227
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:228
 msgid ""
 "Display only top-level entries in select boxes of hierarchical taxonomies "
 "(e.g. property type)."
@@ -1818,7 +1822,7 @@ msgstr ""
 "Nur Elemente der Hauptebene in Auswahlboxen hierarchischer Taxonomien "
 "anzeigen (z. B. Objektart)."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:239
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:240
 msgid ""
 "If the selectable taxonomy terms are to be limited to certain options, the "
 "corresponding <strong>top-level slugs</strong> can be stored in the "
@@ -1829,19 +1833,19 @@ msgstr ""
 "strong> in den folgenden Eingabefeldern in Form von kommagetrennten Listen "
 "hinterlegt werden (z. B. \"haeuser, wohnungen\")."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:246
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:247
 msgid "Locations"
 msgstr "Orte"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:293
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:294
 msgid "Distance Search"
 msgstr "Umkreissuche"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:301
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:302
 msgid "Autocomplete Countries"
 msgstr "Länder der Autovervollständigung"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:302
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:303
 msgid ""
 "Comma-separated <strong>ISO 3166-1 ALPHA-2</strong> country code list (e.g. "
 "\"de,at,ch,be,nl\") – leave empty to use defaults."
@@ -1849,11 +1853,11 @@ msgstr ""
 "Kommagetrennte Liste von Ländercodes (<strong>ISO 3166-1 ALPHA-2</strong>), "
 "z. B. \"de,at,ch,be,nl\" – leer lassen für Standardvorgaben."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:311
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:312
 msgid "Autocomplete OSM Place Tags"
 msgstr "OSM Place Tags (Autovervollständigung)"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:312
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:313
 msgid ""
 "Comma-separated <strong>OpenStreetMap Place Tag List</strong> for filtering/"
 "prioritizing autocomplete search results – defaults to "
@@ -1864,7 +1868,7 @@ msgstr ""
 "Standardvorgabe ist \"city,town,village,borough,suburb\" falls leer."
 
 #. translators: %s: plugin name
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:335
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:336
 #, php-format
 msgid ""
 "The file must be included in the <strong>skin folder</strong> selected in "

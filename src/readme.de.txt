@@ -113,7 +113,7 @@ immonex Kickstart for Elementor ist freie Software. Quellcodes, Dokumentation, S
 == Changelog ==
 
 = 1.0.0 "Ice" =
-* Veröffentlichungsdatum: 08.02.2026
+* Veröffentlichungsdatum: 11.02.2026
 * Erstveröffentlichung.
 
 Siehe changelog.de.txt für die komplette Versionshistorie.
