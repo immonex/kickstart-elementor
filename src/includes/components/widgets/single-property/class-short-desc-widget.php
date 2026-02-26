@@ -180,8 +180,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widge
 			return false;
 		}
 
-		// phpcs:ignore
-		$utils = apply_filters( 'inx_elementor_get_utils', [] );
+		$utils = apply_filters( 'inxkickel_get_utils', [] );
 		if ( empty( $utils ) ) {
 			return false;
 		}

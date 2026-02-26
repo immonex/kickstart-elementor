@@ -23,7 +23,6 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\ForElementor\Compone
 	const WIDGET_CATEGORIES        = [ 'inx-property-list' ];
 	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/filter-sortierung';
 	const ENABLE_RENDER_ON_PREVIEW = true;
-	const IS_DYNAMIC_CONTENT       = true;
 
 	/**
 	 * Get widget title.

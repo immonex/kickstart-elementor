@@ -89,8 +89,7 @@ class Main_Image_Widget extends \immonex\Kickstart\ForElementor\Components\Widge
 		$this->add_group_control(
 			\Elementor\Group_Control_Image_Size::get_type(),
 			[
-				// phpcs:ignore
-				'name'    => 'image', // Usage: `{name}_size` and `{name}_custom_dimension`, in this case `image_size` and `image_custom_dimension`.
+				'name'    => 'image',
 				'default' => 'large',
 			]
 		);
@@ -476,7 +475,7 @@ class Main_Image_Widget extends \immonex\Kickstart\ForElementor\Components\Widge
 			'fields'     => 'ids',
 			'meta_query' => [
 				[
-					'key'   => '_inx_elementor_demo_content',
+					'key'   => '_inxkickel_demo_content',
 					'value' => 'main_image',
 				],
 			],
@@ -501,8 +500,7 @@ class Main_Image_Widget extends \immonex\Kickstart\ForElementor\Components\Widge
 	 * @return mixed[] Attachment or placeholder ID and URL.
 	 */
 	private function create_demo_image() {
-		// phpcs:ignore
-		$plugin_dir   = apply_filters( 'inx_elementor_get_plugin_dir', '' );
+		$plugin_dir   = apply_filters( 'inxkickel_get_plugin_dir', '' );
 		$source_image = trailingslashit( $plugin_dir ) . 'assets/demo-images/' . self::DEMO_IMAGE_FILENAME;
 
 		$meta = [

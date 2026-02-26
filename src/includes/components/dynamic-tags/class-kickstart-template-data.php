@@ -102,8 +102,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 				continue;
 			}
 
-			// phpcs:ignore
-			$options = apply_filters( 'inx_elementor_mapping_select_options', [], $option_type );
+			$options = apply_filters( 'inxkickel_mapping_select_options', [], $option_type );
 			if ( empty( $options ) ) {
 				continue;
 			}
@@ -248,8 +247,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 	 * @return string Dynamic tag value.
 	 */
 	public function get_value( $options = [] ) {
-		// phpcs:ignore
-		$is_edit_mode = ! empty( $_REQUEST['editor_post_id'] )
+		$is_edit_mode = ! empty( $_REQUEST['editor_post_id'] ) // phpcs:ignore
 			|| \Elementor\Plugin::$instance->editor->is_edit_mode();
 
 		if ( 'array_keys' === $this->get_settings( 'type' ) ) {
@@ -284,8 +282,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 				$element['value'] = "[{$element['value']}]";
 				$element_data     = [ $element ];
 			} else {
-				// phpcs:ignore
-				$element_data = apply_filters( 'inx_get_flex_items', [], $element['element'], $scope );
+				$element_data = apply_filters( 'inx_get_flex_items', [], $element['element'], $scope ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 
 				if ( empty( $element_data ) ) {
 					continue;
@@ -304,7 +301,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 					}
 
 					$element_return['value'] = apply_filters(
-						'inx_format', // phpcs:ignore
+						'inx_format', // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 						$element_return['value'],
 						$format['type'],
 						$format['args']
@@ -346,8 +343,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 			return '';
 		}
 
-		// phpcs:ignore
-		$template_data = apply_filters( 'inx_get_property_template_data', [] );
+		$template_data = apply_filters( 'inx_get_property_template_data', [] ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 		if ( empty( $template_data ) ) {
 			return '';
 		}
@@ -419,7 +415,7 @@ class Kickstart_Template_Data extends \Elementor\Core\DynamicTags\Data_Tag {
 		}
 
 		$this->format_filters = apply_filters(
-			'inx_elementor_format_filters', // phpcs:ignore
+			'inxkickel_format_filters',
 			[
 				'inx_format_price'  => [
 					'title' => __( 'Price', 'immonex-kickstart-for-elementor' ),

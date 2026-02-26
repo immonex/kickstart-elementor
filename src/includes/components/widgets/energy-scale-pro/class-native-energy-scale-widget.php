@@ -5,7 +5,7 @@
  * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\EnergyScalePro;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -237,13 +237,19 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\ForElementor\Compone
 		}
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			$preview_data = [
-				'type'          => 'consumption',
-				'class'         => 'E',
-				'year'          => '2014',
-				'final_energy'  => 148,
-				'co2_emissions' => 123,
-			];
+			$post_id = get_the_ID();
+
+			if ( static::POST_TYPE === get_post_type( $post_id ) ) {
+				$preview_data = [ 'property_post_id' => $post_id ];
+			} else {
+				$preview_data = [
+					'type'          => 'consumption',
+					'class'         => 'E',
+					'year'          => '2014',
+					'final_energy'  => 148,
+					'co2_emissions' => 123,
+				];
+			}
 
 			foreach ( $preview_data as $att => $value ) {
 				$this->add_render_attribute( 'shortcode', $att, $value );

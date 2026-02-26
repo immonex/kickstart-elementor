@@ -1,29 +1,28 @@
 <?php
 /**
- * Class Native_Agency_Widget
+ * Class Native_Agent_Widget
  *
  * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\ForElementor\Components\Widgets\Team;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\KickstartTeam;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Elementor Native Agency Widget
+ * Elementor Native Agent Widget
  *
  * @since 1.0.0
  */
-class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
+class Native_Agent_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Widget_Base {
 
-	const WIDGET_NAME               = 'inx-e-native-team-agency';
-	const WIDGET_ICON               = 'eicon-welcome';
-	const WIDGET_CATEGORIES         = [ 'inx-team' ];
-	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/agentur';
+	const WIDGET_NAME               = 'inx-e-native-team-agent';
+	const WIDGET_ICON               = 'eicon-person';
+	const WIDGET_CATEGORIES         = [ 'inx-single-property', 'inx-team' ];
+	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/kontaktperson-formular';
 	const ENABLE_RENDER_ON_PREVIEW  = true;
-	const IS_DYNAMIC_CONTENT        = true;
 	const PARENT_PLUGIN_NAME        = 'immonex Kickstart Team';
 	const PARENT_PLUGIN_WP_REPO_URL = 'https://wordpress.org/plugins/immonex-kickstart-team/';
 
@@ -35,7 +34,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Agency', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
+		return __( 'Contact <span style="white-space:nowrap">Person/Form</span>', 'immonex-kickstart-for-elementor' ) . self::NATIVE_POSTFIX;
 	} // get_title
 
 	/**
@@ -52,8 +51,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				[
 					__( 'contact', 'immonex-kickstart-for-elementor' ),
 					__( 'team', 'immonex-kickstart-for-elementor' ),
-					__( 'agency', 'immonex-kickstart-for-elementor' ),
-					__( 'agents', 'immonex-kickstart-for-elementor' ),
+					__( 'agent', 'immonex-kickstart-for-elementor' ),
 				]
 			)
 		);
@@ -69,36 +67,35 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			return;
 		}
 
-		$agency_posts = get_posts(
+		$agent_posts = get_posts(
 			[
-				'post_type' => 'inx_agency',
+				'post_type' => 'inx_agent',
 				'orderby'   => 'title',
 				'order'     => 'ASC',
 			]
 		);
-		$agencies     = [
+		$agents      = [
 			'' => __( 'Automatic (Property Detail Pages)', 'immonex-kickstart-for-elementor' ),
 		];
 
-		if ( ! empty( $agency_posts ) ) {
-			foreach ( $agency_posts as $agency ) {
-				$agencies[ $agency->ID ] = $agency->post_title;
+		if ( ! empty( $agent_posts ) ) {
+			foreach ( $agent_posts as $agent ) {
+				$agents[ $agent->ID ] = $agent->post_title;
 			}
 		}
 
-		// phpcs:ignore
-		$agency_elements = apply_filters( 'inx_team_get_agency_elements', [] );
+		$agent_elements  = apply_filters( 'inx_team_get_agent_elements', [] );  // phpcs:ignore -- Filter hook of another Kickstart add-on plugin that can't be changed (yet) for compatibility reasons.
 		$element_options = [];
 
-		if ( ! empty( $agency_elements ) ) {
+		if ( ! empty( $agent_elements ) ) {
 			uasort(
-				$agency_elements,
+				$agent_elements,
 				function ( $a, $b ) {
 					return $a['order'] <=> $b['order'];
 				}
 			);
 
-			foreach ( $agency_elements as $key => $element ) {
+			foreach ( $agent_elements as $key => $element ) {
 				if ( empty( $element['selectable_for_output'] ) ) {
 					continue;
 				}
@@ -116,15 +113,15 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 		$text_style_sections = [
 			'text_general'     => [
 				'label' => __( 'Text in General', 'immonex-kickstart-for-elementor' ),
-				'class' => '.inx-team-single-agency',
+				'class' => '.inx-team-single-agent',
 			],
-			'company'          => [
-				'label' => __( 'Company', 'immonex-kickstart-for-elementor' ),
-				'class' => '.inx-team-single-agency__company, .inx-team-single-agency__element--type--company .inx-team-single-agency__element-value',
+			'name'             => [
+				'label' => __( 'Name', 'immonex-kickstart-for-elementor' ),
+				'class' => '.inx-team-single-agent__name',
 			],
 			'contact_elements' => [
 				'label' => __( 'Contact Data Elements', 'immonex-kickstart-for-elementor' ),
-				'class' => '.inx-team-single-agency__element-value',
+				'class' => '.inx-team-single-agent__element-value',
 			],
 			'consent'          => [
 				'label' => __( 'Consent Texts', 'immonex-kickstart-for-elementor' ),
@@ -146,32 +143,38 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			'type',
 			[
 				'label'       => __( 'Display Type', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'The widget is a compact view that usually contains the contact data incl. logo and form (see Elements below), the full view also includes lists of related agents and properties, but no form by default.', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'The detail page section and the more compact widget view usually contain all contact information incl. photo and a form (see Elements below), the full view also includes a list of related properties and a link to the agency details.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
-					''       => __( 'Full View (Single)', 'immonex-kickstart-for-elementor' ),
-					'widget' => __( 'Widget', 'immonex-kickstart-for-elementor' ),
+					''                                    => __( 'Full View (Single)', 'immonex-kickstart-for-elementor' ),
+					'default_contact_element_replacement' => __( 'Contact Section (Property Detail Pages)', 'immonex-kickstart-for-elementor' ),
+					'widget'                              => __( 'Widget', 'immonex-kickstart-for-elementor' ),
 				],
+				'default'     => 'default_contact_element_replacement',
 			]
 		);
 
 		$this->add_control(
-			'agency_id',
+			'agent_id',
 			[
-				'label'       => __( 'Agency', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'Only to be selected if the agency data should <strong>not</strong> be embedded in a <strong>property detail page<strong>.', 'immonex-kickstart-for-elementor' ),
+				'label'       => __( 'Contact Person (Agent)', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Only to be selected if the agent data should <strong>not</strong> be embedded in a <strong>property detail page<strong>.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'default'     => '',
-				'options'     => $agencies,
+				'options'     => $agents,
+				'condition'   => [
+					'type!' => 'default_contact_element_replacement',
+				],
 			]
 		);
 
 		$default_control_args = [
 			'heading'       => [
-				'condition' => [
-					'type' => 'widget',
+				'description' => __( 'Insert "auto" for an agent\'s gender conforming standard title.', 'immonex-kickstart-for-elementor' ),
+				'default'     => 'auto',
+				'condition'   => [
+					'type!' => '',
 				],
 			],
 			'heading_level' => [
@@ -201,7 +204,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 		$this->add_control(
 			'link_type',
 			[
-				'label'     => __( 'Agency Link Destination', 'immonex-kickstart-for-elementor' ),
+				'label'     => __( 'Agent Link Destination', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'default'   => '',
 				'options'   => [
@@ -211,7 +214,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 					'none'     => _x( 'None', 'link destination: none', 'immonex-kickstart-for-elementor' ),
 				],
 				'condition' => [
-					'type' => 'widget',
+					'type!' => 'default_contact_element_replacement',
 				],
 			]
 		);
@@ -220,7 +223,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			'display_for',
 			[
 				'label'       => __( 'Property Status', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'Display the agency widget only on detail pages of properties matching the selected state.', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Display the agent widget only on detail pages of properties matching the selected state.', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',
 				'options'     => [
@@ -232,7 +235,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 					'references_only'       => __( 'References only', 'immonex-kickstart-for-elementor' ),
 				],
 				'condition'   => [
-					'type' => 'widget',
+					'type!' => 'default_contact_element_replacement',
 				],
 			]
 		);
@@ -325,25 +328,9 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
-				'content'     => __( 'The following settings can be used to override the corresponding ones in the plugin and agency options.', 'immonex-kickstart-for-elementor' ),
+				'content'     => __( 'The following settings can be used to override the corresponding ones in the plugin and agent options.', 'immonex-kickstart-for-elementor' ),
 				'condition'   => [
 					'use_default_elements' => '',
-				],
-			]
-		);
-
-		$this->add_control(
-			'show_agent_list',
-			[
-				'label'       => __( 'Agent List', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'Display agents associated with the agency.', 'immonex-kickstart-for-elementor' ),
-				'label_block' => true,
-				'type'        => \Elementor\Controls_Manager::SELECT,
-				'default'     => '',
-				'options'     => [
-					''    => __( 'Default (Plugin/Agency Options)', 'immonex-kickstart-for-elementor' ),
-					'yes' => __( 'show', 'immonex-kickstart-for-elementor' ),
-					'no'  => __( 'hide', 'immonex-kickstart-for-elementor' ),
 				],
 			]
 		);
@@ -352,12 +339,12 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			'show_property_list',
 			[
 				'label'       => __( 'Property List', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'Display properties associated with the agency.', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Display properties associated with the agent.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',
 				'options'     => [
-					''    => __( 'Default (Plugin/Agency Options)', 'immonex-kickstart-for-elementor' ),
+					''    => __( 'Default (Plugin/Agent Options)', 'immonex-kickstart-for-elementor' ),
 					'yes' => __( 'show', 'immonex-kickstart-for-elementor' ),
 					'no'  => __( 'hide', 'immonex-kickstart-for-elementor' ),
 				],
@@ -365,15 +352,15 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 		);
 
 		$this->add_control(
-			'show_legal_notice',
+			'show_agency_link',
 			[
-				'label'       => __( 'Legal Notice', 'immonex-kickstart-for-elementor' ),
-				'description' => __( "Display the agency's legal notice, if available.", 'immonex-kickstart-for-elementor' ),
+				'label'       => __( 'Footer Box (Agency Link)', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Includes the name/logo linked to the detail page of the related agency and a short description, if available.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',
 				'options'     => [
-					''    => __( 'Default (Plugin/Agency Options)', 'immonex-kickstart-for-elementor' ),
+					''    => __( 'Default (Plugin/Agent Options)', 'immonex-kickstart-for-elementor' ),
 					'yes' => __( 'show', 'immonex-kickstart-for-elementor' ),
 					'no'  => __( 'hide', 'immonex-kickstart-for-elementor' ),
 				],
@@ -392,30 +379,46 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				],
 				'heading_align'         => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__title' => 'text-align: {{VALUE}};',
+						'{{WRAPPER}} .inx-team-single-agent__title' => 'text-align: {{VALUE}};',
 					],
 				],
 				'heading_title_color'   => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__title' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .inx-team-single-agent__title' => 'color: {{VALUE}};',
 					],
 				],
 				'heading_typography'    => [
-					'selector' => '{{WRAPPER}} .inx-team-single-agency__title',
+					'selector' => '{{WRAPPER}} .inx-team-single-agent__title',
 				],
 				'heading_text_stroke'   => [
-					'selector' => '{{WRAPPER}} .inx-team-single-agency__title',
+					'selector' => '{{WRAPPER}} .inx-team-single-agent__title',
 				],
 				'heading_text_shadow'   => [
-					'selector' => '{{WRAPPER}} .inx-team-single-agency__title',
+					'selector' => '{{WRAPPER}} .inx-team-single-agent__title',
 				],
 				'blend_mode'            => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__title' => 'mix-blend-mode: {{VALUE}}',
+						'{{WRAPPER}} .inx-team-single-agent__title' => 'mix-blend-mode: {{VALUE}}',
 					],
 				],
 			],
 			false
+		);
+
+		$this->add_control(
+			'disable_heading_dividing_line',
+			[
+				'label'        => __( 'Hide Dividing Line', 'immonex-kickstart-for-elementor' ),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'return_value' => '0',
+				'selectors'    => [
+					'{{WRAPPER}} .inx-single-property__section-title.uk-heading-divider' => 'padding-bottom: {{VALUE}}; border-bottom: {{VALUE}};',
+				],
+				'separator'    => 'before',
+				'condition'    => [
+					'type' => 'default_contact_element_replacement',
+				],
+			]
 		);
 
 		$this->end_controls_section();
@@ -628,6 +631,16 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'list_headline_section',
+			[
+				'label'     => __( 'List Headlines', 'immonex-kickstart-for-elementor' ),
+				'tab'       => \Elementor\Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'type' => '',
+				],
+			]
+		);
 		$this->add_default_controls(
 			[ 'heading_style' ],
 			[
@@ -642,26 +655,26 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				],
 				'heading_align'         => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__list-headline' => 'text-align: {{VALUE}};',
+						'{{WRAPPER}} .inx-team-single-agent__list-headline' => 'text-align: {{VALUE}};',
 					],
 				],
 				'heading_title_color'   => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__list-headline' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .inx-team-single-agent__list-headline' => 'color: {{VALUE}};',
 					],
 				],
 				'heading_typography'    => [
-					'selector' => '{{WRAPPER}} .inx-team-single-agency__list-headline',
+					'selector' => '{{WRAPPER}} .inx-team-single-agent__list-headline',
 				],
 				'heading_text_stroke'   => [
-					'selector' => '{{WRAPPER}} .inx-team-single-agency__list-headline',
+					'selector' => '{{WRAPPER}} .inx-team-single-agent__list-headline',
 				],
 				'heading_text_shadow'   => [
-					'selector' => '{{WRAPPER}} .inx-team-single-agency__list-headline',
+					'selector' => '{{WRAPPER}} .inx-team-single-agent__list-headline',
 				],
 				'blend_mode'            => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__list-headline' => 'mix-blend-mode: {{VALUE}}',
+						'{{WRAPPER}} .inx-team-single-agent__list-headline' => 'mix-blend-mode: {{VALUE}}',
 					],
 				],
 			],
@@ -687,6 +700,10 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 
 		$settings = $this->get_settings_for_display();
 
+		if ( 'default_contact_element_replacement' === $settings['type'] ) {
+			$this->add_render_attribute( 'shortcode', 'template', 'single-agent/default-contact-element-replacement' );
+		}
+
 		if ( ! $settings['use_default_elements'] && ! empty( $settings['form_elements'] ) ) {
 			$elements = [];
 
@@ -697,15 +714,19 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			$this->add_render_attribute( 'shortcode', 'elements', implode( ',', $elements ) );
 		}
 
-		if ( ! empty( $settings['agency_id'] ) ) {
-			$this->add_render_attribute( 'shortcode', 'id', $settings['agency_id'] );
+		if ( ! empty( $settings['agent_id'] ) ) {
+			$this->add_render_attribute( 'shortcode', 'id', $settings['agent_id'] );
 		}
 
-		if ( ! empty( $settings['heading'] ) ) {
-			$h_tag = $this->get_h_tag( $settings['heading_level'] );
+		if (
+			! empty( $settings['heading'] )
+			|| 'default_contact_element_replacement' === $settings['type']
+		) {
+			$h_tag      = $this->get_h_tag( $settings['heading_level'] );
+			$title_attr = 'default_contact_element_replacement' === $settings['type'] ? 'default_contact_section_title' : 'title';
 
 			$this->add_render_attribute( 'shortcode', 'before_title', "<{$h_tag}>" );
-			$this->add_render_attribute( 'shortcode', 'title', $settings['heading'] );
+			$this->add_render_attribute( 'shortcode', $title_attr, $settings['heading'] );
 			$this->add_render_attribute( 'shortcode', 'after_title', "</{$h_tag}>" );
 		}
 
@@ -715,9 +736,8 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			'link_type',
 			'display_for',
 			'convert_links',
-			'show_agent_list',
 			'show_property_list',
-			'show_legal_notice',
+			'show_agency_link',
 		];
 
 		foreach ( $ext_atts as $att ) {
@@ -730,7 +750,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			$this->add_render_attribute( 'shortcode', 'is_preview', '1' );
 		}
 
-		$shortcode_output = do_shortcode( '[inx-team-agency ' . $this->get_render_attribute_string( 'shortcode' ) . ']' );
+		$shortcode_output = do_shortcode( '[inx-team-agent ' . $this->get_render_attribute_string( 'shortcode' ) . ']' );
 
 		return $shortcode_output ?
 			[
@@ -740,4 +760,4 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			false;
 	} // get_template_data
 
-} // class Native_Agency_Widget
+} // class Native_Agent_Widget

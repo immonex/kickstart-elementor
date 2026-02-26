@@ -19,7 +19,6 @@ abstract class Map_Widget extends Widget_Base {
 	const DEFAULT_MARKER_STROKE_WIDTH_PX  = 3;
 	const DEFAULT_MARKER_SCALE_PCT        = 75;
 	const ENABLE_RENDER_ON_PREVIEW        = true;
-	const IS_DYNAMIC_CONTENT              = true;
 
 	/**
 	 * Return widget contents for frontend template rendering.

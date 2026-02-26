@@ -123,10 +123,9 @@ class Kickstart_Gallery extends \Elementor\Core\DynamicTags\Data_Tag {
 		} elseif ( ! $type ) {
 			return [];
 		} else {
-			// phpcs:ignore
-			$property_id = apply_filters( 'inx_current_property_post_id', get_the_id() );
+			$property_id = apply_filters( 'inx_current_property_post_id', get_the_id() ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 			$image_ids   = apply_filters(
-				'inx_get_property_images', // phpcs:ignore
+				'inx_get_property_images', // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 				[],
 				$property_id,
 				[

@@ -1,5 +1,17 @@
 == Changelog ==
 
+= 1.1.5 =
+* Veröffentlichungsdatum: 26.02.2026
+* Auswahl der Widget-Vorschau-Inhalte überarbeitet.
+* Interne Widget-Ordnerstruktur und Präfixe angepasst.
+* Abhängigkeiten aktualisiert.
+
+= 1.1.0 =
+* Veröffentlichungsdatum: 17.02.2026
+* Dynamic Tag für Objekt- und Backlink-URLs ergänzt.
+* Elementor-Pro-bezogene Abfragen-, Cache- und Vorschau-Verarbeitung verbessert.
+* Abhängigkeiten aktualisiert.
+
 = 1.0.0 "Ice" =
-* Veröffentlichungsdatum: 11.02.2026
+* Veröffentlichungsdatum: 30.01.2026
 * Erstveröffentlichung.

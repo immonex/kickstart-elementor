@@ -23,7 +23,6 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\ForElementor\Component
 	const WIDGET_CATEGORIES        = [ 'inx-marketing-acquisition' ];
 	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/lead-generator';
 	const ENABLE_RENDER_ON_PREVIEW = true;
-	const IS_DYNAMIC_CONTENT       = true;
 	const PARENT_PLUGIN_NAME       = 'immonex Lead Generator';
 	const PARENT_PLUGIN_SHOP_URL   = 'https://plugins.inveris.de/wordpress-plugins/immonex-lead-generator';
 
@@ -67,7 +66,7 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\ForElementor\Component
 			return;
 		}
 
-		$lead_gen_options     = apply_filters( 'immonex_options', [], 'lead_gen' );
+		$lead_gen_options     = apply_filters( 'immonex_options', [], 'lead_gen' ); // phpcs:ignore -- Common framework filter hook for all immonex plugins.
 		$additional_form_sets = ! empty( $lead_gen_options['additional_form_sets'] ) ?
 			(int) $lead_gen_options['additional_form_sets'] : 0;
 

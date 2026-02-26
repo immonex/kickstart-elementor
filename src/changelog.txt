@@ -1,5 +1,17 @@
 == Changelog ==
 
+= 1.1.5 =
+* Release date: 2026-02-26
+* Reworked widget preview data selection.
+* Adjusted internal widget folder structure and prefixes.
+* Updated dependencies.
+
+= 1.1.0 =
+* Release date: 2026-02-17
+* Added a dynamic tag for property and backlink URLs.
+* Improved Elementor Pro related query, cache and preview processing.
+* Updated dependencies.
+
 = 1.0.0 "Ice" =
-* Release date: 2026-02-11
+* Release date: 2026-01-30
 * Initial release.

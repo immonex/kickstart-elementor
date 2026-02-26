@@ -5,7 +5,7 @@
  * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\ForElementor\Components\Widgets\SingleProperty;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\KickstartPrint;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -173,8 +173,7 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\ForElementor\Components\W
 			return false;
 		}
 
-		// phpcs:ignore
-		$url = apply_filters( 'inx_print_pdf_link_url', '' );
+		$url = apply_filters( 'inxkickpr_pdf_link_url', '' ); // phpcs:ignore -- Filter hook belongs to another Kickstart add-on plugin.
 		if ( ! $url ) {
 			return false;
 		}

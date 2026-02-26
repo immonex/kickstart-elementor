@@ -4,6 +4,8 @@
 
 ![Screenshot: Karussell (Immobilienliste) Elementor-Widget](../assets/scst-widget-karussell.png)
 
+?> Als Alternative zu diesem Widget können mit [Elementor Pro](https://be.elementor.com/visit/?bta=229006&nci=5657) können auch ganz [individuell gestaltete Listenansichten mittels Loop-Widgets](/elementor-pro/immobilien-loop-grid) erstellt werden.
+
 ## Widget-Details
 
 [](_type-native.md ':include')
@@ -33,6 +35,7 @@ Die Einstellungen sind identisch mit denen des [Grid-Listen-Widgets](liste-grid)
 ### Siehe auch
 
 - Widget: [Liste (Grid) 🄽](liste-grid)
+- [Immobilienliste als Loop-Karussell (Elementor Pro)](/elementor-pro/immobilien-loop-grid)
 - [Listenansicht](https://docs.immonex.de/kickstart/#/komponenten/liste) (immonex Kickstart)
 
 [](_backlink.md ':include')

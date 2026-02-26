@@ -79,7 +79,7 @@ class Key_Value_List_Widget extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$tweaks = apply_filters(
-			'inx_elementor_tweaks', // phpcs:ignore
+			'inxkickel_tweaks',
 			[ 'enable_before_after_item_contents' => self::ENABLE_BEFORE_AFTER_ITEM_CONTENTS ],
 			90
 		);
@@ -148,8 +148,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					}
 
 					$options = $this->add_extended_element_select_options(
-						// phpcs:ignore
-						apply_filters( 'inx_elementor_mapping_select_options', [], $option_type ),
+						apply_filters( 'inxkickel_mapping_select_options', [], $option_type ),
 						$option_type
 					);
 
@@ -1022,6 +1021,13 @@ class Key_Value_List_Widget extends Widget_Base {
 			'items'           => [],
 		];
 
+		$post_id      = null;
+		$temp_post_id = get_the_ID();
+
+		if ( static::POST_TYPE === get_post_type( $temp_post_id ) ) {
+			$post_id = $temp_post_id;
+		}
+
 		foreach ( $elements as $element ) {
 			if (
 				! empty( $element['predefined_element'] )
@@ -1048,8 +1054,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				continue;
 			}
 
-			// phpcs:ignore
-			$element_data = apply_filters( 'inx_get_flex_items', [], $element['element'], $scope );
+			$element_data = apply_filters( 'inx_get_flex_items', [], $element['element'], $scope, $post_id ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 			if ( empty( $element_data ) ) {
 				continue;
 			}
@@ -1082,7 +1087,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					}
 
 					$element_return['value'] = apply_filters(
-						'inx_format', // phpcs:ignore
+						'inx_format', // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 						$element_return['value'],
 						$format['type'],
 						$format['args']
@@ -1160,7 +1165,7 @@ class Key_Value_List_Widget extends Widget_Base {
 		}
 
 		$this->format_filters = apply_filters(
-			'inx_elementor_format_filters', // phpcs:ignore
+			'inxkickel_format_filters',
 			[
 				'inx_format_price'  => [
 					'title' => __( 'Price', 'immonex-kickstart-for-elementor' ),

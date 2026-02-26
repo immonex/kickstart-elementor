@@ -5,7 +5,7 @@
  * @package immonex\KickstartForElementor
  */
 
-namespace immonex\Kickstart\ForElementor\Components\Widgets\Team;
+namespace immonex\Kickstart\ForElementor\Components\Widgets\KickstartTeam;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -23,7 +23,6 @@ class Native_Agent_List_Widget extends \immonex\Kickstart\ForElementor\Component
 	const WIDGET_CATEGORIES         = [ 'inx-team' ];
 	const WIDGET_HELP_URL           = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/kontaktpersonen-liste';
 	const ENABLE_RENDER_ON_PREVIEW  = true;
-	const IS_DYNAMIC_CONTENT        = true;
 	const PARENT_PLUGIN_NAME        = 'immonex Kickstart Team';
 	const PARENT_PLUGIN_WP_REPO_URL = 'https://wordpress.org/plugins/immonex-kickstart-team/';
 

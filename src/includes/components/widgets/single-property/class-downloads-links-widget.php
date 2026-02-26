@@ -62,8 +62,10 @@ class Downloads_Links_Widget extends \immonex\Kickstart\ForElementor\Components\
 	protected function get_template_data() {
 		$template_data = parent::get_template_data();
 
-		$files = apply_filters( 'inx_get_property_files', [], false ); // phpcs:ignore
-		$links = apply_filters( 'inx_get_property_links', [], false ); // phpcs:ignore
+		// phpcs:disable -- Parent plugin filter hooks that can't be changed (yet) for compatibility reasons.
+		$files = apply_filters( 'inx_get_property_files', [], false );
+		$links = apply_filters( 'inx_get_property_links', [], false );
+		// phpcs:enable
 
 		if ( empty( $files ) && empty( $links ) ) {
 			return false;
@@ -105,8 +107,7 @@ class Downloads_Links_Widget extends \immonex\Kickstart\ForElementor\Components\
 		}
 
 		if ( ! empty( $links ) ) {
-			// phpcs:ignore
-			$utils = apply_filters( 'inx_elementor_get_utils', [] );
+			$utils = apply_filters( 'inxkickel_get_utils', [] );
 			$icon  = \Elementor\Icons_Manager::try_get_icon_html(
 				[
 					'value'   => 'fas fa-external-link-alt',

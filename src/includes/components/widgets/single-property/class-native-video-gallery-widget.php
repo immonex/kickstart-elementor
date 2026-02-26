@@ -251,8 +251,11 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\ForElementor\Compon
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			$this->add_render_attribute( 'shortcode', 'is_preview', '1' );
-			$this->add_render_attribute( 'shortcode', 'video_urls', implode( '|', \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIDEO_URLS ) );
 			$this->add_render_attribute( 'shortcode', 'videos_require_consent', '0' );
+
+			if ( static::POST_TYPE !== get_post_type() ) {
+				$this->add_render_attribute( 'shortcode', 'video_urls', implode( '|', \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIDEO_URLS ) );
+			}
 		}
 
 		$switch_controls = [

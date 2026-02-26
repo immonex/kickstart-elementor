@@ -15,15 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main plugin class.
  */
-class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Base {
+class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_9_0\Base {
 
 	const PLUGIN_NAME                = 'immonex Kickstart for Elementor';
 	const ADDON_NAME                 = 'Elementor';
 	const ADDON_TAB_ID               = 'addon_elementor';
-	const PLUGIN_PREFIX              = 'inx_elementor_';
-	const PUBLIC_PREFIX              = 'inx-elementor-';
+	const PLUGIN_PREFIX              = 'inxkickel_';
+	const PUBLIC_PREFIX              = 'inxkickel-';
 	const TEXTDOMAIN                 = 'immonex-kickstart-for-elementor';
-	const PLUGIN_VERSION             = '1.0.0';
+	const PLUGIN_VERSION             = '1.1.5';
 	const PLUGIN_VERSION_BYNAME      = 'Ice';
 	const PLUGIN_HOME_URL            = 'https://immonex.dev/wordpress-immobilien-plugin/immonex-kickstart-for-elementor';
 	const PLUGIN_DOC_URLS            = [
@@ -37,6 +37,20 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 	];
 	const OPTIONS_LINK_MENU_LOCATION = false;
 	const PARENT_PLUGIN_MAIN_CLASS   = '\immonex\Kickstart\Kickstart';
+	const SUPPORTED_POST_TYPES       = [
+		'inx_property' => [
+			'plain_key' => 'property',
+			'name'      => '',
+		],
+		'inx_agency'   => [
+			'plain_key' => 'agency',
+			'name'      => '',
+		],
+		'inx_agent'    => [
+			'plain_key' => 'agent',
+			'name'      => '',
+		],
+	];
 
 	/**
 	 * Plugin Options
@@ -56,6 +70,27 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 	protected $active_addons = [];
 
 	/**
+	 * Supported Post Types
+	 *
+	 * @var mixed[]
+	 */
+	private $supported_post_types = [];
+
+	/**
+	 * Supported Taxonomy Terms
+	 *
+	 * @var mixed[]
+	 */
+	private $supported_tax_terms = [];
+
+	/**
+	 * Elementor Bootstrap Instance
+	 *
+	 * @var \immonex\Kickstart\ForElementor\Elementor_Bootstrap
+	 */
+	private $elementor_bootstrap = [];
+
+	/**
 	 * Here we go!
 	 *
 	 * @since 1.0.0
@@ -65,8 +100,10 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 	public function __construct( $plugin_slug ) {
 		parent::__construct( $plugin_slug, self::TEXTDOMAIN );
 
-		$elementor_bootstrap = new Elementor_Bootstrap( $this->bootstrap_data );
-		$elementor_bootstrap->init();
+		$this->bootstrap_data['supported_post_types'] = self::SUPPORTED_POST_TYPES;
+
+		$this->elementor_bootstrap = new Elementor_Bootstrap( $this->bootstrap_data );
+		$this->elementor_bootstrap->init();
 	} // __construct
 
 	/**
@@ -83,7 +120,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 	 */
 	protected function activate_plugin_single_site( $fire_before_hook = true, $fire_after_hook = true ) {
 		/**
-		 * Temporary: Check if the plugin is installed with its deprecated
+		 * TEMPORARY: Check if the plugin is installed with its deprecated
 		 * name/slug and remove it if so.
 		 */
 
@@ -101,10 +138,33 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 			$result = delete_plugins( [ $deprecated_plugin_slug_main_file ] );
 		}
 
+		/**
+		 * TEMPORARY: Delete demo images with outdated tags (custom fields).
+		 */
+
+		$args = [
+			'post_type'   => 'attachment',
+			'numberposts' => -1,
+			'fields'      => 'ids',
+			'meta_query'  => [
+				[
+					'key'     => '_inx_elementor_demo_content',
+					'compare' => 'EXISTS',
+				],
+			],
+		];
+		$ids  = get_posts( $args );
+
+		if ( ! empty( $ids ) ) {
+			foreach ( $ids as $id ) {
+				wp_delete_attachment( $id, true );
+				clean_post_cache( $id );
+			}
+		}
+
 		parent::activate_plugin_single_site( true, false );
 
-		// phpcs:ignore
-		do_action( 'immonex_core_after_activation', $this->plugin_slug );
+		do_action( 'immonex_core_after_activation', $this->plugin_slug ); // phpcs:ignore -- Common framework action hook for all immonex plugins.
 	} // activate_plugin_single_site
 
 	/**
@@ -130,7 +190,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 
 		// Internal filter.
 		add_filter(
-			'inx_elementor_get_plugin_dir',
+			'inxkickel_get_plugin_dir',
 			function ( $plugin_dir ) { // phpcs:ignore
 				return $this->plugin_dir;
 			}
@@ -138,7 +198,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 
 		// Internal filter.
 		add_filter(
-			'inx_elementor_get_utils',
+			'inxkickel_get_utils',
 			function ( $utils ) { // phpcs:ignore
 				return $this->utils;
 			}
@@ -150,7 +210,10 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 			add_filter( 'immonex-kickstart_option_fields', [ $this, 'extend_fields' ], 15 );
 		}
 
-		do_action( 'immonex_core_after_init', $this->plugin_slug );
+		add_filter( 'inxkickel_supported_post_types', [ $this, 'get_supported_post_types' ] );
+		add_filter( 'inxkickel_supported_tax_terms', [ $this, 'get_supported_tax_terms' ] );
+
+		do_action( 'immonex_core_after_init', $this->plugin_slug ); // phpcs:ignore -- Common framework action hook for all immonex plugins.
 	} // init_plugin
 
 	/**
@@ -171,7 +234,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 		$mapping_table = new Mapping_Table( $this->bootstrap_data );
 		$mapping_table->init();
 
-		do_action( 'immonex_core_after_init_admin', $this->plugin_slug );
+		do_action( 'immonex_core_after_init_admin', $this->plugin_slug ); // phpcs:ignore -- Common framework action hook for all immonex plugins.
 	} // init_plugin_admin
 
 	/**
@@ -179,9 +242,9 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $tabs Original tab array.
+	 * @param mixed[] $tabs Original tab array.
 	 *
-	 * @return array Extended tab array.
+	 * @return mixed[] Extended tab array.
 	 */
 	public function extend_tabs( $tabs ) {
 		$addon_footer_infos = implode( ' | ', $this->get_plugin_footer_infos() );
@@ -199,10 +262,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 			],
 		];
 
-		// phpcs:ignore
-		$addon_tabs = apply_filters( "{$this->plugin_slug}_option_tabs", $addon_tabs );
-
-		do_action( 'immonex_plugin_options_add_extension_tabs', $this->plugin_slug, $addon_tabs );
+		do_action( 'immonex_plugin_options_add_extension_tabs', $this->plugin_slug, $addon_tabs ); // phpcs:ignore -- Common framework action hook for all immonex plugins.
 
 		return array_merge( $tabs, $addon_tabs );
 	} // extend_tabs
@@ -212,9 +272,9 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $sections Original sections array.
+	 * @param mixed[] $sections Original sections array.
 	 *
-	 * @return array Extended sections array.
+	 * @return mixed[] Extended sections array.
 	 */
 	public function extend_sections( $sections ) {
 		$prefix = self::ADDON_TAB_ID . '_';
@@ -227,10 +287,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 			],
 		];
 
-		// phpcs:ignore
-		$addon_sections = apply_filters( "{$this->plugin_slug}_option_sections", $addon_sections );
-
-		do_action( 'immonex_plugin_options_add_extension_sections', $this->plugin_slug, $addon_sections );
+		do_action( 'immonex_plugin_options_add_extension_sections', $this->plugin_slug, $addon_sections ); // phpcs:ignore -- Common framework action hook for all immonex plugins.
 
 		return array_merge( $sections, $addon_sections );
 	} // extend_sections
@@ -240,9 +297,9 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $fields Original fields array.
+	 * @param mixed[] $fields Original fields array.
 	 *
-	 * @return array Extended fields array.
+	 * @return mixed[] Extended fields array.
 	 */
 	public function extend_fields( $fields ) {
 		$prefix = self::ADDON_TAB_ID . '_';
@@ -263,12 +320,209 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_7_0\Ba
 			],
 		];
 
-		// phpcs:ignore
-		$addon_fields = apply_filters( "{$this->plugin_slug}_option_fields", $addon_fields );
-
-		do_action( 'immonex_plugin_options_add_extension_fields', $this->plugin_slug, $addon_fields );
+		do_action( 'immonex_plugin_options_add_extension_fields', $this->plugin_slug, $addon_fields ); // phpcs:ignore -- Common framework action hook for all immonex plugins.
 
 		return array_merge( $fields, $addon_fields );
 	} // extend_fields
+
+	/**
+	 * Return an array (key => plain key + translated plural output name) of all
+	 * Kickstart-related post types supported by this plugin (filter callback).
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param mixed[] $post_types Empty array.
+	 *
+	 * @return mixed[] Supported post types.
+	 */
+	public function get_supported_post_types( $post_types ) {
+		if ( ! empty( $this->supported_post_types ) ) {
+			return $this->supported_post_types;
+		}
+
+		$names = [
+			'inx_property' => __( 'Properties', 'immonex-kickstart-for-elementor' ),
+			'inx_agency'   => __( 'Agencies', 'immonex-kickstart-for-elementor' ),
+			'inx_agent'    => __( 'Agents', 'immonex-kickstart-for-elementor' ),
+		];
+
+		$supported_post_types = self::SUPPORTED_POST_TYPES;
+
+		foreach ( $supported_post_types as $key => $post_type ) {
+			if ( isset( $names[ $key ] ) ) {
+				$supported_post_types[ $key ]['name'] = $names[ $key ];
+			}
+		}
+
+		$this->supported_post_types = $supported_post_types;
+
+		return $supported_post_types;
+	} // get_supported_post_types
+
+	/**
+	 * Return a structured array of all supported taxonomy tags related to
+	 * Kickstart custom post types (filter callback).
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param mixed[] $tax_terms Empty array.
+	 *
+	 * @return mixed[] Supported taxonomy terms.
+	 */
+	public function get_supported_tax_terms( $tax_terms ) {
+		if ( ! empty( $this->supported_tax_terms ) ) {
+			return $this->supported_tax_terms;
+		}
+
+		$supported_post_types = $this->get_supported_post_types( [] );
+		$supported_tax_terms  = [];
+
+		foreach ( $supported_post_types as $post_type_key => $post_type ) {
+			$taxonomies = get_object_taxonomies( $post_type_key, 'objects' );
+
+			if ( empty( $taxonomies ) ) {
+				continue;
+			}
+
+			foreach ( $taxonomies as $taxonomy_key => $taxonomy ) {
+				if ( 'inx_' !== substr( $taxonomy_key, 0, 4 ) ) {
+					continue;
+				}
+
+				$terms = get_terms(
+					[
+						'taxonomy'   => $taxonomy_key,
+						'hide_empty' => false,
+					]
+				);
+
+				if ( empty( $terms ) || is_wp_error( $terms ) ) {
+					continue;
+				}
+
+				$terms   = $this->maybe_filter_and_add_ancestor_terms( $terms );
+				$options = $this->get_hierarchical_option_list( $terms, 0, 0 );
+
+				foreach ( $options as $term_slug => $term_name ) {
+					if ( ! isset( $supported_tax_terms[ $post_type_key ] ) ) {
+						$supported_tax_terms[ $post_type_key ] = [];
+					}
+					if ( ! isset( $supported_tax_terms[ $post_type_key ][ $taxonomy_key ] ) ) {
+						$supported_tax_terms[ $post_type_key ][ $taxonomy_key ] = [];
+					}
+
+					$supported_tax_terms[ $post_type_key ][ $taxonomy_key ][ $term_slug ] = [
+						'post_type_name' => $post_type['name'],
+						'taxonomy_name'  => $taxonomy->labels->singular_name,
+						'name'           => $term_name,
+					];
+				}
+			}
+		}
+
+		$this->supported_tax_terms = $supported_tax_terms;
+
+		return $supported_tax_terms;
+	} // get_supported_post_types
+
+	/**
+	 * Maybe add ancestor taxonomy terms before building hierarchical
+	 * option lists.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param \WP_Term[] $terms Array of WP term objects.
+	 *
+	 * @return \WP_Term[] Possibly extended term array.
+	 */
+	private function maybe_filter_and_add_ancestor_terms( $terms ) {
+		if ( empty( $terms ) ) {
+			return $terms;
+		}
+
+		$taxonomy     = $terms[0]->taxonomy;
+		$term_ids     = [];
+		$add_term_ids = [];
+
+		foreach ( $terms as $term ) {
+			$term_ids[] = $term->term_id;
+		}
+
+		foreach ( $terms as $i => $term ) {
+			$ancestor_ids = get_ancestors( $term->term_id, $term->taxonomy, 'taxonomy' );
+
+			if ( ! empty( $ancestor_ids ) ) {
+				foreach ( $ancestor_ids as $id ) {
+					if ( $id && ! in_array( $id, $term_ids, true ) ) {
+						$add_term_ids[] = $id;
+					}
+				}
+			}
+		}
+
+		$add_term_ids = array_unique( $add_term_ids );
+
+		if ( ! empty( $add_term_ids ) ) {
+			$terms = array_merge(
+				$terms,
+				get_terms(
+					[
+						'taxonomy' => $taxonomy,
+						'include'  => $add_term_ids,
+					]
+				)
+			);
+
+			uasort(
+				$terms,
+				function ( $a, $b ) {
+					if ( $a->name === $b->name ) {
+						return 0;
+					}
+
+					return $a->name < $b->name ? -1 : 1;
+				}
+			);
+		}
+
+		return $terms;
+	} // maybe_filter_and_add_ancestor_terms
+
+	/**
+	 * Recursively create and return an hierarchical option list.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param \WP_Term[] $terms     WP term objects.
+	 * @param int        $parent_id Parent term ID (optional, defaults to 0).
+	 * @param int        $level     Start level (optional, defaults to 0).
+	 *
+	 * @return mixed[] Term options.
+	 */
+	private function get_hierarchical_option_list( $terms, $parent_id = 0, $level = 0 ) {
+		$level_options = [];
+
+		if ( ! empty( $terms ) ) {
+			foreach ( $terms as $term ) {
+				if ( $term->parent === $parent_id ) {
+					$level_options[ $term->slug ] = str_repeat(
+						'&ndash;',
+						$level
+					) . " {$term->name}";
+
+					$level_options = array_merge(
+						$level_options,
+						$this->get_hierarchical_option_list(
+							$terms,
+							$term->term_id,
+							$level + 1
+						)
+					);
+				}
+			}
+		}
+
+		return $level_options;
+	} // get_hierarchical_option_list
 
 } // class Kickstart_for_Elementor

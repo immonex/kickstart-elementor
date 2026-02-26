@@ -6,10 +6,10 @@
 * **Widgets**
   * [Einleitung](/elementor-immobilien-widgets/einleitung)
   * [Übersicht](/elementor-immobilien-widgets/uebersicht)
-* **Dynamic Tags**
-  * [Übersicht](/elementor-immobilien-dynamic-tags/uebersicht)
-  * [Template-Daten](/elementor-immobilien-dynamic-tags/template-daten)
-  * [Galerie](/elementor-immobilien-dynamic-tags/galerie)
+* **Elementor Pro**
+  * [Loop Grid / Loop-Karussell](/elementor-pro/immobilien-loop-grid)
+  * [Dynamic Tags](/elementor-immobilien-dynamic-tags/uebersicht)
+
 * **Anpassung & Erweiterung**
   * [CSS](/anpassung-erweiterung/css)
   * [Skins](/anpassung-erweiterung/skins)

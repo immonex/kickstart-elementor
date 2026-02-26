@@ -369,21 +369,24 @@ class Native_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\W
 		$element  = 'custom_field' === $settings['gallery_image_type'] ? 'gallery' : $settings['gallery_image_type'];
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			$demo_image_ids = \immonex\Kickstart\ForElementor\Demo_Media::get_demo_image_ids();
-			$image_ids      = isset( $demo_image_ids[ $settings['gallery_image_type'] ] ) ?
-				$demo_image_ids[ $settings['gallery_image_type'] ] :
-				$demo_image_ids['gallery'];
-
-			$virtual_tour_embed_code  = '<p style="margin:0; padding:16px; text-align:center; color:#FFF; background-color:#4C93EC">' . __( 'This is a <strong>demo</strong> of the <a href="https://www.cloudpano.com/" target="_blank">CloudPano</a> 360° tour service.', 'immonex-kickstart-for-elementor' ) . '</p>' . PHP_EOL;
-			$virtual_tour_embed_code .= '<iframe width="640" height="480" src="' . \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIRTUAL_TOUR_URL . '"></iframe>';
-
 			$this->add_render_attribute( 'shortcode', 'is_preview', '1' );
-			$this->add_render_attribute( 'shortcode', 'image_ids', implode( ',', $image_ids ) );
-			$this->add_render_attribute( 'shortcode', 'video_url', \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIDEO_URLS[0] );
 			$this->add_render_attribute( 'shortcode', 'videos_require_consent', '0' );
-			$this->add_render_attribute( 'shortcode', 'virtual_tour_url', \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIRTUAL_TOUR_URL );
-			$this->add_render_attribute( 'shortcode', 'virtual_tour_embed_code', $virtual_tour_embed_code );
 			$this->add_render_attribute( 'shortcode', 'virtual_tours_require_consent', '0' );
+
+			if ( static::POST_TYPE !== get_post_type() ) {
+				$demo_image_ids = \immonex\Kickstart\ForElementor\Demo_Media::get_demo_image_ids();
+				$image_ids      = isset( $demo_image_ids[ $settings['gallery_image_type'] ] ) ?
+					$demo_image_ids[ $settings['gallery_image_type'] ] :
+					$demo_image_ids['gallery'];
+
+				$virtual_tour_embed_code  = '<p style="margin:0; padding:16px; text-align:center; color:#FFF; background-color:#4C93EC">' . __( 'This is a <strong>demo</strong> of the <a href="https://www.cloudpano.com/" target="_blank">CloudPano</a> 360° tour service.', 'immonex-kickstart-for-elementor' ) . '</p>' . PHP_EOL;
+				$virtual_tour_embed_code .= '<iframe width="640" height="480" src="' . \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIRTUAL_TOUR_URL . '"></iframe>';
+
+				$this->add_render_attribute( 'shortcode', 'image_ids', implode( ',', $image_ids ) );
+				$this->add_render_attribute( 'shortcode', 'video_url', \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIDEO_URLS[0] );
+				$this->add_render_attribute( 'shortcode', 'virtual_tour_url', \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIRTUAL_TOUR_URL );
+				$this->add_render_attribute( 'shortcode', 'virtual_tour_embed_code', $virtual_tour_embed_code );
+			}
 		}
 
 		if ( ! empty( $settings['image_selection_custom_field'] ) ) {

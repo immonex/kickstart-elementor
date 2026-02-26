@@ -19,9 +19,9 @@ class Elementor_Bootstrap {
 
 	const MIN_REQ_VERSIONS = [
 		'esp'            => '2.1.0',
-		'print'          => '0.3.0',
+		'print'          => '0.9.2-beta',
 		'team'           => '1.5.12',
-		'lead-generator' => '3.0.0-rc6',
+		'lead-generator' => '3.0.0',
 		'notify'         => '1.1.6',
 	];
 
@@ -67,14 +67,15 @@ class Elementor_Bootstrap {
 		add_action( 'elementor/elements/categories_registered', [ $this, 'add_widget_categories' ], 90 );
 		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'enqueue_editor_css_js' ] );
+		add_action( 'elementor/widget/before_render_content', [ $this, 'extend_loop_css_classes' ] );
 
-		// phpcs:ignore
-		if ( apply_filters( 'inx_elementor_is_plugin_available', false, 'elementor-pro' ) ) {
-			add_action( 'elementor/dynamic_tags/register', [ $this, 'register_inx_dynamic_tag_group' ] );
-			add_action( 'elementor/dynamic_tags/register', [ $this, 'register_inx_dynamic_tags' ] );
+		if ( apply_filters( 'inxkickel_is_plugin_available', false, 'elementor-pro' ) ) {
+			add_action( 'elementor/dynamic_tags/register', [ $this, 'register_dynamic_tag_group' ] );
+			add_action( 'elementor/dynamic_tags/register', [ $this, 'register_dynamic_tags' ] );
 		}
 
 		add_filter( 'option_elementor_element_cache_ttl', [ $this, 'disable_element_cache_for_template_pages' ] );
+		add_filter( 'elementor/query/query_args', [ $this, 'maybe_extend_query_args' ], 10, 2 );
 	} // init
 
 	/**
@@ -97,8 +98,7 @@ class Elementor_Bootstrap {
 			],
 		];
 
-		// phpcs:ignore
-		if ( apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-kickstart-team', self::MIN_REQ_VERSIONS['team'] ) ) {
+		if ( apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-kickstart-team', self::MIN_REQ_VERSIONS['team'] ) ) {
 			$add_categories['inx-team'] = [
 				'title' => $house_icon . __( 'Contacts & Agencies', 'immonex-kickstart-for-elementor' ) . ' (+Team)',
 				'icon'  => 'fa fa-home',
@@ -127,14 +127,14 @@ class Elementor_Bootstrap {
 	 *
 	 * @param \Elementor\Core\DynamicTags\Manager $dynamic_tags_manager Elementor dynamic tags manager.
 	 */
-	public function register_inx_dynamic_tag_group( $dynamic_tags_manager ) {
+	public function register_dynamic_tag_group( $dynamic_tags_manager ) {
 		$dynamic_tags_manager->register_group(
 			'inx',
 			[
 				'title' => 'immonex Kickstart',
 			]
 		);
-	} // register_inx_dynamic_tag_group
+	} // register_dynamic_tag_group
 
 	/**
 	 * Register Kickstart Dynamic Tags (action callback).
@@ -143,10 +143,11 @@ class Elementor_Bootstrap {
 	 *
 	 * @param \Elementor\Core\DynamicTags\Manager $dynamic_tags_manager Elementor dynamic tags manager.
 	 */
-	public function register_inx_dynamic_tags( $dynamic_tags_manager ) {
+	public function register_dynamic_tags( $dynamic_tags_manager ) {
 		$dynamic_tags_manager->register( new Components\DynamicTags\Kickstart_Gallery() );
 		$dynamic_tags_manager->register( new Components\DynamicTags\Kickstart_Template_Data() );
-	} // register_inx_dynamic_tags
+		$dynamic_tags_manager->register( new Components\DynamicTags\Kickstart_URL() );
+	} // register_dynamic_tags
 
 	/**
 	 * Register single property Elementor widgets (action callback).
@@ -156,20 +157,18 @@ class Elementor_Bootstrap {
 	 * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
 	 */
 	public function register_widgets( $widgets_manager ) {
-		// phpcs:disable
-		$esp_active          = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-energy-scale-pro', self::MIN_REQ_VERSIONS['esp'] );
-		$print_add_on_active = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-kickstart-print', self::MIN_REQ_VERSIONS['print'] );
-		$team_add_on_active  = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-kickstart-team', self::MIN_REQ_VERSIONS['team'] );
-		$lead_gen_active     = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-lead-generator', self::MIN_REQ_VERSIONS['lead-generator'] );
-		$notify_active       = apply_filters( 'inx_elementor_is_plugin_available', false, 'immonex-notify', self::MIN_REQ_VERSIONS['notify'] );
-		// phpcs:enable
+		$esp_active          = apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-energy-scale-pro', self::MIN_REQ_VERSIONS['esp'] );
+		$print_add_on_active = apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-kickstart-print', self::MIN_REQ_VERSIONS['print'] );
+		$team_add_on_active  = apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-kickstart-team', self::MIN_REQ_VERSIONS['team'] );
+		$lead_gen_active     = apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-lead-generator', self::MIN_REQ_VERSIONS['lead-generator'] );
+		$notify_active       = apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-notify', self::MIN_REQ_VERSIONS['notify'] );
 
 		$this->widgets = [
 			new Components\Widgets\SingleProperty\Native_Head_Widget(),
 			new Components\Widgets\SingleProperty\Property_Type_Widget(),
 			new Components\Widgets\SingleProperty\Title_Widget(),
 			new Components\Widgets\SingleProperty\Labels_Widget(),
-			new Components\Widgets\SingleProperty\Print_PDF_Link_Widget( [], [ 'parent_plugin_available' => $print_add_on_active ] ),
+			new Components\Widgets\KickstartPrint\Print_PDF_Link_Widget( [], [ 'parent_plugin_available' => $print_add_on_active ] ),
 			new Components\Widgets\SingleProperty\Main_Image_Widget(),
 			new Components\Widgets\SingleProperty\Short_Desc_Widget(),
 			new Components\Widgets\SingleProperty\Desc_Widget(),
@@ -178,7 +177,7 @@ class Elementor_Bootstrap {
 			new Components\Widgets\SingleProperty\Condition_Widget(),
 			new Components\Widgets\SingleProperty\Prices_Widget(),
 			new Components\Widgets\SingleProperty\Epass_Widget(),
-			new Components\Widgets\SingleProperty\Native_Energy_Scale_Widget( [], [ 'parent_plugin_available' => $esp_active ] ),
+			new Components\Widgets\EnergyScalePro\Native_Energy_Scale_Widget( [], [ 'parent_plugin_available' => $esp_active ] ),
 			new Components\Widgets\SingleProperty\Basic_Gallery_Widget(),
 			new Components\Widgets\SingleProperty\Native_Gallery_Widget(),
 			new Components\Widgets\SingleProperty\Native_Video_Gallery_Widget(),
@@ -187,7 +186,7 @@ class Elementor_Bootstrap {
 			new Components\Widgets\SingleProperty\Feature_List_Widget(),
 			new Components\Widgets\SingleProperty\Detail_List_Widget(),
 			new Components\Widgets\SingleProperty\Downloads_Links_Widget(),
-			new Components\Widgets\Team\Native_Agent_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
+			new Components\Widgets\KickstartTeam\Native_Agent_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
 			new Components\Widgets\SingleProperty\Native_Footer_Widget(),
 			new Components\Widgets\PropertyList\Native_Search_Form_Widget(),
 			new Components\Widgets\PropertyList\Native_Property_Map_Widget(),
@@ -195,9 +194,9 @@ class Elementor_Bootstrap {
 			new Components\Widgets\PropertyList\Native_Property_List_Widget(),
 			new Components\Widgets\PropertyList\Native_Property_Carousel_Widget(),
 			new Components\Widgets\PropertyList\Native_Pagination_Widget(),
-			new Components\Widgets\Team\Native_Agent_List_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
-			new Components\Widgets\Team\Native_Agency_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
-			new Components\Widgets\Team\Native_Agency_List_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
+			new Components\Widgets\KickstartTeam\Native_Agent_List_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
+			new Components\Widgets\KickstartTeam\Native_Agency_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
+			new Components\Widgets\KickstartTeam\Native_Agency_List_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
 			new Components\Widgets\LeadGenerator\Native_Lead_Forms_Widget( [], [ 'parent_plugin_available' => $lead_gen_active ] ),
 			new Components\Widgets\Notify\Native_Notify_Form_Widget( [], [ 'parent_plugin_available' => $notify_active ] ),
 		];
@@ -219,13 +218,13 @@ class Elementor_Bootstrap {
 		foreach ( [ 'assets/js', 'js' ] as $folder ) {
 			if ( file_exists( "{$plugin_dir}{$folder}/elementor-editor.js" ) ) {
 				wp_register_script(
-					'inx-elementor-editor',
+					'inxkickel-editor',
 					plugins_url( $this->data['plugin_slug'] . "/{$folder}/elementor-editor.js" ),
 					array( 'jquery' ),
 					$this->data['plugin_version'],
 					true
 				);
-				wp_enqueue_script( 'inx-elementor-editor' );
+				wp_enqueue_script( 'inxkickel-editor' );
 
 				break;
 			}
@@ -234,7 +233,7 @@ class Elementor_Bootstrap {
 		foreach ( [ 'assets/css', 'css' ] as $folder ) {
 			if ( file_exists( "{$plugin_dir}{$folder}/elementor-editor.css" ) ) {
 				wp_enqueue_style(
-					'inx-elementor-editor',
+					'inxkickel-editor',
 					plugins_url( $this->data['plugin_slug'] . "/{$folder}/elementor-editor.css" ),
 					[],
 					$this->data['plugin_version']
@@ -246,7 +245,8 @@ class Elementor_Bootstrap {
 	} // enqueue_editor_css_js
 
 	/**
-	 * Disable element cache option when rendering a template page (filter callback).
+	 * When updating the related option, disable the element cache for
+	 * (regular) template pages (filter callback).
 	 *
 	 * @since 1.0.0
 	 *
@@ -255,7 +255,7 @@ class Elementor_Bootstrap {
 	 * @return string Possibly modified option value.
 	 */
 	public function disable_element_cache_for_template_pages( $value ) {
-		$options           = apply_filters( 'inx_options', [], 'core' ); // phpcs:ignore
+		$options           = apply_filters( 'inx_options', [], 'core' ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 		$template_page_ids = array_filter(
 			[
 				! empty( $options['property_list_page_id'] ) ? (int) $options['property_list_page_id'] : null,
@@ -272,5 +272,45 @@ class Elementor_Bootstrap {
 
 		return $value;
 	} // disable_element_cache_for_template_pages
+
+	/**
+	 * Add a custom argument to the Elementor query args if related to a
+	 * supported Kickstart post type (filter callback).
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param mixed[]                $query_args Query args.
+	 * @param \Elementor\Widget_Base $widget     Widget instance.
+	 *
+	 * @return mixed[] Original or extended query args.
+	 */
+	public function maybe_extend_query_args( $query_args, $widget ) { // phpcs:ignore
+		if (
+			! empty( $query_args['post_type'] )
+			&& isset( $this->data['supported_post_types'][ $query_args['post_type'] ] )
+		) {
+			$query_args['execute_pre_get_posts_filter'] = true;
+		}
+
+		return $query_args;
+	} // maybe_extend_query_args
+
+	/**
+	 * Add CSS class "inx-real-estate-list" to Elementor loop elements if
+	 * Kickstart properties are listed (action callback).
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param \Elementor\Widget_Base $widget Widget instance.
+	 */
+	public function extend_loop_css_classes( $widget ) {
+		if ( 'loop-' === substr( $widget->get_name(), 0, 5 ) ) {
+			$settings = $widget->get_active_settings();
+
+			if ( 'inx_property' === $settings['post_query_post_type'] ) {
+				$widget->add_render_attribute( 'container', 'class', 'inx-real-estate-list' );
+			}
+		}
+	} // extend_loop_css_classes
 
 } // class Elementor_Bootstrap

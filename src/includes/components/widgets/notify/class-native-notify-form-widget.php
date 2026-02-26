@@ -23,7 +23,6 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\ForElementor\Componen
 	const WIDGET_CATEGORIES        = [ 'inx-marketing-acquisition' ];
 	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/suchagent-formular';
 	const ENABLE_RENDER_ON_PREVIEW = true;
-	const IS_DYNAMIC_CONTENT       = true;
 	const PARENT_PLUGIN_NAME       = 'immonex Notify';
 	const PARENT_PLUGIN_SHOP_URL   = 'https://plugins.inveris.de/wordpress-plugins/immonex-notify';
 
@@ -69,7 +68,7 @@ class Native_Notify_Form_Widget extends \immonex\Kickstart\ForElementor\Componen
 			return;
 		}
 
-		$form_elements      = apply_filters( 'immonex_notify_request_form_elements', [] );
+		$form_elements      = apply_filters( 'immonex_notify_request_form_elements', [] ); // phpcs:ignore -- Filter hook belongs to another immonex plugin.
 		$element_options    = [];
 		$default_elements   = [];
 		$mandatory_elements = [];

@@ -23,7 +23,6 @@ class Native_Search_Form_Widget extends \immonex\Kickstart\ForElementor\Componen
 	const WIDGET_CATEGORIES        = [ 'inx-property-list' ];
 	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/suchformular';
 	const ENABLE_RENDER_ON_PREVIEW = true;
-	const IS_DYNAMIC_CONTENT       = true;
 
 	/**
 	 * Get widget title.
@@ -61,8 +60,8 @@ class Native_Search_Form_Widget extends \immonex\Kickstart\ForElementor\Componen
 	 * @since 1.0.0
 	 */
 	protected function register_controls() {
-		$utils                  = apply_filters( 'inx_elementor_get_utils', [] ); // phpcs:ignore
-		$search_form_elements   = apply_filters( 'inx_get_search_form_elements', [] ); // phpcs:ignore
+		$utils                  = apply_filters( 'inxkickel_get_utils', [] );
+		$search_form_elements   = apply_filters( 'inx_get_search_form_elements', [] ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 		$pages                  = get_pages();
 		$element_options        = [];
 		$element_control_titles = [];

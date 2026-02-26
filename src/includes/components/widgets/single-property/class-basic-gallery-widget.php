@@ -361,7 +361,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			return false;
 		} else {
 			$image_ids = apply_filters(
-				'inx_get_property_images', // phpcs:ignore
+				'inx_get_property_images', // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 				[],
 				$this->get_post_id(),
 				[

@@ -105,7 +105,7 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 		}
 
 		// phpcs:ignore
-		if ( apply_filters( 'inx_elementor_is_addon_active', false, 'print' ) ) {
+		if ( apply_filters( 'inxkickel_is_addon_active', false, 'print' ) ) {
 			$text_style_sections['print_link'] = __( 'Print/PDF Link', 'immonex-kickstart-for-elementor' );
 
 			$this->add_control(
@@ -362,7 +362,7 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 
 		if ( ! empty( $settings['print_link'] ) ) {
 			add_filter(
-				'inx_print_standard_header_print_link',
+				'inxkickpr_standard_header_print_link',
 				'show' === $settings['print_link'] ? '__return_true' : '__return_false'
 			);
 		}

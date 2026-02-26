@@ -102,8 +102,11 @@ class Native_Virtual_Tour_Widget extends \immonex\Kickstart\ForElementor\Compone
 			$virtual_tour_embed_code .= '<iframe width="640" height="480" src="' . \immonex\Kickstart\ForElementor\Demo_Media::DEMO_VIRTUAL_TOUR_URL . '"></iframe>';
 
 			$this->add_render_attribute( 'shortcode', 'is_preview', '1' );
-			$this->add_render_attribute( 'shortcode', 'virtual_tour_embed_code', $virtual_tour_embed_code );
 			$this->add_render_attribute( 'shortcode', 'virtual_tours_require_consent', '0' );
+
+			if ( static::POST_TYPE !== get_post_type() ) {
+				$this->add_render_attribute( 'shortcode', 'virtual_tour_embed_code', $virtual_tour_embed_code );
+			}
 		}
 
 		if ( ! empty( $settings['headline'] ) ) {

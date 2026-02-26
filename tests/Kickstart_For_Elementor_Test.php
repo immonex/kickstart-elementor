@@ -18,8 +18,8 @@ class Kickstart_For_Elementor_Test extends WP_UnitTestCase {
 		$expected = array(
 			'plugin_name'   => 'immonex Kickstart for Elementor',
 			'plugin_slug'   => 'immonex-kickstart-for-elementor',
-			'plugin_prefix' => 'inx_elementor_',
-			'public_prefix' => 'inx-elementor-'
+			'plugin_prefix' => 'inxkickel_',
+			'public_prefix' => 'inxkickel-'
 		);
 
 		$bootstrap_data = $this->kickstart_for_elementor->bootstrap_data;

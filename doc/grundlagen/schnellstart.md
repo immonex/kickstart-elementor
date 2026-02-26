@@ -17,7 +17,7 @@ Ist nur das Basisplugin im Einsatz, können die Vorlagen komplett in Form von re
 3. ***Seiteneinstellungen*** (*Seite/Zahnrad-Icon* links oben)
    - Titel: *Immobilienangebote*
    - **optional**: Titel ausblenden oder – je nach Theme – alternatives Seitenlayout auswählen (z. B. *Elementor Gesamte Breite*)
-4. Folgende [Widgets](elementor-immobilien-widgets/uebersicht) aus der Kategorie *Immobilienliste* (links) in die Seite ziehen:
+4. Folgende [Widgets](/elementor-immobilien-widgets/uebersicht) aus der Kategorie *Immobilienliste* (links) in die Seite ziehen:
    - *Übersichtskarte*
    - *Suchformular*
    - *Filter/Sortierung*
@@ -52,7 +52,7 @@ Voraussetzung hierfür ist die Installation des (kostenlosen) Add-on-Plugins [El
 1. ***Elementor → Editor → Templates → Neues Template hinzufügen***
    - Template-Typ: *Container*
    - Template-Name: *Immobilienangebote*
-2. Folgende [Widgets](elementor-immobilien-widgets/uebersicht) aus der Kategorie *Immobilienliste* (links) in den Inhaltsbereich ziehen:
+2. Folgende [Widgets](/elementor-immobilien-widgets/uebersicht) aus der Kategorie *Immobilienliste* (links) in den Inhaltsbereich ziehen:
    - *Übersichtskarte*
    - *Suchformular*
    - *Filter/Sortierung*
@@ -99,7 +99,7 @@ Mit der Pro-Variante von Elementor können die o. g. Vorlagen **alternativ** auc
 1. ***Elementor → Editor → Templates / Gespeicherte Templates → Neues Template hinzufügen***
    - Template-Typ: *Archiv*
    - Template-Name: *Immobilienangebote*
-2. Vorlagenbibliothek schließen und Widgets analog zu Punkt 4. des vorherigen Abschnitts hinzufügen
+2. Vorlagenbibliothek schließen und Widgets analog zu Punkt 4. des vorherigen Abschnitts hinzufügen **oder** eine [individuelle Immobilienliste auf Basis eines Loop Grids](/elementor-pro/immobilien-loop-grid) erstellen
 3. ***Bedingung hinzufügen*** (Pfeil neben *Veröffentlichen* rechts oben + ***Bedingungen anzeigen***)
    - Einschließen: *Immobilien Archiv*
    - ***Speichern & Schließen***, anschließend zurück zu WordPress

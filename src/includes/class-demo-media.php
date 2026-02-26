@@ -61,7 +61,7 @@ class Demo_Media {
 				'fields'      => 'ids',
 				'meta_query'  => [
 					[
-						'key'   => '_inx_elementor_demo_content',
+						'key'   => '_inxkickel_demo_content',
 						'value' => "gallery_image_{$type}",
 					],
 				],
@@ -87,7 +87,7 @@ class Demo_Media {
 	 */
 	public static function create_demo_images() {
 		$image_ids  = [];
-		$plugin_dir = apply_filters( 'inx_elementor_get_plugin_dir', '' ); // phpcs:ignore
+		$plugin_dir = apply_filters( 'inxkickel_get_plugin_dir', '' );
 
 		foreach ( array_keys( self::DEMO_IMAGE_FILENAMES ) as $type ) {
 			$image_ids[ $type ] = [];
@@ -112,11 +112,11 @@ class Demo_Media {
 				$post_title_ext = $image_type_title ? ' (' . $image_type_title . ')' : '';
 
 				$meta = [
-					'post_title'                  => __( 'Gallery Image', 'immonex-kickstart-for-elementor' ) . $post_title_ext,
-					'post_excerpt'                => ( $image_type_title ? $image_type_title : __( 'Gallery', 'immonex-kickstart-for-elementor' ) )
+					'post_title'               => __( 'Gallery Image', 'immonex-kickstart-for-elementor' ) . $post_title_ext,
+					'post_excerpt'             => ( $image_type_title ? $image_type_title : __( 'Gallery', 'immonex-kickstart-for-elementor' ) )
 						. ' ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
-					'_inx_elementor_demo_content' => "gallery_image_{$type}",
-					'_wp_attachment_image_alt'    => 'immonex Kickstart for Elementor ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
+					'_inxkickel_demo_content'  => "gallery_image_{$type}",
+					'_wp_attachment_image_alt' => 'immonex Kickstart for Elementor ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
 				];
 
 				$image_data = \immonex\Kickstart\ForElementor\Media_Utils::add_image_to_media_lib( $source_image, $meta );

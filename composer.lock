@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e82b2aae287975638206bb1a6f54fc83",
+    "content-hash": "d98d7567a9cb21ab9925011a372b2274",
     "packages": [
         {
             "name": "html2text/html2text",
@@ -47,16 +47,16 @@
         },
         {
             "name": "immonex/wp-free-plugin-core",
-            "version": "2.7.0",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/immonex/wp-free-plugin-core.git",
-                "reference": "eb67e5c76773ecc4ae2179eb3b0f47e4e73ad9e5"
+                "reference": "716a1c486f53b604258283ba8d6d0eadc682ef96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/immonex/wp-free-plugin-core/zipball/eb67e5c76773ecc4ae2179eb3b0f47e4e73ad9e5",
-                "reference": "eb67e5c76773ecc4ae2179eb3b0f47e4e73ad9e5",
+                "url": "https://api.github.com/repos/immonex/wp-free-plugin-core/zipball/716a1c486f53b604258283ba8d6d0eadc682ef96",
+                "reference": "716a1c486f53b604258283ba8d6d0eadc682ef96",
                 "shasum": ""
             },
             "require": {
@@ -87,9 +87,9 @@
             ],
             "support": {
                 "issues": "https://github.com/immonex/wp-free-plugin-core/issues",
-                "source": "https://github.com/immonex/wp-free-plugin-core/tree/2.7.0"
+                "source": "https://github.com/immonex/wp-free-plugin-core/tree/2.9.0"
             },
-            "time": "2026-02-10T06:08:41+00:00"
+            "time": "2026-02-26T11:06:26+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -333,12 +333,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "0319c822d183bbb95c83570c5d44ef89aae34db2"
+                "reference": "9c85915a73bc804b250c9c3fcfae78fce57c124f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/0319c822d183bbb95c83570c5d44ef89aae34db2",
-                "reference": "0319c822d183bbb95c83570c5d44ef89aae34db2",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/9c85915a73bc804b250c9c3fcfae78fce57c124f",
+                "reference": "9c85915a73bc804b250c9c3fcfae78fce57c124f",
                 "shasum": ""
             },
             "require": {
@@ -406,7 +406,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-08T18:02:26+00:00"
+            "time": "2026-02-26T09:46:59+00:00"
         }
     ],
     "packages-dev": [
@@ -1055,12 +1055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f9f31a35f726beaab98d1efe3b640e9b40c80baf"
+                "reference": "a8ed8c5d85b7cb6768e2829b4ee507e880e9f22e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f9f31a35f726beaab98d1efe3b640e9b40c80baf",
-                "reference": "f9f31a35f726beaab98d1efe3b640e9b40c80baf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a8ed8c5d85b7cb6768e2829b4ee507e880e9f22e",
+                "reference": "a8ed8c5d85b7cb6768e2829b4ee507e880e9f22e",
                 "shasum": ""
             },
             "require": {
@@ -1158,7 +1158,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-01T08:24:05+00:00"
+            "time": "2026-02-23T16:12:28+00:00"
         },
         {
             "name": "sebastian/cli-parser",

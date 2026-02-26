@@ -3,7 +3,7 @@ Contributors: immonex
 Tags: realestate, elementor, immobilien, immobilienmakler, openimmo
 Requires at least: 6.5
 Tested up to: 7.0
-Stable Tag: 1.0.0
+Stable Tag: 1.1.5
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,6 +48,7 @@ immonex OpenImmo2WP [2] ist eine seit 2015 praxiserprobte Lösung für den Impor
 
 * 35+ spezielle Elementor-Widgets für die Präsentation und Vermarktung von Immobilien mit umfangreichen Konfigurationsmöglichkeiten
 * Dynamic Tags zur Einbindung von Immobilien-Text- und Bildinhalten mit Elementor-Pro-Standard-Widgets
+* Individuell gestaltbare Immobilienlisten mit Loop-Grid- oder Loop-Carousel-Widgets (Elementor Pro)
 * Verwendung regulärer Seiten als Vorlagen mit der kostenlosen Version von Elementor
 * Unterstützung mehrsprachiger Websites (WPML, Polylang)
 
@@ -112,8 +113,20 @@ immonex Kickstart for Elementor ist freie Software. Quellcodes, Dokumentation, S
 
 == Changelog ==
 
+= 1.1.5 =
+* Veröffentlichungsdatum: 26.02.2026
+* Auswahl der Widget-Vorschau-Inhalte überarbeitet.
+* Interne Widget-Ordnerstruktur und Präfixe angepasst.
+* Abhängigkeiten aktualisiert.
+
+= 1.1.0 =
+* Veröffentlichungsdatum: 17.02.2026
+* Dynamic Tag für Objekt- und Backlink-URLs ergänzt.
+* Elementor-Pro-bezogene Abfragen-, Cache- und Vorschau-Verarbeitung verbessert.
+* Abhängigkeiten aktualisiert.
+
 = 1.0.0 "Ice" =
-* Veröffentlichungsdatum: 11.02.2026
+* Veröffentlichungsdatum: 30.01.2026
 * Erstveröffentlichung.
 
 Siehe changelog.de.txt für die komplette Versionshistorie.

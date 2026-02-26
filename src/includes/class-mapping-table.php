@@ -83,7 +83,7 @@ class Mapping_Table {
 			'zustand'       => __( 'Condition', 'immonex-kickstart-for-elementor' ),
 		];
 
-		add_filter( 'inx_elementor_mapping_select_options', [ $this, 'get_select_options' ], 10, 2 );
+		add_filter( 'inxkickel_mapping_select_options', [ $this, 'get_select_options' ], 10, 2 );
 	} // init
 
 	/**
@@ -314,7 +314,7 @@ class Mapping_Table {
 	 * @return string Mapping file path.
 	 */
 	private function get_current_mapping_file() {
-		$current_mapping_file = apply_filters( 'immonex_oi2wp_current_mapping_file', '' );
+		$current_mapping_file = apply_filters( 'immonex_oi2wp_current_mapping_file', '' ); // phpcs:ignore -- Filter hook belongs to another immonex plugin.
 
 		if ( $current_mapping_file && file_exists( $current_mapping_file ) ) {
 			// phpcs:ignore

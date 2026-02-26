@@ -173,22 +173,19 @@ class Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Wid
 		}
 
 		if ( empty( $desc ) ) {
-			// phpcs:ignore
-			$desc = apply_filters( 'inx_get_custom_field_value_by_name', '', $settings['field_name'], $post_id );
+			$desc = apply_filters( 'inx_get_custom_field_value_by_name', '', $settings['field_name'], $post_id ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 		}
 		if ( ! $desc ) {
 			return false;
 		}
 
-		// phpcs:ignore
-		$utils = apply_filters( 'inx_elementor_get_utils', [] );
+		$utils = apply_filters( 'inxkickel_get_utils', [] );
 		if ( empty( $utils ) ) {
 			return false;
 		}
 
 		if ( 'yes' === $settings['format_ctext'] ) {
-			// phpcs:ignore
-			$desc = apply_filters( 'inx_the_content', $utils['string']->convert_urls( $desc ) );
+			$desc = apply_filters( 'inx_the_content', $utils['string']->convert_urls( $desc ) ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 		}
 
 		return ! empty( $desc ) ?

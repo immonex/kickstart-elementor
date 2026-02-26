@@ -23,7 +23,6 @@ class Native_Property_List_Widget extends \immonex\Kickstart\ForElementor\Compon
 	const WIDGET_CATEGORIES        = [ 'inx-property-list' ];
 	const WIDGET_HELP_URL          = 'https://docs.immonex.de/kickstart-for-elementor/#/elementor-immobilien-widgets/liste-grid';
 	const ENABLE_RENDER_ON_PREVIEW = true;
-	const IS_DYNAMIC_CONTENT       = true;
 
 	/**
 	 * Get widget title.

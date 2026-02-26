@@ -58,7 +58,7 @@ class Feature_List_Widget extends \immonex\Kickstart\ForElementor\Components\Wid
 	 */
 	protected function get_template_data() {
 		$template_data = parent::get_template_data();
-		$features      = get_the_terms( $this->get_post_id(), 'inx_feature' );
+		$features      = get_the_terms( $this->get_post_id(), 'inx_feature' ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 
 		if ( empty( $features ) || is_wp_error( $features ) ) {
 			return false;

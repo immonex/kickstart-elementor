@@ -31,25 +31,21 @@
 	<!-- https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties -->
 	<config name="minimum_supported_wp_version" value="6.5"/>
 	<rule ref="WordPress">
-		<!-- exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped"/ -->
 		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query"/>
 		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_query"/>
-		<exclude name="WordPress.Security.NonceVerification.Recommended"/>
 		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found"/>
-		<!-- exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/ -->
-		<!-- exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed"/ -->
 		<exclude name="Generic.Commenting.DocComment.LongNotCapital"/>
 	</rule>
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Docs"/>
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<!-- Value: replace the function, class, and variable prefixes used. -->
 			<property name="prefixes" type="array">
 				<element value="immonex"/>
-				<element value="inx_"/>
+				<element value="inxkickel"/>
 			</property>
 		</properties>
-		<!-- exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/ -->
-		<!-- exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound"/ -->
 	</rule>
 	<rule ref="WordPress.WP.I18n">
 		<properties>

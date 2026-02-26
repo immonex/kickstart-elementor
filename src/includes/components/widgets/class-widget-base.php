@@ -65,7 +65,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	/**
 	 * Dynamic Content Flag (true = disable cache)
 	 */
-	const IS_DYNAMIC_CONTENT = false;
+	const IS_DYNAMIC_CONTENT = true;
 
 	/**
 	 * Parent Plugin Name
@@ -342,10 +342,20 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 */
 	protected function render() {
+		try {
+			$doc_id     = \Elementor\Plugin::instance()->documents->get_current()->get_id();
+			$is_wp_page = 'wp-page' === \Elementor\Plugin::instance()->documents->get( $doc_id )->get_template_type();
+		} catch ( \Exception $e ) {
+			$is_wp_page = false;
+		}
+
 		if (
 			static::POST_TYPE
 			&& get_post_type( $this->get_post_id() ) !== static::POST_TYPE
-			&& ! static::ENABLE_RENDER_ON_PREVIEW
+			&& (
+				! static::ENABLE_RENDER_ON_PREVIEW
+				|| ( ! $is_wp_page && apply_filters( 'inxkickel_is_plugin_available', false, 'elementor-pro' ) )
+			)
 		) {
 			return;
 		}
@@ -360,8 +370,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			return;
 		}
 
-		// phpcs:ignore
-		$utils          = apply_filters( 'inx_elementor_get_utils', [] );
+		$utils          = apply_filters( 'inxkickel_get_utils', [] );
 		$plain_template = $template_file_info['folder'] . DIRECTORY_SEPARATOR . $template_file_info['plain_name'];
 		$template_file  = '';
 
@@ -392,7 +401,18 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 */
 	protected function content_template() {
-		if ( static::ENABLE_RENDER_ON_PREVIEW || ! $this->parent_plugin_available ) {
+		try {
+			$doc_id     = \Elementor\Plugin::instance()->documents->get_current()->get_id();
+			$is_wp_page = 'wp-page' === \Elementor\Plugin::instance()->documents->get( $doc_id )->get_template_type();
+		} catch ( \Exception $e ) {
+			$is_wp_page = false;
+		}
+
+		if (
+			( ! $is_wp_page && apply_filters( 'inxkickel_is_plugin_available', false, 'elementor-pro' ) )
+			|| static::ENABLE_RENDER_ON_PREVIEW
+			|| ! $this->parent_plugin_available
+		) {
 			return;
 		}
 
@@ -402,8 +422,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			return;
 		}
 
-		// phpcs:ignore
-		$utils    = apply_filters( 'inx_elementor_get_utils', [] );
+		$utils    = apply_filters( 'inxkickel_get_utils', [] );
 		$template = $template_file_info['folder'] . DIRECTORY_SEPARATOR . $template_file_info['plain_name'] . '-preview';
 
 		if ( ! $utils['template']->locate_template_file( $template ) ) {
@@ -417,8 +436,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			'demo_content_escaped' => $demo_content,
 		];
 
-		// phpcs:ignore
-		echo $utils['template']->render_php_template( $template, $template_data_escaped );
+		echo $utils['template']->render_php_template( $template, $template_data_escaped ); // phpcs:ignore
 	} // content_template
 
 	/**
@@ -452,8 +470,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 
 		$contents = array_merge(
 			[
-				// phpcs:ignore
-				'heading_base_level' => apply_filters( 'inx_get_option_value', 1, 'heading_base_level' ),
+				'heading_base_level' => apply_filters( 'inx_get_option_value', 1, 'heading_base_level' ), // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 			],
 			$contents
 		);
@@ -512,7 +529,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 		}
 
 		$this->post_id = 'inx_property' === static::POST_TYPE ?
-			apply_filters( 'inx_current_property_post_id', get_the_ID() ) : // phpcs:ignore
+			apply_filters( 'inx_current_property_post_id', get_the_ID() ) : // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 			get_the_ID();
 
 		return $this->post_id;
@@ -689,7 +706,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 					'{{WRAPPER}} .inx-single-property__section-title' => 'text-align: {{VALUE}};',
 				],
 				'separator'     => 'after',
-				'is_responsive' => true,
+				'is_responsive' => false,
 				'scope'         => [ 'heading_style' ],
 			],
 			'heading_title_color'        => [
