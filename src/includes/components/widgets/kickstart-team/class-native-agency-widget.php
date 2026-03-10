@@ -158,7 +158,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			'agency_id',
 			[
 				'label'       => __( 'Agency', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'Only to be selected if the agency data should <strong>not</strong> be embedded in a <strong>property detail page<strong>.', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Only to be selected if the agency data should <strong>not</strong> be embedded in a <strong>property detail page</strong>.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',

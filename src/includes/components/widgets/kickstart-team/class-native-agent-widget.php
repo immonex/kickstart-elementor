@@ -159,7 +159,7 @@ class Native_Agent_Widget extends \immonex\Kickstart\ForElementor\Components\Wid
 			'agent_id',
 			[
 				'label'       => __( 'Contact Person (Agent)', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'Only to be selected if the agent data should <strong>not</strong> be embedded in a <strong>property detail page<strong>.', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Only to be selected if the agent data should <strong>not</strong> be embedded in a <strong>property detail page</strong>.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => $agents,

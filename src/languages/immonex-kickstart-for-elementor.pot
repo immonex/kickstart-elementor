@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: immonex Kickstart for Elementor 1.1.5\n"
+"Project-Id-Version: immonex Kickstart for Elementor 1.1.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-10T05:37:35+00:00\n"
+"POT-Creation-Date: 2026-03-10T13:37:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: immonex-kickstart-for-elementor\n"
@@ -1485,7 +1485,7 @@ msgid "Widget"
 msgstr ""
 
 #: includes/components/widgets/kickstart-team/class-native-agency-widget.php:161
-msgid "Only to be selected if the agency data should <strong>not</strong> be embedded in a <strong>property detail page<strong>."
+msgid "Only to be selected if the agency data should <strong>not</strong> be embedded in a <strong>property detail page</strong>."
 msgstr ""
 
 #: includes/components/widgets/kickstart-team/class-native-agency-widget.php:187
@@ -1722,7 +1722,7 @@ msgid "Contact Person (Agent)"
 msgstr ""
 
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:162
-msgid "Only to be selected if the agent data should <strong>not</strong> be embedded in a <strong>property detail page<strong>."
+msgid "Only to be selected if the agent data should <strong>not</strong> be embedded in a <strong>property detail page</strong>."
 msgstr ""
 
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:174
@@ -3013,7 +3013,7 @@ msgid "Show Video Captions"
 msgstr ""
 
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:105
-msgid "Defaults to <code>Scale<code>."
+msgid "Defaults to <code>Scale</code>."
 msgstr ""
 
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:139

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: immonex Kickstart for Elementor 1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
-"POT-Creation-Date: 2026-03-10T05:37:35+00:00\n"
-"PO-Revision-Date: 2026-03-10 06:38+0100\n"
+"POT-Creation-Date: 2026-03-10T13:37:15+00:00\n"
+"PO-Revision-Date: 2026-03-10 14:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: immonex <dev@immonex.de>\n"
 "Language: de_DE@formal\n"
@@ -205,7 +205,7 @@ msgstr "Energieausweisbilder"
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:60
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:61
 msgid "Custom Field(s)"
-msgstr "Benutzerdefinierte Felder"
+msgstr "Individuelle(s) Feld(er)"
 
 #: includes/components/dynamic-tags/class-kickstart-gallery.php:85
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:69
@@ -220,9 +220,9 @@ msgid ""
 "Comma-separated list of <strong>custom field names</strong> containing the "
 "(attachment post) IDs of the images to include in the gallery."
 msgstr ""
-"Kommagetrennte Liste der <strong>Namen der benutzerdefinierten Felder</"
-"strong> (Custom Fields), die die IDs (Anhang-Beiträge) der einzubindenden "
-"Bilder enthalten."
+"Kommagetrennte Liste der <strong>Namen der individuellen Felder</strong> "
+"(Custom Fields), die die IDs (Anhang-Beiträge) der einzubindenden Bilder "
+"enthalten."
 
 #: includes/components/dynamic-tags/class-kickstart-template-data.php:41
 msgid "Kickstart Template Data"
@@ -1160,7 +1160,7 @@ msgstr "Beitragstitel"
 
 #: includes/components/widgets/class-widget-base.php:825
 msgid "Slug"
-msgstr "Titelform (Slug)"
+msgstr "Titelform"
 
 #: includes/components/widgets/class-widget-base.php:826
 msgid "Publishing Date"
@@ -1232,8 +1232,8 @@ msgid ""
 msgstr ""
 "Durch das Hinterlegen kommagetrennter <strong>Taxonomie-Term-Slugs</strong> "
 "in den folgenden Feldern können Immobilien bestimmter Arten explizit "
-"eingebunden (z. B. \"haeuser, wohnungen\") oder ausgeschlossen (z. B. \"-"
-"grundstuecke\") werden."
+"eingebunden (z. B. „haeuser, wohnungen“) oder ausgeschlossen (z. B. „-"
+"grundstuecke“) werden."
 
 #: includes/components/widgets/class-widget-base.php:863
 msgid "Minimum Rooms (primary)"
@@ -1261,7 +1261,7 @@ msgid ""
 "(e.g. \"DEU,AUT,CHE\")"
 msgstr ""
 "Kommagetrennte Liste von Ländercodes im Format <strong>ISO 3166-1 ALPHA-3</"
-"strong> (z. B. \"DEU,AUT,CHE\")"
+"strong> (z. B. „DEU,AUT,CHE“)"
 
 #: includes/components/widgets/class-widget-base.php:899
 msgid "Reference Properties"
@@ -1306,7 +1306,7 @@ msgstr ""
 #: includes/components/widgets/class-widget-base.php:940
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:331
 msgid "Custom Template"
-msgstr "Benutzerdefiniertes Template"
+msgstr "Individuelles Template"
 
 #: includes/components/widgets/class-widget-base.php:946
 msgid "List Elements"
@@ -1465,8 +1465,8 @@ msgstr "Linktext"
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:83
 msgid "Defaults to \"Print/PDF\" if empty and no icon is selected."
 msgstr ""
-"Falls leer und kein Icon ausgewählt wurde, wird die Standardvorgabe "
-"\"Drucken/PDF\" übernommen."
+"Falls leer und kein Icon ausgewählt wurde, wird die Standardvorgabe „Drucken/"
+"PDF“ übernommen."
 
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:84
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:187
@@ -1565,7 +1565,7 @@ msgstr "Widget"
 #: includes/components/widgets/kickstart-team/class-native-agency-widget.php:161
 msgid ""
 "Only to be selected if the agency data should <strong>not</strong> be "
-"embedded in a <strong>property detail page<strong>."
+"embedded in a <strong>property detail page</strong>."
 msgstr ""
 "Nur auszuwählen, wenn die Daten der Agentur <strong>nicht</strong> in eine "
 "<strong>Immobilien-Detailseite</strong> eingebettet werden sollen."
@@ -1804,7 +1804,7 @@ msgstr "Makler"
 
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:37
 msgid "Contact <span style=\"white-space:nowrap\">Person/Form</span>"
-msgstr "Kontaktperson/-formular"
+msgstr "<span style=\"white-space:nowrap\">Kontaktperson/-formular</span>"
 
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:146
 msgid ""
@@ -1829,7 +1829,7 @@ msgstr "Kontaktperson (Makler)"
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:162
 msgid ""
 "Only to be selected if the agent data should <strong>not</strong> be "
-"embedded in a <strong>property detail page<strong>."
+"embedded in a <strong>property detail page</strong>."
 msgstr ""
 "Nur auszuwählen, wenn die Daten der Kontaktperson <strong>nicht</strong> in "
 "eine <strong>Immobilien-Detailseite</strong> eingebettet werden sollen."
@@ -1837,7 +1837,7 @@ msgstr ""
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:174
 msgid "Insert \"auto\" for an agent's gender conforming standard title."
 msgstr ""
-"Hier kann mit \"auto\" ein zum Geschlecht der Kontaktperson passender "
+"Hier kann mit „auto“ ein zum Geschlecht der Kontaktperson passender "
 "Standardtitel generiert werden."
 
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:207
@@ -1994,7 +1994,7 @@ msgstr "Reihenfolge"
 
 #: includes/components/widgets/property-list/class-native-filters-sort-widget.php:79
 msgid "Custom Option Scope"
-msgstr "Benutzerdefinierter Optionsumfang"
+msgstr "Individueller Optionsumfang"
 
 #: includes/components/widgets/property-list/class-native-filters-sort-widget.php:85
 #: includes/components/widgets/property-list/class-native-property-list-widget.php:106
@@ -2066,7 +2066,7 @@ msgstr ""
 
 #: includes/components/widgets/property-list/class-native-property-list-widget.php:101
 msgid "Custom Sort Priority"
-msgstr "Benutzerdefinierte Sortierpriorität"
+msgstr "Individuelle Sortierpriorität"
 
 #: includes/components/widgets/property-list/class-native-property-list-widget.php:107
 msgid ""
@@ -2241,7 +2241,7 @@ msgstr "integriert"
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:287
 #: includes/components/widgets/single-property/class-native-location-map-widget.php:150
 msgid "custom"
-msgstr "benutzerdefiniert"
+msgstr "individuell"
 
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:295
 #: includes/components/widgets/single-property/class-native-location-map-widget.php:158
@@ -2326,9 +2326,9 @@ msgid ""
 "Show \"Sold\" and \"Rented\" in the <strong>marketing type select box</"
 "strong> if related properties exist."
 msgstr ""
-"Die Optionen \"Verkauft\" bzw. \"Vermietet\" sollen in der "
-"<strong>Auswahlbox der Vermarktungsart</strong> aufgeführt werden, sofern "
-"zugehörige Immobilien vorhanden sind."
+"Die Optionen „Verkauft“ bzw. „Vermietet“ sollen in der <strong>Auswahlbox "
+"der Vermarktungsart</strong> aufgeführt werden, sofern zugehörige Immobilien "
+"vorhanden sind."
 
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:192
 msgid "Extended Search"
@@ -2359,7 +2359,7 @@ msgstr ""
 "Wenn die auswählbaren Taxonomie-Begriffe auf bestimmte Optionen beschränkt "
 "werden sollen, können die entsprechenden <strong>Slugs der Hauptebene</"
 "strong> in den folgenden Eingabefeldern in Form von kommagetrennten Listen "
-"hinterlegt werden (z. B. \"haeuser, wohnungen\")."
+"hinterlegt werden (z. B. „haeuser, wohnungen“)."
 
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:246
 msgid "Locations"
@@ -2379,7 +2379,7 @@ msgid ""
 "\"de,at,ch,be,nl\") – leave empty to use defaults."
 msgstr ""
 "Kommagetrennte Liste von Ländercodes (<strong>ISO 3166-1 ALPHA-2</strong>), "
-"z. B. \"de,at,ch,be,nl\" – leer lassen für Standardvorgaben."
+"z. B. „de,at,ch,be,nl“ – leer lassen für Standardvorgaben."
 
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:311
 msgid "Autocomplete OSM Place Tags"
@@ -2393,7 +2393,7 @@ msgid ""
 msgstr ""
 "Kommagetrennte Liste von <strong>OpenStreetMap Place Tags</strong> für die "
 "Filterung/Priorisierung von Suchergebnissen der Autovervollständigung – "
-"Standardvorgabe ist \"city,town,village,borough,suburb\" falls leer."
+"Standardvorgabe ist „city,town,village,borough,suburb“ falls leer."
 
 #. translators: %s: plugin name
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:335
@@ -2502,11 +2502,11 @@ msgstr "Abstände"
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:177
 #: includes/components/widgets/single-property/class-native-head-widget.php:157
 msgid "Custom"
-msgstr "Benutzerdefiniert"
+msgstr "Individuell"
 
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:190
 msgid "Custom Spacing"
-msgstr "Benutzerdefinierte Abstände"
+msgstr "Individuelle Abstände"
 
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:229
 #: includes/components/widgets/single-property/class-labels-widget.php:201
@@ -2952,35 +2952,35 @@ msgstr "Mitte Mitte"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:257
 msgid "Center Left"
-msgstr "Mitte Links"
+msgstr "Mitte-links"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:258
 msgid "Center Right"
-msgstr "Mitte Rechts"
+msgstr "Mitte-rechts"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:259
 msgid "Top Center"
-msgstr "Oben Mitte"
+msgstr "Oben-mittig"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:260
 msgid "Top Left"
-msgstr "Oben Links"
+msgstr "Oben-links"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:261
 msgid "Top Right"
-msgstr "Oben Rechts"
+msgstr "Oben-rechts"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:262
 msgid "Bottom Center"
-msgstr "Unten Mitte"
+msgstr "Unten-mittig"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:263
 msgid "Bottom Left"
-msgstr "Unten Links"
+msgstr "Unten-links"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:264
 msgid "Bottom Right"
-msgstr "Unten Rechts"
+msgstr "Unten-rechts"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:296
 #: includes/components/widgets/single-property/class-main-image-widget.php:331
@@ -3047,7 +3047,7 @@ msgstr ""
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:128
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:67
 msgid "Custom Headline"
-msgstr "Benutzerdefinierte Überschrift"
+msgstr "Individuelle Überschrift"
 
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:130
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:69
@@ -3101,7 +3101,7 @@ msgid ""
 msgstr ""
 "Ein komplett ausgefülltes Container-Element wirkt im Regelfall optisch "
 "ansprechender, allerdings können manche Bilder hierbei nach der Animation "
-"horizontal \"zugeschnitten\" dargestellt werden (abhängig von den "
+"horizontal „zugeschnitten“ dargestellt werden (abhängig von den "
 "unterschiedlichen Seitenverhältnissen der Galeriebilder)."
 
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:220
@@ -3318,7 +3318,7 @@ msgid "Show Video Captions"
 msgstr "Videobezeichnungen anzeigen"
 
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:105
-msgid "Defaults to <code>Scale<code>."
+msgid "Defaults to <code>Scale</code>."
 msgstr "Standardvorgabe ist <code>Scale</code>."
 
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:139

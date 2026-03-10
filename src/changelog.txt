@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 1.1.7 =
+= 1.1.8 =
 * Release date: 2026-03-10
 * Updated dependencies and translations.
 

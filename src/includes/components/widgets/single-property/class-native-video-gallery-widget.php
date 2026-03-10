@@ -102,7 +102,7 @@ class Native_Video_Gallery_Widget extends \immonex\Kickstart\ForElementor\Compon
 			[
 				'label'       => __( 'Transition Animation', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
-				'description' => __( 'Defaults to <code>Scale<code>.', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Defaults to <code>Scale</code>.', 'immonex-kickstart-for-elementor' ),
 				'options'     => [
 					''      => __( 'Default', 'immonex-kickstart-for-elementor' ),
 					'slide' => 'Slide',
