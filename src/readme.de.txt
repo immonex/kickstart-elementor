@@ -3,7 +3,7 @@ Contributors: immonex
 Tags: realestate, elementor, immobilien, immobilienmakler, openimmo
 Requires at least: 6.5
 Tested up to: 7.0
-Stable Tag: 1.1.5
+Stable Tag: 1.1.7
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -112,6 +112,10 @@ immonex Kickstart for Elementor ist freie Software. Quellcodes, Dokumentation, S
 12. Suchagent-Formular-Widget (immonex Notify)
 
 == Changelog ==
+
+= 1.1.7 =
+* Veröffentlichungsdatum: 10.03.2026
+* Abhängigkeiten und Übersetzungen aktualisiert.
 
 = 1.1.5 =
 * Veröffentlichungsdatum: 26.02.2026

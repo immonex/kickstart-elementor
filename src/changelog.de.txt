@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.7 =
+* Veröffentlichungsdatum: 10.03.2026
+* Abhängigkeiten und Übersetzungen aktualisiert.
+
 = 1.1.5 =
 * Veröffentlichungsdatum: 26.02.2026
 * Auswahl der Widget-Vorschau-Inhalte überarbeitet.

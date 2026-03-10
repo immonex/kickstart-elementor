@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.7 =
+* Release date: 2026-03-10
+* Updated dependencies and translations.
+
 = 1.1.5 =
 * Release date: 2026-02-26
 * Reworked widget preview data selection.

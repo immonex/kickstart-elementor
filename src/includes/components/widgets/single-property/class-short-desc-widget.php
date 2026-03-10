@@ -203,7 +203,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widge
 	protected function get_demo_content( $contents = null ) {
 		return parent::get_demo_content(
 			[
-				'short_desc' => __( "Don't miss out on this extraordinary chance to own a stunning freestanding single-family home with captivating ocean views in the charming town of Demo. Located just an hour and a half outside the city, the potential for this home is boundless!", 'immonex-kickstart-for-elementor' ),
+				'short_desc' => _x( "Don't miss out on this extraordinary chance to own a stunning freestanding single-family home with captivating ocean views in the charming town of Demo. Located just an hour and a half outside the city, the potential for this home is boundless!", 'sample data', 'immonex-kickstart-for-elementor' ),
 			]
 		);
 	} // get_demo_content
