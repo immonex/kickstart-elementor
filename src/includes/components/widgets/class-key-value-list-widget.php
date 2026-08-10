@@ -26,7 +26,7 @@ class Key_Value_List_Widget extends Widget_Base {
 	const ENABLE_ICONS                      = true;
 	const ENABLE_BEFORE_AFTER_ITEM_CONTENTS = false;
 	const FIXED_ELEMENTS                    = [];
-	const DISABLE_SOURCE_NOTICE             = false;
+	const SHOW_SOURCE_NOTICE                = true;
 
 	/**
 	 * Value Formatting Filters
@@ -86,7 +86,7 @@ class Key_Value_List_Widget extends Widget_Base {
 
 		if ( empty( static::FIXED_ELEMENTS ) ) {
 			$predefined_elements         = $this->get_predefined_elements();
-			$element_type_select_options = $this->get_element_type_select_options();
+			$element_type_select_options = $this->get_element_selection_type_options();
 
 			$selectable_elements = [];
 			foreach ( $predefined_elements as $key => $element ) {
@@ -132,9 +132,9 @@ class Key_Value_List_Widget extends Widget_Base {
 				$repeater->add_control(
 					'element_type',
 					[
-						'label'       => __( 'Element Type', 'immonex-kickstart-for-elementor' ),
+						'label'       => __( 'Element Selection', 'immonex-kickstart-for-elementor' ),
 						'type'        => \Elementor\Controls_Manager::SELECT,
-						'default'     => $this->get_default( 'element_type', 'group' ),
+						'default'     => $this->get_default( 'element_type', 'combined' ),
 						'options'     => $element_type_select_options,
 						'label_block' => true,
 					]
@@ -143,7 +143,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$all_options = [];
 
 				foreach ( $element_type_select_options as $option_type => $option_title ) {
-					if ( 'user_defined' === $option_type ) {
+					if ( in_array( $option_type, [ 'combined', 'user_defined' ], true ) ) {
 						continue;
 					}
 
@@ -160,7 +160,7 @@ class Key_Value_List_Widget extends Widget_Base {
 						"element_{$option_type}",
 						[
 							'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
-							'type'        => \Elementor\Controls_Manager::SELECT,
+							'type'        => \Elementor\Controls_Manager::SELECT2,
 							'options'     => $options,
 							'condition'   => [
 								'element_type' => $option_type,
@@ -171,6 +171,23 @@ class Key_Value_List_Widget extends Widget_Base {
 
 					$all_options = array_merge( $all_options, $options );
 				}
+
+				$combined_options = apply_filters( 'inxkickel_mapping_combined_select_options', [] );
+				$all_options      = array_merge( $all_options, $combined_options );
+
+				$repeater->add_control(
+					'element_combined',
+					[
+						'label'       => __( 'Element', 'immonex-kickstart-for-elementor' ),
+						'type'        => 'inxkickel-extended-select2',
+						'description' => __( '🄶 = Group, 🄳 = Destination. Hover over elements for more information.', 'immonex-kickstart-for-elementor' ),
+						'options'     => $combined_options,
+						'condition'   => [
+							'element_type' => 'combined',
+						],
+						'label_block' => true,
+					]
+				);
 
 				$repeater->add_control(
 					'element_user_defined',
@@ -186,7 +203,7 @@ class Key_Value_List_Widget extends Widget_Base {
 
 				$format_filters = $this->get_format_filters();
 				$format_options = [
-					'' => __( 'no formatting', 'immonex-kickstart-for-elementor' ),
+					'' => __( 'no change', 'immonex-kickstart-for-elementor' ),
 				];
 				if ( ! empty( $format_filters ) ) {
 					foreach ( $format_filters as $key => $filter ) {
@@ -199,6 +216,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					[
 						'label'       => __( 'Format', 'immonex-kickstart-for-elementor' ),
 						'type'        => \Elementor\Controls_Manager::SELECT,
+						'description' => __( 'Most values are already formatted during import (see <strong>Filter</strong> column of the mapping table).', 'immonex-kickstart-for-elementor' ),
 						'options'     => $format_options,
 						'label_block' => true,
 					]
@@ -225,8 +243,31 @@ class Key_Value_List_Widget extends Widget_Base {
 					]
 				);
 
+				$repeater->add_control(
+					'force_format',
+					[
+						'label'       => __( 'Always apply Format', 'immonex-kickstart-for-elementor' ),
+						'type'        => \Elementor\Controls_Manager::SWITCHER,
+						'description' => __( 'If enabled, already formatted values will be reformatted.', 'immonex-kickstart-for-elementor' ),
+						'condition'   => [
+							'format!' => '',
+						],
+					]
+				);
+
 				$options_json = wp_json_encode( $all_options );
 			}
+
+			$repeater->add_control(
+				'alternative_label',
+				[
+					'label'       => __( 'Alternative Label', 'immonex-kickstart-for-elementor' ),
+					'type'        => \Elementor\Controls_Manager::TEXT,
+					'description' => __( 'For single values only. (The default labels are defined in the import mapping table.)', 'immonex-kickstart-for-elementor' ),
+					'label_block' => true,
+					'separator'   => 'before',
+				]
+			);
 
 			$repeater->add_control(
 				'before_value',
@@ -234,7 +275,6 @@ class Key_Value_List_Widget extends Widget_Base {
 					'label'       => __( 'Before Value', 'immonex-kickstart-for-elementor' ),
 					'type'        => \Elementor\Controls_Manager::TEXT,
 					'label_block' => true,
-					'separator'   => 'before',
 				]
 			);
 
@@ -336,16 +376,21 @@ class Key_Value_List_Widget extends Widget_Base {
 				);
 			}
 
-			if ( ! static::DISABLE_SOURCE_NOTICE ) {
+			if ( static::SHOW_SOURCE_NOTICE ) {
 				$this->add_control(
 					'elements_notice',
 					[
 						'type'        => \Elementor\Controls_Manager::NOTICE,
 						'notice_type' => 'warning',
-						'content'     => __( 'Elements can be combined based on the entries in the <strong>import mapping table</strong> (immonex OpenImmo2WP).', 'immonex-kickstart-for-elementor' ) .
-							'<br><br>(' .
-							__( 'The sample data shown may not match the actual type of information.', 'immonex-kickstart-for-elementor' ) .
-							')',
+						'dismissible' => true,
+						'content'     => wp_sprintf(
+								/* translators: %1$s = mapping table documentation page URL, %2$s = OpenImmo2WP product page URL */
+							__( 'OpenImmo Elements can be selected based on their entries in the <a href="%1$s" target="_blank">import mapping table</a> (<a href="%2$s" target="_blank">&rarr; immonex OpenImmo2WP</a>) and combined as desired.', 'immonex-kickstart-for-elementor' ),
+							'https://docs.immonex.de/openimmo2wp/#/mapping/tabellen',
+							'https://plugins.inveris.de/wordpress-plugins/immonex-openimmo2wp'
+						) .
+						( ! apply_filters( 'inxkickel_is_plugin_available', false, 'elementor-pro' ) ?
+							'<br><br>(' . __( 'Type and scope of the sample data shown depend on the selected formatting option and do not match the actual information.', 'immonex-kickstart-for-elementor' ) . ')' : '' ),
 					]
 				);
 			}
@@ -354,7 +399,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			if ( ! empty( $predefined_elements ) ) {
 				$title_field .= "const label = typeof predefined_element !== 'undefined' ? labels[predefined_element] : ''; #>{{{ label }}}";
 			} else {
-				$title_field .= "let label = eval('element_' + element_type); label = label.replace(/[:=]\*/, ''); #>{{{ label }}}";
+				$title_field .= "const labelKey = eval('element_' + element_type); const label = (labels[labelKey] || labelKey).replace(/[\(\[].*/, '').trim(); #>{{{ label }}}";
 			}
 
 			$this->add_control(
@@ -380,6 +425,71 @@ class Key_Value_List_Widget extends Widget_Base {
 			[
 				'label' => __( 'List', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'list_frame_header',
+			[
+				'label' => __( 'Frame', 'immonex-kickstart-for-elementor' ),
+				'type'  => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'list_padding',
+			[
+				'label'      => __( 'Padding', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default'    => [
+					'unit'     => 'px',
+					'isLinked' => true,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-e-key-value-list__items' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'list_bg_color',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-e-key-value-list__items' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'list_border_radius',
+			[
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-e-key-value-list__items' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'list_box_shadow',
+				'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+				'selector' => '{{WRAPPER}} .inx-e-key-value-list__items',
+			]
+		);
+
+		$this->add_control(
+			'list_contents_header',
+			[
+				'label'     => __( 'Contents', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
 			]
 		);
 
@@ -790,7 +900,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .inx-e-key-value-list__icon i'   => 'color: {{VALUE}};',
+						'{{WRAPPER}} .inx-e-key-value-list__icon i'   => 'color: {{VALUE}}',
 						'{{WRAPPER}} .inx-e-key-value-list__icon svg' => 'fill: {{VALUE}};',
 					],
 					'global'    => [
@@ -826,7 +936,7 @@ class Key_Value_List_Widget extends Widget_Base {
 			$this->add_control(
 				'icon_gap',
 				[
-					'label'      => __( 'Gap', 'immonex-kickstart-for-elementor' ),
+					'label'      => _x( 'Gap', 'distance between grid elements', 'immonex-kickstart-for-elementor' ),
 					'type'       => \Elementor\Controls_Manager::SLIDER,
 					'default'    => $this->get_default( 'icon_gap', [ 'size' => 4 ] ),
 					'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -946,7 +1056,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
 					'type'      => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						"{{WRAPPER}} .inx-e-key-value-list__{$class_key}" => 'color: {{VALUE}};',
+						"{{WRAPPER}} .inx-e-key-value-list__{$class_key}" => 'color: {{VALUE}}',
 					],
 					'global'    => [
 						'default' => $this->get_default( "global_{$key}_color", $element['color_default'] ),
@@ -958,7 +1068,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				$this->add_control(
 					"{$key}_gap",
 					[
-						'label'      => __( 'Gap', 'immonex-kickstart-for-elementor' ),
+						'label'      => _x( 'Gap', 'distance between grid elements', 'immonex-kickstart-for-elementor' ),
 						'type'       => \Elementor\Controls_Manager::SLIDER,
 						'default'    => $this->get_default( "{$key}_gap", [ 'size' => 8 ] ),
 						'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
@@ -1040,10 +1150,18 @@ class Key_Value_List_Widget extends Widget_Base {
 				continue;
 			}
 
-			$scope = in_array( $element['element_type'], [ 'name', 'group' ], true ) ? $element['element_type'] : false;
+			$scope = in_array( $element['element_type'], [ 'name', 'group', 'source' ], true ) ? $element['element_type'] : false;
 
 			if ( ! empty( $element[ "element_{$element['element_type']}" ] ) ) {
-				$element['element'] = $element[ "element_{$element['element_type']}" ];
+				$element[ "element_{$element['element_type']}" ] = html_entity_decode( $element[ "element_{$element['element_type']}" ], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+				$element['element']                              = $element[ "element_{$element['element_type']}" ];
+
+				if ( false !== strpos( $element['element'], '|' ) ) {
+					$element_split      = explode( '|', $element['element'] );
+					$element['element'] = $element_split[1];
+					$scope              = in_array( $element_split[0], [ 'name', 'group', 'source' ], true ) ? $element_split[0] : false;
+				}
+
 				if ( '*' === substr( $element['element'], -1 ) ) {
 					// Submit wildcard queries as RegEx.
 					$element['element'] = '/' . substr( $element['element'], 0, -1 ) . '.*/';
@@ -1076,6 +1194,8 @@ class Key_Value_List_Widget extends Widget_Base {
 
 				if ( ! in_array( 'label', $show, true ) ) {
 					$element_return['title'] = '';
+				} elseif ( ! empty( $element['alternative_label'] ) && 1 === count( $element_data ) ) {
+					$element_return['title'] = trim( $element['alternative_label'] );
 				}
 
 				if ( ! empty( $element['format'] ) && isset( $format_filters[ $element['format'] ] ) ) {
@@ -1086,9 +1206,18 @@ class Key_Value_List_Widget extends Widget_Base {
 						$format['args']['decimals'] = $element['decimal_places'];
 					}
 
+					$element_value = $element_return['value'];
+
+					if ( ! empty( $element['force_format'] ) ) {
+						$element_meta = ! empty( $element_return['meta_json'] ) ? json_decode( $element_return['meta_json'], true ) : false;
+						if ( $element_meta && ! empty( $element_meta['value_before_filter'] ) ) {
+							$element_value = $element_meta['value_before_filter'];
+						}
+					}
+
 					$element_return['value'] = apply_filters(
 						'inx_format', // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
-						$element_return['value'],
+						$element_value,
 						$format['type'],
 						$format['args']
 					);
@@ -1178,7 +1307,7 @@ class Key_Value_List_Widget extends Widget_Base {
 					'args'  => [],
 				],
 				'inx_format_number' => [
-					'title' => __( 'Number', 'immonex-kickstart-for-elementor' ),
+					'title' => _x( 'Number', 'general', 'immonex-kickstart-for-elementor' ),
 					'type'  => 'number',
 					'args'  => [],
 				],
@@ -1194,25 +1323,33 @@ class Key_Value_List_Widget extends Widget_Base {
 	} // get_format_filters
 
 	/**
-	 * Return the element type control select options.
+	 * Return the element (selection) type control options.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return string[] Associative array: key => title.
 	 */
-	protected function get_element_type_select_options() {
+	protected function get_element_selection_type_options() {
 		return [
+			'combined'     => wp_sprintf(
+				'%1$s (%2$s)',
+				__( 'combined', 'immonex-kickstart-for-elementor' ),
+				__( 'recommended', 'immonex-kickstart-for-elementor' )
+			),
 			'group'        => __( 'Group', 'immonex-kickstart-for-elementor' ),
 			'name'         => __( 'Name', 'immonex-kickstart-for-elementor' ),
 			'source'       => __( 'Source', 'immonex-kickstart-for-elementor' ),
 			'destination'  => __( 'Destination (Custom Field)', 'immonex-kickstart-for-elementor' ),
 			'user_defined' => __( 'User-defined/RegEx', 'immonex-kickstart-for-elementor' ),
 		];
-	} // get_element_type_select_options
+	} // get_element_selection_type_options
 
 	/**
 	 * Add extended element select options that are usually not listed in the
 	 * mapping table (currently only relevant for destination type elements).
+	 *
+	 * Changes have to be applied in the dynamic tag class for Kickstart
+	 * template data, too.
 	 *
 	 * @since 1.0.0
 	 *
@@ -1224,7 +1361,7 @@ class Key_Value_List_Widget extends Widget_Base {
 	protected function add_extended_element_select_options( $options, $type ) {
 		$raw_ext_options = [
 			'destination' => [
-				'_inx_full_address'                    => __( 'full Address', 'immonex-kickstart-for-elementor' ),
+				'_inx_full_address'                    => __( 'Full Address', 'immonex-kickstart-for-elementor' ),
 				'_inx_street'                          => __( 'Street', 'immonex-kickstart-for-elementor' ),
 				'_inx_lat'                             => __( 'Latitude', 'immonex-kickstart-for-elementor' ),
 				'_inx_lng'                             => __( 'Longitude', 'immonex-kickstart-for-elementor' ),
@@ -1246,7 +1383,7 @@ class Key_Value_List_Widget extends Widget_Base {
 				continue;
 			}
 
-			$options[ $key ] = wp_sprintf( '%s [%s]', $key, $title );
+			$options[ $key ] = wp_sprintf( '%s [%s]', $title, $key );
 		}
 
 		ksort( $options );

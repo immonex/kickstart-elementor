@@ -129,6 +129,465 @@ class Native_Lead_Forms_Widget extends \immonex\Kickstart\ForElementor\Component
 				'options'     => $ff_options,
 			]
 		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'general_frame_style_section',
+			[
+				'label' => __( 'General', 'immonex-kickstart-for-elementor' ) . ' / ' .
+					__( 'Frame', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'enable_custom_bg',
+			[
+				'label'        => __( 'Custom Background', 'immonex-kickstart-for-elementor' ),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'description'  => __( 'Enable the use of custom background/border settings (<strong>Advanced</strong> tab).', 'immonex-kickstart-for-elementor' ),
+				'return_value' => '1',
+			]
+		);
+
+		$this->add_control(
+			'custom_bg',
+			[
+				'type'      => \Elementor\Controls_Manager::HIDDEN,
+				'default'   => 'initial',
+				'selectors' => [
+					'{{WRAPPER}} #immonex-lead-generator .immonex-lead-gen-form' => 'background: {{VALUE}}',
+					'{{WRAPPER}} #immonex-lead-generator .immonex-lead-gen-form .immonex-lead-gen-element' => 'background: {{VALUE}}',
+				],
+				'condition' => [
+					'enable_custom_bg' => '1',
+				],
+			]
+		);
+
+		$this->add_control(
+			'text_color',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-form' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .immonex-lead-gen-element--textblock' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name'     => 'typography',
+				'selector' => '{{WRAPPER}} #immonex-lead-generator .immonex-lead-gen-form .immonex-lead-gen-element--textblock',
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'form_page_hl_style_section',
+			[
+				'label' => __( 'Headline', 'immonex-kickstart-for-elementor' ) .
+					' (' . __( 'Form Page', 'immonex-kickstart-for-elementor' ) . ')',
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'form_page_hl_text_color',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} #immonex-lead-generator .immonex-lead-gen-form .immonex-lead-gen-element--headline' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name'     => 'form_page_hl_typography',
+				'selector' => '{{WRAPPER}} #immonex-lead-generator .immonex-lead-gen-form .immonex-lead-gen-element--headline',
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'buttons_style_section',
+			[
+				'label' => __( 'Buttons', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'buttons_bg_color',
+			[
+				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .el-button' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'button_text_color',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .el-button' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name'     => 'button_typography',
+				'selector' => '{{WRAPPER}} #immonex-lead-generator .immonex-lead-gen-form .el-button',
+			]
+		);
+
+		$this->add_control(
+			'buttons_margin',
+			[
+				'label'      => __( 'Margin', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .el-button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator'  => 'before',
+			]
+		);
+
+		$this->add_control(
+			'buttons_padding',
+			[
+				'label'      => __( 'Padding', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} #immonex-lead-generator .immonex-lead-gen-form .el-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator'  => 'after',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name'     => 'buttons_border',
+				'selector' => '{{WRAPPER}} .el-button',
+			]
+		);
+
+		$this->add_responsive_control(
+			'buttons_border_radius',
+			[
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .el-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'buttons_box_shadow',
+				'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+				'selector' => '{{WRAPPER}} .el-button',
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'select_cards_style_section',
+			[
+				'label' => __( 'Selection Cards', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name'     => 'select_cards_border',
+				'selector' => '{{WRAPPER}} .immonex-lead-gen-element--card-select--item',
+			]
+		);
+
+		$this->add_responsive_control(
+			'select_cards_border_radius',
+			[
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .immonex-lead-gen-element--card-select--item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'select_cards_box_shadow',
+				'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+				'selector' => '{{WRAPPER}} .immonex-lead-gen-element--card-select--item',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name'     => 'select_cards_typography',
+				'selector' => '{{WRAPPER}} .immonex-lead-gen-element--card-select--item',
+			]
+		);
+
+		$this->add_control(
+			'select_cards_inactive_header',
+			[
+				'label'     => __( 'Inactive', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'select_cards_bg_color',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-element--card-select--item' => 'background: {{VALUE}};',
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'select_cards_text_color',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-element--card-select--item' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'select_cards_hover_header',
+			[
+				'label' => __( 'Hover', 'immonex-kickstart-for-elementor' ),
+				'type'  => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'select_cards_bg_color_hover',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-element--card-select--item:hover' => 'background: {{VALUE}};',
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'select_cards_text_color_hover',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-element--card-select--item:hover' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'select_cards_active_header',
+			[
+				'label' => __( 'Active', 'immonex-kickstart-for-elementor' ) . ' (' . __( 'Selected', 'immonex-kickstart-for-elementor' ) . ')',
+				'type'  => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'select_cards_bg_color_active',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-element--card-select--item.is-selected' => 'background: {{VALUE}};',
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'select_cards_text_color_active',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-element--card-select--item.is-selected' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'progress_bar_style_section',
+			[
+				'label' => __( 'Progress Bar', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'progress_bar_base_color',
+			[
+				'label'     => __( 'Base Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-progress-bar .el-step__title.is-wait' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .immonex-lead-gen-progress-bar .el-step__head.is-wait' => 'border-color: {{VALUE}}; color: {{VALUE}}',
+					'{{WRAPPER}} .immonex-lead-gen-progress-bar .el-step__line' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .immonex-lead-gen-progress-bar .el-step .el-step__head.is-process .el-step__icon.is-text' => 'background-color: {{VALUE}}; border-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'progress_bar_active_item_text_color',
+			[
+				'label'     => __( 'Active Step Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-progress-bar .el-step .el-step__title.is-process' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'progress_bar_completed_item_color',
+			[
+				'label'     => __( 'Completed Step Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .immonex-lead-gen-progress-bar .el-step .el-step__title.is-success' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .el-step__head.is-success' => 'border-color: {{VALUE}}; color: {{VALUE}}',
+					'{{WRAPPER}} .immonex-lead-gen-progress-bar .el-step__head.is-success .el-step__line' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'value_slider_style_section',
+			[
+				'label' => __( 'Value Slider', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'value_slider_base_color',
+			[
+				'label'     => __( 'Base Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .el-slider__runway' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'value_slider_active_bar_color',
+			[
+				'label'     => __( 'Active Bar Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .el-slider__bar'    => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .el-slider__button' => 'border-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'input_style_section',
+			[
+				'label' => __( 'Input Fields', 'immonex-kickstart-for-elementor' ) . ' / ' . __( 'Select Boxes', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'input_bg_color',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .el-input__wrapper, {{WRAPPER}} .el-select__wrapper, {{WRAPPER}} .el-radio__inner' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} #immonex-lead-generator .el-textarea textarea.el-textarea__inner' => 'border: none !important; background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'input_text_color',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .el-input__inner, {{WRAPPER}} .el-select__selected-item, {{WRAPPER}} #immonex-lead-generator input::placeholder' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .el-select__placeholder, {{WRAPPER}} .el-select__placeholder.is-transparent, {{WRAPPER}} .el-radio__inner, {{WRAPPER}} .el-select__caret' => 'color: {{VALUE}}',
+					'{{WRAPPER}} #immonex-lead-generator textarea.el-textarea__inner' => 'border: none !important; color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'input_radio_selection_color',
+			[
+				'label'     => __( 'Current Radio Selection Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .el-radio__input.is-checked + .el-radio__label' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .el-radio__input.is-checked .el-radio__inner' => 'background: {{VALUE}}; border-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'input_box_shadow',
+				'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+				'selector' => '{{WRAPPER}} .el-input__wrapper, {{WRAPPER}} .el-textarea',
+			]
+		);
 	} // register_controls
 
 	/**

@@ -132,11 +132,11 @@ class Print_PDF_Link_Widget extends \immonex\Kickstart\ForElementor\Components\W
 			'color',
 			[
 				'label'       => __( 'Color', 'immonex-kickstart-for-elementor' ),
-				'description' => __( 'Defaults to the standard link color.', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'Defaults to the standard link color for <strong>action elements</strong> defined in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::COLOR,
 				'selectors'   => [
-					'{{WRAPPER}} .inx-e-print-pdf-link' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .inx-e-print-pdf-link__icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .inx-e-print-pdf-link' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .inx-e-print-pdf-link__icon svg' => 'fill: {{VALUE}}',
 				],
 			]
 		);

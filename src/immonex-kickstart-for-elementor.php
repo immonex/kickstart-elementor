@@ -4,7 +4,7 @@
  * Requires Plugins:  immonex-kickstart, immonex-kickstart-team, elementor
  * Plugin URI:        https://immonex.dev/wordpress-immobilien-plugin/immonex-kickstart-for-elementor
  * Description:       35+ widgets and dynamic tags for creating professional real estate websites with immonex Kickstart and Elementor
- * Version:           1.1.8
+ * Version:           1.4.0
  * Text Domain:       immonex-kickstart-for-elementor
  * Domain Path:       /languages
  * Requires at least: 6.5

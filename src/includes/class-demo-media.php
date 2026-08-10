@@ -78,7 +78,7 @@ class Demo_Media {
 		}
 
 		return self::create_demo_images();
-	} // get_demo_image
+	} // get_demo_image_ids
 
 	/**
 	 * Add the demo images to the WP media library and return the IDs.
@@ -128,6 +128,6 @@ class Demo_Media {
 		}
 
 		return $image_ids;
-	} // create_demo_image
+	} // create_demo_images
 
 } // class Demo_Media

@@ -14,7 +14,9 @@
 					{{ item.icon_html }}
 				</span>
 				{% endif %}
+				{% if item.title %}
 				<span class="inx-e-key-value-list__label">{{ item.title }}</span>
+				{% endif %}
 				<span class="inx-e-key-value-list__value">{{ item.value }}</span>
 				{% if item.after_item %}
 					<span class="inx-e-key-value-list__after-item">{{ item.after_item }}</span>

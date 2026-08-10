@@ -252,11 +252,23 @@ class Labels_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\W
 		);
 
 		$this->add_control(
-			'color_notice',
+			'label_color_header',
 			[
-				'type'        => \Elementor\Controls_Manager::NOTICE,
-				'notice_type' => 'warning',
-				'content'     => __( 'The label colors can be customized in the Kickstart plugin options. <strong>Optionally</strong>, alternative uniform colors for all labels can be selected below.', 'immonex-kickstart-for-elementor' ),
+				'label'     => __( 'Colors', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'color',
+			[
+				'label'       => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::COLOR,
+				'description' => __( 'The label colors can be customized in the Kickstart plugin options. <strong>If required</strong>, an alternative uniform color for all labels of this element can be selected here.', 'immonex-kickstart-for-elementor' ),
+				'selectors'   => [
+					'{{WRAPPER}} .inx-e-labels__label' => 'background: {{VALUE}};',
+				],
 			]
 		);
 
@@ -266,18 +278,7 @@ class Labels_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\W
 				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .inx-e-labels__label' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'bg_color',
-			[
-				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .inx-e-labels__label' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .inx-e-labels__label' => 'color: {{VALUE}}',
 				],
 			]
 		);

@@ -110,7 +110,7 @@ class Short_Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widge
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'body_text_section',
+			'body_text_style_section',
 			[
 				'label' => __( 'Body Text', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,

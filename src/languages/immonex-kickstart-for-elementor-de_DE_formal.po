@@ -2,27 +2,27 @@
 # This file is distributed under the immonex Plugin License V2.
 msgid ""
 msgstr ""
-"Project-Id-Version: immonex Kickstart for Elementor 1.1\n"
+"Project-Id-Version: immonex Kickstart for Elementor 1.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
-"POT-Creation-Date: 2026-03-10T13:37:15+00:00\n"
-"PO-Revision-Date: 2026-03-10 14:38+0100\n"
+"POT-Creation-Date: 2026-08-07T10:48:46+00:00\n"
+"PO-Revision-Date: 2026-08-07 13:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: immonex <dev@immonex.de>\n"
 "Language: de_DE@formal\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Domain: immonex-kickstart-for-elementor\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Plugin Name of the plugin
-#: immonex-kickstart-for-elementor.php
+#: immonex-kickstart-for-elementor.php:3
 msgid "immonex Kickstart for Elementor"
 msgstr "immonex Kickstart for Elementor"
 
 #. Plugin URI of the plugin
-#: immonex-kickstart-for-elementor.php
+#: immonex-kickstart-for-elementor.php:5
 msgid ""
 "https://immonex.dev/wordpress-immobilien-plugin/immonex-kickstart-for-"
 "elementor"
@@ -31,7 +31,7 @@ msgstr ""
 "elementor"
 
 #. Description of the plugin
-#: immonex-kickstart-for-elementor.php
+#: immonex-kickstart-for-elementor.php:6
 msgid ""
 "35+ widgets and dynamic tags for creating professional real estate websites "
 "with immonex Kickstart and Elementor"
@@ -40,12 +40,12 @@ msgstr ""
 "Websites mit immonex Kickstart und Elementor"
 
 #. Author of the plugin
-#: immonex-kickstart-for-elementor.php
+#: immonex-kickstart-for-elementor.php:12
 msgid "inveris OHG / immonex"
 msgstr "inveris OHG / immonex"
 
 #. Author URI of the plugin
-#: immonex-kickstart-for-elementor.php
+#: immonex-kickstart-for-elementor.php:13
 msgid "https://immonex.dev/"
 msgstr "https://immonex.dev/"
 
@@ -61,7 +61,7 @@ msgstr "Innenansicht"
 msgid "Floor Plan"
 msgstr "Grundriss"
 
-#: includes/class-demo-media.php:109 includes/class-mapping-table.php:76
+#: includes/class-demo-media.php:109 includes/class-mapping-table.php:156
 #: includes/components/widgets/single-property/class-epass-widget.php:35
 #: includes/components/widgets/single-property/class-epass-widget.php:75
 msgid "Energy Pass"
@@ -82,22 +82,26 @@ msgstr "Galerie"
 msgid "Demo Image"
 msgstr "Demobild"
 
-#: includes/class-elementor-bootstrap.php:92
-#: includes/components/dynamic-tags/class-kickstart-url.php:73
+#: includes/class-elementor-bootstrap.php:94
+#: includes/components/dynamic-tags/class-kickstart-url.php:82
 msgid "Property Details"
 msgstr "Immobiliendetails"
 
-#: includes/class-elementor-bootstrap.php:96
+#: includes/class-elementor-bootstrap.php:98
 msgid "Property Lists and Search"
 msgstr "Immobilienlisten und -suche"
 
-#: includes/class-elementor-bootstrap.php:103
+#: includes/class-elementor-bootstrap.php:105
 msgid "Contacts & Agencies"
 msgstr "Kontakte & Agenturen"
 
-#: includes/class-elementor-bootstrap.php:109
+#: includes/class-elementor-bootstrap.php:115
 msgid "Marketing & Acquisition"
 msgstr "Marketing & Akquise"
+
+#: includes/class-elementor-bootstrap.php:121
+msgid "Special Forms"
+msgstr "Spezialformulare"
 
 #: includes/class-kickstart-for-elementor.php:284
 msgid "Layout & Design"
@@ -128,51 +132,238 @@ msgstr "Agenturen"
 msgid "Agents"
 msgstr "Kontaktpersonen"
 
-#: includes/class-mapping-table.php:75
+#: includes/class-mapping-table.php:124 includes/class-mapping-table.php:173
+msgid "Description Texts"
+msgstr "Beschreibungstexte"
+
+#: includes/class-mapping-table.php:125 includes/class-mapping-table.php:170
+#: includes/class-mapping-table.php:174
+msgid "Location Description"
+msgstr "Lagebeschreibung"
+
+#: includes/class-mapping-table.php:126 includes/class-mapping-table.php:169
+#: includes/class-mapping-table.php:175
+msgid "Features Description"
+msgstr "Ausstattungsbeschreibung"
+
+#: includes/class-mapping-table.php:127 includes/class-mapping-table.php:162
+#: includes/components/widgets/single-property/class-desc-widget.php:81
+msgid "Miscellaneous"
+msgstr "Sonstiges"
+
+#: includes/class-mapping-table.php:128
+#: includes/components/widgets/single-property/class-desc-widget.php:124
+msgid "Description Text"
+msgstr "Beschreibungstext"
+
+#: includes/class-mapping-table.php:129 includes/class-mapping-table.php:201
+#: includes/components/widgets/single-property/class-core-details-widget.php:197
+msgid "Property #"
+msgstr "Objektnr."
+
+#: includes/class-mapping-table.php:130 includes/class-mapping-table.php:202
+msgid "external"
+msgstr "extern"
+
+#: includes/class-mapping-table.php:131 includes/class-mapping-table.php:164
+#: includes/components/widgets/single-property/class-core-details-widget.php:282
+#: includes/components/widgets/single-property/class-native-head-widget.php:73
+#: includes/components/widgets/single-property/class-native-head-widget.php:548
+msgid "Primary Price"
+msgstr "Preis (primär)"
+
+#: includes/class-mapping-table.php:132 includes/class-mapping-table.php:165
+msgid "Primary Area"
+msgstr "Fläche (primär)"
+
+#: includes/class-mapping-table.php:133 includes/class-mapping-table.php:166
+msgid "Primary Number of Rooms"
+msgstr "Anzahl Zimmer (primär)"
+
+#: includes/class-mapping-table.php:134 includes/class-mapping-table.php:167
+msgid "Primary Number of Units"
+msgstr "Anzahl Einheiten (primär)"
+
+#: includes/class-mapping-table.php:135 includes/class-mapping-table.php:168
+msgid "Commercial Area"
+msgstr "Gewerbefläche"
+
+#: includes/class-mapping-table.php:136 includes/class-mapping-table.php:172
+msgid "Retail Area"
+msgstr "Verkaufsfläche"
+
+#: includes/class-mapping-table.php:137 includes/class-mapping-table.php:171
+msgid "Office Area"
+msgstr "Bürofläche"
+
+#: includes/class-mapping-table.php:138 includes/class-mapping-table.php:155
+#: includes/class-mapping-table.php:176
 #: includes/components/widgets/class-icon-list-widget.php:73
 #: includes/components/widgets/class-widget-base.php:570
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:282
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:263
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:687
 #: includes/components/widgets/single-property/class-desc-widget.php:80
 msgid "Features"
 msgstr "Ausstattung"
 
-#: includes/class-mapping-table.php:77
+#: includes/class-mapping-table.php:139
+msgid "Bidding Process"
+msgstr "Bieterverfahren"
+
+#: includes/class-mapping-table.php:140 includes/class-mapping-table.php:157
 msgid "Areas"
 msgstr "Flächen"
 
-#: includes/class-mapping-table.php:78
+#: includes/class-mapping-table.php:141 includes/class-mapping-table.php:178
+msgid "Geo Data"
+msgstr "Geodaten"
+
+#: includes/class-mapping-table.php:142 includes/class-mapping-table.php:158
+#: includes/class-mapping-table.php:180
 msgid "Infrastructure"
 msgstr "Infrastruktur"
 
-#: includes/class-mapping-table.php:79
-msgid "Contact"
-msgstr "Kontakt"
+#: includes/class-mapping-table.php:143 includes/class-mapping-table.php:144
+#: includes/class-mapping-table.php:181 includes/class-mapping-table.php:182
+msgid "Distances"
+msgstr "Distanzen"
 
-#: includes/class-mapping-table.php:80
-#: includes/components/widgets/single-property/class-desc-widget.php:79
-msgid "Location"
-msgstr "Lage"
+#: includes/class-mapping-table.php:144 includes/class-mapping-table.php:182
+msgid "Sport"
+msgstr "Sport"
 
-#: includes/class-mapping-table.php:81
+#: includes/class-mapping-table.php:145 includes/class-mapping-table.php:183
+msgid "Contact Data"
+msgstr "Kontaktdaten"
+
+#: includes/class-mapping-table.php:146 includes/class-mapping-table.php:184
+msgid "Other Email Addresses"
+msgstr "Sonstige E-Mail-Adressen"
+
+#: includes/class-mapping-table.php:147 includes/class-mapping-table.php:185
+msgid "Other Phone Numbers"
+msgstr "Sonstige Telefonnummern"
+
+#: includes/class-mapping-table.php:148 includes/class-mapping-table.php:161
 #: includes/components/widgets/single-property/class-prices-widget.php:35
 #: includes/components/widgets/single-property/class-prices-widget.php:86
 msgid "Prices"
 msgstr "Preise"
 
-#: includes/class-mapping-table.php:82
-#: includes/components/widgets/single-property/class-desc-widget.php:81
-msgid "Miscellaneous"
-msgstr "Sonstiges"
+#: includes/class-mapping-table.php:149 includes/class-mapping-table.php:186
+msgid "Actual Rental Revenues"
+msgstr "Mieteinnahmen (Ist)"
 
-#: includes/class-mapping-table.php:83
+#: includes/class-mapping-table.php:150 includes/class-mapping-table.php:187
+msgid "Target Rental Revenues"
+msgstr "Mieteinnahmen (Soll)"
+
+#: includes/class-mapping-table.php:151
+msgid "Foreclosure Auction"
+msgstr "Zwangsversteigerung"
+
+#: includes/class-mapping-table.php:152
+msgid "Property Management"
+msgstr "Verwaltung Objekt"
+
+#: includes/class-mapping-table.php:153
+msgid "Condition Details"
+msgstr "Zustandsangaben"
+
+#: includes/class-mapping-table.php:154
+msgid "Energy Pass Details"
+msgstr "Energieausweis-Angaben"
+
+#: includes/class-mapping-table.php:159
+msgid "Contact"
+msgstr "Kontakt"
+
+#: includes/class-mapping-table.php:160
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:138
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:593
+#: includes/components/widgets/single-property/class-desc-widget.php:79
+msgid "Location"
+msgstr "Lage"
+
+#: includes/class-mapping-table.php:163
 #: includes/components/widgets/single-property/class-condition-widget.php:116
 #: includes/components/widgets/single-property/class-detail-list-widget.php:172
 msgid "Condition"
 msgstr "Zustand"
 
-#: includes/class-mapping-table.php:132 includes/class-mapping-table.php:160
-msgid "various"
-msgstr "diverse"
+#: includes/class-mapping-table.php:177
+msgid "Firing"
+msgstr "Befeuerung"
+
+#: includes/class-mapping-table.php:179
+msgctxt "Building Level"
+msgid "Floor"
+msgstr "Etage"
+
+#: includes/class-mapping-table.php:188
+msgid "Carport Parking Spaces"
+msgstr "Carport-Stellplätze"
+
+#: includes/class-mapping-table.php:189 includes/class-mapping-table.php:191
+#: includes/class-mapping-table.php:193 includes/class-mapping-table.php:195
+#: includes/class-mapping-table.php:197 includes/class-mapping-table.php:199
+msgid "Number and/or Price"
+msgstr "Zahl und/oder Preis"
+
+#: includes/class-mapping-table.php:190
+msgid "Duplex Parking Spaces"
+msgstr "Duplex-Stellplätze"
+
+#: includes/class-mapping-table.php:192
+msgid "Outdoor Parking Spaces"
+msgstr "Außenstellplätze"
+
+#: includes/class-mapping-table.php:194
+msgid "Garage Parking Spaces"
+msgstr "Garagenstellplätze"
+
+#: includes/class-mapping-table.php:196
+msgid "Parking Garage Parking Spaces"
+msgstr "Parkhausstellplätze"
+
+#: includes/class-mapping-table.php:198
+msgid "Underground Parking Spaces"
+msgstr "Tiefgaragenstellplätze"
+
+#: includes/class-mapping-table.php:200
+msgid "Development Scope"
+msgstr "Umfang der Erschließung"
+
+#: includes/class-mapping-table.php:203
+msgid "Country Code"
+msgstr "Ländercode"
+
+#: includes/class-mapping-table.php:298 includes/class-mapping-table.php:352
+#: includes/class-mapping-table.php:710
+msgid "all"
+msgstr "alle"
+
+#: includes/class-mapping-table.php:530
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:534
+#: includes/components/widgets/class-key-value-list-widget.php:1340
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:119
+msgid "Name"
+msgstr "Name"
+
+#: includes/class-mapping-table.php:615
+#: includes/components/widgets/class-key-value-list-widget.php:1339
+msgid "Group"
+msgstr "Gruppe"
+
+#: includes/class-mapping-table.php:639
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:535
+#: includes/components/widgets/class-key-value-list-widget.php:1341
+msgid "Source"
+msgstr "Quelle"
+
+#: includes/class-mapping-table.php:650
+msgid "Dest. Field"
+msgstr "Zielfeld"
 
 #: includes/components/dynamic-tags/class-kickstart-gallery.php:34
 msgid "Kickstart Gallery"
@@ -224,130 +415,321 @@ msgstr ""
 "(Custom Fields), die die IDs (Anhang-Beiträge) der einzubindenden Bilder "
 "enthalten."
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:41
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:44
 msgid "Kickstart Template Data"
 msgstr "Kickstart Template-Daten"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:78
-#: includes/components/dynamic-tags/class-kickstart-url.php:68
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:81
 #: includes/components/widgets/single-property/class-epass-widget.php:116
 msgid "Type"
 msgstr "Art"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:82
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:87
 msgid "Flex Elements"
 msgstr "Flex-Elemente"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:83
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:88
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:532
+#: includes/components/widgets/class-key-value-list-widget.php:1337
+msgid "recommended"
+msgstr "empfohlen"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:90
 msgid "Array Keys"
 msgstr "Array-Schlüssel"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:92
-#: includes/components/widgets/class-key-value-list-widget.php:135
-msgid "Element Type"
-msgstr "Elementart"
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:99
+msgid "Wrap Elements"
+msgstr "Elemente wrappen"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:120
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:134
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:101
+msgid "Wrap element output in a &lt;span&gt; container."
+msgstr "Elementausgabe mit einem &lt;span&gt;-Container umschließen."
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:108
+msgid "Separator"
+msgstr "Trenner"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:111
+msgid "String used to separate multiple elements or values during output"
+msgstr "Zeichenkette zur Trennung mehrerer Elemente oder Werte bei der Ausgabe"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:118
+#: includes/components/widgets/class-key-value-list-widget.php:135
+msgid "Element Selection"
+msgstr "Elementauswahl"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:152
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:177
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:191
 #: includes/components/widgets/class-key-value-list-widget.php:124
 #: includes/components/widgets/class-key-value-list-widget.php:162
-#: includes/components/widgets/class-key-value-list-widget.php:178
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:286
+#: includes/components/widgets/class-key-value-list-widget.php:181
+#: includes/components/widgets/class-key-value-list-widget.php:195
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:268
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:291
 #: includes/components/widgets/notify/class-native-notify-form-widget.php:144
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:182
 msgid "Element"
 msgstr "Element"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:145
-#: includes/components/widgets/class-key-value-list-widget.php:189
-msgid "no formatting"
-msgstr "keine Formatierung"
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:179
+#: includes/components/widgets/class-key-value-list-widget.php:183
+msgid "🄶 = Group, 🄳 = Destination. Hover over elements for more information."
+msgstr ""
+"🄶 = Gruppe, 🄳 = Ziel. Mauszeiger über Elemente bewegen für weitere "
+"Informationen."
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:156
-#: includes/components/widgets/class-key-value-list-widget.php:200
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:202
+#: includes/components/widgets/class-key-value-list-widget.php:206
+msgid "no change"
+msgstr "keine Änderung"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:213
+#: includes/components/widgets/class-key-value-list-widget.php:217
 msgid "Format"
 msgstr "Format"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:166
-#: includes/components/widgets/class-key-value-list-widget.php:210
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:215
+#: includes/components/widgets/class-key-value-list-widget.php:219
+msgid ""
+"Most values are already formatted during import (see <strong>Filter</strong> "
+"column of the mapping table)."
+msgstr ""
+"Die meisten Werte werden bereits im Rahmen des Imports formatiert (siehe "
+"Spalte <strong>Filter</strong> der Mapping-Tabelle)."
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:224
+#: includes/components/widgets/class-key-value-list-widget.php:228
 msgid "Decimal Places"
 msgstr "Dezimalstellen"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:170
-#: includes/components/widgets/class-key-value-list-widget.php:214
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:228
+#: includes/components/widgets/class-key-value-list-widget.php:232
 msgid "auto"
 msgstr "auto"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:187
-#: includes/components/widgets/class-key-value-list-widget.php:234
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:245
+#: includes/components/widgets/class-key-value-list-widget.php:249
+msgid "Always apply Format"
+msgstr "Formatierung immer anwenden"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:247
+#: includes/components/widgets/class-key-value-list-widget.php:251
+msgid "If enabled, already formatted values will be reformatted."
+msgstr "Wenn aktiviert, werden bereits formatierte Werte neu formatiert."
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:257
+#: includes/components/widgets/class-key-value-list-widget.php:275
 msgid "Before Value"
 msgstr "Vor Wert"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:197
-#: includes/components/widgets/class-key-value-list-widget.php:244
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:267
+#: includes/components/widgets/class-key-value-list-widget.php:284
 msgid "After Value"
 msgstr "Nach Wert"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:205
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:401
-#: includes/components/widgets/class-key-value-list-widget.php:1209
-msgid "User-defined/RegEx"
-msgstr "Benutzerdefiniert/RegEx"
+#. translators: %1$s = mapping table documentation page URL, %2$s = OpenImmo2WP product page URL
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:283
+#: includes/components/widgets/class-key-value-list-widget.php:388
+#, php-format
+msgid ""
+"OpenImmo Elements can be selected based on their entries in the <a "
+"href=\"%1$s\" target=\"_blank\">import mapping table</a> (<a href=\"%2$s\" "
+"target=\"_blank\">&rarr; immonex OpenImmo2WP</a>) and combined as desired."
+msgstr ""
+"OpenImmo-Elemente können anhand ihrer Einträge in der <a href=\"%1$s\" "
+"target=\"_blank\">Import-Mapping-Tabelle</a> (<a href=\"%2$s\" "
+"target=\"_blank\">&rarr; immonex OpenImmo2WP</a>) ausgewählt und beliebig "
+"kombiniert werden."
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:211
-#: includes/components/widgets/class-key-value-list-widget.php:363
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:288
+#: includes/components/widgets/class-key-value-list-widget.php:393
+msgid ""
+"Type and scope of the sample data shown depend on the selected formatting "
+"option and do not match the actual information."
+msgstr ""
+"Art und Umfang der angezeigten Beispielinhalte sind abhängig von der "
+"ausgewählten Formatierung und entsprechen nicht den tatsächlichen Daten."
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:299
+#: includes/components/widgets/class-key-value-list-widget.php:408
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:162
 msgid "Elements"
 msgstr "Elemente"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:225
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:313
 msgid "Key(s)"
 msgstr "Schlüssel"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:399
-#: includes/components/widgets/class-key-value-list-widget.php:1206
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:119
-msgid "Name"
-msgstr "Name"
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:531
+#: includes/components/widgets/class-key-value-list-widget.php:1336
+msgid "combined"
+msgstr "kombiniert"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:400
-#: includes/components/widgets/class-key-value-list-widget.php:1208
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:536
+#: includes/components/widgets/class-key-value-list-widget.php:1342
 msgid "Destination (Custom Field)"
 msgstr "Ziel (Custom Field)"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:421
-#: includes/components/widgets/class-key-value-list-widget.php:1171
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:537
+#: includes/components/widgets/class-key-value-list-widget.php:1343
+msgid "User-defined/RegEx"
+msgstr "Benutzerdefiniert/RegEx"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:557
+#: includes/components/widgets/class-key-value-list-widget.php:1300
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:141
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:740
 msgid "Price"
 msgstr "Preis"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:426
-#: includes/components/widgets/class-key-value-list-widget.php:1176
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:562
+#: includes/components/widgets/class-key-value-list-widget.php:1305
 #: includes/components/widgets/single-property/class-core-details-widget.php:224
 msgid "Area"
 msgstr "Fläche"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:431
-#: includes/components/widgets/class-key-value-list-widget.php:1181
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:567
+#: includes/components/widgets/class-key-value-list-widget.php:1310
+msgctxt "general"
 msgid "Number"
-msgstr "Nummer"
+msgstr "Zahl"
 
-#: includes/components/dynamic-tags/class-kickstart-template-data.php:436
-#: includes/components/widgets/class-key-value-list-widget.php:1186
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:572
+#: includes/components/widgets/class-key-value-list-widget.php:1315
 msgid "Link (URL/E-Mail/Phone)"
 msgstr "Link (URL/E-Mail/Fon)"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:598
+#: includes/components/widgets/class-key-value-list-widget.php:1364
+msgid "Full Address"
+msgstr "Vollständige Adresse"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:599
+#: includes/components/widgets/class-key-value-list-widget.php:1365
+msgid "Street"
+msgstr "Straße"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:600
+#: includes/components/widgets/class-key-value-list-widget.php:1366
+msgid "Latitude"
+msgstr "Breitengrad"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:601
+#: includes/components/widgets/class-key-value-list-widget.php:1367
+msgid "Longitude"
+msgstr "Längengrad"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:602
+#: includes/components/widgets/class-key-value-list-widget.php:1368
+msgid "Virtual Tour Embed Code"
+msgstr "Einbettungscode der virtuellen Tour"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:603
+#: includes/components/widgets/class-key-value-list-widget.php:1369
+msgid "OpenImmo ID (OBID)"
+msgstr "OpenImmo ID (OBID)"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:604
+#: includes/components/widgets/class-key-value-list-widget.php:1370
+#: includes/components/widgets/single-property/class-epass-widget.php:132
+msgid "Energy Efficiency Class"
+msgstr "Energieeffizienzklasse"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:605
+#: includes/components/widgets/class-key-value-list-widget.php:1371
+msgid "AreaButler URL"
+msgstr "AreaButler-URL"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:606
+#: includes/components/widgets/class-key-value-list-widget.php:1372
+msgid "AreaButler URL without Address"
+msgstr "AreaButler-URL ohne Adressangabe"
+
+#: includes/components/dynamic-tags/class-kickstart-template-data.php:607
+#: includes/components/widgets/class-key-value-list-widget.php:1373
+msgid "AreaButler URL with Address"
+msgstr "AreaButler-URL mit Adressangabe"
 
 #: includes/components/dynamic-tags/class-kickstart-url.php:34
 msgid "Kickstart URL"
 msgstr "Kickstart URL"
 
-#: includes/components/dynamic-tags/class-kickstart-url.php:72
-msgid "Auto"
-msgstr "Auto"
+#: includes/components/dynamic-tags/class-kickstart-url.php:68
+msgid "Destination Page"
+msgstr "Zielseite"
 
-#: includes/components/dynamic-tags/class-kickstart-url.php:74
+#: includes/components/dynamic-tags/class-kickstart-url.php:73
+#: includes/components/widgets/class-icon-list-widget.php:66
+#: includes/components/widgets/class-key-value-list-widget.php:100
+#: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:73
+#: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:72
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:72
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:117
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:403
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:89
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:135
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:72
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:86
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:138
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:97
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:67
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:68
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:65
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:113
+#: includes/components/widgets/single-property/class-basic-gallery-widget.php:44
+#: includes/components/widgets/single-property/class-desc-widget.php:65
+#: includes/components/widgets/single-property/class-native-footer-widget.php:67
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:45
+#: includes/components/widgets/single-property/class-native-head-widget.php:80
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:65
+#: includes/components/widgets/single-property/class-native-video-gallery-widget.php:45
+#: includes/components/widgets/single-property/class-native-virtual-tour-widget.php:45
+#: includes/components/widgets/single-property/class-property-type-widget.php:68
+#: includes/components/widgets/single-property/class-short-desc-widget.php:71
+#: includes/components/widgets/single-property/class-title-widget.php:63
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:73
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:71
+msgid "General"
+msgstr "Allgemein"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:75
+#: includes/components/widgets/class-widget-base.php:615
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:76
+msgid "Property Details or Overview Page"
+msgstr "Immobiliendetails oder Übersichtsseite"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:80
+msgid "Property Lists"
+msgstr "Immobilienlisten"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:86
+msgid "Property Detail Pages"
+msgstr "Immobilien-Detailseiten"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:88
 msgid "Overview"
 msgstr "Übersicht"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:89
+msgid "First Object"
+msgstr "Erstes Objekt"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:90
+msgid "Previous Object"
+msgstr "Vorheriges Objekt"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:91
+msgid "Next Object"
+msgstr "Nächstes Objekt"
+
+#: includes/components/dynamic-tags/class-kickstart-url.php:92
+msgid "Last Object"
+msgstr "Letztes Objekt"
 
 #: includes/components/widgets/class-gallery-widget.php:50
 #: includes/components/widgets/single-property/class-main-image-widget.php:52
@@ -389,170 +771,293 @@ msgstr "Icon"
 msgid "list"
 msgstr "Liste"
 
-#: includes/components/widgets/class-icon-list-widget.php:66
-#: includes/components/widgets/class-key-value-list-widget.php:100
-#: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:73
-#: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:72
-#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:72
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:136
-#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:89
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:135
-#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:86
-#: includes/components/widgets/notify/class-native-notify-form-widget.php:97
-#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:67
-#: includes/components/widgets/property-list/class-native-property-list-widget.php:68
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:65
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:113
-#: includes/components/widgets/single-property/class-basic-gallery-widget.php:44
-#: includes/components/widgets/single-property/class-desc-widget.php:65
-#: includes/components/widgets/single-property/class-native-footer-widget.php:67
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:45
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:155
-#: includes/components/widgets/single-property/class-native-head-widget.php:78
-#: includes/components/widgets/single-property/class-native-head-widget.php:132
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:65
-#: includes/components/widgets/single-property/class-native-video-gallery-widget.php:45
-#: includes/components/widgets/single-property/class-native-virtual-tour-widget.php:45
-#: includes/components/widgets/single-property/class-property-type-widget.php:68
-#: includes/components/widgets/single-property/class-short-desc-widget.php:71
-#: includes/components/widgets/single-property/class-title-widget.php:63
-msgid "General"
-msgstr "Allgemein"
-
 #: includes/components/widgets/class-icon-list-widget.php:85
-#: includes/components/widgets/class-icon-list-widget.php:375
-#: includes/components/widgets/class-key-value-list-widget.php:254
-#: includes/components/widgets/class-key-value-list-widget.php:782
+#: includes/components/widgets/class-icon-list-widget.php:440
+#: includes/components/widgets/class-key-value-list-widget.php:294
+#: includes/components/widgets/class-key-value-list-widget.php:892
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:92
-#: includes/components/widgets/single-property/class-property-type-widget.php:123
+#: includes/components/widgets/single-property/class-property-type-widget.php:126
 msgid "Icon"
 msgstr "Icon"
 
 #: includes/components/widgets/class-icon-list-widget.php:118
-#: includes/components/widgets/class-key-value-list-widget.php:381
+#: includes/components/widgets/class-key-value-list-widget.php:426
 msgid "List"
 msgstr "Liste"
 
 #: includes/components/widgets/class-icon-list-widget.php:126
-#: includes/components/widgets/class-key-value-list-widget.php:389
-#: includes/components/widgets/class-key-value-list-widget.php:667
+#: includes/components/widgets/class-key-value-list-widget.php:434
+#: includes/components/widgets/class-widget-base.php:1068
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:138
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:167
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:139
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:120
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:302
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:274
+#: includes/components/widgets/single-property/class-native-footer-widget.php:116
+#: includes/components/widgets/single-property/class-native-head-widget.php:134
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:137
+msgid "Frame"
+msgstr "Rahmen"
+
+#: includes/components/widgets/class-icon-list-widget.php:134
+#: includes/components/widgets/class-key-value-list-widget.php:442
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:218
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:247
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:275
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:271
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:554
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:610
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:702
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:227
+msgid "Padding"
+msgstr "Innenabstand"
+
+#: includes/components/widgets/class-icon-list-widget.php:150
+#: includes/components/widgets/class-key-value-list-widget.php:458
+#: includes/components/widgets/class-widget-base.php:1151
+#: includes/components/widgets/class-widget-base.php:1199
+#: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:183
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:234
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:310
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:487
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:567
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:263
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:339
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:493
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:573
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:373
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:404
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:435
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:549
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:205
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:521
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:156
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:235
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:570
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:626
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:718
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:756
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:447
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:769
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1074
+#: includes/components/widgets/single-property/class-labels-widget.php:266
+#: includes/components/widgets/single-property/class-native-footer-widget.php:152
+#: includes/components/widgets/single-property/class-native-head-widget.php:170
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:138
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:277
+msgid "Background Color"
+msgstr "Hintergrundfarbe"
+
+#: includes/components/widgets/class-icon-list-widget.php:161
+#: includes/components/widgets/class-key-value-list-widget.php:469
+#: includes/components/widgets/class-widget-base.php:1262
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:296
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:335
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:170
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:456
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:282
+#: includes/components/widgets/single-property/class-basic-gallery-widget.php:229
+#: includes/components/widgets/single-property/class-labels-widget.php:201
+#: includes/components/widgets/single-property/class-main-image-widget.php:396
+#: includes/components/widgets/single-property/class-native-footer-widget.php:166
+#: includes/components/widgets/single-property/class-native-head-widget.php:184
+#: includes/components/widgets/single-property/class-native-head-widget.php:365
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:145
+msgid "Corner Radius"
+msgstr "Eckradius"
+
+#: includes/components/widgets/class-icon-list-widget.php:174
+#: includes/components/widgets/class-key-value-list-widget.php:482
+#: includes/components/widgets/class-widget-base.php:1097
+#: includes/components/widgets/class-widget-base.php:1122
+#: includes/components/widgets/class-widget-base.php:1290
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:167
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:196
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:196
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:225
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:309
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:348
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:587
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:330
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:359
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:484
+#: includes/components/widgets/single-property/class-native-head-widget.php:386
+msgid "Box Shadow"
+msgstr "Box-Schatten"
+
+#: includes/components/widgets/class-icon-list-widget.php:182
+#: includes/components/widgets/class-key-value-list-widget.php:490
+msgid "Contents"
+msgstr "Inhalte"
+
+#: includes/components/widgets/class-icon-list-widget.php:191
+#: includes/components/widgets/class-key-value-list-widget.php:499
+#: includes/components/widgets/class-key-value-list-widget.php:777
+#: includes/components/widgets/class-widget-base.php:1233
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:421
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:703
 #: includes/components/widgets/single-property/class-labels-widget.php:126
+#: includes/components/widgets/single-property/class-native-head-widget.php:332
 msgid "Layout"
 msgstr "Layout"
 
-#: includes/components/widgets/class-icon-list-widget.php:131
+#: includes/components/widgets/class-icon-list-widget.php:196
 #: includes/components/widgets/class-widget-base.php:902
 #: includes/components/widgets/class-widget-base.php:914
-#: includes/components/widgets/class-widget-base.php:1037
+#: includes/components/widgets/class-widget-base.php:1100
+#: includes/components/widgets/class-widget-base.php:1359
 #: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:129
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:191
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:170
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:172
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:187
 #: includes/components/widgets/kickstart-team/class-native-agency-widget.php:206
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:225
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:199
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:196
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:211
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:230
 #: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:75
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:132
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:333
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:127
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:138
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:151
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:176
 #: includes/components/widgets/single-property/class-main-image-widget.php:110
 #: includes/components/widgets/single-property/class-main-image-widget.php:237
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:190
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:222
-#: includes/components/widgets/single-property/class-native-head-widget.php:118
-#: includes/components/widgets/single-property/class-native-head-widget.php:155
+#: includes/components/widgets/single-property/class-native-footer-widget.php:90
+#: includes/components/widgets/single-property/class-native-footer-widget.php:128
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:167
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:199
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:251
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:268
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:286
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:302
+#: includes/components/widgets/single-property/class-native-head-widget.php:120
+#: includes/components/widgets/single-property/class-native-head-widget.php:146
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:107
 msgid "Default"
 msgstr "Standard"
 
-#: includes/components/widgets/class-icon-list-widget.php:135
-#: includes/components/widgets/class-key-value-list-widget.php:398
+#: includes/components/widgets/class-icon-list-widget.php:200
+#: includes/components/widgets/class-key-value-list-widget.php:508
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:712
 msgid "Inline"
 msgstr "Inline"
 
-#: includes/components/widgets/class-icon-list-widget.php:150
-#: includes/components/widgets/class-key-value-list-widget.php:394
-#: includes/components/widgets/class-key-value-list-widget.php:413
+#: includes/components/widgets/class-icon-list-widget.php:215
+#: includes/components/widgets/class-key-value-list-widget.php:504
+#: includes/components/widgets/class-key-value-list-widget.php:523
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:708
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:723
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:102
 msgid "Columns"
 msgstr "Spalten"
 
-#: includes/components/widgets/class-icon-list-widget.php:178
-#: includes/components/widgets/class-key-value-list-widget.php:465
+#: includes/components/widgets/class-icon-list-widget.php:243
+#: includes/components/widgets/class-key-value-list-widget.php:575
 #: includes/components/widgets/single-property/class-labels-widget.php:170
 msgid "Space Between"
 msgstr "Zwischenraum"
 
-#: includes/components/widgets/class-icon-list-widget.php:215
-#: includes/components/widgets/class-key-value-list-widget.php:441
+#: includes/components/widgets/class-icon-list-widget.php:280
+#: includes/components/widgets/class-key-value-list-widget.php:551
 #: includes/components/widgets/class-widget-base.php:688
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:105
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:331
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:453
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:192
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:566
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:827
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:254
-#: includes/components/widgets/single-property/class-desc-widget.php:113
+#: includes/components/widgets/single-property/class-desc-widget.php:132
 #: includes/components/widgets/single-property/class-labels-widget.php:147
 #: includes/components/widgets/single-property/class-main-image-widget.php:130
-#: includes/components/widgets/single-property/class-property-type-widget.php:163
+#: includes/components/widgets/single-property/class-property-type-widget.php:166
 #: includes/components/widgets/single-property/class-short-desc-widget.php:123
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:106
 msgid "Alignment"
 msgstr "Ausrichtung"
 
-#: includes/components/widgets/class-icon-list-widget.php:220
-#: includes/components/widgets/class-icon-list-widget.php:449
-#: includes/components/widgets/class-key-value-list-widget.php:693
+#: includes/components/widgets/class-icon-list-widget.php:285
+#: includes/components/widgets/class-icon-list-widget.php:514
+#: includes/components/widgets/class-key-value-list-widget.php:803
 #: includes/components/widgets/class-widget-base.php:692
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:152
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:109
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:336
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:457
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:197
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:572
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:832
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:259
-#: includes/components/widgets/single-property/class-desc-widget.php:117
+#: includes/components/widgets/single-property/class-desc-widget.php:136
 #: includes/components/widgets/single-property/class-main-image-widget.php:134
-#: includes/components/widgets/single-property/class-property-type-widget.php:167
+#: includes/components/widgets/single-property/class-property-type-widget.php:170
 #: includes/components/widgets/single-property/class-short-desc-widget.php:127
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:110
 msgid "Left"
 msgstr "Links"
 
-#: includes/components/widgets/class-icon-list-widget.php:224
-#: includes/components/widgets/class-icon-list-widget.php:453
-#: includes/components/widgets/class-icon-list-widget.php:484
-#: includes/components/widgets/class-key-value-list-widget.php:697
-#: includes/components/widgets/class-key-value-list-widget.php:726
+#: includes/components/widgets/class-icon-list-widget.php:289
+#: includes/components/widgets/class-icon-list-widget.php:518
+#: includes/components/widgets/class-icon-list-widget.php:549
+#: includes/components/widgets/class-key-value-list-widget.php:807
+#: includes/components/widgets/class-key-value-list-widget.php:836
 #: includes/components/widgets/class-widget-base.php:696
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:113
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:340
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:461
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:201
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:405
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:576
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:836
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:263
-#: includes/components/widgets/single-property/class-desc-widget.php:121
+#: includes/components/widgets/single-property/class-desc-widget.php:140
 #: includes/components/widgets/single-property/class-main-image-widget.php:138
-#: includes/components/widgets/single-property/class-property-type-widget.php:171
+#: includes/components/widgets/single-property/class-property-type-widget.php:174
 #: includes/components/widgets/single-property/class-short-desc-widget.php:131
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:114
 msgid "Center"
 msgstr "Mitte"
 
-#: includes/components/widgets/class-icon-list-widget.php:228
-#: includes/components/widgets/class-icon-list-widget.php:457
-#: includes/components/widgets/class-key-value-list-widget.php:701
+#: includes/components/widgets/class-icon-list-widget.php:293
+#: includes/components/widgets/class-icon-list-widget.php:522
+#: includes/components/widgets/class-key-value-list-widget.php:811
 #: includes/components/widgets/class-widget-base.php:700
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:156
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:117
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:344
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:465
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:205
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:580
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:840
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:267
-#: includes/components/widgets/single-property/class-desc-widget.php:125
+#: includes/components/widgets/single-property/class-desc-widget.php:144
 #: includes/components/widgets/single-property/class-main-image-widget.php:142
-#: includes/components/widgets/single-property/class-property-type-widget.php:175
+#: includes/components/widgets/single-property/class-property-type-widget.php:178
 #: includes/components/widgets/single-property/class-short-desc-widget.php:135
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:118
 msgid "Right"
 msgstr "Rechts"
 
-#: includes/components/widgets/class-icon-list-widget.php:239
-#: includes/components/widgets/class-key-value-list-widget.php:503
+#: includes/components/widgets/class-icon-list-widget.php:304
+#: includes/components/widgets/class-key-value-list-widget.php:613
 msgid "Divider"
 msgstr "Trenner"
 
-#: includes/components/widgets/class-icon-list-widget.php:241
-#: includes/components/widgets/class-key-value-list-widget.php:505
+#: includes/components/widgets/class-icon-list-widget.php:306
+#: includes/components/widgets/class-key-value-list-widget.php:615
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:131
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:87
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:102
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:118
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:144
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:167
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:206
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:270
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:282
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:294
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:183
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:229
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:348
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:360
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:372
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:58
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:84
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:150
@@ -561,18 +1066,18 @@ msgstr "Trenner"
 msgid "Off"
 msgstr "Aus"
 
-#: includes/components/widgets/class-icon-list-widget.php:242
-#: includes/components/widgets/class-key-value-list-widget.php:506
+#: includes/components/widgets/class-icon-list-widget.php:307
+#: includes/components/widgets/class-key-value-list-widget.php:616
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:132
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:88
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:103
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:119
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:145
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:168
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:207
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:271
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:283
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:295
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:184
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:230
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:349
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:361
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:373
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:59
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:85
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:151
@@ -581,102 +1086,130 @@ msgstr "Aus"
 msgid "On"
 msgstr "An"
 
-#: includes/components/widgets/class-icon-list-widget.php:254
-#: includes/components/widgets/class-key-value-list-widget.php:518
+#: includes/components/widgets/class-icon-list-widget.php:319
+#: includes/components/widgets/class-key-value-list-widget.php:628
 msgid "Style"
 msgstr "Stil"
 
-#: includes/components/widgets/class-icon-list-widget.php:258
-#: includes/components/widgets/class-key-value-list-widget.php:521
+#: includes/components/widgets/class-icon-list-widget.php:323
+#: includes/components/widgets/class-key-value-list-widget.php:631
 msgid "Solid"
 msgstr "Durchgezogen"
 
-#: includes/components/widgets/class-icon-list-widget.php:259
-#: includes/components/widgets/class-key-value-list-widget.php:522
+#: includes/components/widgets/class-icon-list-widget.php:324
+#: includes/components/widgets/class-key-value-list-widget.php:632
 msgid "Double"
 msgstr "Doppelt"
 
-#: includes/components/widgets/class-icon-list-widget.php:260
-#: includes/components/widgets/class-key-value-list-widget.php:523
+#: includes/components/widgets/class-icon-list-widget.php:325
+#: includes/components/widgets/class-key-value-list-widget.php:633
 msgid "Dotted"
 msgstr "Gepunktet"
 
-#: includes/components/widgets/class-icon-list-widget.php:261
-#: includes/components/widgets/class-key-value-list-widget.php:524
+#: includes/components/widgets/class-icon-list-widget.php:326
+#: includes/components/widgets/class-key-value-list-widget.php:634
 msgid "Dashed"
 msgstr "Gestrichelt"
 
-#: includes/components/widgets/class-icon-list-widget.php:279
-#: includes/components/widgets/class-key-value-list-widget.php:543
+#: includes/components/widgets/class-icon-list-widget.php:344
+#: includes/components/widgets/class-key-value-list-widget.php:653
 msgid "Weight"
 msgstr "Stärke"
 
-#: includes/components/widgets/class-icon-list-widget.php:305
-#: includes/components/widgets/class-key-value-list-widget.php:577
+#: includes/components/widgets/class-icon-list-widget.php:370
+#: includes/components/widgets/class-key-value-list-widget.php:687
 #: includes/components/widgets/single-property/class-main-image-widget.php:155
 msgid "Width"
 msgstr "Breite"
 
-#: includes/components/widgets/class-icon-list-widget.php:323
-#: includes/components/widgets/class-key-value-list-widget.php:601
+#: includes/components/widgets/class-icon-list-widget.php:388
+#: includes/components/widgets/class-key-value-list-widget.php:711
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:291
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:320
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:215
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:502
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:955
 #: includes/components/widgets/single-property/class-main-image-widget.php:209
+#: includes/components/widgets/single-property/class-native-head-widget.php:218
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:205
 msgid "Height"
 msgstr "Höhe"
 
-#: includes/components/widgets/class-icon-list-widget.php:355
-#: includes/components/widgets/class-icon-list-widget.php:383
-#: includes/components/widgets/class-icon-list-widget.php:552
-#: includes/components/widgets/class-key-value-list-widget.php:639
-#: includes/components/widgets/class-key-value-list-widget.php:790
-#: includes/components/widgets/class-key-value-list-widget.php:946
+#: includes/components/widgets/class-icon-list-widget.php:420
+#: includes/components/widgets/class-icon-list-widget.php:448
+#: includes/components/widgets/class-icon-list-widget.php:617
+#: includes/components/widgets/class-key-value-list-widget.php:749
+#: includes/components/widgets/class-key-value-list-widget.php:900
+#: includes/components/widgets/class-key-value-list-widget.php:1056
 #: includes/components/widgets/class-widget-base.php:763
+#: includes/components/widgets/class-widget-base.php:1297
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:134
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:465
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:464
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:470
-#: includes/components/widgets/single-property/class-desc-widget.php:143
-#: includes/components/widgets/single-property/class-native-head-widget.php:295
-#: includes/components/widgets/single-property/class-property-type-widget.php:190
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:130
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:232
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:521
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:919
+#: includes/components/widgets/single-property/class-desc-widget.php:162
+#: includes/components/widgets/single-property/class-native-head-widget.php:206
+#: includes/components/widgets/single-property/class-native-head-widget.php:394
+#: includes/components/widgets/single-property/class-property-type-widget.php:193
 #: includes/components/widgets/single-property/class-short-desc-widget.php:153
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:131
 msgid "Color"
 msgstr "Farbe"
 
-#: includes/components/widgets/class-icon-list-widget.php:398
-#: includes/components/widgets/class-key-value-list-widget.php:805
+#: includes/components/widgets/class-icon-list-widget.php:463
+#: includes/components/widgets/class-key-value-list-widget.php:915
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:396
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:632
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:751
 msgid "Size"
 msgstr "Größe"
 
-#: includes/components/widgets/class-icon-list-widget.php:422
-#: includes/components/widgets/class-key-value-list-widget.php:829
-#: includes/components/widgets/class-key-value-list-widget.php:961
+#: includes/components/widgets/class-icon-list-widget.php:487
+#: includes/components/widgets/class-key-value-list-widget.php:939
+#: includes/components/widgets/class-key-value-list-widget.php:1071
+#: includes/components/widgets/class-widget-base.php:971
+#: includes/components/widgets/class-widget-base.php:1031
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:116
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:145
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:282
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:379
+msgctxt "distance between grid elements"
 msgid "Gap"
-msgstr "Lücke"
+msgstr "Abstand"
 
-#: includes/components/widgets/class-icon-list-widget.php:444
-#: includes/components/widgets/class-key-value-list-widget.php:688
+#: includes/components/widgets/class-icon-list-widget.php:509
+#: includes/components/widgets/class-key-value-list-widget.php:798
 msgid "Horizontal Alignment"
 msgstr "Horizontale Ausrichtung"
 
-#: includes/components/widgets/class-icon-list-widget.php:475
-#: includes/components/widgets/class-key-value-list-widget.php:717
+#: includes/components/widgets/class-icon-list-widget.php:540
+#: includes/components/widgets/class-key-value-list-widget.php:827
 msgid "Vertical Alignment"
 msgstr "Vertikale Ausrichtung"
 
-#: includes/components/widgets/class-icon-list-widget.php:480
-#: includes/components/widgets/class-key-value-list-widget.php:722
+#: includes/components/widgets/class-icon-list-widget.php:545
+#: includes/components/widgets/class-key-value-list-widget.php:832
 msgid "Start"
 msgstr "Start"
 
-#: includes/components/widgets/class-icon-list-widget.php:488
-#: includes/components/widgets/class-key-value-list-widget.php:734
+#: includes/components/widgets/class-icon-list-widget.php:553
+#: includes/components/widgets/class-key-value-list-widget.php:844
 msgid "End"
 msgstr "Ende"
 
-#: includes/components/widgets/class-icon-list-widget.php:501
-#: includes/components/widgets/class-key-value-list-widget.php:847
+#: includes/components/widgets/class-icon-list-widget.php:566
+#: includes/components/widgets/class-key-value-list-widget.php:957
 msgid "Adjust Vertical Position"
 msgstr "Vertikale Position anpassen"
 
-#: includes/components/widgets/class-icon-list-widget.php:525
+#: includes/components/widgets/class-icon-list-widget.php:590
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:97
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:332
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:567
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:98
 msgid "Text"
 msgstr "Text"
 
@@ -692,159 +1225,118 @@ msgstr "Schlüssel-Wert"
 msgid "Detail Section"
 msgstr "Detailabschnitt"
 
-#: includes/components/widgets/class-key-value-list-widget.php:325
-#: includes/components/widgets/class-key-value-list-widget.php:881
+#: includes/components/widgets/class-key-value-list-widget.php:264
+msgid "Alternative Label"
+msgstr "Alternative Bezeichnung"
+
+#: includes/components/widgets/class-key-value-list-widget.php:266
+msgid ""
+"For single values only. (The default labels are defined in the import "
+"mapping table.)"
+msgstr ""
+"Nur für Einzelwerte. (Die Standardbezeichnungen sind in der Import-Mapping-"
+"Tabelle definiert.)"
+
+#: includes/components/widgets/class-key-value-list-widget.php:365
+#: includes/components/widgets/class-key-value-list-widget.php:991
 msgid "Before Item"
 msgstr "Vor Element"
 
-#: includes/components/widgets/class-key-value-list-widget.php:333
-#: includes/components/widgets/class-key-value-list-widget.php:886
+#: includes/components/widgets/class-key-value-list-widget.php:373
+#: includes/components/widgets/class-key-value-list-widget.php:996
 msgid "After Item"
 msgstr "Nach Element"
 
-#: includes/components/widgets/class-key-value-list-widget.php:345
-msgid ""
-"Elements can be combined based on the entries in the <strong>import mapping "
-"table</strong> (immonex OpenImmo2WP)."
-msgstr ""
-"Elemente können anhand der Einträge in der <strong>Import-Mapping-Tabelle</"
-"strong> (immonex OpenImmo2WP) kombiniert werden."
-
-#: includes/components/widgets/class-key-value-list-widget.php:347
-msgid "The sample data shown may not match the actual type of information."
-msgstr ""
-"Die Art der angezeigten Beispielinhalte entspricht möglicherweise nicht der "
-"der tatsächlichen Daten."
-
-#: includes/components/widgets/class-key-value-list-widget.php:446
+#: includes/components/widgets/class-key-value-list-widget.php:556
 #: includes/components/widgets/single-property/class-labels-widget.php:151
 msgid "left"
 msgstr "links"
 
-#: includes/components/widgets/class-key-value-list-widget.php:450
+#: includes/components/widgets/class-key-value-list-widget.php:560
 #: includes/components/widgets/single-property/class-labels-widget.php:155
 msgid "center"
 msgstr "zentriert"
 
-#: includes/components/widgets/class-key-value-list-widget.php:454
+#: includes/components/widgets/class-key-value-list-widget.php:564
 #: includes/components/widgets/single-property/class-labels-widget.php:159
 msgid "right"
 msgstr "rechts"
 
-#: includes/components/widgets/class-key-value-list-widget.php:659
+#: includes/components/widgets/class-key-value-list-widget.php:769
 msgid "Item"
 msgstr "Element"
 
-#: includes/components/widgets/class-key-value-list-widget.php:672
+#: includes/components/widgets/class-key-value-list-widget.php:782
+#: includes/components/widgets/class-widget-base.php:1242
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:430
 #: includes/components/widgets/single-property/class-labels-widget.php:131
+#: includes/components/widgets/single-property/class-native-head-widget.php:341
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: includes/components/widgets/class-key-value-list-widget.php:676
+#: includes/components/widgets/class-key-value-list-widget.php:786
+#: includes/components/widgets/class-widget-base.php:1238
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:426
 #: includes/components/widgets/single-property/class-labels-widget.php:135
+#: includes/components/widgets/single-property/class-native-head-widget.php:337
 msgid "Vertical"
-msgstr "Vertical"
+msgstr "Vertikal"
 
-#: includes/components/widgets/class-key-value-list-widget.php:730
+#: includes/components/widgets/class-key-value-list-widget.php:840
 msgid "Baseline"
 msgstr "Grundlinie"
 
-#: includes/components/widgets/class-key-value-list-widget.php:745
+#: includes/components/widgets/class-key-value-list-widget.php:855
 msgid "Label, Value"
 msgstr "Bezeichnung, Wert"
 
-#: includes/components/widgets/class-key-value-list-widget.php:746
+#: includes/components/widgets/class-key-value-list-widget.php:856
 msgid "Value, Label"
 msgstr "Wert, Bezeichnung"
 
-#: includes/components/widgets/class-key-value-list-widget.php:753
+#: includes/components/widgets/class-key-value-list-widget.php:863
 msgid "Label, Value, Icon"
 msgstr "Bezeichnung, Wert, Icon"
 
-#: includes/components/widgets/class-key-value-list-widget.php:754
+#: includes/components/widgets/class-key-value-list-widget.php:864
 msgid "Icon, Label, Value"
 msgstr "Icon, Bezeichnung, Wert"
 
-#: includes/components/widgets/class-key-value-list-widget.php:755
+#: includes/components/widgets/class-key-value-list-widget.php:865
 msgid "Icon, Value, Label"
 msgstr "Icon, Wert, Bezeichnung"
 
-#: includes/components/widgets/class-key-value-list-widget.php:756
+#: includes/components/widgets/class-key-value-list-widget.php:866
 msgid "Value, Label, Icon"
 msgstr "Wert, Bezeichnung, Icon"
 
-#: includes/components/widgets/class-key-value-list-widget.php:757
+#: includes/components/widgets/class-key-value-list-widget.php:867
 msgid "Icon, Value"
 msgstr "Icon, Wert"
 
-#: includes/components/widgets/class-key-value-list-widget.php:758
+#: includes/components/widgets/class-key-value-list-widget.php:868
 msgid "Value, Icon"
 msgstr "Wert, Icon"
 
-#: includes/components/widgets/class-key-value-list-widget.php:766
+#: includes/components/widgets/class-key-value-list-widget.php:876
 msgid "Scope/Order"
 msgstr "Umfang/Reihenfolge"
 
-#: includes/components/widgets/class-key-value-list-widget.php:871
+#: includes/components/widgets/class-key-value-list-widget.php:981
 msgid "Label"
 msgstr "Bezeichnung"
 
-#: includes/components/widgets/class-key-value-list-widget.php:876
+#: includes/components/widgets/class-key-value-list-widget.php:986
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:367
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:377
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:603
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:613
 msgid "Value"
 msgstr "Wert"
 
-#: includes/components/widgets/class-key-value-list-widget.php:919
+#: includes/components/widgets/class-key-value-list-widget.php:1029
 msgid "Font Size"
 msgstr "Schriftgröße"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1205
-msgid "Group"
-msgstr "Gruppe"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1207
-msgid "Source"
-msgstr "Quelle"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1227
-msgid "full Address"
-msgstr "vollständige Adresse"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1228
-msgid "Street"
-msgstr "Straße"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1229
-msgid "Latitude"
-msgstr "Breitengrad"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1230
-msgid "Longitude"
-msgstr "Längengrad"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1231
-msgid "Virtual Tour Embed Code"
-msgstr "Einbettungscode der virtuellen Tour"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1232
-msgid "OpenImmo ID (OBID)"
-msgstr "OpenImmo ID (OBID)"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1233
-#: includes/components/widgets/single-property/class-epass-widget.php:132
-msgid "Energy Efficiency Class"
-msgstr "Energieeffizienzklasse"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1234
-msgid "AreaButler URL"
-msgstr "AreaButler-URL"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1235
-msgid "AreaButler URL without Address"
-msgstr "AreaButler-URL ohne Adressangabe"
-
-#: includes/components/widgets/class-key-value-list-widget.php:1236
-msgid "AreaButler URL with Address"
-msgstr "AreaButler-URL mit Adressangabe"
 
 #: includes/components/widgets/class-widget-base.php:243
 #: includes/components/widgets/class-widget-base.php:278
@@ -882,17 +1374,17 @@ msgid "Order it now!"
 msgstr "Jetzt ordern!"
 
 #: includes/components/widgets/class-widget-base.php:564
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:264
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:255
 msgid "Property Types"
 msgstr "Objektarten"
 
 #: includes/components/widgets/class-widget-base.php:565
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:273
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:259
 msgid "Marketing Types"
 msgstr "Vermarktungsarten"
 
 #: includes/components/widgets/class-widget-base.php:566
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:255
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:251
 msgid "Types of Use"
 msgstr "Nutzungsarten"
 
@@ -905,10 +1397,13 @@ msgid "Localities"
 msgstr "Orte"
 
 #: includes/components/widgets/class-widget-base.php:569
+#: includes/components/widgets/class-widget-base.php:1227
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:136
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:413
 #: includes/components/widgets/single-property/class-labels-widget.php:35
 #: includes/components/widgets/single-property/class-labels-widget.php:76
-#: includes/components/widgets/single-property/class-native-head-widget.php:68
-#: includes/components/widgets/single-property/class-native-head-widget.php:385
+#: includes/components/widgets/single-property/class-native-head-widget.php:70
+#: includes/components/widgets/single-property/class-native-head-widget.php:545
 msgid "Labels"
 msgstr "Labels"
 
@@ -917,7 +1412,7 @@ msgid "Available Properties"
 msgstr "Verfügbare Immobilien"
 
 #: includes/components/widgets/class-widget-base.php:585
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:229
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:210
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:234
 msgid "Unavailable only"
 msgstr "Nur nicht verfügbare"
@@ -954,10 +1449,6 @@ msgstr "Startseiten-Angebote"
 msgid "Non-Front-Page-Offers only"
 msgstr "Nur Nicht-Startseiten-Angebote"
 
-#: includes/components/widgets/class-widget-base.php:615
-msgid "Automatic"
-msgstr "Automatisch"
-
 #: includes/components/widgets/class-widget-base.php:616
 msgid "Most Current"
 msgstr "Aktuellste"
@@ -991,7 +1482,7 @@ msgid "Rooms ascending"
 msgstr "Zimmer/Räume aufsteigend"
 
 #: includes/components/widgets/class-widget-base.php:649
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:333
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1125
 msgid ""
 "Enter the <strong>filename</strong> if an <strong>alternative</strong> PHP "
 "template should be used for rendering the component."
@@ -1012,6 +1503,7 @@ msgstr ""
 
 #: includes/components/widgets/class-widget-base.php:664
 #: includes/components/widgets/class-widget-base.php:683
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:808
 #: includes/components/widgets/single-property/class-native-virtual-tour-widget.php:54
 msgid "Heading"
 msgstr "Überschrift"
@@ -1021,32 +1513,58 @@ msgid "H Level (relative)"
 msgstr "H-Ebene (relativ)"
 
 #: includes/components/widgets/class-widget-base.php:713
-#: includes/components/widgets/class-widget-base.php:1003
+#: includes/components/widgets/class-widget-base.php:1167
+#: includes/components/widgets/class-widget-base.php:1306
 #: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:153
 #: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:194
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:433
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:535
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:611
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:432
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:509
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:595
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:438
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:540
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:616
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:515
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:601
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:172
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:203
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:243
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:385
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:416
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:447
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:561
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:243
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:320
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:376
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:543
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:246
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:533
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:649
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:779
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:473
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:555
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:612
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:816
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:880
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:936
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:287
-#: includes/components/widgets/single-property/class-labels-widget.php:266
-#: includes/components/widgets/single-property/class-native-head-widget.php:140
-#: includes/components/widgets/single-property/class-native-head-widget.php:247
+#: includes/components/widgets/single-property/class-labels-widget.php:278
+#: includes/components/widgets/single-property/class-native-head-widget.php:416
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:176
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:305
 msgid "Text Color"
 msgstr "Textfarbe"
 
 #: includes/components/widgets/class-widget-base.php:723
-#: includes/components/widgets/class-widget-base.php:1013
+#: includes/components/widgets/class-widget-base.php:1184
+#: includes/components/widgets/class-widget-base.php:1218
 msgid "Typograhy"
 msgstr "Typografie"
 
 #: includes/components/widgets/class-widget-base.php:733
 msgid "Text Stroke"
-msgstr "Textumrandung"
+msgstr "Textkontur"
 
 #: includes/components/widgets/class-widget-base.php:745
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:863
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:901
 msgid "Text Shadow"
 msgstr "Textschatten"
 
@@ -1188,7 +1706,7 @@ msgid "Descending"
 msgstr "Absteigend"
 
 #: includes/components/widgets/class-widget-base.php:845
-#: includes/components/widgets/single-property/class-labels-widget.php:368
+#: includes/components/widgets/single-property/class-labels-widget.php:369
 msgid "Demo"
 msgstr "Demo"
 
@@ -1205,6 +1723,8 @@ msgstr "Standard (Ja)"
 #: includes/components/widgets/class-widget-base.php:915
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:139
 #: includes/components/widgets/single-property/class-main-image-widget.php:111
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:287
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:303
 msgid "Yes"
 msgstr "Ja"
 
@@ -1214,13 +1734,15 @@ msgstr "Ja"
 #: includes/components/widgets/class-widget-base.php:926
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:140
 #: includes/components/widgets/single-property/class-main-image-widget.php:112
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:288
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:304
 msgid "No"
 msgstr "Nein"
 
 #: includes/components/widgets/class-widget-base.php:852
 #: includes/components/widgets/class-widget-base.php:905
 #: includes/components/widgets/class-widget-base.php:917
-#: includes/components/widgets/class-widget-base.php:1038
+#: includes/components/widgets/class-widget-base.php:1360
 msgid "Only"
 msgstr "Nur"
 
@@ -1304,53 +1826,174 @@ msgstr ""
 "festzulegen."
 
 #: includes/components/widgets/class-widget-base.php:940
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:331
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1123
 msgid "Custom Template"
 msgstr "Individuelles Template"
 
 #: includes/components/widgets/class-widget-base.php:946
+#: includes/components/widgets/class-widget-base.php:988
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:92
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:121
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:237
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:332
+msgid "Grid"
+msgstr "Raster"
+
+#: includes/components/widgets/class-widget-base.php:947
+#: includes/components/widgets/class-widget-base.php:952
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:319
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:37
+msgid "Agent List"
+msgstr "Kontaktpersonen-Liste"
+
+#: includes/components/widgets/class-widget-base.php:957
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:100
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:129
+msgid "Column Width"
+msgstr "Spaltenbreite"
+
+#: includes/components/widgets/class-widget-base.php:989
+#: includes/components/widgets/class-widget-base.php:994
+#: includes/components/widgets/class-widget-base.php:1228
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:335
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:341
+msgid "Property List"
+msgstr "Immobilienliste"
+
+#: includes/components/widgets/class-widget-base.php:999
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:245
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:340
+msgid "Column Minimum Width"
+msgstr "Spalten-Mindestbreite"
+
+#: includes/components/widgets/class-widget-base.php:1046
+msgid "Image Container Height"
+msgstr "Bildcontainer-Höhe"
+
+#: includes/components/widgets/class-widget-base.php:1062
 msgid "List Elements"
 msgstr "Listen-Elemente"
 
-#: includes/components/widgets/class-widget-base.php:951
-#: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:183
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:488
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:564
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:493
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:569
-#: includes/components/widgets/single-property/class-labels-widget.php:277
-#: includes/components/widgets/single-property/class-native-head-widget.php:179
-msgid "Background Color"
-msgstr "Hintergrundfarbe"
+#: includes/components/widgets/class-widget-base.php:1063
+msgid "Tiles"
+msgstr "Kacheln"
 
-#: includes/components/widgets/class-widget-base.php:962
-msgid "Box Shadow"
-msgstr "Box-Schatten"
-
-#: includes/components/widgets/class-widget-base.php:975
+#: includes/components/widgets/class-widget-base.php:1078
 msgid "Border Type"
 msgstr "Rahmenart"
 
-#: includes/components/widgets/class-widget-base.php:985
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:522
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:598
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:527
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:603
+#: includes/components/widgets/class-widget-base.php:1087
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:155
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:545
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:634
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:184
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:551
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:640
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:297
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:582
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:283
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:318
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:399
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:581
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:637
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:729
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:767
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:532
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:788
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:982
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1093
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:254
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:344
 msgid "Border Radius"
 msgstr "Eckradius"
 
-#: includes/components/widgets/class-widget-base.php:994
-#: includes/components/widgets/single-property/class-native-head-widget.php:272
+#: includes/components/widgets/class-widget-base.php:1101
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:171
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:200
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:334
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:129
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: includes/components/widgets/class-widget-base.php:1102
+#: includes/components/widgets/class-widget-base.php:1123
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:172
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:197
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:201
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:226
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:134
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:335
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:360
+#: includes/components/widgets/single-property/class-basic-gallery-widget.php:177
+#: includes/components/widgets/single-property/class-native-footer-widget.php:130
+#: includes/components/widgets/single-property/class-native-head-widget.php:148
+msgid "Custom"
+msgstr "Individuell"
+
+#. translators: %1$s = color type, e.g. "all action elements"; %2$s = plugin options tab URL
+#: includes/components/widgets/class-widget-base.php:1138
+#, php-format
+msgid ""
+"Instead of selecting <strong>element-related</strong> link colors below, "
+"setting <strong>global</strong> colors for <strong>%1$s</strong> in the <a "
+"href=\"%2$s\" target=\"_blank\">Kickstart plugin options</a> makes more "
+"sense in most cases."
+msgstr ""
+"Anstatt nachfolgend <strong>elementspezifische</strong> Linkfarben "
+"festzulegen, ist in den meisten Fällen die Auswahl <strong>globaler</strong> "
+"Farben für <strong>%1$s</strong> in den <a href=\"%2$s\" "
+"target=\"_blank\">Kickstart-Plugin-Optionen</a> sinnvoller."
+
+#: includes/components/widgets/class-widget-base.php:1139
+msgid "action or marketing type related elements"
+msgstr "Elemente mit Aktions- oder Vermarktungsart-Bezug"
+
+#: includes/components/widgets/class-widget-base.php:1146
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:210
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:239
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:546
+msgid "Body"
+msgstr "Haupt-Inhaltsbereich"
+
+#: includes/components/widgets/class-widget-base.php:1159
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:679
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:802
+#: includes/components/widgets/single-property/class-native-head-widget.php:453
 msgid "Icon Color"
 msgstr "Icon-Farbe"
 
-#: includes/components/widgets/class-widget-base.php:1005
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:435
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:467
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:440
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:472
-msgid "This color is <strong>not</strong> applied to links."
-msgstr "Diese Farbe wird <strong>nicht</strong> auf Links angewendet."
+#: includes/components/widgets/class-widget-base.php:1175
+#: includes/components/widgets/class-widget-base.php:1208
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:256
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:327
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:285
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:356
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1012
+#: includes/components/widgets/single-property/class-native-footer-widget.php:188
+#: includes/components/widgets/single-property/class-property-type-widget.php:208
+msgid "Link Color"
+msgstr "Linkfarbe"
+
+#: includes/components/widgets/class-widget-base.php:1193
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:283
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:312
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:694
+#: includes/components/widgets/single-property/class-native-footer-widget.php:36
+msgid "Footer"
+msgstr "Footer"
+
+#: includes/components/widgets/class-widget-base.php:1299
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:523
+#: includes/components/widgets/single-property/class-labels-widget.php:268
+#: includes/components/widgets/single-property/class-native-head-widget.php:396
+msgid ""
+"The label colors can be customized in the Kickstart plugin options. "
+"<strong>If required</strong>, an alternative uniform color for all labels of "
+"this element can be selected here."
+msgstr ""
+"Die Farben der Labels können in den Kickstart Plugin-Optionen angepasst "
+"werden. <strong>Falls notwendig</strong>, kann hier eine alternative "
+"Einheitsfarbe für alle Labels dieses Elements ausgewählt werden."
 
 #: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:38
 msgid "Energy Scale"
@@ -1420,7 +2063,7 @@ msgid "Stacked Bars"
 msgstr "Farbbalken (Stacked Bars)"
 
 #: includes/components/widgets/energy-scale-pro/class-native-energy-scale-widget.php:140
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:146
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:127
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:145
 msgid "Display Type"
 msgstr "Darstellungsart"
@@ -1441,8 +2084,8 @@ msgid "Compact"
 msgstr "Kompakt"
 
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:36
-#: includes/components/widgets/single-property/class-native-head-widget.php:109
-#: includes/components/widgets/single-property/class-native-head-widget.php:114
+#: includes/components/widgets/single-property/class-native-head-widget.php:111
+#: includes/components/widgets/single-property/class-native-head-widget.php:116
 msgid "Print/PDF Link"
 msgstr "Drucken/PDF-Link"
 
@@ -1479,8 +2122,12 @@ msgid "Link Text/Icon"
 msgstr "Linktext/Icon"
 
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:135
-msgid "Defaults to the standard link color."
-msgstr "Vorgabe ist die Standard-Linkfarbe."
+msgid ""
+"Defaults to the standard link color for <strong>action elements</strong> "
+"defined in the Kickstart plugin options."
+msgstr ""
+"Standard ist die Linkfarbe für <strong>Aktionselemente</strong>, die in den "
+"Kickstart-Plugin-Optionen festgelegt werden kann."
 
 #: includes/components/widgets/kickstart-print/class-print-pdf-link-widget.php:147
 msgid "Icon Alignment"
@@ -1502,14 +2149,66 @@ msgstr "Team"
 msgid "agency"
 msgstr "agentur"
 
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:137
+msgctxt "real estate property"
+msgid "Agency Tile"
+msgstr "Agenturkachel"
+
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:245
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:274
+msgid "Text/Icon Color"
+msgstr "Text/Icon-Farbe"
+
+#. translators: %1$s = color type, e.g. "all action elements"; %2$s = plugin options tab URL
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:260
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:314
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:571
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:289
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:343
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:577
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:655
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:923
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1016
+#: includes/components/widgets/single-property/class-native-footer-widget.php:192
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:281
+#, php-format
+msgid ""
+"Instead of selecting an <strong>element-related</strong> color here, setting "
+"a <strong>global</strong> color for <strong>%1$s</strong> in the <a "
+"href=\"%2$s\" target=\"_blank\">Kickstart plugin options</a> makes more "
+"sense in most cases."
+msgstr ""
+"Anstatt hier eine <strong>elementspezifische</strong> Farbe festzulegen, ist "
+"in den meisten Fällen die Auswahl einer <strong>globalen</strong> Farbe für "
+"<strong>%1$s</strong> in den <a href=\"%2$s\" target=\"_blank\">Kickstart-"
+"Plugin-Optionen</a> sinnvoller."
+
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:261
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:572
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:290
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:578
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:656
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:924
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1017
+#: includes/components/widgets/single-property/class-native-footer-widget.php:193
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:282
+msgid "all action elements"
+msgstr "alle Aktionselemente"
+
+#: includes/components/widgets/kickstart-team/class-native-agency-list-widget.php:315
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:344
+msgid "all background elements"
+msgstr "alle Hintergrund-Elemente"
+
 #: includes/components/widgets/kickstart-team/class-native-agency-widget.php:37
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:160
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:141
 #: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:97
 msgid "Agency"
 msgstr "Agentur"
 
 #: includes/components/widgets/kickstart-team/class-native-agency-widget.php:52
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:52
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:50
 msgid "contact"
 msgstr "Kontakt"
 
@@ -1522,26 +2221,7 @@ msgstr "Makler"
 msgid "Automatic (Property Detail Pages)"
 msgstr "Automatisch (Immobilien-Detailseiten)"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:116
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:115
-msgid "Text in General"
-msgstr "Text allgemein"
-
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:120
-msgid "Company"
-msgstr "Firma"
-
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:124
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:123
-msgid "Contact Data Elements"
-msgstr "Kontaktdaten-Elemente"
-
 #: includes/components/widgets/kickstart-team/class-native-agency-widget.php:128
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:127
-msgid "Consent Texts"
-msgstr "Einwilligungstexte"
-
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:147
 msgid ""
 "The widget is a compact view that usually contains the contact data incl. "
 "logo and form (see Elements below), the full view also includes lists of "
@@ -1552,17 +2232,17 @@ msgstr ""
 "Vollansicht umfasst zudem Listen zugehöriger Kontaktpersonen und Immobilien, "
 "in der Standardkonfiguration aber kein Formular."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:151
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:132
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:150
 msgid "Full View (Single)"
 msgstr "Vollansicht (Single)"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:152
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:133
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:152
 msgid "Widget"
 msgstr "Widget"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:161
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:142
 msgid ""
 "Only to be selected if the agency data should <strong>not</strong> be "
 "embedded in a <strong>property detail page</strong>."
@@ -1570,58 +2250,58 @@ msgstr ""
 "Nur auszuwählen, wenn die Daten der Agentur <strong>nicht</strong> in eine "
 "<strong>Immobilien-Detailseite</strong> eingebettet werden sollen."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:187
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:168
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:192
 msgid "Contact Form Scope"
 msgstr "Kontaktformular-Umfang"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:192
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:173
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:197
 msgid "Basic"
 msgstr "Einfach"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:193
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:174
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:198
-#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:120
-#: includes/components/widgets/property-list/class-native-property-list-widget.php:170
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:297
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:826
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:262
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:407
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:323
-#: includes/components/widgets/single-property/class-native-footer-widget.php:88
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:315
-#: includes/components/widgets/single-property/class-native-head-widget.php:308
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:270
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:429
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1115
+#: includes/components/widgets/single-property/class-native-footer-widget.php:270
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:393
+#: includes/components/widgets/single-property/class-native-head-widget.php:468
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:292
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:195
 msgid "Extended"
 msgstr "Erweitert"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:202
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:183
 msgid "Agency Link Destination"
 msgstr "Agentur-Linkziel"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:207
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:188
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:212
 msgid "Internal Profile Page"
 msgstr "Interne Profilseite"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:208
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:189
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:213
 msgid "External URL (if available)"
 msgstr "Externe URL (wenn verfügbar)"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:209
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:190
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:214
-#: includes/components/widgets/single-property/class-property-type-widget.php:112
+#: includes/components/widgets/single-property/class-property-type-widget.php:113
 msgctxt "link destination: none"
 msgid "None"
 msgstr "Ohne"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:220
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:201
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:225
 msgid "Property Status"
 msgstr "Objektstatus"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:221
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:202
 msgid ""
 "Display the agency widget only on detail pages of properties matching the "
 "selected state."
@@ -1629,48 +2309,48 @@ msgstr ""
 "Agentur-Widget nur in Detailseiten von Immobilien anzeigen, deren Status dem "
 "ausgewählten entspricht."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:226
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:207
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:231
 msgid "All Properties"
 msgstr "Alle Immobilien"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:227
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:208
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:232
 msgid "All except References"
 msgstr "Alle außer Referenzen"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:228
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:209
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:233
 msgid "Available only"
 msgstr "Nur verfügbare"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:230
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:211
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:235
 msgid "References only"
 msgstr "Nur Referenzobjekte"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:241
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:222
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:246
 msgid "Convert Links"
 msgstr "Links konvertieren"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:242
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:223
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:247
 msgid "Convert mail addresses and phone numbers to links."
 msgstr "Mail-Adressen und Telefonnummern in Links umwandeln."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:254
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:235
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:259
 msgid "Contact Elements"
 msgstr "Kontakt-Elemente"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:262
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:243
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:267
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:170
 msgid "Use default elements"
 msgstr "Standard-Elemente verwenden"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:274
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:255
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:279
 msgid ""
 "The order of the following elements does not affect their frontend output "
@@ -1679,19 +2359,19 @@ msgstr ""
 "Die Reihenfolge der folgenden Elemente hat keinen Einfluss auf ihre "
 "Ausgabereihenfolge im Frontend."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:296
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:278
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:301
 #: includes/components/widgets/notify/class-native-notify-form-widget.php:154
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:202
 msgid "User-defined Elements"
 msgstr "Benutzerdefinierte Elemente"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:313
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:295
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:318
 msgid "Extended (Full View)"
 msgstr "Erweitert (Vollansicht)"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:326
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:308
 msgid ""
 "The following settings can be used to override the corresponding ones in the "
 "plugin and agency options."
@@ -1699,56 +2379,67 @@ msgstr ""
 "Mit den folgenden Einstellungen können die entsprechenden Angaben der "
 "Plugin- und Agentur-Optionen überschrieben werden."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:336
-#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:37
-msgid "Agent List"
-msgstr "Kontaktpersonen-Liste"
-
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:337
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:320
 msgid "Display agents associated with the agency."
 msgstr "Kontaktpersonen der Agentur anzeigen."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:342
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:358
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:374
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:325
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:341
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:357
 msgid "Default (Plugin/Agency Options)"
 msgstr "Standard (Plugin-/Agentur-Optionen)"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:343
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:359
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:375
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:326
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:342
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:358
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:348
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:364
 msgid "show"
 msgstr "anzeigen"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:344
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:360
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:376
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:327
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:343
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:359
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:349
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:365
 msgid "hide"
 msgstr "ausblenden"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:352
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:341
-msgid "Property List"
-msgstr "Immobilienliste"
-
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:353
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:336
 msgid "Display properties associated with the agency."
 msgstr "Immobilien der Agentur anzeigen."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:368
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:351
 msgid "Legal Notice"
 msgstr "Impressum"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:369
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:352
 msgid "Display the agency's legal notice, if available."
 msgstr "Impressum der Agentur anzeigen, sofern vorhanden."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:436
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:468
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:407
+msgid "Company"
+msgstr "Firma"
+
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:411
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:123
+msgid "Contact Data Elements"
+msgstr "Kontaktdaten-Elemente"
+
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:415
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:127
+msgid "Consent Texts"
+msgstr "Einwilligungstexte"
+
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:434
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:466
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:440
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:472
+msgid "This color is <strong>not</strong> applied to links."
+msgstr "Diese Farbe wird <strong>nicht</strong> auf Links angewendet."
+
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:435
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:467
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:441
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:473
 msgid ""
@@ -1757,42 +2448,58 @@ msgstr ""
 "Die Linkfarbe (Aktionselemente) wird in den Optionen des Kickstart-Plugins "
 "festgelegt."
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:457
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:456
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:462
-#: includes/components/widgets/single-property/class-native-head-widget.php:287
+#: includes/components/widgets/single-property/class-native-footer-widget.php:214
 msgid "Icons"
 msgstr "Icons"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:480
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:479
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:485
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:180
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:427
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:109
 msgid "Form Fields"
 msgstr "Formularfelder"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:499
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:498
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:504
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:231
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:460
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:164
 msgid "Placeholder Color"
 msgstr "Platzhalter-Farbe"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:511
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:587
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:516
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:592
-msgid "Border Color"
-msgstr "Rahmenfarbe"
-
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:556
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:561
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:559
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:565
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:445
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:269
 msgid "Submit Button"
-msgstr "Absendebutton"
+msgstr "Absende-Button"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:575
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:580
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:584
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:590
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:532
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:294
 msgid "Hover Color"
 msgstr "Hover-Farbe"
 
-#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:636
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:637
-#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:651
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:614
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:620
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:562
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:324
+msgid "Border Color"
+msgstr "Rahmenfarbe"
+
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:654
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:660
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:364
+msgid "Hide \"Secure\" Icon"
+msgstr "\"Sicher\"-Icon ausblenden"
+
+#: includes/components/widgets/kickstart-team/class-native-agency-widget.php:673
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:675
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:689
 msgid "List Headlines"
 msgstr "Listen-Überschriften"
 
@@ -1802,9 +2509,18 @@ msgstr "Listen-Überschriften"
 msgid "agent"
 msgstr "Makler"
 
+#: includes/components/widgets/kickstart-team/class-native-agent-list-widget.php:166
+msgctxt "real estate property"
+msgid "Agent Tile"
+msgstr "Agentenkachel"
+
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:37
-msgid "Contact <span style=\"white-space:nowrap\">Person/Form</span>"
-msgstr "<span style=\"white-space:nowrap\">Kontaktperson/-formular</span>"
+msgid "Contact <span style=\"white-space:nowrap\">Person / Form</span>"
+msgstr "Kontaktperson / Formular"
+
+#: includes/components/widgets/kickstart-team/class-native-agent-widget.php:115
+msgid "Text in General"
+msgstr "Text allgemein"
 
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:146
 msgid ""
@@ -1882,11 +2598,45 @@ msgstr ""
 "Agentur) und eine Kurzbeschreibung, sofern verfügbar."
 
 #: includes/components/widgets/kickstart-team/class-native-agent-widget.php:411
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:241
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1047
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:319
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:124
 #: includes/components/widgets/single-property/class-native-virtual-tour-widget.php:77
 msgid "Hide Dividing Line"
 msgstr "Trennlinie ausblenden"
+
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:35
+msgid "Contact Form Confirmation Message"
+msgstr "Kontaktformular Bestätigungsmeldung"
+
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:51
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:55
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:51
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:52
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:52
+msgid "form"
+msgstr "Formular"
+
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:52
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:53
+msgid "confirmation"
+msgstr "Bestätigung"
+
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:53
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:54
+msgid "message"
+msgstr "Meldung"
+
+#. translators: %s = plugin options tab URL
+#: includes/components/widgets/kickstart-team/class-native-contact-form-confirmation-message-widget.php:86
+#, php-format
+msgid ""
+"This widget displays the confirmation message entered in the <a href=\"%s\" "
+"target=\"_blank\">contact form tab of the Team add-on plugin options</a>."
+msgstr ""
+"Dieses Widget dient der Ausgabe der Bestätigungsmeldung, die im <a "
+"href=\"%s\" target=\"_blank\">Kontaktformular-Tab der Team Add-on Plugin-"
+"Optionen</a> hinterlegt ist."
 
 #: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:37
 msgid "Lead Generator"
@@ -1931,6 +2681,99 @@ msgstr ""
 "Hier kann ein %1$sspezifisches Immobilientyp-Formular%2$s ausgewählt werden, "
 "dass direkt angezeigt werden soll."
 
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:147
+msgid "Custom Background"
+msgstr "Individueller Hintergrund"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:149
+msgid ""
+"Enable the use of custom background/border settings (<strong>Advanced</"
+"strong> tab)."
+msgstr ""
+"Verwendung individueller Hintergrund/Rahmen-Einstellungen (Tab "
+"<strong>Erweitert</strong>) aktivieren."
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:194
+msgid "Headline"
+msgstr "Überschrift"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:195
+msgid "Form Page"
+msgstr "Formularseite"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:224
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:911
+msgid "Buttons"
+msgstr "Buttons"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:262
+msgid "Margin"
+msgstr "Außenabstand"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:319
+msgid "Selection Cards"
+msgstr "Auswahlkarten"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:364
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:396
+#: includes/components/widgets/single-property/class-main-image-widget.php:324
+msgid "Hover"
+msgstr "Hover"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:427
+msgid "Active"
+msgstr "Aktiv"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:427
+msgid "Selected"
+msgstr "Ausgewählt"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:460
+msgid "Progress Bar"
+msgstr "Fortschrittsbalken"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:468
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:516
+msgid "Base Color"
+msgstr "Grundfarbe"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:482
+msgid "Active Step Text Color"
+msgstr "Textfarbe Aktiver Schritt"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:493
+msgid "Completed Step Color"
+msgstr "Textfarbe Abgeschl. Schritt"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:508
+msgid "Value Slider"
+msgstr "Wertslider"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:527
+msgid "Active Bar Color"
+msgstr "Farbe Aktiver Balken"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:541
+msgid "Input Fields"
+msgstr "Eingabefelder"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:541
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:181
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:184
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:428
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:110
+msgid "Select Boxes"
+msgstr "Auswahlboxen"
+
+#: includes/components/widgets/lead-generator/class-native-lead-forms-widget.php:574
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:217
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:150
+msgid "Current Radio Selection Color"
+msgstr "Aktuelle Radio-Auswahlfarbe"
+
 #: includes/components/widgets/notify/class-native-notify-form-widget.php:37
 msgid "Search Agent Form"
 msgstr "Suchagent-Formular"
@@ -1943,11 +2786,6 @@ msgstr "Notify"
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:50
 msgid "search"
 msgstr "Suche"
-
-#: includes/components/widgets/notify/class-native-notify-form-widget.php:55
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:51
-msgid "form"
-msgstr "Formular"
 
 #: includes/components/widgets/notify/class-native-notify-form-widget.php:107
 msgid "Form Scope"
@@ -1975,6 +2813,46 @@ msgstr "benutzerdefiniert"
 msgid "The following mandatory elements are always included in the form:"
 msgstr ""
 "Die folgenden obligatorischen Elemente sind immer im Formular enthalten:"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:170
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:99
+msgid "Intro Text"
+msgstr "Einleitungstext"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:175
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:104
+msgid "Radio Selection"
+msgstr "Radio-Auswahl"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:187
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:116
+msgid "Consent Text"
+msgstr "Einwilligungstext"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:312
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:547
+msgid "Value Sliders"
+msgstr "Wertslider"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:366
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:602
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:854
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:892
+msgid "Typography"
+msgstr "Typografie"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:415
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:651
+msgid "Accent Color"
+msgstr "Akzentfarbe"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:478
+msgid "Margin Top"
+msgstr "Abstand oben"
+
+#: includes/components/widgets/notify/class-native-notify-form-widget.php:496
+msgid "Color (Disabled)"
+msgstr "Farbe (Deaktiviert)"
 
 #: includes/components/widgets/property-list/class-native-filters-sort-widget.php:35
 msgid "Filters/Sort"
@@ -2021,6 +2899,26 @@ msgid ""
 msgstr ""
 "Die Standard-Sortieroption muss nur dann ausgewählt werden, wenn sie nicht "
 "der ersten Auswahl entspricht und nicht per GET-Parameter definiert wird."
+
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:128
+#: includes/components/widgets/single-property/class-native-footer-widget.php:124
+#: includes/components/widgets/single-property/class-native-head-widget.php:142
+msgid "Background"
+msgstr "Hintergrund"
+
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:130
+msgid ""
+"The <strong>default</strong> background color can be adjusted in the "
+"Kickstart plugin options."
+msgstr ""
+"Die <strong>Standard</strong>-Hintergrundfarbe kann in den Kickstart Plugin-"
+"Optionen angepasst werden."
+
+#: includes/components/widgets/property-list/class-native-filters-sort-widget.php:133
+#: includes/components/widgets/single-property/class-native-footer-widget.php:129
+#: includes/components/widgets/single-property/class-native-head-widget.php:147
+msgid "Transparent"
+msgstr "Transparent"
 
 #: includes/components/widgets/property-list/class-native-pagination-widget.php:35
 msgid "Pagination"
@@ -2077,14 +2975,65 @@ msgstr ""
 "Veröffentlichungsdatum der enthaltenen Einträge sortiert."
 
 #: includes/components/widgets/property-list/class-native-property-list-widget.php:129
+msgctxt "real estate property"
+msgid "Property Tiles"
+msgstr "Immobilienkacheln"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:135
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:373
+#: includes/components/widgets/single-property/class-main-image-widget.php:83
+#: includes/components/widgets/single-property/class-main-image-widget.php:122
+msgid "Image"
+msgstr "Bild"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:137
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:592
+#: includes/components/widgets/single-property/class-labels-widget.php:106
+#: includes/components/widgets/single-property/class-property-type-widget.php:35
+msgid "Property Type"
+msgstr "Objektart"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:139
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:594
+msgid "Excerpt"
+msgstr "Beschreibung (Auszug)"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:140
+#: includes/components/widgets/single-property/class-core-details-widget.php:34
+msgid "Core Details"
+msgstr "Kerndaten"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:205
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:211
 msgid "Taxonomy Filters"
 msgstr "Taxonomie-Filter"
 
-#: includes/components/widgets/property-list/class-native-property-list-widget.php:141
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:217
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:223
 msgid "Custom Field Filters"
 msgstr "Custom-Field-Filter"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:301
+msgctxt "real estate property"
+msgid "Property Tile"
+msgstr "Immobilienkachel"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:381
+msgid "Container Height"
+msgstr "Containerhöhe"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:591
+#: includes/components/widgets/single-property/class-native-head-widget.php:280
+#: includes/components/widgets/single-property/class-native-head-widget.php:546
+#: includes/components/widgets/single-property/class-title-widget.php:35
+msgid "Title"
+msgstr "Titel"
+
+#: includes/components/widgets/property-list/class-native-property-list-widget.php:739
+#: includes/components/widgets/single-property/class-native-head-widget.php:74
+#: includes/components/widgets/single-property/class-native-head-widget.php:549
+msgid "Core Data"
+msgstr "Kerndaten"
 
 #: includes/components/widgets/property-list/class-native-property-map-widget.php:34
 msgid "Overview Map"
@@ -2223,53 +3172,53 @@ msgstr "Maximale Anzahl an Markern, die in der Karte enthalten sein kann."
 msgid "Author Filters"
 msgstr "Autorenfilter"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:274
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:137
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:296
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:159
 msgid "Marker"
 msgstr "Marker"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:282
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:145
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:304
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:167
 msgid "Marker Type"
 msgstr "Markertyp"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:286
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:149
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:308
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:171
 msgid "integrated"
 msgstr "integriert"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:287
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:150
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:309
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:172
 msgid "custom"
 msgstr "individuell"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:295
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:158
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:317
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:180
 msgid "Fill Color"
 msgstr "Füllfarbe"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:307
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:170
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:329
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:192
 msgid "Fill Opacity"
 msgstr "Deckkraft der Füllung"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:332
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:195
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:354
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:217
 msgid "Stroke Color"
-msgstr "Umrandungsfarbe"
+msgstr "Konturfarbe"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:344
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:207
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:366
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:229
 msgid "Stroke Width"
-msgstr "Umrandungsstärke"
+msgstr "Konturstärke"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:369
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:232
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:391
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:254
 msgid "Scale Factor"
 msgstr "Skalierungsfaktor"
 
-#: includes/components/widgets/property-list/class-native-property-map-widget.php:394
-#: includes/components/widgets/single-property/class-native-location-map-widget.php:257
+#: includes/components/widgets/property-list/class-native-property-map-widget.php:416
+#: includes/components/widgets/single-property/class-native-location-map-widget.php:279
 msgid "Marker Icon URL"
 msgstr "Marker-Icon-URL"
 
@@ -2301,10 +3250,6 @@ msgstr ""
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:129
-msgid "Disabled"
-msgstr "Deaktiviert"
-
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:137
 msgid "Alternative Results Page"
 msgstr "Alternative Ergebnisseite"
@@ -2331,6 +3276,7 @@ msgstr ""
 "vorhanden sind."
 
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:192
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1039
 msgid "Extended Search"
 msgstr "Erweiterte Suche"
 
@@ -2352,28 +3298,26 @@ msgstr ""
 
 #: includes/components/widgets/property-list/class-native-search-form-widget.php:239
 msgid ""
-"If the selectable taxonomy terms are to be limited to certain options, the "
-"corresponding <strong>top-level slugs</strong> can be stored in the "
-"following input fields as comma-separated lists (e.g. \"houses, flats\")."
+"If the selectable taxonomy terms (e.g. \"houses, flats\") are to be limited "
+"to certain <strong>top-level options</strong>, these can be selected below."
 msgstr ""
-"Wenn die auswählbaren Taxonomie-Begriffe auf bestimmte Optionen beschränkt "
-"werden sollen, können die entsprechenden <strong>Slugs der Hauptebene</"
-"strong> in den folgenden Eingabefeldern in Form von kommagetrennten Listen "
-"hinterlegt werden (z. B. „haeuser, wohnungen“)."
+"Wenn die auswählbaren Taxonomie-Begriffe auf bestimmte Optionen "
+"(<strong>Hauptkategorien</strong>, z. B. Häuser, Wohnungen) beschränkt "
+"werden sollen, können diese nachfolgend ausgewählt werden."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:246
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:247
 msgid "Locations"
 msgstr "Orte"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:293
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:302
 msgid "Distance Search"
 msgstr "Umkreissuche"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:301
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:310
 msgid "Autocomplete Countries"
 msgstr "Länder der Autovervollständigung"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:302
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:311
 msgid ""
 "Comma-separated <strong>ISO 3166-1 ALPHA-2</strong> country code list (e.g. "
 "\"de,at,ch,be,nl\") – leave empty to use defaults."
@@ -2381,11 +3325,11 @@ msgstr ""
 "Kommagetrennte Liste von Ländercodes (<strong>ISO 3166-1 ALPHA-2</strong>), "
 "z. B. „de,at,ch,be,nl“ – leer lassen für Standardvorgaben."
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:311
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:320
 msgid "Autocomplete OSM Place Tags"
 msgstr "OSM Place Tags (Autovervollständigung)"
 
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:312
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:321
 msgid ""
 "Comma-separated <strong>OpenStreetMap Place Tag List</strong> for filtering/"
 "prioritizing autocomplete search results – defaults to "
@@ -2393,10 +3337,44 @@ msgid ""
 msgstr ""
 "Kommagetrennte Liste von <strong>OpenStreetMap Place Tags</strong> für die "
 "Filterung/Priorisierung von Suchergebnissen der Autovervollständigung – "
-"Standardvorgabe ist „city,town,village,borough,suburb“ falls leer."
+"Standardvorgabe ist „city,town,village,borough,suburb“, falls leer."
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:358
+msgid "Column Minimum Height"
+msgstr "Spalten-Mindesthöhe"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:396
+msgid "Vertical Element Alignment"
+msgstr "Vertikale Element-Ausrichtung"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:401
+msgid "Top"
+msgstr "oben"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:409
+msgid "Bottom"
+msgstr "unten"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:695
+msgid "Checkboxes"
+msgstr "Checkboxen"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:871
+msgid "Checkbox Labels"
+msgstr "Checkbox-Labels"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1004
+#: includes/components/widgets/single-property/class-native-footer-widget.php:180
+#: includes/components/widgets/single-property/class-property-type-widget.php:109
+msgid "Links"
+msgstr "Links"
+
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1060
+msgid "Dividing Line Color"
+msgstr "Farbe der Trennlinie"
 
 #. translators: %s: plugin name
-#: includes/components/widgets/property-list/class-native-search-form-widget.php:335
+#: includes/components/widgets/property-list/class-native-search-form-widget.php:1127
 #, php-format
 msgid ""
 "The file must be included in the <strong>skin folder</strong> selected in "
@@ -2465,6 +3443,7 @@ msgid "Caption"
 msgstr "Titel"
 
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:116
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:271
 msgid "None"
 msgstr "Keine"
 
@@ -2474,6 +3453,7 @@ msgstr "Anhangtitel"
 
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:128
 #: includes/components/widgets/single-property/class-main-image-widget.php:100
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:217
 msgid "Lightbox"
 msgstr "Lightbox"
 
@@ -2499,23 +3479,12 @@ msgstr "Bilder"
 msgid "Spacing"
 msgstr "Abstände"
 
-#: includes/components/widgets/single-property/class-basic-gallery-widget.php:177
-#: includes/components/widgets/single-property/class-native-head-widget.php:157
-msgid "Custom"
-msgstr "Individuell"
-
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:190
 msgid "Custom Spacing"
 msgstr "Individuelle Abstände"
 
-#: includes/components/widgets/single-property/class-basic-gallery-widget.php:229
-#: includes/components/widgets/single-property/class-labels-widget.php:201
-#: includes/components/widgets/single-property/class-main-image-widget.php:396
-msgid "Corner Radius"
-msgstr "Eckradius"
-
 #: includes/components/widgets/single-property/class-basic-gallery-widget.php:271
-#: includes/components/widgets/single-property/class-desc-widget.php:129
+#: includes/components/widgets/single-property/class-desc-widget.php:148
 #: includes/components/widgets/single-property/class-short-desc-widget.php:139
 msgid "Justified"
 msgstr "Ausgerichtet"
@@ -2559,10 +3528,6 @@ msgstr "Dachform"
 msgid "Gabled Roof"
 msgstr "Satteldach"
 
-#: includes/components/widgets/single-property/class-core-details-widget.php:34
-msgid "Core Details"
-msgstr "Kerndaten"
-
 #: includes/components/widgets/single-property/class-core-details-widget.php:49
 msgid "core"
 msgstr "Kern"
@@ -2571,10 +3536,6 @@ msgstr "Kern"
 #: includes/components/widgets/single-property/class-detail-list-widget.php:48
 msgid "details"
 msgstr "Details"
-
-#: includes/components/widgets/single-property/class-core-details-widget.php:197
-msgid "Property #"
-msgstr "Objektnr."
 
 #: includes/components/widgets/single-property/class-core-details-widget.php:206
 msgid "Locality"
@@ -2599,12 +3560,6 @@ msgstr "Wohn-/Schlafzimmer"
 msgid "Bedrooms"
 msgstr "Schlafzimmer"
 
-#: includes/components/widgets/single-property/class-core-details-widget.php:282
-#: includes/components/widgets/single-property/class-native-head-widget.php:71
-#: includes/components/widgets/single-property/class-native-head-widget.php:388
-msgid "Primary Price"
-msgstr "Primärpreis"
-
 #: includes/components/widgets/single-property/class-desc-widget.php:37
 msgid "Description"
 msgstr "Beschreibung"
@@ -2626,11 +3581,33 @@ msgstr "Immobilie"
 msgid "Format Continuous Text"
 msgstr "Fließtext formatieren"
 
-#: includes/components/widgets/single-property/class-desc-widget.php:105
-msgid "Description Text"
-msgstr "Beschreibungstext"
+#: includes/components/widgets/single-property/class-desc-widget.php:100
+msgid "Link Conversion"
+msgstr "Link-Konvertierung"
 
-#: includes/components/widgets/single-property/class-desc-widget.php:211
+#: includes/components/widgets/single-property/class-desc-widget.php:102
+msgid "Convert URLs and/or email addresses in description texts into links."
+msgstr ""
+"In den Beschreibungstexten enthaltene URLs und/oder E-Mail-Adressen in Links "
+"umwandeln."
+
+#: includes/components/widgets/single-property/class-desc-widget.php:104
+msgid "none"
+msgstr "keine"
+
+#: includes/components/widgets/single-property/class-desc-widget.php:105
+msgid "yes, including email addresses and video URLs"
+msgstr "ja, einschließlich E-Mail-Adressen und Video-URLs"
+
+#: includes/components/widgets/single-property/class-desc-widget.php:106
+msgid "yes, including email adresses"
+msgstr "ja, einschließlich E-Mail-Adressen"
+
+#: includes/components/widgets/single-property/class-desc-widget.php:107
+msgid "yes, including video URLs"
+msgstr "ja, einschließlich Video-URLs"
+
+#: includes/components/widgets/single-property/class-desc-widget.php:236
 msgctxt "sample data"
 msgid ""
 "Would you like to live in a great single-family home and move in straight "
@@ -2639,7 +3616,7 @@ msgstr ""
 "Würden Sie gerne in einem tollen Einfamilienhaus wohnen und sofort einziehen "
 "– ohne lästige Renovierungsarbeiten?"
 
-#: includes/components/widgets/single-property/class-desc-widget.php:212
+#: includes/components/widgets/single-property/class-desc-widget.php:237
 msgctxt "sample data"
 msgid ""
 "Floor-to-ceiling windows, a friendly and colorful facade design as well as "
@@ -2650,7 +3627,7 @@ msgstr ""
 "sowie viele kommunikative Gemeinschaftsbereiche unterstreichen die klare "
 "Ausrichtung an den Bedürfnissen der Bewohner."
 
-#: includes/components/widgets/single-property/class-desc-widget.php:213
+#: includes/components/widgets/single-property/class-desc-widget.php:238
 msgctxt "sample data"
 msgid ""
 "The house convinces with a style-typical architecture that combines modern "
@@ -2665,7 +3642,7 @@ msgstr ""
 "Modernisierung erhalten und verleihen dem Gebäude heute einen ganz "
 "besonderen, individuellen Charakter."
 
-#: includes/components/widgets/single-property/class-desc-widget.php:214
+#: includes/components/widgets/single-property/class-desc-widget.php:239
 msgctxt "sample data"
 msgid ""
 "The single-family house offered here surprises with an astonishingly idyllic "
@@ -2675,7 +3652,7 @@ msgstr ""
 "idyllischen Lage inmitten des geschäftigen Treibens der Rupert-Farnsworth-"
 "Allee."
 
-#: includes/components/widgets/single-property/class-desc-widget.php:215
+#: includes/components/widgets/single-property/class-desc-widget.php:240
 msgctxt "sample data"
 msgid ""
 "There is a large supermarket in town, as well as bakeries, butchers, various "
@@ -2684,7 +3661,7 @@ msgstr ""
 "Im Ort gibt es einen großen Supermarkt, außerdem Bäckereien, Metzgereien, "
 "diverse Bankfilialen, eine Apotheke und verschiedene Handwerksbetriebe."
 
-#: includes/components/widgets/single-property/class-desc-widget.php:216
+#: includes/components/widgets/single-property/class-desc-widget.php:241
 msgctxt "sample data"
 msgid ""
 "Thanks to the floor-to-ceiling windows and the southern orientation, the sun "
@@ -2699,7 +3676,7 @@ msgstr ""
 "Garten befinden sich ein Geräteschuppen und ein großes Gewächshaus. Ersterer "
 "verfügt sogar über Strom- und Frischwasseranschlüsse!"
 
-#: includes/components/widgets/single-property/class-desc-widget.php:217
+#: includes/components/widgets/single-property/class-desc-widget.php:242
 msgctxt "sample data"
 msgid ""
 "We would like to point out that the property information, documents, plans, "
@@ -2876,35 +3853,24 @@ msgstr "Vermarktungsart"
 msgid "Type of Use"
 msgstr "Nutzungsart"
 
-#: includes/components/widgets/single-property/class-labels-widget.php:106
-#: includes/components/widgets/single-property/class-property-type-widget.php:35
-msgid "Property Type"
-msgstr "Objektart"
+#: includes/components/widgets/single-property/class-labels-widget.php:257
+msgid "Colors"
+msgstr "Farben"
 
-#: includes/components/widgets/single-property/class-labels-widget.php:259
-msgid ""
-"The label colors can be customized in the Kickstart plugin options. "
-"<strong>Optionally</strong>, alternative uniform colors for all labels can "
-"be selected below."
-msgstr ""
-"Die Farben der Labels können in den Kickstart Plugin-Optionen angepasst "
-"werden. <strong>Optional</strong> kann nachfolgend auch eine alternative "
-"Einheitsfarbe für alle Labels ausgewählt werden."
-
-#: includes/components/widgets/single-property/class-labels-widget.php:358
+#: includes/components/widgets/single-property/class-labels-widget.php:359
 msgid "For Sale"
 msgstr "Zu Verkaufen"
 
-#: includes/components/widgets/single-property/class-labels-widget.php:364
+#: includes/components/widgets/single-property/class-labels-widget.php:365
 msgid "Reserved"
 msgstr "Reserviert"
 
-#: includes/components/widgets/single-property/class-labels-widget.php:374
+#: includes/components/widgets/single-property/class-labels-widget.php:375
 msgid "Living Property"
 msgstr "Wohnimmobilie"
 
-#: includes/components/widgets/single-property/class-labels-widget.php:380
-#: includes/components/widgets/single-property/class-property-type-widget.php:343
+#: includes/components/widgets/single-property/class-labels-widget.php:381
+#: includes/components/widgets/single-property/class-property-type-widget.php:346
 msgid "Single-family House"
 msgstr "Einfamilienhaus"
 
@@ -2912,11 +3878,6 @@ msgstr "Einfamilienhaus"
 #: includes/components/widgets/single-property/class-main-image-widget.php:507
 msgid "Main Image"
 msgstr "Hauptbild"
-
-#: includes/components/widgets/single-property/class-main-image-widget.php:83
-#: includes/components/widgets/single-property/class-main-image-widget.php:122
-msgid "Image"
-msgstr "Bild"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:182
 msgid "Max Width"
@@ -2928,7 +3889,7 @@ msgstr "Bildanpassung"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:238
 msgid "Fill"
-msgstr "Füllen"
+msgstr "Ausfüllen"
 
 #: includes/components/widgets/single-property/class-main-image-widget.php:239
 msgid "Cover"
@@ -2987,10 +3948,6 @@ msgstr "Unten-rechts"
 msgid "Opacity"
 msgstr "Deckkraft"
 
-#: includes/components/widgets/single-property/class-main-image-widget.php:324
-msgid "Hover"
-msgstr "Hover"
-
 #: includes/components/widgets/single-property/class-main-image-widget.php:357
 msgid "Transition Duration"
 msgstr "Übergangsdauer"
@@ -2998,10 +3955,6 @@ msgstr "Übergangsdauer"
 #: includes/components/widgets/single-property/class-main-image-widget.php:375
 msgid "Hover Animation"
 msgstr "Hover-Animation"
-
-#: includes/components/widgets/single-property/class-native-footer-widget.php:36
-msgid "Footer"
-msgstr "Footer"
 
 #: includes/components/widgets/single-property/class-native-footer-widget.php:51
 msgid "footer"
@@ -3012,10 +3965,93 @@ msgid "bottom"
 msgstr "unten"
 
 #: includes/components/widgets/single-property/class-native-footer-widget.php:79
-msgid "The native footer box contains a link to the property overview page."
+msgid ""
+"The native footer box contains an (optional) property post navigation and a "
+"link to the overview page."
 msgstr ""
-"Die native <em>Footer-Box</em> enthält einen Link zur Immobilien-"
-"Übersichtsseite."
+"Die native Footer-Box enthält eine (optionale) Immobilien-Beitrags-"
+"Navigation sowie einen Link zur Übersichtsseite."
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:86
+msgid "Previous/Next Navigation"
+msgstr "Vor/Zurück-Navigation"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:88
+msgid ""
+"The previous/next navigation is available by default if the property is part "
+"of a selection based on certain search criteria. Alternatively, it can be "
+"generally enabled (optionally including first/last property links) or "
+"disabled (overview link only)."
+msgstr ""
+"Die Vor/Zurück-Navigation ist standardmäßig verfügbar, wenn die Immobilie "
+"Teil einer Auswahl auf Basis bestimmter Suchkriterien ist. Alternativ kann "
+"sie generell aktiviert (optional inklusive Links zum ersten/letzten Objekt) "
+"oder deaktiviert werden (nur Übersichtslink)."
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:91
+msgid "never"
+msgstr "nie"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:92
+#: includes/components/widgets/single-property/class-native-footer-widget.php:93
+msgid "in search results"
+msgstr "in Suchergebnissen"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:93
+#: includes/components/widgets/single-property/class-native-footer-widget.php:95
+msgid "incl. first/last property"
+msgstr "inkl. erste/letzte Immobilie"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:94
+#: includes/components/widgets/single-property/class-native-footer-widget.php:95
+msgid "always"
+msgstr "immer"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:104
+msgid "Overview Link Text"
+msgstr "Übersichts-Linktext"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:107
+msgid ""
+"Here, an <strong>alternative</strong> link text can be specified to be used "
+"instead of the default \"Back to overview\" (or \"-\" to hide it)."
+msgstr ""
+"Hier kann ein <strong>alternativer</strong> Linktext angegeben werden, der "
+"den Standardtext „Zurück zur Übersicht“ ersetzt (oder „-“ zum Ausblenden)."
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:126
+#: includes/components/widgets/single-property/class-native-head-widget.php:144
+msgid ""
+"The <strong>default</strong> background color for header and footer sections "
+"can be adjusted in the Kickstart plugin options."
+msgstr ""
+"Die <strong>Standard</strong>-Hintergrundfarbe für Kopf- und Fußabschnitte "
+"kann in den Kickstart Plugin-Optionen angepasst werden."
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:223
+#: includes/components/widgets/single-property/class-native-footer-widget.php:241
+msgid "Ratio"
+msgstr "Größenverhältnis"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:224
+msgid "back/next"
+msgstr "vor/zurück"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:242
+msgid "first/last Property"
+msgstr "erstes/letztes Objekt"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:258
+msgid "Enable Tooltips"
+msgstr "Tooltips aktivieren"
+
+#: includes/components/widgets/single-property/class-native-footer-widget.php:260
+msgid ""
+"By default, the titles of the linked properties and \"Back to overview\" are "
+"displayed as tooltips."
+msgstr ""
+"Standardmäßig werden die Titel der verlinkten Immobilien und „Zurück zur "
+"Übersicht“ als Tooltips angezeigt."
 
 #: includes/components/widgets/single-property/class-native-gallery-widget.php:58
 msgid "Main Gallery"
@@ -3058,25 +4094,18 @@ msgstr "Leer lassen zum Ausblenden der Überschrift."
 msgid "Show Image/Video Captions"
 msgstr "Bild-/Videobezeichnungen anzeigen"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:163
-msgid "Image Links"
-msgstr "Bildlinks"
-
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:165
-msgid "Enable full size/lightbox link for the currently displayed image."
-msgstr "Vollansicht/Lightbox-Link für das aktuell angezeigte Bild aktivieren."
-
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:178
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:155
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:95
 msgid "Animation"
 msgstr "Animation"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:186
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:163
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:248
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:103
 msgid "Transition Animation"
 msgstr "Übergangsanimation"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:188
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:165
 msgid ""
 "Defaults to <code>Push</code> for the main gallery and <code>Scale</code> "
 "for other gallery types (floor plans, energy pass images etc.)."
@@ -3085,15 +4114,15 @@ msgstr ""
 "<code>Scale</code> für andere Galerien (Grundrisse, Energieausweis-Grafiken "
 "etc.)."
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:203
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:180
 msgid "Ken Burns Effect"
 msgstr "Ken-Burns-Effekt"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:216
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:193
 msgid "KBE Display Mode"
 msgstr "KBE-Darstellungsmodus"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:218
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:195
 msgid ""
 "Covering the entire area of the container element usually looks better, but "
 "some images may be displayed \"cropped\" horizontally after the animation "
@@ -3104,7 +4133,7 @@ msgstr ""
 "horizontal „zugeschnitten“ dargestellt werden (abhängig von den "
 "unterschiedlichen Seitenverhältnissen der Galeriebilder)."
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:220
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:197
 msgid ""
 "In return, always displaying the images in full may result in empty areas at "
 "the top and/or bottom of the container element."
@@ -3113,54 +4142,93 @@ msgstr ""
 "leere Flächen am oberen und/oder unteren Rand des Container-Elements "
 "resultieren."
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:223
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:200
 msgid "Cover the entire container element"
 msgstr "Container-Element vollständig ausfüllen"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:224
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:225
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:201
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:202
 msgid "Show full images"
 msgstr "Bilder vollständig anzeigen"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:224
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:201
 msgid "centered"
 msgstr "zentriert"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:225
-#: includes/components/widgets/single-property/class-native-head-widget.php:53
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:202
+#: includes/components/widgets/single-property/class-native-head-widget.php:55
 msgid "top"
 msgstr "oben"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:256
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:216
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:225
+msgid "Image Links"
+msgstr "Bildlinks"
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:227
+msgid "Enable full size/lightbox link for the currently displayed image."
+msgstr "Vollansicht/Lightbox-Link für das aktuell angezeigte Bild aktivieren."
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:241
+msgid ""
+"The following options apply exclusively to the <strong>Kickstart Lightbox</"
+"strong> (see plugin options) and should be left at \"Standard\" if the "
+"Elementor Lightbox is being used."
+msgstr ""
+"Die folgenden Optionen gelten ausschließlich für die <strong>Kickstart-"
+"Lightbox</strong> (siehe Plugin-Optionen) und sollten auf „Standard“ "
+"belassen werden, wenn die Elementor-Lightbox verwendet wird."
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:265
+msgid "Navigation"
+msgstr "Navigation"
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:270
+msgid "Dots"
+msgstr "Punkte"
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:282
+msgid "Counter"
+msgstr "Zähler"
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:284
+msgid "Display a counter with the current and the total number of images."
+msgstr "Zähler mit aktueller und Gesamtanzahl der Bilder anzeigen."
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:299
+msgid "Image Captions"
+msgstr "Bilduntertitel"
+
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:334
 msgid "Videos"
 msgstr "Videos"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:267
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:345
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:147
 msgid "Autoplay"
 msgstr "Autoplay"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:279
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:357
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:159
 msgid "Automute"
 msgstr "Automute"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:291
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:369
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:171
 msgid "YouTube Nocookie"
 msgstr "YouTube-Nocookie"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:303
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:381
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:183
 msgid "iFrame allow Attribute"
 msgstr "iFrame-allow-Attribut"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:305
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:383
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:185
 msgid "Leave blank to use the default value."
 msgstr "Leer lassen zur Verwendung des Standardwerts."
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:325
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:404
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:205
 msgid ""
 "The following options must only be adjusted <strong>per widget</strong> in "
@@ -3171,12 +4239,12 @@ msgstr ""
 "Ausnahmefällen erforderlich. Die globalen Vorgaben für alle Galerien können "
 "in den Kickstart-Plugin-Optionen definiert werden."
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:333
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:411
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:213
 msgid "Slider Min. Height"
 msgstr "Slider-Mindesthöhe"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:335
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:413
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:215
 msgid ""
 "Minimum height of the <strong>container element</strong> that holds the "
@@ -3187,12 +4255,12 @@ msgstr ""
 "oberen Haupt-Slider der Galerie enthält (<code>0</code> zur Übernahme des "
 "globalen Standardwerts)."
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:350
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:428
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:230
 msgid "Slider Background Color"
 msgstr "Slider-Hintergrundfarbe"
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:351
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:429
 #: includes/components/widgets/single-property/class-native-video-gallery-widget.php:231
 msgid ""
 "Background color of the upper main slider area that contains the currently "
@@ -3201,7 +4269,7 @@ msgstr ""
 "Hintergrundfarbe des oberen Haupt-Slider-Bereichs, der das aktuell "
 "ausgewählte Bild, Video bzw. die virtuelle Tour enthält."
 
-#: includes/components/widgets/single-property/class-native-gallery-widget.php:382
+#: includes/components/widgets/single-property/class-native-gallery-widget.php:460
 #: includes/components/widgets/single-property/class-native-virtual-tour-widget.php:101
 msgid ""
 "This is a <strong>demo</strong> of the <a href=\"https://www.cloudpano.com/"
@@ -3210,34 +4278,29 @@ msgstr ""
 "Dies ist eine <strong>Demonstration</strong> des <a href=\"https://"
 "www.cloudpano.com/\" target=\"_blank\">CloudPano</a> 360°-Tour-Dienstes."
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:36
+#: includes/components/widgets/single-property/class-native-head-widget.php:38
 msgid "Standard Header"
 msgstr "Standard-Header"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:51
+#: includes/components/widgets/single-property/class-native-head-widget.php:53
 msgid "head"
 msgstr "Kopf"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:52
+#: includes/components/widgets/single-property/class-native-head-widget.php:54
 msgid "header"
 msgstr "Header"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:69
-#: includes/components/widgets/single-property/class-native-head-widget.php:384
+#: includes/components/widgets/single-property/class-native-head-widget.php:71
+#: includes/components/widgets/single-property/class-native-head-widget.php:544
 msgid "Use/Property Type"
 msgstr "Nutzungs-/Objektart"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:70
-#: includes/components/widgets/single-property/class-native-head-widget.php:387
+#: includes/components/widgets/single-property/class-native-head-widget.php:72
+#: includes/components/widgets/single-property/class-native-head-widget.php:547
 msgid "Address/Location"
 msgstr "Adresse/Lage"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:72
-#: includes/components/widgets/single-property/class-native-head-widget.php:389
-msgid "Core Data"
-msgstr "Kerndaten"
-
-#: includes/components/widgets/single-property/class-native-head-widget.php:90
+#: includes/components/widgets/single-property/class-native-head-widget.php:93
 msgid ""
 "The standard header contains the property's type, title, address and price "
 "as well as other core data and labels."
@@ -3245,7 +4308,7 @@ msgstr ""
 "Der Standard-Header enthält Art, Bezeichnung, Adresse, Preis sowie weitere "
 "Kerndaten und Labels der Immobilie."
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:92
+#: includes/components/widgets/single-property/class-native-head-widget.php:95
 msgid ""
 "<strong>Alternatively</strong>, these contens can also be inserted as "
 "separate elements."
@@ -3253,40 +4316,34 @@ msgstr ""
 "Diese Angaben können <strong>alternativ</strong> auch in Form separater "
 "Inhaltselemente eingebunden werden."
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:116
+#: includes/components/widgets/single-property/class-native-head-widget.php:118
 msgid "The default is defined in the Kickstart Print add-on options."
 msgstr ""
 "Die Standardangabe ist in den Kickstart Print Add-on-Optionen definiert."
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:119
+#: includes/components/widgets/single-property/class-native-head-widget.php:121
 msgid "Show"
 msgstr "Anzeigen"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:120
+#: includes/components/widgets/single-property/class-native-head-widget.php:122
 msgid "Hide"
 msgstr "Ausblenden"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:151
-msgid "Background"
-msgstr "Hintergrund"
+#: includes/components/widgets/single-property/class-native-head-widget.php:198
+msgid "Dividing Lines"
+msgstr "Trennlinien"
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:153
+#: includes/components/widgets/single-property/class-native-head-widget.php:207
 msgid ""
-"The <strong>default</strong> background color for header and footer sections "
-"can be adjusted in the Kickstart plugin options."
+"The <strong>default</strong> color for dividing lines can be adjusted in the "
+"Kickstart plugin options."
 msgstr ""
-"Die <strong>Standard</strong>-Hintergrundfarbe für Kopf- und Fußabschnitte "
-"können in den Kickstart Plugin-Optionen angepasst werden."
+"Die <strong>Standardfarbe</strong> der Trennlinien kann in den Kickstart "
+"Plugin-Optionen angepasst werden."
 
-#: includes/components/widgets/single-property/class-native-head-widget.php:156
-msgid "Transparent"
-msgstr "Transparent"
-
-#: includes/components/widgets/single-property/class-native-head-widget.php:195
-#: includes/components/widgets/single-property/class-native-head-widget.php:386
-#: includes/components/widgets/single-property/class-title-widget.php:35
-msgid "Title"
-msgstr "Titel"
+#: includes/components/widgets/single-property/class-native-head-widget.php:248
+msgid "Vertical Margin"
+msgstr "Vertikaler Abstand"
 
 #: includes/components/widgets/single-property/class-native-location-map-widget.php:34
 msgid "Location Map"
@@ -3386,15 +4443,15 @@ msgstr ""
 "– optional mit Links zu den Übersichts-/Archivseiten der betreffenden "
 "Kategorien."
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:87
+#: includes/components/widgets/single-property/class-property-type-widget.php:88
 msgid "Include Type of Use"
 msgstr "Nutzungsart einbinden"
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:97
+#: includes/components/widgets/single-property/class-property-type-widget.php:98
 msgid "Include Parent Type"
 msgstr "Hauptkategorie einbinden"
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:98
+#: includes/components/widgets/single-property/class-property-type-widget.php:99
 msgid ""
 "e.g. <strong>Houses</strong> for a property types like <strong>Single-family "
 "home</strong>"
@@ -3402,11 +4459,7 @@ msgstr ""
 "z. B. <strong>Häuser</strong> für einen Immobilientyp wie "
 "<strong>Einfamilienhaus</strong>"
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:108
-msgid "Links"
-msgstr "Links"
-
-#: includes/components/widgets/single-property/class-property-type-widget.php:110
+#: includes/components/widgets/single-property/class-property-type-widget.php:111
 msgid ""
 "The default overview page can be selected in the <strong>lists</strong> tab "
 "of the Kickstart plugin options."
@@ -3414,15 +4467,15 @@ msgstr ""
 "Die Standard-Übersichtsseite kann im Tab <strong>Listen</strong> der "
 "Kickstart-Plugin-Optionen ausgewählt werden."
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:113
+#: includes/components/widgets/single-property/class-property-type-widget.php:114
 msgid "Default Overview Page"
 msgstr "Standard-Übersichtsseite"
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:114
+#: includes/components/widgets/single-property/class-property-type-widget.php:115
 msgid "Archive Page"
 msgstr "Archivseite"
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:125
+#: includes/components/widgets/single-property/class-property-type-widget.php:128
 msgid ""
 "The icon is displayed as separator between the trail elements (&gt; if not "
 "selected)."
@@ -3430,19 +4483,15 @@ msgstr ""
 "Das Icon wird als Trenner zwischen den Pfad-Elementen angezeigt (&gt; falls "
 "nicht ausgewählt)."
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:155
+#: includes/components/widgets/single-property/class-property-type-widget.php:158
 msgid "Text/Icon"
 msgstr "Text/Icon"
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:205
-msgid "Link Color"
-msgstr "Linkfarbe"
-
-#: includes/components/widgets/single-property/class-property-type-widget.php:333
+#: includes/components/widgets/single-property/class-property-type-widget.php:336
 msgid "Residential Property"
 msgstr "Wohnimmobilie"
 
-#: includes/components/widgets/single-property/class-property-type-widget.php:338
+#: includes/components/widgets/single-property/class-property-type-widget.php:341
 msgid "Houses"
 msgstr "Häuser"
 
@@ -3502,6 +4551,124 @@ msgstr "HTML-Tag"
 #: includes/components/widgets/single-property/class-title-widget.php:125
 msgid "Spacious house in an excellent location"
 msgstr "Geräumiges Haus in erstklassiger Lage"
+
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:35
+msgid "Withdrawal Form Confirmation Message"
+msgstr "Kontaktformular Bestätigungsmeldung"
+
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:50
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:50
+msgid "contract"
+msgstr "Vertrag"
+
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:51
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:51
+msgid "withdrawal"
+msgstr "Widerruf"
+
+#. translators: %s = plugin options tab URL
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-confirmation-message-widget.php:87
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:85
+#, php-format
+msgid ""
+"The withdrawal form and processing must be enabled and configured in the <a "
+"href=\"%s\" target=\"_blank\">Kickstart plugin options tab</a> of the same "
+"name."
+msgstr ""
+"Widerrufsformular und -verarbeitung müssen im zugehörigen <a href=\"%s\" "
+"target=\"_blank\">Tab der Kickstart-Plugin-Optionen</a> aktiviert bzw. "
+"konfiguriert werden."
+
+#: includes/components/widgets/special-forms/class-native-withdrawal-form-widget.php:35
+msgid "Withdrawal Form"
+msgstr "Widerrufsformular"
+
+#~ msgid "Text Alignment"
+#~ msgstr "Textausrichtung"
+
+#~ msgid ""
+#~ "Instead of selecting <strong>element-related link colors</strong> below, "
+#~ "setting <strong>global</strong> colors for <strong>action or marketing "
+#~ "type related elements</strong> in the Kickstart plugin options makes more "
+#~ "sense in most cases."
+#~ msgstr ""
+#~ "Anstatt nachfolgend <strong>Linkfarben speziell für die betr. Elemente</"
+#~ "strong> festzulegen, ist in den meisten Fällen die Auswahl "
+#~ "<strong>globaler</strong> Farben für Elemente in den Kickstart-Plugin-"
+#~ "Optionen sinnvoller, die sich auf bestimmte <strong>Aktionen oder "
+#~ "Vermarktungsarten </strong> beziehen."
+
+#~ msgctxt "real estate property"
+#~ msgid "Property Tile (Frame)"
+#~ msgstr "Immobilienkachel (Rahmen)"
+
+#~ msgid "Grid Elements"
+#~ msgstr "Raster-Elemente"
+
+#~ msgid "Minimum Width"
+#~ msgstr "Mindestbreite"
+
+#~ msgid "Minimum Height"
+#~ msgstr "Mindesthöhe"
+
+#~ msgid "Horizontal Layout"
+#~ msgstr "Horizontales Layout"
+
+#~ msgid "Icon Size"
+#~ msgstr "Icongröße"
+
+#~ msgid "previous/next Property"
+#~ msgstr "vorheriges/nächstes Objekt"
+
+#~ msgid "Defaults to the standard link color."
+#~ msgstr "Vorgabe ist die Standard-Linkfarbe."
+
+#~ msgid "Contact Person"
+#~ msgstr "Kontaktperson"
+
+#~ msgid "various"
+#~ msgstr "diverse"
+
+#~ msgid "Element Type"
+#~ msgstr "Elementart"
+
+#~ msgid "no formatting"
+#~ msgstr "keine Formatierung"
+
+#~ msgid "Number"
+#~ msgstr "Nummer"
+
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#~ msgid ""
+#~ "Elements can be combined based on the entries in the <strong>import "
+#~ "mapping table</strong> (immonex OpenImmo2WP)."
+#~ msgstr ""
+#~ "Elemente können anhand der Einträge in der <strong>Import-Mapping-"
+#~ "Tabelle</strong> (immonex OpenImmo2WP) kombiniert werden."
+
+#~ msgid "The sample data shown may not match the actual type of information."
+#~ msgstr ""
+#~ "Die Art der angezeigten Beispielinhalte entspricht möglicherweise nicht "
+#~ "der der tatsächlichen Daten."
+
+#~ msgid "Search"
+#~ msgstr "Suche"
+
+#~ msgid "The native footer box contains a link to the property overview page."
+#~ msgstr ""
+#~ "Die native <em>Footer-Box</em> enthält einen Link zur Immobilien-"
+#~ "Übersichtsseite."
+
+#~ msgid "Wrap element output in a span container."
+#~ msgstr "Elementausgabe mit einem span-Container umschließen."
+
+#~ msgid "Wrap element output in a <span> container."
+#~ msgstr "Elementausgabe mit einem <span>-Container umschließen."
+
+#~ msgid "Element Height"
+#~ msgstr "Elementhöhe"
 
 #~ msgid "Kickstart Taxonomy Filter"
 #~ msgstr "Kickstart Taxonomie-Filter"
@@ -3565,9 +4732,6 @@ msgstr "Geräumiges Haus in erstklassiger Lage"
 #~ msgid "Agencies & Contacts"
 #~ msgstr "Agenturen & Kontakte"
 
-#~ msgid "Contact Person"
-#~ msgstr "Kontaktperson"
-
 #~ msgid "Photos/Illustrations"
 #~ msgstr "Fotos/Illustrationen"
 
@@ -3584,9 +4748,6 @@ msgstr "Geräumiges Haus in erstklassiger Lage"
 #~ "Dieser Wert muss nur in Sonderfällen angepasst werden. Bei <code>0</code> "
 #~ "wird der Standardwert der entsprechenden Kickstart-Plugin-Option "
 #~ "übernommen."
-
-#~ msgid "Content"
-#~ msgstr "Inhalt"
 
 #~ msgid "Display if unavailable"
 #~ msgstr "Anzeigen bei Nichtverfügbarkeit"
@@ -3613,17 +4774,11 @@ msgstr "Geräumiges Haus in erstklassiger Lage"
 #~ msgid "basic"
 #~ msgstr "einfach"
 
-#~ msgid "extended"
-#~ msgstr "erweitert"
-
 #~ msgid "internal profile page"
 #~ msgstr "interne Profilseite"
 
 #~ msgid "external URL – if available"
 #~ msgstr "externe URL – sofern verfügbar"
-
-#~ msgid "none"
-#~ msgstr "keine"
 
 #~ msgid "Display the agency widget based on the selected property state."
 #~ msgstr "Agentur-Widget auf Basis des gewählten Objektstatus anzeigen."
@@ -3661,9 +4816,6 @@ msgstr "Geräumiges Haus in erstklassiger Lage"
 
 #~ msgid "no"
 #~ msgstr "nein"
-
-#~ msgid "all"
-#~ msgstr "alle"
 
 #~ msgid "for reference properties"
 #~ msgstr "für Referenzobjekte"
@@ -3714,3 +4866,12 @@ msgstr "Geräumiges Haus in erstklassiger Lage"
 
 #~ msgid "full"
 #~ msgstr "voll"
+
+#~ msgid "First"
+#~ msgstr "Erste"
+
+#~ msgid "Next"
+#~ msgstr "Nächste"
+
+#~ msgid "Last"
+#~ msgstr "Letzte"

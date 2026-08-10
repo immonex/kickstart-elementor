@@ -121,6 +121,71 @@ class Icon_List_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
+			'list_frame_header',
+			[
+				'label' => __( 'Frame', 'immonex-kickstart-for-elementor' ),
+				'type'  => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'list_padding',
+			[
+				'label'      => __( 'Padding', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default'    => [
+					'unit'     => 'px',
+					'isLinked' => true,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-e-icon-list__items' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'list_bg_color',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-e-icon-list__items' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'list_border_radius',
+			[
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-e-icon-list__items' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'list_box_shadow',
+				'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+				'selector' => '{{WRAPPER}} .inx-e-icon-list__items',
+			]
+		);
+
+		$this->add_control(
+			'list_contents_header',
+			[
+				'label'     => __( 'Contents', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
 			'layout',
 			[
 				'label'          => __( 'Layout', 'immonex-kickstart-for-elementor' ),
@@ -386,7 +451,7 @@ class Icon_List_Widget extends Widget_Base {
 					'default' => $this->get_default( 'global_icon_color', \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .inx-e-icon-list__icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .inx-e-icon-list__icon i' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .inx-e-icon-list__icon svg' => 'fill: {{VALUE}};',
 				],
 			]
@@ -419,7 +484,7 @@ class Icon_List_Widget extends Widget_Base {
 		$this->add_control(
 			'text_indent',
 			[
-				'label'      => __( 'Gap', 'immonex-kickstart-for-elementor' ),
+				'label'      => _x( 'Gap', 'distance between grid elements', 'immonex-kickstart-for-elementor' ),
 				'type'       => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
 				'range'      => [
@@ -555,7 +620,7 @@ class Icon_List_Widget extends Widget_Base {
 					'default' => $this->get_default( 'global_text_color', \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_SECONDARY ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .inx-e-icon-list__text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .inx-e-icon-list__text' => 'color: {{VALUE}}',
 				],
 			]
 		);

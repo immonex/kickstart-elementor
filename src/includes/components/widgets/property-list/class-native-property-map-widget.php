@@ -269,6 +269,28 @@ class Native_Property_Map_Widget extends \immonex\Kickstart\ForElementor\Compone
 		$this->end_controls_section();
 
 		$this->start_controls_section(
+			'frame_section',
+			[
+				'label' => __( 'Frame', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'border_radius',
+			[
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-property-map' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
 			'marker_section',
 			[
 				'label' => __( 'Marker', 'immonex-kickstart-for-elementor' ),

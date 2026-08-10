@@ -16,7 +16,7 @@
 
 Die Seitennavigation (Paginierung) für Immobilienlisten wird im Regelfall unterhalb der zugehörigen [Grid-Listenansicht](liste-grid) eingebunden.
 
-Für die Generierung der Ausgabe kommt die reguläre WordPress-Paginierungsfunktion ([get_the_posts_navigation](https://developer.wordpress.org/reference/functions/get_the_posts_pagination/)) zum Einsatz, die Optik entspricht daher – sofern vorhanden – den **Vorgaben des Themes**.
+!> Für die Generierung der Ausgabe kommt die **reguläre WordPress-Paginierungsfunktion** ([get_the_posts_navigation](https://developer.wordpress.org/reference/functions/get_the_posts_pagination/)) zum Einsatz, die Optik entspricht daher – sofern vorhanden – den **Vorgaben des Themes**.
 
 ---
 

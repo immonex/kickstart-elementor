@@ -504,9 +504,9 @@ class Main_Image_Widget extends \immonex\Kickstart\ForElementor\Components\Widge
 		$source_image = trailingslashit( $plugin_dir ) . 'assets/demo-images/' . self::DEMO_IMAGE_FILENAME;
 
 		$meta = [
-			'post_title'                  => __( 'Main Image', 'immonex-kickstart-for-elementor' ),
-			'_inx_elementor_demo_content' => 'main_image',
-			'_wp_attachment_image_alt'    => 'immonex Kickstart for Elementor ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
+			'post_title'               => __( 'Main Image', 'immonex-kickstart-for-elementor' ),
+			'_inxkickel_demo_content'  => 'main_image',
+			'_wp_attachment_image_alt' => 'immonex Kickstart for Elementor ' . __( 'Demo Image', 'immonex-kickstart-for-elementor' ),
 		];
 
 		return \immonex\Kickstart\ForElementor\Media_Utils::add_image_to_media_lib( $source_image, $meta );

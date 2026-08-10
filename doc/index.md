@@ -10,10 +10,11 @@
 - Immobilien-Suchformular
 - Standortkarten
 - Mediengalerien (Objektfotos, Grundrisse/Lagepläne, Videos, 360°-Ansichten, virtuelle Touren ...)
+- Widerrufsformular
 
 ![Elementor-Immobilien-Widgets](assets/elementor-immobilien-widgets.webp)
 
-Ebenfalls unterstützt werden Inhaltselemente weiterer immonex-Plugins wie ...
+Ebenfalls unterstützt werden Komponenten und Inhaltselemente weiterer immonex-Plugins wie ...
 
 - Objektbezogene Kontaktdaten und Anfrageformulare
 - Ansprechpartner- und Agenturlisten
@@ -22,7 +23,7 @@ Ebenfalls unterstützt werden Inhaltselemente weiterer immonex-Plugins wie ...
 - Suchagent (Formular zum Anlegen von Suchaufträgen mit automatisierter Mail-Benachrichtigung)
 - uvm.
 
-**Elementor** ist ein beliebter *Page Builder* bzw. *Website Builder* für WordPress. Das Kickstart-Elementor-Add-on kann sowohl in Kombination mit der kostenfreien [Open-Source-](https://de.wordpress.org/plugins/elementor/) als auch mit der erweiterten [Pro-Variante](https://be.elementor.com/visit/?bta=229006&nci=5657) eingesetzt werden.
+**Elementor** ist ein beliebter *Page Builder* bzw. *Website Builder* für WordPress. Das Kickstart-Elementor-Add-on kann in Kombination mit dem kostenfreien [Elementor-Core-Plugin](https://de.wordpress.org/plugins/elementor/) eingesetzt werden und unterstützt zudem diverse Funktionen der Erweiterung [Elementor Pro](https://be.elementor.com/visit/?bta=229006&nci=5657).
 
 ?> Alle [Widgets](/elementor-immobilien-widgets/uebersicht) können in vollem Umfang mit der kostenfreien Elementor-Variante genutzt werden. Elementor Pro bietet zusätzliche Möglichkeiten wie die Verwendung von [Dynamic Tags](/elementor-immobilien-dynamic-tags/uebersicht) oder die individuelle Gestaltung von [Immobilien-Übersichtslisten mit Loop Grids](/elementor-pro/immobilien-loop-grid).
 
@@ -30,7 +31,7 @@ Ebenfalls unterstützt werden Inhaltselemente weiterer immonex-Plugins wie ...
 
 - 35+ spezielle [Elementor-Immobilien-Widgets](/elementor-immobilien-widgets/uebersicht) mit umfangreichen Konfigurationsmöglichkeiten
 - [Dynamic Tags](/elementor-immobilien-dynamic-tags/uebersicht) zur Einbindung von Immobiliendaten und -bildern mit Elementor-Standard-Widgets
-- Verwendung regulärer Seiten als Vorlagen mit der kostenlosen Version von Elementor
+- Verwendung regulärer Seiten als Vorlagen mit der Open-Source-Variante von Elementor (Core)
 - Individuell gestaltbare [Immobilienlisten mit Loop-Grid- oder Loop-Carousel-Widgets](/elementor-pro/immobilien-loop-grid) (Elementor Pro)
 - Unterstützung mehrsprachiger Websites ([WPML](https://wpml.org/de/) und [Polylang](https://de.wordpress.org/plugins/polylang/)/[Polylang Pro](https://polylang.pro/))
 

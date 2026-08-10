@@ -1,0 +1,135 @@
+@use "../_config";
+
+.elementor-widget-container .inx-property-search {
+	.inx-form-element--text,
+	.inx-form-element--select,
+	.inx-form-element--range,
+	.inx-form-element--submit,
+	div.inx-form-element[class*="-autocomplete"] {
+		display: flex;
+		align-items: center;
+
+		> * {
+			flex: 1 1 100%
+		}
+	}
+
+	.inx-form-element--text {
+		justify-content: right;
+
+		button.uk-search-icon-flip {
+			position: initial;
+			flex: 0 0 content;
+			z-index: 1;
+		}
+
+		input {
+			position: absolute;
+		}
+	}
+
+	.inx-search-submit-button button.inx-button--action span:first-child,
+	a.inx-link span:first-child,
+	button.uk-search-icon-flip {
+		margin-top: 0;
+		width: 1em;
+		height: 1em;
+		min-width: 20px;
+		min-height: 20px;
+
+		> svg {
+			width: 1em;
+			height: 1em;
+			min-width: 20px;
+			min-height: 20px;
+		}
+	}
+
+	div.inx-form-element[class*="-autocomplete"] {
+		.multiselect {
+			display: flex;
+			align-items: center;
+			justify-content: right;
+		}
+
+		.multiselect__tags {
+		 	position: absolute;
+			display: flex;
+			align-items: center;
+			width: 100%;
+  			max-height: none;
+  			padding-right: 30px;
+		}
+
+		.multiselect__select {
+			position: initial;
+			flex: 0 0 content;
+			margin-right: 4px;
+			z-index: 1;
+		}
+
+		.multiselect__content-wrapper {
+			top: 100%;
+		}
+	}
+
+	.inx-form-element--checkbox input.inx-checkbox {
+		box-sizing: content-box;
+	}
+}
+
+@each $breakpoint in config.$elementor-breakpoints {
+	body.elementor-device-#{$breakpoint},
+	body[data-elementor-device-mode="#{$breakpoint}"] {
+		@if $breakpoint == desktop {
+			$breakpoint: '';
+		} @else {
+			$breakpoint: -#{$breakpoint};
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--left {
+			&.inx-e--layout--inline ul.inx-e-icon-list__items {
+				justify-content: flex-start;
+			}
+
+			.inx-e-icon-list__item {
+				justify-content: flex-start;
+				text-align: left;
+			}
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--center {
+			&.inx-e--layout--inline ul.inx-e-icon-list__items {
+				justify-content: center;
+			}
+
+			.inx-e-icon-list__item {
+				justify-content: center;
+
+				&::after {
+					margin: auto;
+				}
+			}
+		}
+
+		.elementor-widget.inx-e#{$breakpoint}--align--right {
+			ul.inx-e-icon-list__items {
+				justify-content: flex-end;
+			}
+
+			.inx-e-icon-list__item {
+				justify-content: flex-end;
+				text-align: right;
+			}
+		}
+
+		@for $i from 2 through 4 {
+			.inx-form-element__options.inx-e#{$breakpoint}--columns--#{$i} {
+				.inx-form-element__option:nth-child(#{$i}n+1):nth-last-child(-n+#{$i}),
+				.inx-form-element__option:nth-child(#{$i}n+1):nth-last-child(-n+#{$i}) ~ li {
+					padding-bottom: 0 !important;
+				}
+			}
+		}
+	}
+}

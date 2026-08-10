@@ -78,6 +78,7 @@ class Property_Type_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
 				'content'     => __( 'The property type is rendered as breadcrumb trail with (optional) links to the related category overview/archive pages.', 'immonex-kickstart-for-elementor' ),
+				'dismissible' => true,
 			]
 		);
 
@@ -114,6 +115,8 @@ class Property_Type_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 					'archive' => __( 'Archive Page', 'immonex-kickstart-for-elementor' ),
 				],
 				'default'     => 'list',
+				'label_block' => true,
+				'separator'   => 'before',
 			]
 		);
 

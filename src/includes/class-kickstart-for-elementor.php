@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main plugin class.
  */
-class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_10_1\Base {
+class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_13_4\Base {
 
 	const PLUGIN_NAME                = 'immonex Kickstart for Elementor';
 	const ADDON_NAME                 = 'Elementor';
@@ -23,8 +23,8 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_10_1\B
 	const PLUGIN_PREFIX              = 'inxkickel_';
 	const PUBLIC_PREFIX              = 'inxkickel-';
 	const TEXTDOMAIN                 = 'immonex-kickstart-for-elementor';
-	const PLUGIN_VERSION             = '1.1.8';
-	const PLUGIN_VERSION_BYNAME      = 'Ice';
+	const PLUGIN_VERSION             = '1.4.0';
+	const PLUGIN_VERSION_BYNAME      = 'Crushed Ice';
 	const PLUGIN_HOME_URL            = 'https://immonex.dev/wordpress-immobilien-plugin/immonex-kickstart-for-elementor';
 	const PLUGIN_DOC_URLS            = [
 		'de' => 'https://docs.immonex.de/kickstart-for-elementor/',
@@ -148,7 +148,7 @@ class Kickstart_For_Elementor extends \immonex\WordPressFreePluginCore\V2_10_1\B
 			'fields'      => 'ids',
 			'meta_query'  => [
 				[
-					'key'     => '_inx_elementor_demo_content',
+					'key'     => '_inxkickel_demo_content',
 					'compare' => 'EXISTS',
 				],
 			],

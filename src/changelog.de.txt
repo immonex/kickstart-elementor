@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 1.4.0 "Crushed Ice" =
+* Veröffentlichungsdatum: 07.08.2026
+* Widget für Widerrufsformulare ergänzt.
+* Dynamische Aktualisierungen und konsistente Seitennavigation für Property-Loop-Ansichten umgesetzt.
+* Styling-Optionen diverser Widgets stark erweitert (insbesondere die des Suchformulars).
+* Neue Optionen zum URL-Dynamic-Tags hinzugefügt (Vor/Zurück und Erste/Letzte Immobilie).
+* Auswahl OpenImmo/Mapping-basierter Elemente im Elementor-Editor überarbeitet.
+* Diverse Detailoptimierungen (Handling, Performance, Kompatibilität) umgesetzt.
+* Abhängigkeiten und Übersetzungen aktualisiert.
+
 = 1.1.8 =
 * Veröffentlichungsdatum: 10.03.2026
 * Abhängigkeiten und Übersetzungen aktualisiert.

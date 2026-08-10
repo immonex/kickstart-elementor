@@ -22,7 +22,7 @@
 
 </div><div>
 
-Dieses Widget ermöglicht die Einbindung eines *Agenturprofils* – sowohl in Vorlageseiten/Templates von Immobilien-Detailseiten (→ Darstellungsart *Widget*) als auch in dedizierten Agentur-Detailseiten (→ *Vollansicht*).
+Dieses Widget ermöglicht die Einbindung eines *Agenturprofils* – sowohl in Vorlageseiten/Templates von Immobilien-Detailseiten (→ Darstellungsart *Widget*) als auch in dedizierten Agentur-Detailseiten (→ *Vollansicht*).
 
 Der Umfang ist variabel: Die kompaktere Widget-Ansicht enthält alle Agentur-Kontaktdaten inkl. Logo und Formular. Die Vollansicht umfasst (optional) zusätzlich Listen zugehöriger Kontaktpersonen und Immobilien sowie ein Impressum.
 

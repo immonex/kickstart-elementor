@@ -16,7 +16,7 @@
 
 <div class="two-column-layout"><div>
 
-![Screenshot: Marker-Konfiguration des Standortkarten-Widgets im Elementor-Editor](../assets/scst-widget-standortkarte-marker-konfiguration.png)
+![Screenshot: Marker-Konfiguration des Standortkarten-Widgets im Elementor-Editor](../assets/scst-widget-standortkarte-marker-konfiguration.webp)
 
 </div><div>
 

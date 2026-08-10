@@ -33,6 +33,8 @@ Mit der gleichnamigen Option können der Typ bzw. die Quelle der einzubindenden 
 
 Bei Auswahl letzterer Option können in einem zusätzlichen Eingabefeld (kommagetrennt) die **Namen** der benutzerdefinierten Felder (*Custom Fields*) hinterlegt werden, die die IDs der einzubindenden Medienanhang-Beiträge – wiederum in Form kommagetrennter Listen – enthalten.
 
+!> Die Lightbox-Optionen im Tab ***Stil*** beziehen sich nur auf [Kickstart-interne Lightbox-Funktion](https://docs.immonex.de/kickstart/#/schnellstart/einrichtung?id=lightbox) – sofern aktiv. Bei Verwendung der Elementor-Lightbox sollten alle Auswahloptionen hier auf *Standard* belassen werden.
+
 Alle Widget-Einstellungen entsprechen weitestgehend den [galeriebezogenen Attributen](https://docs.immonex.de/kickstart/#/komponenten/detailansicht?id=galerien) des Kickstart-Shortcodes für Immobilien-Detailseiten-Abschnitte, [`[inx-property-details]`](https://docs.immonex.de/kickstart/#/komponenten/detailansicht?id=detail-abschnitte-gruppierte-angaben).
 
 </div></div>

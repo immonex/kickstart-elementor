@@ -4,13 +4,15 @@ Sind alle [Systemanforderungen](systemanforderungen) erfüllt, kann das Plugin i
 
 Eine typische Immobilienmakler-Website enthält (mindestens) eine Übersichtsseite, die neben einer Liste der aktuellen Immobilienangebote üblicherweise auch Such- bzw. Filtermöglichkeiten sowie eine Karte mit Standortmarkern bietet. Jedes Angebot ist wiederum mit einer Objekt-Detailseite verlinkt.
 
-Je nachdem, ob nur das [Elementor-Basisplugin](https://de.wordpress.org/plugins/elementor/) oder auch die [Pro-Erweiterung](https://elementor.com/) genutzt werden, gibt es für die Erstellung der beiden hierfür benötigten Vorlagen (Übersicht und Detailseite) nach der [Installation](installation) und Aktivierung mehrere Möglichkeiten:
+Je nachdem, ob nur das [Elementor-Core-Plugin](https://de.wordpress.org/plugins/elementor/) oder auch die [Pro-Erweiterung](https://be.elementor.com/visit/?bta=229006&nci=5657) genutzt werden, gibt es für die Erstellung der beiden hierfür benötigten Vorlagen (Übersicht und Detailseite) nach der [Installation](installation) und Aktivierung mehrere Möglichkeiten, die nachfolgend beschrieben werden.
 
-## Elementor-Basisplugin
+?> Der erste [Import von Immobilienangeboten via OpenImmo-Schnittstelle](https://docs.immonex.de/kickstart/#/schnellstart/import) sollte bereits **vor** dem Anlegen der Templates erfolgen, um hierbei eine [Vorschau](/elementor-immobilien-widgets/einleitung?id=vorschau) anhand realer Daten zu ermöglichen. (Bei der Umsetzung der **Detailansichten** erlaubt Elementor Pro die Auswahl einer bestimmten Vorschau-Immobilie, bei der Core-Variante werden hierfür entsprechende Beispielinhalte verwendet.)
+
+## Elementor Core
 
 ### Seiten als Vorlagen
 
-Ist nur das Basisplugin im Einsatz, können die Vorlagen komplett in Form von regulären Seiten umgesetzt werden.
+Wird nur das Elementor-Basisplugin (Core) eingesetzt, können die Vorlagen in Form von regulären Seiten umgesetzt werden.
 
 1. ***Seiten → Seite hinzufügen***
 2. ***Mit Elementor bearbeiten*** wählen
@@ -94,7 +96,7 @@ Wurden bereits [Immobilienangebote via OpenImmo-Schnittstelle importiert](https:
 
 ## Elementor Pro
 
-Mit der Pro-Variante von Elementor können die o. g. Vorlagen **alternativ** auch als *Archiv- und Single-Post-Templates* der benutzerdefinierten Beitragsart (*Custom Post Type* oder kurz *CPT*) für Immobilien angelegt werden:
+Mit der Pro-Variante von Elementor sollten die o. g. Vorlagen als reguläre *Archiv- und Single-Post-Templates* der benutzerdefinierten Beitragsart (*Custom Post Type* oder kurz *CPT*) für Immobilien angelegt werden:
 
 1. ***Elementor → Editor → Templates / Gespeicherte Templates → Neues Template hinzufügen***
    - Template-Typ: *Archiv*

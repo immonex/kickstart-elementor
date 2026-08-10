@@ -153,7 +153,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\ForElementor\Compone
 				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .immonex-energy-scale > *:not(.immonex-energy-scale-remarks)' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .immonex-energy-scale > *:not(.immonex-energy-scale-remarks)' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -194,7 +194,7 @@ class Native_Energy_Scale_Widget extends \immonex\Kickstart\ForElementor\Compone
 				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .immonex-energy-scale-remarks' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .immonex-energy-scale-remarks' => 'color: {{VALUE}}',
 				],
 			]
 		);

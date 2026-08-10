@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+use immonex\Kickstart\ForElementor\Elementor_Bootstrap;
+
 /**
  * Elementor Single Property Native Head Widget
  *
@@ -65,11 +67,11 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 		$contents = $this->get_head_contents();
 
 		$text_style_sections = [
-			'labels'        => __( 'Labels', 'immonex-kickstart-for-elementor' ),
-			'type'          => __( 'Use/Property Type', 'immonex-kickstart-for-elementor' ),
-			'location'      => __( 'Address/Location', 'immonex-kickstart-for-elementor' ),
-			'primary-price' => __( 'Primary Price', 'immonex-kickstart-for-elementor' ),
-			'element-title' => __( 'Core Data', 'immonex-kickstart-for-elementor' ),
+			'labels'            => __( 'Labels', 'immonex-kickstart-for-elementor' ),
+			'type'              => __( 'Use/Property Type', 'immonex-kickstart-for-elementor' ),
+			'location'          => __( 'Address/Location', 'immonex-kickstart-for-elementor' ),
+			'primary-price'     => __( 'Primary Price', 'immonex-kickstart-for-elementor' ),
+			'core-data-element' => __( 'Core Data', 'immonex-kickstart-for-elementor' ),
 		];
 
 		$this->start_controls_section(
@@ -87,6 +89,7 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
+				'dismissible' => true,
 				'content'     => __( "The standard header contains the property's type, title, address and price as well as other core data and labels.", 'immonex-kickstart-for-elementor' ) .
 					'<br><br>' .
 					__( '<strong>Alternatively</strong>, these contens can also be inserted as separate elements.', 'immonex-kickstart-for-elementor' ),
@@ -99,13 +102,12 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 				[
 					'label'   => $label,
 					'type'    => \Elementor\Controls_Manager::SWITCHER,
-					'default' => 'yes',
+					'default' => $this->get_default( "show_{$key}", 'yes' ),
 				]
 			);
 		}
 
-		// phpcs:ignore
-		if ( apply_filters( 'inxkickel_is_addon_active', false, 'print' ) ) {
+		if ( apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-kickstart-print', Elementor_Bootstrap::MIN_REQ_VERSIONS['print'] ) ) {
 			$text_style_sections['print_link'] = __( 'Print/PDF Link', 'immonex-kickstart-for-elementor' );
 
 			$this->add_control(
@@ -127,21 +129,10 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'general_style_section',
+			'frame_style_section',
 			[
-				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
+				'label' => __( 'Frame', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_color',
-			[
-				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .inx-single-property__head' => 'color: {{VALUE}}',
-				],
 			]
 		);
 
@@ -163,7 +154,7 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 			'bg_transparent',
 			[
 				'type'      => \Elementor\Controls_Manager::HIDDEN,
-				'default'   => 'none',
+				'default'   => $this->get_default( 'bg_transparent', 'none' ),
 				'selectors' => [
 					'{{WRAPPER}} .inx-single-property__head' => 'background: {{VALUE}}',
 				],
@@ -184,6 +175,100 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 				'condition' => [
 					'background' => 'custom',
 				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'border_radius',
+			[
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-single-property__head' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'divider_style_section',
+			[
+				'label' => __( 'Dividing Lines', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'divider_color',
+			[
+				'label'       => __( 'Color', 'immonex-kickstart-for-elementor' ),
+				'description' => __( 'The <strong>default</strong> color for dividing lines can be adjusted in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::COLOR,
+				'selectors'   => [
+					'{{WRAPPER}} .inx-single-property__head hr' => 'color: {{VALUE}}; background-color: {{VALUE}}; border-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'divider_height',
+			[
+				'label'      => __( 'Height', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'default'    => $this->get_default(
+					'divider_height',
+					[
+						'size' => 1,
+						'unit' => 'px',
+					]
+				),
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'range'      => [
+					'px'  => [
+						'max' => 16,
+					],
+					'em'  => [
+						'min' => 0,
+						'max' => 2,
+					],
+					'rem' => [
+						'min' => 0,
+						'max' => 2,
+					],
+				],
+				'selectors'  => [ '{{WRAPPER}} .inx-single-property__head hr' => 'height: {{SIZE}}{{UNIT}}' ],
+			]
+		);
+
+		$this->add_responsive_control(
+			'divider_v_margin',
+			[
+				'label'      => __( 'Vertical Margin', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'default'    => $this->get_default(
+					'divider_v_margin',
+					[
+						'size' => 16,
+						'unit' => 'px',
+					],
+				),
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'range'      => [
+					'px'  => [
+						'max' => 64,
+					],
+					'em'  => [
+						'min' => 0,
+						'max' => 8,
+					],
+					'rem' => [
+						'min' => 0,
+						'max' => 8,
+					],
+				],
+				'selectors'  => [ '{{WRAPPER}} .inx-single-property__head hr' => 'margin: {{SIZE}}{{UNIT}} auto' ],
 			]
 		);
 
@@ -240,67 +325,142 @@ class Native_Head_Widget extends \immonex\Kickstart\ForElementor\Components\Widg
 				]
 			);
 
-			if ( 'labels' !== $key ) {
+			if ( 'labels' === $key ) {
 				$this->add_control(
-					"{$key}_color",
+					"{$key}_layout",
 					[
-						'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
-						'type'      => \Elementor\Controls_Manager::COLOR,
-						'selectors' => [
-							'print_link' === $key ?
-								'{{WRAPPER}} .inx-print-link-wrap__link' :
-								"{{WRAPPER}} .inx-single-property__{$class_key}" => 'color: {{VALUE}}',
+						'label'   => __( 'Layout', 'immonex-kickstart-for-elementor' ),
+						'type'    => \Elementor\Controls_Manager::CHOOSE,
+						'default' => $this->get_default( 'labels_layout', 'horizontal' ),
+						'options' => [
+							'vertical'   => [
+								'title' => __( 'Vertical', 'immonex-kickstart-for-elementor' ),
+								'icon'  => 'eicon-editor-list-ul',
+							],
+							'horizontal' => [
+								'title' => __( 'Horizontal', 'immonex-kickstart-for-elementor' ),
+								'icon'  => 'eicon-ellipsis-h',
+							],
 						],
 					]
 				);
+
+				$this->add_control(
+					"{$key}_vertical_layout",
+					[
+						'type'      => \Elementor\Controls_Manager::HIDDEN,
+						'default'   => '1',
+						'selectors' => [
+							"{{WRAPPER}} .inx-single-property__{$class_key}" => 'display: flex; flex-direction: column; align-items: end; row-gap: .2em',
+						],
+						'condition' => [
+							'labels_layout' => 'vertical',
+						],
+					]
+				);
+
+				$this->add_control(
+					"{$key}_border_radius",
+					[
+						'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+						'type'       => \Elementor\Controls_Manager::SLIDER,
+						'size_units' => [ 'px', '%' ],
+						'range'      => [
+							'px' => [
+								'max' => 16,
+							],
+							'%'  => [
+								'max' => 25,
+							],
+						],
+						'selectors'  => [
+							"{{WRAPPER}} .inx-single-property__{$class_key} .inx-property-label" => 'border-radius: {{SIZE}}{{UNIT}}',
+						],
+					]
+				);
+
+				$this->add_group_control(
+					\Elementor\Group_Control_Box_Shadow::get_type(),
+					[
+						'name'     => "{$key}_box_shadow",
+						'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+						'selector' => "{{WRAPPER}} .inx-single-property__{$class_key} .inx-property-label",
+					]
+				);
+
+				$this->add_control(
+					"{$key}_bg_color",
+					[
+						'label'       => __( 'Color', 'immonex-kickstart-for-elementor' ),
+						'type'        => \Elementor\Controls_Manager::COLOR,
+						'description' => __( 'The label colors can be customized in the Kickstart plugin options. <strong>If required</strong>, an alternative uniform color for all labels of this element can be selected here.', 'immonex-kickstart-for-elementor' ),
+						'selectors'   => [
+							"{{WRAPPER}} .inx-single-property__{$class_key} .inx-property-label" => 'background: {{VALUE}};',
+						],
+						'separator'   => 'before',
+					]
+				);
+			}
+
+			if ( 'labels' === $key ) {
+				$text_color_selector = "{{WRAPPER}} .inx-single-property__{$class_key} .inx-property-label";
+			} elseif ( 'print_link' === $key ) {
+				$text_color_selector = '{{WRAPPER}} .inxkickpr-link-wrap__link';
+			} else {
+				$text_color_selector = "{{WRAPPER}} .inx-single-property__{$class_key}";
+			}
+
+			$this->add_control(
+				"{$key}_color",
+				[
+					'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+					'type'      => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						$text_color_selector => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			switch ( $key ) {
+				case 'print_link':
+					$selector = '{{WRAPPER}} .inxkickpr-link-wrap__link, '
+						. '{{WRAPPER}} .inxkickpr-link-wrap__link svg';
+					break;
+				case 'core-data-element':
+					$selector = "{{WRAPPER}} .inx-single-property__{$class_key}, " .
+						'{{WRAPPER}} .inx-single-property__head-elements:last-child > div, ' .
+						"{{WRAPPER}} .inx-single-property__{$class_key} [class^=\"flaticon-\"]::before, " .
+						'{{WRAPPER}} .inx-single-property__head-elements:last-child > div [class^=\"flaticon-\"]::before';
+					break;
+				default:
+					$selector = "{{WRAPPER}} .inx-single-property__{$class_key}, " .
+						"{{WRAPPER}} .inx-single-property__{$class_key} [class^=\"flaticon-\"]::before";
+					break;
 			}
 
 			$this->add_group_control(
 				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name'     => "{$key}_typography",
-					'selector' => 'print_link' === $key ?
-						'{{WRAPPER}} .inx-print-link-wrap__link' :
-						"{{WRAPPER}} .inx-single-property__{$class_key}",
+					'selector' => $selector,
 				]
 			);
 
-			if ( 'print_link' === $key ) {
+			if ( in_array( $key, [ 'location', 'core-data-element', 'print_link' ], true ) ) {
 				$this->add_control(
-					'print_link_icon_color',
+					"{$key}_icon_color",
 					[
 						'label'     => __( 'Icon Color', 'immonex-kickstart-for-elementor' ),
 						'type'      => \Elementor\Controls_Manager::COLOR,
-						'selectors' => [
-							'{{WRAPPER}} .inx-single-property__head .inx-print-link-wrap__link svg' => 'color: {{VALUE}}',
-						],
+						'selectors' => 'print_link' === $key ?
+							[ '{{WRAPPER}} .inx-single-property__head .inxkickpr-link-wrap__link svg' => 'color: {{VALUE}}' ] :
+							[ "{{WRAPPER}} .inx-single-property__{$class_key} [class^=\"flaticon-\"]::before" => 'color: {{VALUE}}' ],
 					]
 				);
 			}
 
 			$this->end_controls_section();
 		}
-
-		$this->start_controls_section(
-			'icons_section',
-			[
-				'label' => __( 'Icons', 'immonex-kickstart-for-elementor' ),
-				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'icon_color',
-			[
-				'label'     => __( 'Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .inx-single-property__head .inx-core-detail-icon' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'extended_style_section',

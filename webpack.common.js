@@ -7,7 +7,8 @@ module.exports = {
   entry: {
     ...{
         frontend: './src/js/frontend.js',
-        'elementor-editor': './src/js/elementor-editor.js'
+        'elementor-editor': './src/js/elementor-editor.js',
+        'extended-select2': './src/js/controls/extended-select2.js'
     },
     ...glob.sync('./src/skins/**/js/index.js', { dotRelative: true }).reduce((acc, path) => {
         let entry = path.replace('./src/skins/', '../../skins/')

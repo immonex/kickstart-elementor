@@ -44,6 +44,7 @@ Beim Kontaktformular kann zwischen einer einfachen (Name, Telefon, E-Mail-Adress
 
 ## Siehe auch
 
+- Widget: [Kontaktformular-Bestätigungsmeldung 🄽](kontaktformular-bestaetigungsmeldung)
 - [Kontaktpersonen-Details](https://docs.immonex.de/kickstart-team/#/komponenten/kontaktpersonen-details) (immonex Kickstart Team)
 - Plugin: [immonex Kickstart Team](https://de.wordpress.org/plugins/immonex-kickstart-team/) (→ [Dokumentation](https://docs.immonex.de/kickstart-team/))
 

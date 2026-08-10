@@ -112,6 +112,262 @@ class Native_Agent_List_Widget extends \immonex\Kickstart\ForElementor\Component
 			],
 			[ 'authors' => [ 'separator' => 'before' ] ]
 		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_grid_style',
+			[
+				'label' => __( 'Grid', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'column_width',
+			[
+				'label'      => __( 'Column Width', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'      => [
+					'px' => [
+						'min' => 180,
+						'max' => 1200,
+					],
+				],
+				'selectors'  => [ '{{WRAPPER}} .inx-team-agent-list__item-wrap' => 'width: {{SIZE}}{{UNIT}}' ],
+			]
+		);
+
+		$this->add_responsive_control(
+			'grid_element_gap',
+			[
+				'label'      => _x( 'Gap', 'distance between grid elements', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'      => [
+					'px' => [
+						'max' => 64,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-team-agent-list__item-wrap' => 'padding-left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} * + .uk-grid-margin, .uk-grid + .uk-grid, .uk-grid > .uk-grid-margin' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .inx-team-agent-list > .uk-grid' => 'margin-left: -{{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_agent_tile_frame_style',
+			[
+				'label' => _x( 'Agent Tile', 'real estate property', 'immonex-kickstart-for-elementor' ) .
+					' (' . __( 'Frame', 'immonex-kickstart-for-elementor' ) . ')',
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name'      => 'agent_tile_field_border',
+				'selector'  => '{{WRAPPER}} .inx-team-agent-list-item',
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'agent_tile_border_radius',
+			[
+				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-team-agent-list-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'agent_tile_box_shadow_type',
+			[
+				'label'     => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::SELECT,
+				'options'   => [
+					''         => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'disabled' => __( 'Disabled', 'immonex-kickstart-for-elementor' ),
+					'custom'   => __( 'Custom', 'immonex-kickstart-for-elementor' ),
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'agent_tile_remove_native_box_shadow',
+			[
+				'type'      => \Elementor\Controls_Manager::HIDDEN,
+				'default'   => '1',
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-agent-list-item' => 'box-shadow: none',
+				],
+				'condition' => [
+					'agent_tile_box_shadow_type' => 'disabled',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'      => 'agent_tile_box_shadow',
+				'label'     => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ) .
+					' (' . __( 'Custom', 'immonex-kickstart-for-elementor' ) . ')',
+				'selector'  => '{{WRAPPER}} .inx-team-agent-list-item',
+				'condition' => [
+					'agent_tile_box_shadow_type' => 'custom',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_body_style',
+			[
+				'label' => __( 'Body', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'body_padding',
+			[
+				'label'      => __( 'Padding', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default'    => [
+					'unit'     => 'px',
+					'isLinked' => true,
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-team-agent-list-item__body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'body_bg_color',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-agent-list-item > div' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'body_text_icon_color',
+			[
+				'label'     => __( 'Text/Icon Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-agent-list-item__body' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'body_link_color',
+			[
+				'label'       => __( 'Link Color', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::COLOR,
+				'description' => wp_sprintf(
+					/* translators: %1$s = color type, e.g. "all action elements"; %2$s = plugin options tab URL */
+					__( 'Instead of selecting an <strong>element-related</strong> color here, setting a <strong>global</strong> color for <strong>%1$s</strong> in the <a href="%2$s" target="_blank">Kickstart plugin options</a> makes more sense in most cases.', 'immonex-kickstart-for-elementor' ),
+					__( 'all action elements', 'immonex-kickstart-for-elementor' ),
+					admin_url( 'admin.php?page=immonex-kickstart_settings&section_tab=3' )
+				),
+				'selectors'   => [
+					'{{WRAPPER}} .inx-team-agent-list-item__body a' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name'     => 'body_typography',
+				'selector' => '{{WRAPPER}} .inx-team-agent-list-item__body',
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_footer_style',
+			[
+				'label' => __( 'Footer', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'footer_height',
+			[
+				'label'      => __( 'Height', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range'      => [
+					'px' => [
+						'min' => 16,
+						'max' => 64,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-team-agent-list-item__footer' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .inx-team-agent-list-item:not(.inx-team-agency-list-item--no-footer)' => 'padding-bottom: {{SIZE}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'footer_bg_color',
+			[
+				'label'       => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::COLOR,
+				'description' => wp_sprintf(
+					/* translators: %1$s = color type, e.g. "all action elements"; %2$s = plugin options tab URL */
+					__( 'Instead of selecting an <strong>element-related</strong> color here, setting a <strong>global</strong> color for <strong>%1$s</strong> in the <a href="%2$s" target="_blank">Kickstart plugin options</a> makes more sense in most cases.', 'immonex-kickstart-for-elementor' ),
+					__( 'all background elements', 'immonex-kickstart-for-elementor' ),
+					admin_url( 'admin.php?page=immonex-kickstart_settings&section_tab=3' )
+				),
+				'selectors'   => [
+					'{{WRAPPER}} .inx-team-agent-list-item__footer .inx-link.inx-gradient--type--action' => 'background: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'footer_link_color',
+			[
+				'label'     => __( 'Link Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-agent-list-item__footer .inx-link' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name'     => 'footer_typography',
+				'selector' => '{{WRAPPER}} .inx-team-agent-list-item__footer',
+			]
+		);
 	} // register_controls
 
 	/**

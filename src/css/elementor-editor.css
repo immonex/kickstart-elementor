@@ -2,3 +2,10 @@
 	position: inherit;
 	color: inherit;
 }
+
+.dialog-message .elementor-control-field-description {
+	font-size: 11px;
+	font-style: italic;
+	line-height: 1.4;
+	color: var(--e-a-color-txt-muted);
+}

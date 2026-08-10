@@ -87,9 +87,28 @@ class Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Wid
 		$this->add_control(
 			'format_ctext',
 			[
-				'label'   => __( 'Format Continuous Text', 'immonex-kickstart-for-elementor' ),
-				'type'    => \Elementor\Controls_Manager::SWITCHER,
-				'default' => static::DEFAULT_CTEXT_FORMATTING_STATE,
+				'label'     => __( 'Format Continuous Text', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::SWITCHER,
+				'default'   => static::DEFAULT_CTEXT_FORMATTING_STATE,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'link_conversion',
+			[
+				'label'       => __( 'Link Conversion', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::SELECT,
+				'description' => __( 'Convert URLs and/or email addresses in description texts into links.', 'immonex-kickstart-for-elementor' ),
+				'options'     => [
+					''           => __( 'none', 'immonex-kickstart-for-elementor' ),
+					'full'       => __( 'yes, including email addresses and video URLs', 'immonex-kickstart-for-elementor' ),
+					'incl_email' => __( 'yes, including email adresses', 'immonex-kickstart-for-elementor' ),
+					'incl_video' => __( 'yes, including video URLs', 'immonex-kickstart-for-elementor' ),
+				],
+				'default'     => 'incl_email',
+				'label_block' => true,
+				'separator'   => 'after',
 			]
 		);
 
@@ -184,8 +203,14 @@ class Desc_Widget extends \immonex\Kickstart\ForElementor\Components\Widgets\Wid
 			return false;
 		}
 
+		if ( $settings['link_conversion'] ) {
+			$convert_email = in_array( $settings['link_conversion'], [ 'full', 'incl_email' ], true );
+			$convert_video = in_array( $settings['link_conversion'], [ 'full', 'incl_video' ], true );
+			$desc          = $utils['string']->convert_urls( $desc, $convert_email, $convert_video );
+		}
+
 		if ( 'yes' === $settings['format_ctext'] ) {
-			$desc = apply_filters( 'inx_the_content', $utils['string']->convert_urls( $desc ) ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
+			$desc = apply_filters( 'inx_the_content', $desc ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 		}
 
 		return ! empty( $desc ) ?

@@ -288,7 +288,7 @@ class Basic_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .gallery-item .gallery-caption' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .gallery-item .gallery-caption' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'gallery_display_caption' => '',

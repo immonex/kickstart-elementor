@@ -33,8 +33,11 @@ if (settings.heading) {
 			false;
 
 		const items = element.format in contents.items ? contents.items[element.format] : contents.items['generic'];
+		console.log(element)
 
 		_.each(items, function(item) {
+			console.log(element)
+			const label = element.alternative_label || item.title
 			const value = element.decimal_places && typeof item.value === 'object' && element.decimal_places in item.value ?
 				item.value[element.decimal_places] : item.value;
 			#>
@@ -49,7 +52,7 @@ if (settings.heading) {
 					</span>
 					<# } #>
 					<# if (show.includes('label')) { #>
-					<span class="inx-e-key-value-list__label">{{{ item.title }}}</span>
+					<span class="inx-e-key-value-list__label">{{{ label }}}</span>
 					<# } #>
 					<# if (show.includes('value')) { #>
 					<span class="inx-e-key-value-list__value">

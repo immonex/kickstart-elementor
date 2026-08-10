@@ -2,8 +2,8 @@
 Contributors: immonex
 Tags: realestate, elementor, immobilien, immobilienmakler, openimmo
 Requires at least: 6.5
-Tested up to: 7.0
-Stable Tag: 1.1.8
+Tested up to: 7.1
+Stable Tag: 1.4.0
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ This **add-on plugin** extends [immonex Kickstart](https://wordpress.org/plugins
 
 The focus here is on the presentation of real estate offers, the data of which is managed using a common software solution for real estate agents and continuously synchronized via an OpenImmo® XML interface with [immonex OpenImmo2WP](https://plugins.inveris.de/wordpress-plugins/immonex-openimmo2wp) ([Doc](https://docs.immonex.de/openimmo2wp/)) on the WP import side.
 
-All widgets can be used in full with the **free Elementor version**. [Elementor Pro](https://elementor.com/products/website-builder/) is only required for using the *dynamic tags*.
+All widgets can be used in full with the **free Elementor version (Core)**. [Elementor Pro](https://elementor.com/products/website-builder/) is only required for using the *dynamic tags*.
 
 The plugin supports both Kickstart's basic frontend components – property list and detail views, search form, image/video galleries, maps, 360° tours ... – and those of its add-ons like [Team](https://wordpress.org/plugins/immonex-kickstart-team/) (contact persons, agencies, inquiry forms etc.) and *Print* (PDF exposé generation).
 
@@ -76,7 +76,7 @@ Optional plugins (additional functions and frontend elements):
 immonex Kickstart for Elementor is available in the official [WordPress Plugin Directory](https://wordpress.org/plugins/) and can be installed via the WordPress backend.
 
 1. *Plugins > Add New > Search for "immonex" ...* [1]
-2. Elementor Pro only: Enable Properties and optionally Agencies/Agents under *Elementor > Editor > Settings > Post Types*
+2. Elementor Pro only: Enable Properties and optionally Agencies/Agents under *Elementor > Editor > Settings > Post Types*.
 3. Create property list and detail view templates with the Elementor Editor [3].
 4. Assign templates under *immonex > Settings > Lists (Property Overview)* and *... > Detail View (Property Details Page)*: previously created pages (free Elementor version) or "none (use **theme** template)" (Elementor Pro).
 
@@ -113,6 +113,16 @@ immonex Kickstart for Elementor is free software. Sources, development docs/supp
 
 == Changelog ==
 
+= 1.4.0 "Crushed Ice" =
+* Release date: 2026-08-07
+* Added widget for withdrawal forms.
+* Implemented dynamic updates and consistent pagination for property loop views.
+* Significantly extended styling options of various widgets (especially those of the search form).
+* Added previous/next and first/last property options to the URL dynamic tag.
+* Reworked the OpenImmo/mapping based element selection in the Elementor editor.
+* Implemented various detail optimizations (handling, performance, compatibility).
+* Updated dependencies.
+
 = 1.1.8 =
 * Release date: 2026-03-10
 * Updated dependencies and translations.
@@ -122,15 +132,5 @@ immonex Kickstart for Elementor is free software. Sources, development docs/supp
 * Reworked widget preview data selection.
 * Adjusted internal widget folder structure and prefixes.
 * Updated dependencies.
-
-= 1.1.0 =
-* Release date: 2026-02-17
-* Added a dynamic tag for property and backlink URLs.
-* Improved Elementor Pro related query, cache and preview processing.
-* Updated dependencies.
-
-= 1.0.0 "Ice" =
-* Release date: 2026-01-30
-* Initial release.
 
 See changelog.txt for the complete version history.

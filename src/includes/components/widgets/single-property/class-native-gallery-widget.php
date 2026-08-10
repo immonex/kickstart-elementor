@@ -150,29 +150,6 @@ class Native_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\W
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'general_style_section',
-			[
-				'label' => __( 'General', 'immonex-kickstart-for-elementor' ),
-				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'enable_gallery_image_links',
-			[
-				'label'        => __( 'Image Links', 'immonex-kickstart-for-elementor' ),
-				'type'         => \Elementor\Controls_Manager::SWITCHER,
-				'description'  => __( 'Enable full size/lightbox link for the currently displayed image.', 'immonex-kickstart-for-elementor' ),
-				'default'      => '1',
-				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
-				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
-				'return_value' => '1',
-			]
-		);
-
-		$this->end_controls_section();
-
-		$this->start_controls_section(
 			'animation_style_section',
 			[
 				'label' => __( 'Animation', 'immonex-kickstart-for-elementor' ),
@@ -228,6 +205,107 @@ class Native_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\W
 					'enable_ken_burns_effect' => '1',
 				],
 				'label_block' => true,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'image_links_lightbox_style_section',
+			[
+				'label' => __( 'Image Links', 'immonex-kickstart-for-elementor' ) . ' / ' .
+					__( 'Lightbox', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'enable_gallery_image_links',
+			[
+				'label'        => __( 'Image Links', 'immonex-kickstart-for-elementor' ),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'description'  => __( 'Enable full size/lightbox link for the currently displayed image.', 'immonex-kickstart-for-elementor' ),
+				'default'      => '1',
+				'label_off'    => __( 'Off', 'immonex-kickstart-for-elementor' ),
+				'label_on'     => __( 'On', 'immonex-kickstart-for-elementor' ),
+				'return_value' => '1',
+			]
+		);
+
+		$this->add_control(
+			'lightbox_options_notice',
+			[
+				'type'        => \Elementor\Controls_Manager::NOTICE,
+				'notice_type' => 'warning',
+				'dismissible' => true,
+				'content'     => __( 'The following options apply exclusively to the <strong>Kickstart Lightbox</strong> (see plugin options) and should be left at "Standard" if the Elementor Lightbox is being used.', 'immonex-kickstart-for-elementor' ),
+			]
+		);
+
+		$this->add_control(
+			'lightbox_animation',
+			[
+				'label'     => __( 'Transition Animation', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::SELECT,
+				'options'   => [
+					''      => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'slide' => 'Slide',
+					'fade'  => 'Fade',
+					'scale' => 'Scale',
+				],
+				'condition' => [
+					'enable_gallery_image_links' => '1',
+				],
+			]
+		);
+
+		$this->add_control(
+			'lightbox_nav',
+			[
+				'label'     => __( 'Navigation', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::SELECT,
+				'options'   => [
+					''         => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'thumbnav' => 'Thumbnails',
+					'dotnav'   => __( 'Dots', 'immonex-kickstart-for-elementor' ),
+					'false'    => __( 'None', 'immonex-kickstart-for-elementor' ),
+				],
+				'condition' => [
+					'enable_gallery_image_links' => '1',
+				],
+			]
+		);
+
+		$this->add_control(
+			'enable_lightbox_counter',
+			[
+				'label'       => __( 'Counter', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::SELECT,
+				'description' => __( 'Display a counter with the current and the total number of images.', 'immonex-kickstart-for-elementor' ),
+				'options'     => [
+					''  => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'1' => __( 'Yes', 'immonex-kickstart-for-elementor' ),
+					'0' => __( 'No', 'immonex-kickstart-for-elementor' ),
+				],
+				'condition'   => [
+					'enable_gallery_image_links' => '1',
+				],
+			]
+		);
+
+		$this->add_control(
+			'enable_lightbox_caption',
+			[
+				'label'     => __( 'Image Captions', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::SELECT,
+				'options'   => [
+					''    => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'yes' => __( 'Yes', 'immonex-kickstart-for-elementor' ),
+					'no'  => __( 'No', 'immonex-kickstart-for-elementor' ),
+				],
+				'condition' => [
+					'enable_gallery_image_links' => '1',
+				],
 			]
 		);
 
@@ -322,8 +400,8 @@ class Native_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\W
 			[
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
+				'dismissible' => true,
 				'content'     => __( 'The following options must only be adjusted <strong>per widget</strong> in special cases. The global defaults for all galleries can be defined in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
-				'scope'       => [ 'tax_filters' ],
 			]
 		);
 
@@ -415,6 +493,10 @@ class Native_Gallery_Widget extends \immonex\Kickstart\ForElementor\Components\W
 			'animation_type',
 			'allow',
 			'ken_burns_effect_display_mode',
+			'lightbox_animation',
+			'lightbox_nav',
+			'enable_lightbox_counter',
+			'enable_lightbox_caption',
 		];
 
 		foreach ( $ext_controls as $control ) {

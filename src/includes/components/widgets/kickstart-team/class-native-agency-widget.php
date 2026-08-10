@@ -111,25 +111,6 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 
 		$element_options_json = wp_json_encode( $element_options );
 
-		$text_style_sections = [
-			'text_general'     => [
-				'label' => __( 'Text in General', 'immonex-kickstart-for-elementor' ),
-				'class' => '.inx-team-single-agency',
-			],
-			'company'          => [
-				'label' => __( 'Company', 'immonex-kickstart-for-elementor' ),
-				'class' => '.inx-team-single-agency__company, .inx-team-single-agency__element--type--company .inx-team-single-agency__element-value',
-			],
-			'contact_elements' => [
-				'label' => __( 'Contact Data Elements', 'immonex-kickstart-for-elementor' ),
-				'class' => '.inx-team-single-agency__element-value',
-			],
-			'consent'          => [
-				'label' => __( 'Consent Texts', 'immonex-kickstart-for-elementor' ),
-				'class' => '.inx-team-contact-form__consent-text',
-			],
-		];
-
 		$this->start_controls_section(
 			'general_content_section',
 			[
@@ -179,7 +160,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			],
 		];
 
-		$this->add_default_controls( [ 'heading' ], $default_control_args );
+		$this->add_default_controls( [ 'heading' ], $default_control_args, false );
 
 		$this->add_control(
 			'contact_form_scope',
@@ -275,6 +256,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				'condition'   => [
 					'use_default_elements' => '',
 				],
+				'dismissible' => true,
 			]
 		);
 
@@ -327,6 +309,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				'condition'   => [
 					'use_default_elements' => '',
 				],
+				'dismissible' => true,
 			]
 		);
 
@@ -395,7 +378,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				],
 				'heading_title_color'   => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__title' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .inx-team-single-agency__title' => 'color: {{VALUE}}',
 					],
 				],
 				'heading_typography'    => [
@@ -412,11 +395,27 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 						'{{WRAPPER}} .inx-team-single-agency__title' => 'mix-blend-mode: {{VALUE}}',
 					],
 				],
-			],
-			false
+			]
 		);
 
-		$this->end_controls_section();
+		$text_style_sections = [
+			'text_general'     => [
+				'label' => 'Text (' . __( 'General', 'immonex-kickstart-for-elementor' ) . ')',
+				'class' => '.inx-team-single-agency',
+			],
+			'company'          => [
+				'label' => __( 'Company', 'immonex-kickstart-for-elementor' ),
+				'class' => '.inx-team-single-agency__company, .inx-team-single-agency__element--type--company .inx-team-single-agency__element-value',
+			],
+			'contact_elements' => [
+				'label' => __( 'Contact Data Elements', 'immonex-kickstart-for-elementor' ),
+				'class' => '.inx-team-single-agency__element-value',
+			],
+			'consent'          => [
+				'label' => __( 'Consent Texts', 'immonex-kickstart-for-elementor' ),
+				'class' => '.inx-team-contact-form__consent-text',
+			],
+		];
 
 		foreach ( $text_style_sections as $key => $section_data ) {
 			$this->start_controls_section(
@@ -501,31 +500,6 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__input > input::placeholder, {{WRAPPER}} .inx-team-contact-form__input > textarea::placeholder' => 'color: {{VALUE}}',
 				],
-				'separator' => 'after',
-			]
-		);
-
-		$this->add_control(
-			'field_border_color',
-			[
-				'label'     => __( 'Border Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'field_border_radius',
-			[
-				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
-				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', 'rem' ],
-				'selectors'  => [
-					'{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator'  => 'after',
 			]
 		);
 
@@ -548,6 +522,35 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			]
 		);
 
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name'     => 'field_shadow',
+				'selector' => '{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name'      => 'field_border',
+				'selector'  => '{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea',
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'field_border_radius',
+			[
+				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-team-contact-form__input > input, {{WRAPPER}} .inx-team-contact-form__input > textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -561,9 +564,15 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 		$this->add_control(
 			'submit_button_bg_color',
 			[
-				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
+				'label'       => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::COLOR,
+				'description' => wp_sprintf(
+					/* translators: %1$s = color type, e.g. "all action elements"; %2$s = plugin options tab URL */
+					__( 'Instead of selecting an <strong>element-related</strong> color here, setting a <strong>global</strong> color for <strong>%1$s</strong> in the <a href="%2$s" target="_blank">Kickstart plugin options</a> makes more sense in most cases.', 'immonex-kickstart-for-elementor' ),
+					__( 'all action elements', 'immonex-kickstart-for-elementor' ),
+					admin_url( 'admin.php?page=immonex-kickstart_settings&section_tab=3' )
+				),
+				'selectors'   => [
 					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled)' => 'background-color: {{VALUE}}',
 				],
 			]
@@ -577,31 +586,6 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				'selectors' => [
 					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled):hover' => 'background-color: {{VALUE}}',
 				],
-				'separator' => 'after',
-			]
-		);
-
-		$this->add_control(
-			'submit_button_border_color',
-			[
-				'label'     => __( 'Border Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled)' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'submit_button_border_radius',
-			[
-				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
-				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', 'rem' ],
-				'selectors'  => [
-					'{{WRAPPER}} .inx-team-contact-form__submit' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator'  => 'after',
 			]
 		);
 
@@ -621,6 +605,59 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 			[
 				'name'     => 'submit_button_typography',
 				'selector' => '{{WRAPPER}} .inx-team-contact-form__submit',
+			]
+		);
+
+		$this->add_control(
+			'submit_button_border_color',
+			[
+				'label'     => __( 'Border Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-contact-form__submit:not(:disabled)' => 'border-color: {{VALUE}}',
+				],
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name'     => 'submit_button_border',
+				'selector' => '{{WRAPPER}} .inx-team-contact-form__submit',
+			]
+		);
+
+		$this->add_responsive_control(
+			'submit_button_border_radius',
+			[
+				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-team-contact-form__submit' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'submit_button_box_shadow',
+				'selector' => '{{WRAPPER}} .inx-team-contact-form__submit',
+			]
+		);
+
+		$this->add_control(
+			'submit_button_secure_icon',
+			[
+				'label'        => __( 'Hide "Secure" Icon', 'immonex-kickstart-for-elementor' ),
+				'type'         => \Elementor\Controls_Manager::SWITCHER,
+				'return_value' => '0',
+				'selectors'    => [
+					'{{WRAPPER}} .inx-team-contact-form__input--name--submit > div:first-child' => 'opacity: {{VALUE}}',
+				],
+				'separator'    => 'before',
 			]
 		);
 
@@ -645,7 +682,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 				],
 				'heading_title_color'   => [
 					'selectors' => [
-						'{{WRAPPER}} .inx-team-single-agency__list-headline' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .inx-team-single-agency__list-headline' => 'color: {{VALUE}}',
 					],
 				],
 				'heading_typography'    => [
@@ -668,7 +705,7 @@ class Native_Agency_Widget extends \immonex\Kickstart\ForElementor\Components\Wi
 
 		$this->end_controls_section();
 
-		$this->add_default_controls( [ 'list_element_style' ] );
+		$this->add_default_controls( [ 'agent_list_grid', 'property_list_grid', 'list_element_style', 'list_labels_style' ] );
 	} // register_controls
 
 	/**

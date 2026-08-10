@@ -660,12 +660,12 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 		}
 
 		$all_controls = [
-			'heading'                    => [
+			'heading'                               => [
 				'label' => __( 'Heading', 'immonex-kickstart-for-elementor' ),
 				'type'  => \Elementor\Controls_Manager::TEXT,
 				'scope' => [ 'heading' ],
 			],
-			'heading_level'              => [
+			'heading_level'                         => [
 				'label'   => __( 'H Level (relative)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'options' => [
@@ -679,12 +679,12 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'default' => static::DEFAULT_HEADING_LEVEL,
 				'scope'   => [ 'heading' ],
 			],
-			'heading_style_section'      => [
+			'heading_style_section'                 => [
 				'label' => __( 'Heading', 'immonex-kickstart-for-elementor' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 				'scope' => [ 'heading_style' ],
 			],
-			'heading_align'              => [
+			'heading_align'                         => [
 				'label'         => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
 				'type'          => \Elementor\Controls_Manager::CHOOSE,
 				'options'       => [
@@ -709,16 +709,16 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'is_responsive' => false,
 				'scope'         => [ 'heading_style' ],
 			],
-			'heading_title_color'        => [
+			'heading_title_color'                   => [
 				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .inx-e-heading' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .inx-single-property__section-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .inx-e-heading' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .inx-single-property__section-title' => 'color: {{VALUE}}',
 				],
 				'scope'     => [ 'heading_style' ],
 			],
-			'heading_typography'         => [
+			'heading_typography'                    => [
 				'group_control' => [
 					'label'   => __( 'Typograhy', 'immonex-kickstart-for-elementor' ),
 					'type'    => \Elementor\Group_Control_Typography::get_type(),
@@ -728,7 +728,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				],
 				'scope'         => [ 'heading_style' ],
 			],
-			'heading_text_stroke'        => [
+			'heading_text_stroke'                   => [
 				'group_control' => [
 					'label'   => __( 'Text Stroke', 'immonex-kickstart-for-elementor' ),
 					'type'    => \Elementor\Group_Control_Text_Stroke::get_type(),
@@ -738,7 +738,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				],
 				'scope'         => [ 'heading_style' ],
 			],
-			'heading_text_shadow'        => [
+			'heading_text_shadow'                   => [
 				'group_control' => [
 					'type'    => \Elementor\Group_Control_Text_Shadow::get_type(),
 					'options' => [
@@ -748,7 +748,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				],
 				'scope'         => [ 'heading_style' ],
 			],
-			'blend_mode'                 => [
+			'blend_mode'                            => [
 				'label'     => __( 'Blend Mode', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
@@ -772,7 +772,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				],
 				'scope'     => [ 'heading_style' ],
 			],
-			'limit'                      => [
+			'limit'                                 => [
 				'label'       => __( 'Post Limit', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
 				'description' => __( 'Maximum <strong>total</strong> number of displayed posts.', 'immonex-kickstart-for-elementor' ),
@@ -781,7 +781,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'default'     => 0,
 				'scope'       => [ 'lists', 'overview_map' ],
 			],
-			'limit-page'                 => [
+			'limit-page'                            => [
 				'label'       => __( 'Page Limit', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::NUMBER,
 				'description' => __( 'Number of displayed posts <strong>per page</strong> unless a maximum number has been specified.', 'immonex-kickstart-for-elementor' ),
@@ -791,7 +791,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'condition'   => [ 'limit' => [ 0, '' ] ],
 				'scope'       => [ 'lists' ],
 			],
-			'authors'                    => [
+			'authors'                               => [
 				'label'       => __( 'Authors Filter', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT2,
 				'description' => __( 'Show/Hide only posts of selected authors.', 'immonex-kickstart-for-elementor' ),
@@ -800,7 +800,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'scope'       => [ 'authors' ],
 			],
-			'exclude_authors'            => [
+			'exclude_authors'                       => [
 				'label'       => __( 'Exclude Authors', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
 				'description' => __( 'Exclude posts of selected authors instead of explicitely including them.', 'immonex-kickstart-for-elementor' ),
@@ -815,7 +815,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				],
 				'scope'       => [ 'authors' ],
 			],
-			'order'                      => [
+			'order'                                 => [
 				'label'       => __( 'Order', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
@@ -830,7 +830,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'scope'       => [ 'team_common' ],
 			],
-			'order_dir'                  => [
+			'order_dir'                             => [
 				'label'     => __( 'Sort Direction', 'immonex-kickstart-for-elementor' ),
 				'type'      => \Elementor\Controls_Manager::SELECT,
 				'options'   => [
@@ -841,7 +841,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'condition' => [ 'order!' => '' ],
 				'scope'     => [ 'team_common' ],
 			],
-			'demo'                       => [
+			'demo'                                  => [
 				'label'       => __( 'Demo', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'description' => __( 'Display posts that are marked as demo content.', 'immonex-kickstart-for-elementor' ),
@@ -853,13 +853,13 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				],
 				'scope'       => [ 'team_common' ],
 			],
-			'tax_filter_notice'          => [
+			'tax_filter_notice'                     => [
 				'type'        => \Elementor\Controls_Manager::NOTICE,
 				'notice_type' => 'warning',
 				'content'     => __( 'Add comma-separated <strong>taxonomy term slugs</strong> in the following fields to explicitely include (e.g. "houses, flats") or exclude (e.g. "-lots") related properties.', 'immonex-kickstart-for-elementor' ),
 				'scope'       => [ 'tax_filters' ],
 			],
-			'min-rooms'                  => [
+			'min-rooms'                             => [
 				'label'   => __( 'Minimum Rooms (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'min'     => 0,
@@ -867,7 +867,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'default' => 0,
 				'scope'   => [ 'cf_filters' ],
 			],
-			'min-area'                   =>
+			'min-area'                              =>
 			[
 				'label'   => __( 'Minimum Area (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
@@ -876,26 +876,26 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'default' => 0,
 				'scope'   => [ 'cf_filters' ],
 			],
-			'price_min'                  => [
+			'price_min'                             => [
 				'label'   => __( 'Minimum Price (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'default' => 0,
 				'scope'   => [ 'cf_filters' ],
 			],
-			'price_max'                  => [
+			'price_max'                             => [
 				'label'   => __( 'Maximum Price (primary)', 'immonex-kickstart-for-elementor' ),
 				'type'    => \Elementor\Controls_Manager::NUMBER,
 				'default' => 0,
 				'scope'   => [ 'cf_filters' ],
 			],
-			'iso-country'                => [
+			'iso-country'                           => [
 				'label'       => __( 'Countries', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Comma-separated list of <strong>ISO 3166-1 ALPHA-3</strong> country codes (e.g. "DEU,AUT,CHE")', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 				'scope'       => [ 'cf_filters' ],
 			],
-			'references'                 => [
+			'references'                            => [
 				'label'       => __( 'Reference Properties', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
@@ -907,7 +907,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'scope'       => [ 'cf_filters' ],
 			],
-			'masters'                    => [
+			'masters'                               => [
 				'label'       => __( 'Master Properties', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
@@ -919,7 +919,7 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				'label_block' => true,
 				'scope'       => [ 'cf_filters' ],
 			],
-			'disable_links'              => [
+			'disable_links'                         => [
 				'label'       => __( 'Disable Property Detail Links', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'options'     => [
@@ -930,43 +930,146 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				],
 				'label_block' => true,
 			],
-			'force-lang'                 => [
+			'force-lang'                            => [
 				'label'       => __( 'Force Detail Page Language', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Required in special cases in multilingual environments only: Enter a two letter ISO 639-1 language code (de, en, fr ...) to force a specific language for the <strong>linked property detail pages</strong>.', 'immonex-kickstart-for-elementor' ),
 				'label_block' => true,
 			],
-			'template'                   => [
+			'template'                              => [
 				'label'       => __( 'Custom Template', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'description' => $template_desc,
 				'label_block' => true,
 			],
-			'list_element_style_section' => [
-				'label' => __( 'List Elements', 'immonex-kickstart-for-elementor' ),
+			'list_grid_section_agent_list'          => [
+				'label' => __( 'Grid', 'immonex-kickstart-for-elementor' ) .
+					' (' . __( 'Agent List', 'immonex-kickstart-for-elementor' ) . ')',
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+				'scope' => [ 'agent_list_grid' ],
+			],
+			'list_grid_heading_agent_list'          => [
+				'label' => __( 'Agent List', 'immonex-kickstart-for-elementor' ),
+				'type'  => \Elementor\Controls_Manager::HEADING,
+				'scope' => [ 'agent_list_grid' ],
+			],
+			'agent_list_column_width'               => [
+				'label'         => __( 'Column Width', 'immonex-kickstart-for-elementor' ),
+				'type'          => \Elementor\Controls_Manager::SLIDER,
+				'size_units'    => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'         => [
+					'px' => [
+						'min' => 180,
+						'max' => 1200,
+					],
+				],
+				'selectors'     => [ '{{WRAPPER}} .inx-team-agent-list__item-wrap' => 'width: {{SIZE}}{{UNIT}}; box-sizing: content-box' ],
+				'is_responsive' => true,
+				'scope'         => [ 'agent_list_grid' ],
+			],
+			'agent_list_grid_element_gap'           => [
+				'label'         => _x( 'Gap', 'distance between grid elements', 'immonex-kickstart-for-elementor' ),
+				'type'          => \Elementor\Controls_Manager::SLIDER,
+				'size_units'    => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'         => [
+					'px' => [
+						'max' => 64,
+					],
+				],
+				'selectors'     => [
+					'{{WRAPPER}} .inx-team-agent-list__item-wrap' => 'padding-left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} * + .uk-grid-margin, .uk-grid + .uk-grid, .uk-grid > .uk-grid-margin' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .inx-team-agent-list > .uk-grid' => 'margin-left: -{{SIZE}}{{UNIT}}',
+				],
+				'is_responsive' => true,
+				'scope'         => [ 'agent_list_grid' ],
+			],
+			'list_grid_section_property_list'       => [
+				'label' => __( 'Grid', 'immonex-kickstart-for-elementor' ) .
+					' (' . __( 'Property List', 'immonex-kickstart-for-elementor' ) . ')',
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+				'scope' => [ 'property_list_grid' ],
+			],
+			'list_grid_heading_property_list'       => [
+				'label' => __( 'Property List', 'immonex-kickstart-for-elementor' ),
+				'type'  => \Elementor\Controls_Manager::HEADING,
+				'scope' => [ 'property_list_grid' ],
+			],
+			'property_list_column_min_width'        => [
+				'label'         => __( 'Column Minimum Width', 'immonex-kickstart-for-elementor' ),
+				'type'          => \Elementor\Controls_Manager::SLIDER,
+				'size_units'    => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'         => [
+					'px' => [
+						'min' => 180,
+						'max' => 1200,
+					],
+				],
+				'selectors'     => [ '{{WRAPPER}} .inx-property-list' => 'grid-template-columns: repeat(auto-fit, minmax({{SIZE}}{{UNIT}}, 1fr))' ],
+				'is_responsive' => true,
+				'scope'         => [ 'property_list_grid' ],
+			],
+			'property_list_remove_max_width'        => [
+				'type'       => \Elementor\Controls_Manager::HIDDEN,
+				'default'    => '1',
+				'selectors'  => [
+					'{{WRAPPER}} .inx-property-list .inx-property-list__item-wrap' => 'width: 100%',
+					'{{WRAPPER}} .inx-property-list .inx-property-list-item' => 'max-width: 100%',
+				],
+				'conditions' => [
+					'terms' => [
+						[
+							'name'     => 'property_list_column_min_width[size]',
+							'operator' => '!=',
+							'value'    => '',
+						],
+					],
+				],
+				'scope'      => [ 'property_list_grid' ],
+			],
+			'property_list_grid_element_gap'        => [
+				'label'         => _x( 'Gap', 'distance between grid elements', 'immonex-kickstart-for-elementor' ),
+				'type'          => \Elementor\Controls_Manager::SLIDER,
+				'size_units'    => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+				'range'         => [
+					'px' => [
+						'max' => 64,
+					],
+				],
+				'selectors'     => [
+					'{{WRAPPER}} .inx-property-list' => 'grid-gap: {{SIZE}}{{UNIT}}',
+				],
+				'is_responsive' => true,
+				'scope'         => [ 'property_list_grid' ],
+			],
+			'property_list_image_container_height'  => [
+				'label'         => __( 'Image Container Height', 'immonex-kickstart-for-elementor' ),
+				'type'          => \Elementor\Controls_Manager::SLIDER,
+				'size_units'    => [ 'px', 'em', 'rem' ],
+				'range'         => [
+					'px' => [
+						'min' => 180,
+						'max' => 1200,
+					],
+				],
+				'selectors'     => [
+					'{{WRAPPER}} .inx-property-list-item__media-top' => 'height: {{SIZE}}{{UNIT}}',
+				],
+				'is_responsive' => true,
+				'scope'         => [ 'property_list_grid' ],
+			],
+			'list_element_style_section'            => [
+				'label' => __( 'List Elements', 'immonex-kickstart-for-elementor' ) .
+					' (' . __( 'Tiles', 'immonex-kickstart-for-elementor' ) . ')',
 				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 				'scope' => [ 'list_element_style' ],
 			],
-			'list_element_bg_color'      => [
-				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .inx-property-list-item, {{WRAPPER}} .inx-team-agent-list-item' => 'background-color: {{VALUE}};',
-				],
-				'scope'     => [ 'list_element_style' ],
+			'list_element_heading_frame'            => [
+				'label' => __( 'Frame', 'immonex-kickstart-for-elementor' ),
+				'type'  => \Elementor\Controls_Manager::HEADING,
+				'scope' => [ 'list_element_style' ],
 			],
-			'list_element_shadow'        => [
-				'group_control' => [
-					'type'    => \Elementor\Group_Control_Box_Shadow::get_type(),
-					'options' => [
-						'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
-						'selector' => '{{WRAPPER}} .inx-property-list-item.inx-property-list-item--card, {{WRAPPER}} .inx-team-agent-list-item.inx-team-agent-list-item--type--card',
-						'exclude'  => [ 'box_shadow_position' ],
-					],
-				],
-				'scope'         => [ 'list_element_style' ],
-			],
-			'list_element_border'        => [
+			'list_element_border'                   => [
 				'group_control' => [
 					'type'    => \Elementor\Group_Control_Border::get_type(),
 					'options' => [
@@ -976,39 +1079,107 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 							],
 						],
 						'selector'       => '{{WRAPPER}} .inx-property-list-item.inx-property-list-item--card, {{WRAPPER}} .inx-team-agent-list-item.inx-team-agent-list-item--type--card',
-						'separator'      => 'before',
 					],
 				],
 				'scope'         => [ 'list_element_style' ],
 			],
-			'list_element_border_radius' => [
-				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
-				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em', 'rem' ],
-				'selectors'  => [
+			'list_element_border_radius'            => [
+				'label'         => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
+				'type'          => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units'    => [ 'px', '%', 'em', 'rem' ],
+				'selectors'     => [
 					'{{WRAPPER}} .inx-property-list-item.inx-property-list-item--card, {{WRAPPER}} .inx-team-agent-list-item.inx-team-agent-list-item--type--card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
-				'scope'      => [ 'list_element_style' ],
+				'is_responsive' => true,
+				'scope'         => [ 'list_element_style' ],
 			],
-			'list_element_icon_color'    => [
-				'label'     => __( 'Icon Color', 'immonex-kickstart-for-elementor' ),
-				'type'      => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .inx-core-detail-icon, {{WRAPPER}} .inx-team-agent-list-item__element-icon svg' => 'color: {{VALUE}};',
+			'list_element_box_shadow_type'          => [
+				'label'     => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::SELECT,
+				'options'   => [
+					''         => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'disabled' => __( 'Disabled', 'immonex-kickstart-for-elementor' ),
+					'custom'   => __( 'Custom', 'immonex-kickstart-for-elementor' ),
 				],
 				'separator' => 'before',
 				'scope'     => [ 'list_element_style' ],
 			],
-			'list_element_text_color'    => [
-				'label'       => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
-				'type'        => \Elementor\Controls_Manager::COLOR,
-				'description' => __( 'This color is <strong>not</strong> applied to links.', 'immonex-kickstart-for-elementor' ),
-				'selectors'   => [
-					'{{WRAPPER}} .inx-property-list-item, {{WRAPPER}} .inx-team-agent-list-item' => 'color: {{VALUE}};',
+			'list_element_remove_native_box_shadow' => [
+				'type'      => \Elementor\Controls_Manager::HIDDEN,
+				'default'   => '1',
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-agent-list-item' => 'box-shadow: none',
 				],
+				'condition' => [
+					'list_element_box_shadow_type' => 'disabled',
+				],
+				'scope'     => [ 'list_element_style' ],
+			],
+			'list_element_box_shadow'               => [
+				'group_control' => [
+					'type'    => \Elementor\Group_Control_Box_Shadow::get_type(),
+					'options' => [
+						'label'     => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ) .
+							' (' . __( 'Custom', 'immonex-kickstart-for-elementor' ) . ')',
+						'selector'  => '{{WRAPPER}} .inx-property-list-item.inx-property-list-item--card, {{WRAPPER}} .inx-team-agent-list-item.inx-team-agent-list-item--type--card',
+						'exclude'   => [ 'box_shadow_position' ],
+						'condition' => [
+							'list_element_box_shadow_type' => 'custom',
+						],
+					],
+				],
+				'scope'         => [ 'list_element_style' ],
+			],
+			'list_element_link_notice'              => [
+				'type'        => \Elementor\Controls_Manager::NOTICE,
+				'notice_type' => 'warning',
+				'content'     => wp_sprintf(
+					/* translators: %1$s = color type, e.g. "all action elements"; %2$s = plugin options tab URL */
+					__( 'Instead of selecting <strong>element-related</strong> link colors below, setting <strong>global</strong> colors for <strong>%1$s</strong> in the <a href="%2$s" target="_blank">Kickstart plugin options</a> makes more sense in most cases.', 'immonex-kickstart-for-elementor' ),
+					__( 'action or marketing type related elements', 'immonex-kickstart-for-elementor' ),
+					admin_url( 'admin.php?page=immonex-kickstart_settings&section_tab=3' )
+				),
+				'dismissible' => true,
 				'scope'       => [ 'list_element_style' ],
 			],
-			'list_element_typography'    => [
+			'list_element_heading_body'             => [
+				'label' => __( 'Body', 'immonex-kickstart-for-elementor' ),
+				'type'  => \Elementor\Controls_Manager::HEADING,
+				'scope' => [ 'list_element_style' ],
+			],
+			'list_element_bg_color_body'            => [
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-property-list-item, {{WRAPPER}} .inx-team-agent-list-item' => 'background-color: {{VALUE}};',
+				],
+				'scope'     => [ 'list_element_style' ],
+			],
+			'list_element_icon_color'               => [
+				'label'     => __( 'Icon Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-core-detail-icon, {{WRAPPER}} .inx-team-agent-list-item__element-icon svg' => 'color: {{VALUE}}',
+				],
+				'scope'     => [ 'list_element_style' ],
+			],
+			'list_element_text_color'               => [
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-property-list-item, {{WRAPPER}} .inx-team-agent-list-item' => 'color: {{VALUE}}',
+				],
+				'scope'     => [ 'list_element_style' ],
+			],
+			'list_element_body_link_color'          => [
+				'label'     => __( 'Link Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-property-list-item__body a, {{WRAPPER}} .inx-team-agent-list-item__body a' => 'color: {{VALUE}}',
+				],
+				'scope'     => [ 'list_element_style' ],
+			],
+			'list_element_typography'               => [
 				'group_control' => [
 					'label'   => __( 'Typograhy', 'immonex-kickstart-for-elementor' ),
 					'type'    => \Elementor\Group_Control_Typography::get_type(),
@@ -1017,6 +1188,157 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 					],
 				],
 				'scope'         => [ 'list_element_style' ],
+			],
+			'list_element_heading_footer'           => [
+				'label' => __( 'Footer', 'immonex-kickstart-for-elementor' ) .
+					' (Link)',
+				'type'  => \Elementor\Controls_Manager::HEADING,
+				'scope' => [ 'list_element_style' ],
+			],
+			'list_element_bg_color_footer'          => [
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-agent-list-item__footer a.inx-link' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .inx-property-list-item__footer a.inx-property-list-item__property-price' => 'background: {{VALUE}}',
+				],
+				'scope'     => [ 'list_element_style' ],
+			],
+			'list_element_footer_link_color'        => [
+				'label'     => __( 'Link Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-team-agent-list-item__footer a.inx-link' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .inx-property-list-item__footer a.inx-property-list-item__property-price' => 'color: {{VALUE}}',
+				],
+				'scope'     => [ 'list_element_style' ],
+			],
+			'list_element_footer_typography'        => [
+				'group_control' => [
+					'label'   => __( 'Typograhy', 'immonex-kickstart-for-elementor' ),
+					'type'    => \Elementor\Group_Control_Typography::get_type(),
+					'options' => [
+						'selector' => '{{WRAPPER}} .inx-team-agent-list-item__footer a.inx-link, {{WRAPPER}} .inx-property-list-item__footer a.inx-property-list-item__property-price',
+					],
+				],
+				'scope'         => [ 'list_element_style' ],
+			],
+			'list_labels_style_section'             => [
+				'label' => __( 'Labels', 'immonex-kickstart-for-elementor' ) .
+					' (' . __( 'Property List', 'immonex-kickstart-for-elementor' ) . ')',
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+				'scope' => [ 'list_labels_style' ],
+			],
+			'list_labels_layout'                    => [
+				'label'   => __( 'Layout', 'immonex-kickstart-for-elementor' ),
+				'type'    => \Elementor\Controls_Manager::CHOOSE,
+				'default' => $this->get_default( 'labels_layout', 'vertical' ),
+				'options' => [
+					'vertical'   => [
+						'title' => __( 'Vertical', 'immonex-kickstart-for-elementor' ),
+						'icon'  => 'eicon-editor-list-ul',
+					],
+					'horizontal' => [
+						'title' => __( 'Horizontal', 'immonex-kickstart-for-elementor' ),
+						'icon'  => 'eicon-ellipsis-h',
+					],
+				],
+				'scope'   => [ 'list_labels_style' ],
+			],
+			'list_labels_horizontal_layout'         => [
+				'type'      => \Elementor\Controls_Manager::HIDDEN,
+				'default'   => '1',
+				'selectors' => [
+					'{{WRAPPER}} .inx-property-list-item__labels'                          => 'display: flex; flex-wrap: wrap; gap: 0.5em',
+					'{{WRAPPER}} .inx-property-list-item__labels .inx-property-label'      => 'margin-bottom: 0',
+					'{{WRAPPER}} .inx-property-list-item__labels .inx-property-label > br' => 'display: none',
+				],
+				'condition' => [
+					'list_labels_layout' => 'horizontal',
+				],
+				'scope'     => [ 'list_labels_style' ],
+			],
+			'list_labels_border_radius'             => [
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'default'    => $this->get_default(
+					'border_radius',
+					[
+						'size' => 4,
+						'unit' => 'px',
+					]
+				),
+				'size_units' => [ 'px', '%' ],
+				'range'      => [
+					'px' => [
+						'max' => 16,
+					],
+					'%'  => [
+						'max' => 25,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-property-label' => 'border-radius: {{SIZE}}{{UNIT}}',
+				],
+				'scope'      => [ 'list_labels_style' ],
+			],
+			'list_labels_box_shadow'                => [
+				'group_control' => [
+					'type'    => \Elementor\Group_Control_Box_Shadow::get_type(),
+					'options' => [
+						'name'     => 'list_labels_box_shadow',
+						'label'    => __( 'Box Shadow', 'immonex-kickstart-for-elementor' ),
+						'selector' => '{{WRAPPER}} .inx-property-label',
+					],
+				],
+				'scope'         => [ 'list_labels_style' ],
+			],
+			'list_labels_color'                     => [
+				'label'       => __( 'Color', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::COLOR,
+				'description' => __( 'The label colors can be customized in the Kickstart plugin options. <strong>If required</strong>, an alternative uniform color for all labels of this element can be selected here.', 'immonex-kickstart-for-elementor' ),
+				'selectors'   => [
+					'{{WRAPPER}} .inx-property-label' => 'background: {{VALUE}};',
+				],
+				'scope'       => [ 'list_labels_style' ],
+			],
+			'list_labels_text_color'                => [
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-property-label' => 'color: {{VALUE}}',
+				],
+				'scope'     => [ 'list_labels_style' ],
+			],
+			'list_labels_typography'                => [
+				'group_control' => [
+					'type'    => \Elementor\Group_Control_Typography::get_type(),
+					'options' => [
+						'name'           => 'list_labels_typography',
+						'selector'       => '{WRAPPER}} .inx-property-label.uk-label',
+						'fields_options' => [
+							'font_size'      => [
+								'default' => [
+									'size' => 1,
+									'unit' => 'em',
+								],
+							],
+							'font_weight'    => [
+								'default' => 'bold',
+							],
+							'text_transform' => [
+								'default' => 'uppercase',
+							],
+							'line_height'    => [
+								'default' => [
+									'size' => 1.2,
+									'unit' => 'em',
+								],
+							],
+						],
+					],
+				],
+				'scope'         => [ 'list_labels_style' ],
 			],
 		];
 
@@ -1066,45 +1388,26 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 			}
 		}
 
-		foreach ( $scopes as $scope ) {
-			$controls = array_filter(
-				$all_controls,
-				function ( $control, $key ) use ( $scope ) {
-					return ( ! empty( $control['scope'] ) && in_array( $scope, $control['scope'], true ) )
-						|| $key === $scope;
-				},
-				ARRAY_FILTER_USE_BOTH
-			);
+		$section_started   = false;
+		$control_keys_used = [];
 
-			if ( empty( $controls ) ) {
-				continue;
-			}
-
-			$section_started = false;
-
-			foreach ( $controls as $key => $control ) {
-				if (
-					isset( $control['group_control'] )
-					&& empty( $control['group_control']['options']['name'] )
-				) {
-					$control['group_control']['options']['name'] = $key;
+		foreach ( $all_controls as $key => $control ) {
+			foreach ( $scopes as $scope ) {
+				if ( ( empty( $control['scope'] ) || ! in_array( $scope, $control['scope'], true ) ) ) {
+					continue;
 				}
 
-				if ( ! empty( $args[ $scope ]['prefix'] ) ) {
-					$key = $args[ $scope ]['prefix'] . '_' . $key;
-
-					if ( isset( $control['group_control']['options']['name'] ) ) {
-						$control['group_control']['options']['name'] = $args[ $scope ]['prefix'] . '_' . $control['group_control']['options']['name'];
-					}
-				}
+				$control_key = ! empty( $args[ $scope ]['prefix'] ) ? "{$args[ $scope ]['prefix']}_{$key}" : $key;
 
 				if ( ! empty( $control['tab'] ) ) {
-					if ( $this->get_current_section() ) {
-						continue;
+					$current_section = $this->get_current_section();
+
+					if ( ! empty( $current_section ) ) {
+						$this->end_controls_section();
 					}
 
 					$this->start_controls_section(
-						$key,
+						$control_key,
 						[
 							'label'     => $control['label'],
 							'tab'       => $control['tab'],
@@ -1112,19 +1415,25 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 								$control['condition'] : null,
 						]
 					);
-					$section_started = true;
+
+					$section_started     = true;
+					$control_keys_used[] = $control_key;
 				} elseif ( ! empty( $control['group_control'] ) ) {
+					$control['group_control']['options']['name'] = $control_key;
 					$this->add_group_control( $control['group_control']['type'], $control['group_control']['options'] );
+					$control_keys_used[] = $control_key;
 				} elseif ( ! empty( $control['is_responsive'] ) ) {
-					$this->add_responsive_control( $key, $control );
+					$this->add_responsive_control( $control_key, $control );
+					$control_keys_used[] = $control_key;
 				} else {
-					$this->add_control( $key, $control );
+					$this->add_control( $control_key, $control );
+					$control_keys_used[] = $control_key;
 				}
 			}
+		}
 
-			if ( $section_started && $end_controls_section ) {
-				$this->end_controls_section();
-			}
+		if ( $section_started && $end_controls_section ) {
+			$this->end_controls_section();
 		}
 	} // add_default_controls
 
@@ -1197,6 +1506,10 @@ abstract class Widget_Base extends \Elementor\Widget_Base {
 				! empty( $template_data['settings'][ $att ] )
 				|| ( is_string( $template_data['settings'][ $att ] ) && '0' === $template_data['settings'][ $att ] )
 			) {
+				if ( is_array( $template_data['settings'][ $att ] ) && is_int( key( $template_data['settings'][ $att ] ) ) ) {
+					$template_data['settings'][ $att ] = implode( ',', $template_data['settings'][ $att ] );
+				}
+
 				if ( 'template' === $att ) {
 					$template_data['settings'][ $att ] = ( $skin_subfolder ? $skin_subfolder . DIRECTORY_SEPARATOR : '' )
 						. sanitize_file_name( basename( $template_data['settings'][ $att ] ) );

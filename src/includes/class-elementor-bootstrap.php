@@ -67,7 +67,8 @@ class Elementor_Bootstrap {
 		add_action( 'elementor/elements/categories_registered', [ $this, 'add_widget_categories' ], 90 );
 		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'enqueue_editor_css_js' ] );
-		add_action( 'elementor/widget/before_render_content', [ $this, 'extend_loop_css_classes' ] );
+		add_action( 'elementor/widget/render_content', [ $this, 'extend_loop_css_classes' ], 10, 2 );
+		add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
 
 		if ( apply_filters( 'inxkickel_is_plugin_available', false, 'elementor-pro' ) ) {
 			add_action( 'elementor/dynamic_tags/register', [ $this, 'register_dynamic_tag_group' ] );
@@ -76,6 +77,7 @@ class Elementor_Bootstrap {
 
 		add_filter( 'option_elementor_element_cache_ttl', [ $this, 'disable_element_cache_for_template_pages' ] );
 		add_filter( 'elementor/query/query_args', [ $this, 'maybe_extend_query_args' ], 10, 2 );
+		add_filter( 'elementor/posts/wp_link_page', [ $this, 'fix_pagination_url' ] );
 	} // init
 
 	/**
@@ -105,8 +107,18 @@ class Elementor_Bootstrap {
 			];
 		}
 
-		$add_categories['inx-marketing-acquisition'] = [
-			'title' => $house_icon . __( 'Marketing & Acquisition', 'immonex-kickstart-for-elementor' ),
+		if (
+			apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-lead-generator', self::MIN_REQ_VERSIONS['lead-generator'] )
+			|| apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-notify', self::MIN_REQ_VERSIONS['notify'] )
+		) {
+			$add_categories['inx-marketing-acquisition'] = [
+				'title' => $house_icon . __( 'Marketing & Acquisition', 'immonex-kickstart-for-elementor' ),
+				'icon'  => 'fa fa-home',
+			];
+		}
+
+		$add_categories['inx-special-forms'] = [
+			'title' => $house_icon . __( 'Special Forms', 'immonex-kickstart-for-elementor' ),
 			'icon'  => 'fa fa-home',
 		];
 
@@ -164,6 +176,7 @@ class Elementor_Bootstrap {
 		$notify_active       = apply_filters( 'inxkickel_is_plugin_available', false, 'immonex-notify', self::MIN_REQ_VERSIONS['notify'] );
 
 		$this->widgets = [
+			new Components\Widgets\SingleProperty\Detail_List_Widget(),
 			new Components\Widgets\SingleProperty\Native_Head_Widget(),
 			new Components\Widgets\SingleProperty\Property_Type_Widget(),
 			new Components\Widgets\SingleProperty\Title_Widget(),
@@ -184,9 +197,9 @@ class Elementor_Bootstrap {
 			new Components\Widgets\SingleProperty\Native_Virtual_Tour_Widget(),
 			new Components\Widgets\SingleProperty\Native_Location_Map_Widget(),
 			new Components\Widgets\SingleProperty\Feature_List_Widget(),
-			new Components\Widgets\SingleProperty\Detail_List_Widget(),
 			new Components\Widgets\SingleProperty\Downloads_Links_Widget(),
 			new Components\Widgets\KickstartTeam\Native_Agent_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
+			new Components\Widgets\KickstartTeam\Native_Contact_Form_Confirmation_Message_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
 			new Components\Widgets\SingleProperty\Native_Footer_Widget(),
 			new Components\Widgets\PropertyList\Native_Search_Form_Widget(),
 			new Components\Widgets\PropertyList\Native_Property_Map_Widget(),
@@ -199,12 +212,25 @@ class Elementor_Bootstrap {
 			new Components\Widgets\KickstartTeam\Native_Agency_List_Widget( [], [ 'parent_plugin_available' => $team_add_on_active ] ),
 			new Components\Widgets\LeadGenerator\Native_Lead_Forms_Widget( [], [ 'parent_plugin_available' => $lead_gen_active ] ),
 			new Components\Widgets\Notify\Native_Notify_Form_Widget( [], [ 'parent_plugin_available' => $notify_active ] ),
+			new Components\Widgets\SpecialForms\Native_Withdrawal_Form_Widget(),
+			new Components\Widgets\SpecialForms\Native_Withdrawal_Form_Confirmation_Message_Widget(),
 		];
 
 		foreach ( $this->widgets as $widget ) {
 			$widgets_manager->register( $widget );
 		}
 	} // register_widgets
+
+	/**
+	 * Register custom Elementor controls for Kickstart (action callback).
+	 *
+	 * @since 1.4.0
+	 *
+	 * @param \Elementor\Controls_Manager $controls_manager Elementor controls manager.
+	 */
+	public function register_controls( $controls_manager ) {
+		$controls_manager->register( new Controls\Extended_Select2() );
+	} // register_controls
 
 	/**
 	 * Register/Enqueue Elementor editor CSS/JS files (action callback).
@@ -296,21 +322,46 @@ class Elementor_Bootstrap {
 	} // maybe_extend_query_args
 
 	/**
-	 * Add CSS class "inx-real-estate-list" to Elementor loop elements if
-	 * Kickstart properties are listed (action callback).
+	 * Add CSS class "inx-real-estate-list" to Elementor loop element containers
+	 * if Kickstart properties are listed (action callback).
 	 *
-	 * @since 1.1.0
+	 * @since 1.2.0
 	 *
-	 * @param \Elementor\Widget_Base $widget Widget instance.
+	 * @param string                 $content Widget content.
+	 * @param \Elementor\Widget_Base $widget  Widget instance.
+	 *
+	 * @return string Possibly extended content.
 	 */
-	public function extend_loop_css_classes( $widget ) {
-		if ( 'loop-' === substr( $widget->get_name(), 0, 5 ) ) {
+	public function extend_loop_css_classes( $content, $widget ) {
+		if ( false !== strpos( $widget->get_name(), 'loop-' ) ) {
 			$settings = $widget->get_active_settings();
 
 			if ( 'inx_property' === $settings['post_query_post_type'] ) {
-				$widget->add_render_attribute( 'container', 'class', 'inx-real-estate-list' );
+				return preg_replace( '/class="/', 'class="inx-real-estate-list ', $content, 1 );
 			}
 		}
+
+		return $content;
 	} // extend_loop_css_classes
+
+	/**
+	 * Fix a "single property" pagination base URL (filter callback).
+	 *
+	 * @since 1.2.0
+	 *
+	 * @param string $url URL generated by Elementor.
+	 *
+	 * @return string Original or fixed URL.
+	 */
+	public function fix_pagination_url( $url ) {
+		$post_id = url_to_postid( $url );
+		if ( ! $post_id || ( $post_id && 'inx_property' !== get_post_type( $post_id ) ) ) {
+			return $url;
+		}
+
+		$slug = get_post_field( 'post_name', $post_id );
+
+		return $slug ? preg_replace( "/\/{$slug}\/([0-9]+)/", '/page/$1', $url ) : $url;
+	} // fix_pagination_url
 
 } // class Elementor_Bootstrap

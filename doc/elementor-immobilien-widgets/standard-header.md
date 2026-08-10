@@ -30,7 +30,7 @@ Der auf dem *Standard-Skin* des Kickstart-Basisplugins basierende Header für [I
 
 Alle Elemente sind **optional** und können separat ein-/ausgeblendet und formatiert werden. (Die Reihenfolge kann nicht verändert werden.)
 
-Die **Farben der Labels** können unter ***immonex → Einstellungen → Allgemein → Farben*** angepasst werden.
+Die **globalen** Farben der **Labels** können unter ***immonex → Einstellungen → Allgemein → Farben*** angepasst werden. Alternativ kann im ***Stil-Tab*** des Elementor-Editors aber auch eine Einheits-Labelfarbe für das betr. Element festgelegt werden.
 
 Der Link **Drucken / PDF** wird nur angezeigt, wenn das *Kickstart Print Add-on* installiert und die entsprechende Option unter ***immonex → Einstellungen → Print <sup>ADD-ON</sup>*** aktiviert ist.
 

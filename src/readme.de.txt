@@ -2,8 +2,8 @@
 Contributors: immonex
 Tags: realestate, elementor, immobilien, immobilienmakler, openimmo
 Requires at least: 6.5
-Tested up to: 7.0
-Stable Tag: 1.1.8
+Tested up to: 7.1
+Stable Tag: 1.4.0
 Requires PHP: 8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ Dieses **Add-on-Plugin** erweitert WordPress-Installationen auf Basis von [immon
 
 Der Fokus liegt hier bei der Präsentation von Immobilienangeboten, deren Daten mit einer gängigen Softwarelösung für Immobilienmakler verwaltet und kontinuierlich über eine OpenImmo®-XML-Schnittstelle mit [immonex OpenImmo2WP](https://plugins.inveris.de/wordpress-plugins/immonex-openimmo2wp) ([Doku](https://docs.immonex.de/openimmo2wp/)) auf der WP-Import-Seite synchronisiert werden.
 
-Alle Widgets können in vollem Umfang mit der **kostenfreien Elementor-Variante** genutzt werden. [Elementor Pro](https://elementor.com/products/website-builder/) wird nur für die Verwendung der *Dynamic Tags* benötigt.
+Alle Widgets können in vollem Umfang mit der **kostenfreien Elementor-Variante (Core)** genutzt werden. [Elementor Pro](https://elementor.com/products/website-builder/) wird nur für die Verwendung der *Dynamic Tags* benötigt.
 
 Das Plugin unterstützt sowohl die grundlegenden Frontend-Komponenten von Kickstart – Immobilienlisten- und Detailansichten, Suchformular, Galerien für Bilder und Videos, Karten, 360°-Touren ... – als auch die der zugehörigen Add-ons wie [Team](https://wordpress.org/plugins/immonex-kickstart-team/) (Kontaktpersonen, Makleragenturen, Anfrageformulare etc.) und *Print* (PDF-Exposé-Erstellung).
 
@@ -113,6 +113,16 @@ immonex Kickstart for Elementor ist freie Software. Quellcodes, Dokumentation, S
 
 == Changelog ==
 
+= 1.4.0 "Crushed Ice" =
+* Veröffentlichungsdatum: 07.08.2026
+* Widget für Widerrufsformulare ergänzt.
+* Dynamische Aktualisierungen und konsistente Seitennavigation für Property-Loop-Ansichten umgesetzt.
+* Styling-Optionen diverser Widgets stark erweitert (insbesondere die des Suchformulars).
+* Neue Optionen zum URL-Dynamic-Tags hinzugefügt (Vor/Zurück und Erste/Letzte Immobilie).
+* Auswahl OpenImmo/Mapping-basierter Elemente im Elementor-Editor überarbeitet.
+* Diverse Detailoptimierungen (Handling, Performance, Kompatibilität) umgesetzt.
+* Abhängigkeiten und Übersetzungen aktualisiert.
+
 = 1.1.8 =
 * Veröffentlichungsdatum: 10.03.2026
 * Abhängigkeiten und Übersetzungen aktualisiert.
@@ -122,15 +132,5 @@ immonex Kickstart for Elementor ist freie Software. Quellcodes, Dokumentation, S
 * Auswahl der Widget-Vorschau-Inhalte überarbeitet.
 * Interne Widget-Ordnerstruktur und Präfixe angepasst.
 * Abhängigkeiten aktualisiert.
-
-= 1.1.0 =
-* Veröffentlichungsdatum: 17.02.2026
-* Dynamic Tag für Objekt- und Backlink-URLs ergänzt.
-* Elementor-Pro-bezogene Abfragen-, Cache- und Vorschau-Verarbeitung verbessert.
-* Abhängigkeiten aktualisiert.
-
-= 1.0.0 "Ice" =
-* Veröffentlichungsdatum: 30.01.2026
-* Erstveröffentlichung.
 
 Siehe changelog.de.txt für die komplette Versionshistorie.

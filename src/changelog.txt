@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 1.4.0 "Crushed Ice" =
+* Release date: 2026-08-07
+* Added widget for withdrawal forms.
+* Implemented dynamic updates and consistent pagination for property loop views.
+* Significantly extended styling options of various widgets (especially those of the search form).
+* Added previous/next and first/last property options to the URL dynamic tag.
+* Reworked the OpenImmo/mapping based element selection in the Elementor editor.
+* Implemented various detail optimizations (handling, performance, compatibility).
+* Updated dependencies.
+
 = 1.1.8 =
 * Release date: 2026-03-10
 * Updated dependencies and translations.

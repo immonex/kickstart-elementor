@@ -12,9 +12,13 @@ Als *Widgets* werden Frontend-Elemente bezeichnet, die im Elementor-Editor per D
 
 </div><div>
 
-Die meisten Elementor-Immobilien-Widgets sind nach dem jeweiligen Einsatzbereich in den beiden Hauptkategorien für Listen- und Übersichtsseiten (→ ***Immobilienliste***) sowie Objekt-Detailansicht-Templates (→ ***Immobiliendetails***) gruppiert. Der Umfang dieser Kategorien hängt davon ab, ob nebem dem [Kickstart-Basisplugin](https://de.wordpress.org/plugins/immonex-kickstart/) noch weitere [unterstützte Komponenten](/grundlagen/systemanforderungen?id=optionale-komponenten) verwendet werden.
+Die meisten [Elementor-Immobilien-Widgets](uebersicht) sind nach dem jeweiligen Einsatzbereich in den beiden Hauptkategorien für Listen- und Übersichtsseiten (→ ***Immobilienlisten und -suche***) sowie Objekt-Detailansicht-Templates (→ ***Immobiliendetails***) gruppiert.
 
-Für Zusatzplugins mit mehreren Frontend-Elementen werden weitere Kategorien ergänzt (z. B. ***Kontakte & Agenturen*** bei aktivem [Team Add-on](https://de.wordpress.org/plugins/immonex-kickstart-team/)), wobei einige der hier enthaltenen Widgets parallel auch in den Hauptkategorien verfügbar sein können.
+Der Umfang dieser Kategorien hängt davon ab, ob nebem dem [Kickstart-Basisplugin](https://de.wordpress.org/plugins/immonex-kickstart/) noch weitere [unterstützte Komponenten](/grundlagen/systemanforderungen?id=optionale-komponenten) verwendet werden.
+
+Für aktive Zusatzplugins und Kickstart-Add-ons werden weitere Kategorien ergänzt:
+
+- ***Kontakte & Agenturen*** ([Team Add-on](https://de.wordpress.org/plugins/immonex-kickstart-team/)), wobei einige der hier enthaltenen Widgets parallel auch in den Hauptkategorien verfügbar sein können.
 
 Beim **Rendering der Ausgabe** wird zwischen zwei Widget-Arten unterschieden:
 
@@ -44,11 +48,31 @@ Native Widgets und meist etwas umfangreicher, unterscheiden sich vom Handling he
 
 </div><div>
 
-Jedes Immobilien-Widget verfügt über eine Reihe von Optionen, mit denen die hierüber eingebundenen Inhalte und deren Optik individuell angepasst werden können.
+Jedes [Elementor-Immobilien-Widget](uebersicht) verfügt über eine Reihe von Optionen, mit denen die hierüber eingebundenen Inhalte und deren Optik individuell angepasst werden können.
 
-Umfasst die Widget-Ausgabe mehrere Elemente unterschiedlicher Art, bspw. eine Überschrift und eine Liste inkl. Icons, können diese im Tab ***Stil*** separat formatiert werden.
+Wie bei Elementor üblich, sind die Optionen in drei Tabs unterteilt: Unter ***Inhalt*** werden Art und Umfang der einzubindenden Informationen festgelegt, der Tab ***Stil*** enthält die zugehörigen Formatierungs- und Gestaltungsoptionen.
+
+Umfasst die Widget-Ausgabe mehrere Elemente unterschiedlicher Art, ist auch der ***Stil***-Tab in entsprechende Abschnitte unterteilt, die die jeweiligen Optionen für die individuelle Anpassung der Optik enthalten.
 
 Der Tab ***Erweitert*** enthält allgemeine Einstellungen wie Rahmen/Abstände, CSS-Klassen/Regeln, Animationen und benutzerdefinierte Attribute, die sich auf das Container-Element beziehen.
+
+</div></div>
+
+## Vorschau
+
+<div class="two-column-layout"><div>
+
+![Auswahl des Immobilien-Archivs für die Vorschau im Elementor-Editor](../assets/scst-elementor-pro-vorschau-auswahl-2.webp ':no-zoom')
+
+![Auswahl einer Vorschau-Immobilie im Elementor-Editor](../assets/scst-elementor-pro-vorschau-auswahl.webp ':no-zoom')
+
+</div><div>
+
+Bei der Erstellung von Immobilienseiten und -vorlagen ist es vorteilhaft, für Vorschauzwecke bereits auf reale Objektdaten zurückgreifen zu können. Daher sollte bereits vorab ein [Import von Immobilienangeboten via OpenImmo-Schnittstelle](https://docs.immonex.de/kickstart/#/schnellstart/import) erfolgen, sofern noch keine Angebote vorhanden sind.
+
+Elementor Pro bietet hierbei die Möglichkeit, sowohl für [Listenansichten auf Loop-Basis](/elementor-pro/immobilien-loop-grid) (*Archive*) als auch für Einzelvorlagen (*Single Templates*) explizit die Immobilien-Beitragsart bzw. eine bestimmte Immobilie auszuwählen.
+
+Ist das Elementor-Core-Plugin **ohne** die Pro-Erweiterung im Einsatz, werden bei den *nativen* Listen-Widgets im Editor auch hier die Echtdaten eingebunden. Bei Templates für Immobilien-Detailansichten werden aber Beispielinhalte verwendet, die nicht an die tatsächlichen Immobiliendaten gebunden sind.
 
 </div></div>
 

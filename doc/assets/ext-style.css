@@ -67,6 +67,10 @@ body:not(.dark) .markdown-section blockquote em {
 	color: #E8E8E7 !important;
 }
 
+body:not(.dark) .markdown-section:not(.token.keyword) code strong {
+	color: inherit;
+}
+
 .markdown-section blockquote a.link-internal {
 	color: var(--link-internal-color-lighter);
 }

@@ -65,13 +65,33 @@ class Kickstart_URL extends \Elementor\Core\DynamicTags\Data_Tag {
 		$this->add_control(
 			'type',
 			[
-				'label'       => __( 'Type', 'immonex-kickstart-for-elementor' ),
+				'label'       => __( 'Destination Page', 'immonex-kickstart-for-elementor' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'default'     => '',
-				'options'     => [
-					''         => __( 'Auto', 'immonex-kickstart-for-elementor' ),
-					'detail'   => __( 'Property Details', 'immonex-kickstart-for-elementor' ),
-					'backlink' => wp_sprintf( 'Backlink (%s)', __( 'Overview', 'immonex-kickstart-for-elementor' ) ),
+				'groups'      => [
+					[
+						'label'   => __( 'General', 'immonex-kickstart-for-elementor' ),
+						'options' => [
+							'' => __( 'Automatic', 'immonex-kickstart-for-elementor' )
+								. ' (' . __( 'Property Details or Overview Page', 'immonex-kickstart-for-elementor' ) . ')',
+						],
+					],
+					[
+						'label'   => __( 'Property Lists', 'immonex-kickstart-for-elementor' ),
+						'options' => [
+							'detail' => __( 'Property Details', 'immonex-kickstart-for-elementor' ),
+						],
+					],
+					[
+						'label'   => __( 'Property Detail Pages', 'immonex-kickstart-for-elementor' ),
+						'options' => [
+							'backlink' => wp_sprintf( 'Backlink (%s)', __( 'Overview', 'immonex-kickstart-for-elementor' ) ),
+							'first'    => __( 'First Object', 'immonex-kickstart-for-elementor' ),
+							'prev'     => __( 'Previous Object', 'immonex-kickstart-for-elementor' ),
+							'next'     => __( 'Next Object', 'immonex-kickstart-for-elementor' ),
+							'last'     => __( 'Last Object', 'immonex-kickstart-for-elementor' ),
+						],
+					],
 				],
 				'label_block' => true,
 			]
@@ -92,19 +112,46 @@ class Kickstart_URL extends \Elementor\Core\DynamicTags\Data_Tag {
 			$type = is_singular( 'inx_property' ) ? 'backlink' : 'detail';
 		}
 
-		if ( ! $type ) {
+		if ( ! $type && 'inx_property' === get_post_type() ) {
 			return get_permalink();
 		}
 
 		$template_data = apply_filters( 'inx_get_property_template_data', [], [ 'post_id' => get_the_ID() ] ); // phpcs:ignore -- Parent plugin filter hook that can't be changed (yet) for compatibility reasons.
 
-		if ( 'detail' === $type && ! empty( $template_data['url'] ) ) {
-			return $template_data['url'];
-		} elseif ( 'backlink' === $type && ! empty( $template_data['overview_url'] ) ) {
-			return $template_data['overview_url'];
+		switch ( $type ) {
+			case 'detail':
+				if ( ! empty( $template_data['url'] ) ) {
+					return $template_data['url'];
+				}
+				break;
+			case 'backlink':
+				if ( ! empty( $template_data['overview_url'] ) ) {
+					return $template_data['overview_url'];
+				}
+				break;
+			case 'first':
+				if ( ! empty( $template_data['inter_post_nav']['first_url'] ) ) {
+					return $template_data['inter_post_nav']['first_url'];
+				}
+				break;
+			case 'prev':
+				if ( ! empty( $template_data['inter_post_nav']['prev_url'] ) ) {
+					return $template_data['inter_post_nav']['prev_url'];
+				}
+				break;
+			case 'next':
+				if ( ! empty( $template_data['inter_post_nav']['next_url'] ) ) {
+					return $template_data['inter_post_nav']['next_url'];
+				}
+				break;
+			case 'last':
+				if ( ! empty( $template_data['inter_post_nav']['last_url'] ) ) {
+					return $template_data['inter_post_nav']['last_url'];
+				}
+				break;
 		}
 
-		return get_permalink();
+		return '';
 	} // get_value
 
 } // class Kickstart_URL

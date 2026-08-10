@@ -19,6 +19,22 @@ jQuery(document).ready(async function($) {
 								helperFields[0].dispatchEvent(new Event('input', { bubbles: true }))
 							}, 100)
 						})
+						element.addEventListener('select', function() {
+							window.setTimeout(function() {
+								helperFields[0].dispatchEvent(new Event('input', { bubbles: true }))
+							}, 100)
+						})
+						element.setAttribute('listener', true)
+					}
+				})
+
+				dialog.querySelectorAll('.select2-selection').forEach((element) => {
+					if (!element.getAttribute('listener')) {
+						$(element).on('keydown mousedown focus blur', function (e) {
+							window.setTimeout(function() {
+								helperFields[0].dispatchEvent(new Event('input', { bubbles: true }))
+							}, 100)
+						})
 						element.setAttribute('listener', true)
 					}
 				})

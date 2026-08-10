@@ -115,6 +115,183 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\ForElementor\Compone
 		$this->end_controls_section();
 
 		$this->start_controls_section(
+			'frame_style_section',
+			[
+				'label' => __( 'Frame', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'background',
+			[
+				'label'       => __( 'Background', 'immonex-kickstart-for-elementor' ),
+				'type'        => \Elementor\Controls_Manager::SELECT,
+				'description' => __( 'The <strong>default</strong> background color can be adjusted in the Kickstart plugin options.', 'immonex-kickstart-for-elementor' ),
+				'options'     => [
+					''            => __( 'Default', 'immonex-kickstart-for-elementor' ),
+					'transparent' => __( 'Transparent', 'immonex-kickstart-for-elementor' ),
+					'custom'      => __( 'Custom', 'immonex-kickstart-for-elementor' ),
+				],
+			]
+		);
+
+		$this->add_control(
+			'bg_transparent',
+			[
+				'type'      => \Elementor\Controls_Manager::HIDDEN,
+				'default'   => $this->get_default( 'bg_transparent', 'none' ),
+				'selectors' => [
+					'{{WRAPPER}} .inx-property-filters' => 'background: {{VALUE}}',
+				],
+				'condition' => [
+					'background' => 'transparent',
+				],
+			]
+		);
+
+		$this->add_control(
+			'bg_color',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-property-filters' => 'background-color: {{VALUE}}',
+				],
+				'condition' => [
+					'background' => 'custom',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'border_radius',
+			[
+				'label'      => __( 'Corner Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-property-filters' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'select_style',
+			[
+				'label' => __( 'Select Boxes', 'immonex-kickstart-for-elementor' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_responsive_control(
+			'align',
+			[
+				'label'   => __( 'Alignment', 'immonex-kickstart-for-elementor' ),
+				'type'    => \Elementor\Controls_Manager::CHOOSE,
+				'default' => $this->get_default( 'select_align', 'right' ),
+				'options' => [
+					'left'   => [
+						'title' => __( 'Left', 'immonex-kickstart-for-elementor' ),
+						'icon'  => 'eicon-h-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'immonex-kickstart-for-elementor' ),
+						'icon'  => 'eicon-h-align-center',
+					],
+					'right'  => [
+						'title' => __( 'Right', 'immonex-kickstart-for-elementor' ),
+						'icon'  => 'eicon-h-align-right',
+					],
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'select_height',
+			[
+				'label'      => __( 'Height', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range'      => [
+					'px' => [
+						'min' => 16,
+						'max' => 64,
+					],
+				],
+				'default'    => $this->get_default( 'select_height', [ 'height' => '40px' ] ),
+				'selectors'  => [
+					'{{WRAPPER}} .inx-form-element--select > select.inx-select' => 'height: {{SIZE}}{{UNIT}};',
+				],
+				'separator'  => 'after',
+			]
+		);
+
+		$this->add_control(
+			'select_bg_color',
+			[
+				'label'     => __( 'Background Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-form-element--select > select.inx-select' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'select_text_color',
+			[
+				'label'     => __( 'Text Color', 'immonex-kickstart-for-elementor' ),
+				'type'      => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .inx-form-element--select > select.inx-select' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name'     => 'select_typography',
+				'selector' => '{{WRAPPER}} .inx-form-element--select > select.inx-select',
+				'exclude'  => ! empty( $element['exclude'] ) ? $element['exclude'] : [],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Text_Shadow::get_type(),
+			[
+				'name'     => 'select_shadow',
+				'selector' => '{{WRAPPER}} .inx-form-element--select > select.inx-select',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name'      => 'select_border',
+				'selector'  => '{{WRAPPER}} .inx-form-element--select > select.inx-select',
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'select_border_radius',
+			[
+				'label'      => __( 'Border Radius', 'immonex-kickstart-for-elementor' ),
+				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'selectors'  => [
+					'{{WRAPPER}} .inx-form-element--select > select.inx-select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
 			'extended_style_section',
 			[
 				'label' => __( 'Extended', 'immonex-kickstart-for-elementor' ),
@@ -146,7 +323,7 @@ class Native_Filters_Sort_Widget extends \immonex\Kickstart\ForElementor\Compone
 			'settings' => $settings,
 		];
 
-		$ext_atts = [ 'template' ];
+		$ext_atts = [ 'align', 'template' ];
 
 		$this->add_extended_sc_atts( $ext_atts, $template_data, 'property-list' );
 

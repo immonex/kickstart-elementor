@@ -23,10 +23,10 @@ Die Möglichkeiten der Basisgalerie für Kickstart-Inhalte entsprechen weitgehen
 
 - Hauptgalerie (Außen- und Innenansichten, Objekt-Detailfotos, Illustrationen etc.)
 - Grundrisse und Lagepläne
-- Energieausweisbilder/-dokumente
+- Energieausweisbilder (PDF-Dokumente werden bei dieser Galerieart nicht unterstützt.)
 - *Benutzerdefinierte Felder*
 
-Bei Auswahl letzterer Option können in einem zusätzlichen Eingabefeld (kommagetrennt) die **Namen** der benutzerdefinierten Felder (*Custom Fields*) hinterlegt werden, die die IDs der einzubindenden Bilder/PDF-Dateien (Medienanhang-Beiträge) – wiederum in Form kommagetrennter Listen – enthalten.
+Bei Auswahl letzterer Option können in einem zusätzlichen Eingabefeld (kommagetrennt) die **Namen** der benutzerdefinierten Felder (*Custom Fields*) hinterlegt werden, die die IDs der einzubindenden Bilder (Medienanhang-Beiträge) – wiederum in Form kommagetrennter Listen – enthalten.
 
 </div></div>
 

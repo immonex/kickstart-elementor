@@ -14,16 +14,16 @@ Im Anschluss an den Upload und die Installation muss das Plugin noch per Klick a
 
 ## Einrichtung
 
-Mit Ausnahme der **optionalen** [Auswahl eines alternativen Skins](/anpassung-erweiterung/skins?id=auswahl) unter ***immonex → Einstellungen → Elementor <sup>ADD-ON</sup>*** weist das Add-on keine dedizierten Optionen auf.
+?> Umfang und Optik der Inhaltselemente können weitestgehend direkt im Elementor-Editor konfiguriert werden.
 
-Umfang und Optik der hiermit eingebundenen Inhaltselemente werden größtenteils direkt im Elementor-Editor konfiguriert.
+Der Add-on-Optionstab unter ***immonex → Einstellungen → Elementor <sup>ADD-ON</sup>*** bietet daher nur die (optionale) Möglichkeit, ein alternatives [Skin](/anpassung-erweiterung/skins) auszuwählen.
 
-Grundlage für die Darstellung bilden die *Skins* und Design/Layout-Optionen der Plugins, dir für das eigentliche *Rendering* der jeweiligen Frontend-Komponenten verantwortlich sind, z. B.:
+Unabhängig von den Einstellungen im Elementor-Editor und dem Add-on-Skin bilden die jeweiligen **pluginspezifischen** Skins und Design/Layout-Optionen die Grundlage für die Darstellung. Diese werden nachfolgend auch als *globale Optionen* bezeichnet und beziehen sich auf die immonex-Plugins, die für das eigentliche *Rendering* der zugehörigen Frontend-Komponenten verantwortlich sind:
 
-- ***immonex → Einstellungen → Allgemein → Design & Struktur, Farben ...*** (Kickstart-Basisplugin)
-- ***immonex → Energieskala*** (Energy Scale Pro)
-- ***Immobilien-Leads → Einstellungen*** (Lead Generator)
-- ***Suchaufträge → Einstellungen*** (Notify)
+- Kickstart-Basisplugin (***immonex → Einstellungen → Allgemein → Design & Struktur, Farben ...***)
+- Energy Scale Pro (***immonex → Energieskala***)
+- Lead Generator (***Immobilien-Leads → Einstellungen***)
+- Notify (***Suchaufträge → Einstellungen***)
 
 ![Kickstart-Optionen im WordPress-Backend](../assets/scst-kickstart-optionen-wp-backend.png)
 
